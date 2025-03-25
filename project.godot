@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
-"res://AutoloadScripts/": "teal",
 "res://Cooking (mechanics and ui)/": "red",
 "res://Game (movements, npcs, world map, inventory)/": "pink",
 "res://JSON (dictionaries, data)/": "blue",
