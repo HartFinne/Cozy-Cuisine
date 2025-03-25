@@ -1,0 +1,27 @@
+{
+	"Fryer": {
+		"Assets": "[Add Fryer Assets]",
+		"Label": "Deep Fryer",
+		"Description": "Used for deep frying various snacks and crispy dishes."
+	},
+	"Grill": {
+		"Assets": "[Add Grill Assets]",
+		"Label": "Grill",
+		"Description": "Used for grilling meats and other savory dishes to perfection."
+	},
+	"Oven": {
+		"Assets": "[Add Oven Assets]",
+		"Label": "Oven",
+		"Description": "Used for baking and roasting dishes like pizzas and pastries."
+	},
+	"KitchenTop": {
+		"Assets": "[Add Countertop Assets]",
+		"Label": "Kitchen Countertop",
+		"Description": "A surface used for preparing and assembling food items."
+	},
+	"Blender": {
+		"Assets": "[Add Blender Assets]",
+		"Label": "Blender",
+		"Description": "Used for blending ingredients into smooth drinks like milkshakes."
+	}
+}

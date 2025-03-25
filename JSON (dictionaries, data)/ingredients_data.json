@@ -1,0 +1,110 @@
+{
+	"Potatoes": {
+			"Icon": "[Add Icon]",
+			"Label": "Pre-Cut Potatoes",
+			"Price": 5,
+			"Description": "Freshly sliced potatoes, ready for deep frying."
+		},
+		"Oil": {
+			"Icon": "[Add Icon]",
+			"Label": "Cooking Oil",
+			"Price": 10,
+			"Description": "Essential for frying and cooking various dishes."
+		},
+		"Salt": {
+			"Icon": "[Add Icon]",
+			"Label": "Salt",
+			"Price": 2,
+			"Description": "A common seasoning used to enhance flavor."
+		},
+		"Meat": {
+			"Icon": "[Add Icon]",
+			"Label": "Ground Meat",
+			"Price": 15,
+			"Description": "Freshly minced meat, ideal for making burger patties."
+		},
+		"Mushroom": {
+			"Icon": "[Add Icon]",
+			"Label": "Mushrooms",
+			"Price": 7,
+			"Description": "Sliced mushrooms, adding rich flavor and texture."
+		},
+		"SteakSauce": {
+			"Icon": "[Add Icon]",
+			"Label": "Steak Sauce",
+			"Price": 8,
+			"Description": "A savory sauce that enhances the taste of meat dishes."
+		},
+		"MixedVeg": {
+			"Icon": "[Add Icon]",
+			"Label": "Mixed Vegetables",
+			"Price": 6,
+			"Description": "A blend of fresh vegetables for a nutritious side dish."
+		},
+		"Dough": {
+			"Icon": "[Add Icon]",
+			"Label": "Pizza Dough",
+			"Price": 4,
+			"Description": "Ready-to-use dough for quick and easy pizza preparation."
+		},
+		"PizzaSauce": {
+			"Icon": "[Add Icon]",
+			"Label": "Pizza Sauce",
+			"Price": 5,
+			"Description": "A rich and tangy tomato-based sauce for pizza."
+		},
+		"Pepperoni": {
+			"Icon": "[Add Icon]",
+			"Label": "Pepperoni",
+			"Price": 12,
+			"Description": "Spicy and flavorful cured meat slices for pizza toppings."
+		},
+		"Cheese": {
+			"Icon": "[Add Icon]",
+			"Label": "Cheese",
+			"Price": 10,
+			"Description": "A creamy and stretchy topping that melts perfectly."
+		},
+		"Choco": {
+			"Icon": "[Add Icon]",
+			"Label": "Chocolate Ice Cream",
+			"Price": 8,
+			"Description": "Rich and creamy chocolate-flavored frozen dessert."
+		},
+		"Vanilla": {
+			"Icon": "[Add Icon]",
+			"Label": "Vanilla Ice Cream",
+			"Price": 8,
+			"Description": "Smooth and classic vanilla-flavored frozen treat."
+		},
+		"Strawberry": {
+			"Icon": "[Add Icon]",
+			"Label": "Strawberry Ice Cream",
+			"Price": 8,
+			"Description": "A sweet and fruity strawberry-flavored dessert."
+		},
+		"Cone": {
+			"Icon": "[Add Icon]",
+			"Label": "Ice Cream Cone",
+			"Price": 3,
+			"Description": "A crispy cone perfect for serving scooped ice cream."
+		},
+		"Milk": {
+			"Icon": "[Add Icon]",
+			"Label": "Fresh Milk",
+			"Price": 6,
+			"Description": "Adds smoothness and richness to the shake."
+		},
+		"Sugar": {
+			"Icon": "[Add Icon]",
+			"Label": "Sugar",
+			"Price": 3,
+			"Description": "Sweetens the milkshake for a delightful taste."
+		},
+		"Ice": {
+			"Icon": "[Add Icon]",
+			"Label": "Ice",
+			"Price": 2,
+			"Description": "Chilled ice cubes used to keep drinks cold and refreshing."
+		}
+}

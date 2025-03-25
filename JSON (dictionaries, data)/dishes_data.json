@@ -1,0 +1,37 @@
+{
+	"Fries": {
+			"Assets": "[Add Fries Icon]",
+			"Label": "French Fries",
+			"Description": "Crispy, golden-brown potato fries, deep-fried to perfection.",
+			"Ingredients": ["Potatoes", "Oil", "Salt"],
+			"Price": 20
+		},
+		"BurgerSteak": {
+			"Assets": "[Add Burger Steak Icon]",
+			"Label": "Burger Steak",
+			"Description": "A juicy grilled beef patty served with steak sauce and mixed vegetables.",
+			"Ingredients": ["Meat", "Mushroom", "SteakSauce", "MixedVeg"],
+			"Price": 40
+		},
+		"PepperoniPizza": {
+			"Assets": "[Add Pepperoni Pizza Icon]",
+			"Label": "Pepperoni Pizza",
+			"Description": "A classic pizza topped with spicy pepperoni slices, melted cheese, and rich tomato sauce.",
+			"Ingredients": ["Dough", "PizzaSauce", "Pepperoni", "Cheese"],
+			"Price": 35
+		},
+		"IceCream": {
+			"Assets": "[Add Ice Cream Icon]",
+			"Label": "Ice Cream",
+			"Description": "A delicious frozen dessert available in multiple flavors like chocolate, vanilla, and strawberry.",
+			"Ingredients": ["Choco", "Vanilla", "Strawberry", "Milk"],
+			"Price": 33
+		},
+		"Milkshake": {
+			"Assets": "[Add Milkshake Icon]",
+			"Label": "Milkshake",
+			"Description": "A smooth and creamy drink blended with milk, ice cream, and sugar.",
+			"Ingredients": ["Vanilla", "Milk", "Sugar", "Ice"],
+			"Price": 22
+		}
+}
