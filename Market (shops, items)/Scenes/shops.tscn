@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck02vn5ftbsjf"]
 
-[ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market/Scripts/shops.gd" id="1_5dwnq"]
+[ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market (shops, items)/Scripts/shops.gd" id="1_5dwnq"]
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_o6wdg"]
 
 [node name="Shops" type="PanelContainer"]

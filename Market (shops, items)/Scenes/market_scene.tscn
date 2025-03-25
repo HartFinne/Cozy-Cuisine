@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bs4bk1jk28hsl"]
 
-[ext_resource type="PackedScene" uid="uid://ck02vn5ftbsjf" path="res://Market/Scenes/shops.tscn" id="1_4m8jw"]
-[ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market/Scripts/available.gd" id="2_pc21n"]
-[ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market/Scenes/ingredient_container.tscn" id="3_svmds"]
+[ext_resource type="PackedScene" uid="uid://ck02vn5ftbsjf" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_4m8jw"]
+[ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
+[ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_svmds"]
 
 [node name="MarketScene" type="Control"]
 layout_mode = 3
