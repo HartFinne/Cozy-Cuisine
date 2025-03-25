@@ -1,0 +1,8 @@
+{
+	"Meat": {
+		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
+		"name": "Meat",
+		"price": 15.0,
+		"quantity": 1.0
+	}
+}

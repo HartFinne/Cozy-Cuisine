@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="CozyCuisine"
+run/main_scene="uid://bs4bk1jk28hsl"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+IngredientLoader="*res://Market (shops, items)/Autoloader/ingredient_loader.gd"
+BasketManager="*res://Market (shops, items)/Autoloader/basket_manager.gd"
+
 [display]
 
-window/size/mode=1
 window/stretch/mode="viewport"
 
 [file_customization]

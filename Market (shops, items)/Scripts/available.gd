@@ -5,31 +5,31 @@ extends TabBar
 @export var ingredient_scene: PackedScene
 
 var ingredients: Array = []
+var shop_list: Array = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 func _on_shop_selected(shop_index: int):
 	scroll_container = %ScrollContainer
 	grid_container = %GridContainer
+	
+	# Remove existing ingredients
 	for child in grid_container.get_children():
 		child.queue_free()
 	
-	var shop_list = [
-		{ "name": "Shop 1", "ingredients": ["Apple", "Banana", "Carrot", "Apple", "Banana", "Carrot", "Apple", "Banana", "Carrot"] },
-		{ "name": "Shop 2", "ingredients": ["Tomato", "Onion", "Potato"] }
-	]
+	# Fetch shop_list from shops.gd
+	var shops_node = get_parent().get_parent().get_node("Shops")  # Adjust this path as needed
+	if shops_node:
+		shop_list = shops_node.shop_list  # Get updated shop list
 	
 	if shop_index >= 0 and shop_index < shop_list.size():
 		ingredients = shop_list[shop_index]["ingredients"]
 		populate_ingredients()
 		
-		
-
 func populate_ingredients():
-	for ingredient_name in ingredients:
+	for ingredient in ingredients:
 		var ingredient_instance = ingredient_scene.instantiate()
 		grid_container.add_child(ingredient_instance)
-		ingredient_instance.set_ingredient_name(ingredient_name)
+		ingredient_instance.set_ingredient_display(ingredient["name"], ingredient["price"], ingredient["image"])
 		

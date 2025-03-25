@@ -40,6 +40,7 @@ size_flags_horizontal = 10
 text = "->"
 
 [node name="ShopRect" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_o6wdg")
