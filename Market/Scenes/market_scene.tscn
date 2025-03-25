@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=4 format=3 uid="uid://bs4bk1jk28hsl"]
 
 [ext_resource type="PackedScene" uid="uid://ck02vn5ftbsjf" path="res://Market/Scenes/shops.tscn" id="1_4m8jw"]
-[ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="2_pc21n"]
+[ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market/Scripts/available.gd" id="2_pc21n"]
+[ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market/Scenes/ingredient_container.tscn" id="3_svmds"]
 
 [node name="MarketScene" type="Control"]
 layout_mode = 3
@@ -22,71 +23,55 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Shops" parent="Panel" instance=ExtResource("1_4m8jw")]
 layout_mode = 1
-offset_left = 13.0
-offset_right = 13.0001
+anchor_left = 0.0885417
+anchor_top = 0.222222
+anchor_right = 0.453125
+anchor_bottom = 0.765432
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 3.05176e-05
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="TabContainer" type="TabContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.519965
-anchor_top = 0.226852
-anchor_right = 0.928819
-anchor_bottom = 0.705247
+anchor_left = 0.507813
+anchor_top = 0.222222
+anchor_right = 0.946181
+anchor_bottom = 0.75
 tab_alignment = 1
 current_tab = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Available" type="TabBar" parent="Panel/TabContainer"]
 layout_mode = 2
+script = ExtResource("2_pc21n")
+ingredient_scene = ExtResource("3_svmds")
 metadata/_tab_index = 0
 
-[node name="GridContainer" type="GridContainer" parent="Panel/TabContainer/Available"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/Available"]
+unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.0360934
+anchor_top = 0.0609319
+anchor_right = 0.961783
+anchor_bottom = 0.946237
 grow_horizontal = 2
 grow_vertical = 2
-columns = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Available/GridContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Available/GridContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Available/GridContainer/PanelContainer/VBoxContainer"]
-z_index = 1
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="IngredientLabel" type="Label" parent="Panel/TabContainer/Available/GridContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-text = "Ingredient Name"
-
-[node name="IngredientRect" type="TextureRect" parent="Panel/TabContainer/Available/GridContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-texture = ExtResource("2_pc21n")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/TabContainer/Available/GridContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="PriceLabel" type="Label" parent="Panel/TabContainer/Available/GridContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+[node name="GridContainer" type="GridContainer" parent="Panel/TabContainer/Available/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "10"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="Panel/TabContainer/Available/GridContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-modulate = Color(0.254902, 1, 1, 1)
-layout_mode = 2
-size_flags_horizontal = 8
-text = "+"
+size_flags_vertical = 3
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 10
+columns = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
 visible = false

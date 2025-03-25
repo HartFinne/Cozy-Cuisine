@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck02vn5ftbsjf"]
+
+[ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market/Scripts/shops.gd" id="1_5dwnq"]
+[ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_o6wdg"]
+
+[node name="Shops" type="PanelContainer"]
+anchors_preset = -1
+anchor_left = 0.0772569
+anchor_top = 0.177469
+anchor_right = 0.421007
+anchor_bottom = 0.666667
+offset_left = 39.0
+offset_top = 29.0
+offset_right = 39.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5dwnq")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "<-"
+
+[node name="ShopNameLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Market Name"
+
+[node name="RightButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "->"
+
+[node name="ShopRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_o6wdg")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]
