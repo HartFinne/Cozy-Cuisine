@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
-"res://Cooking/": "red",
-"res://Game/": "pink",
-"res://JSON/": "blue",
-"res://Market/": "purple",
+"res://Cooking (mechanics and ui)/": "red",
+"res://Game (movements, npcs, world map, inventory)/": "pink",
+"res://JSON (dictionaries, data)/": "blue",
+"res://Market (shops, items)/": "purple",
 "res://Menu/": "orange"
 }
 
