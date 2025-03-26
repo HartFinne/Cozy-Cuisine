@@ -1,13 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=7 format=3 uid="uid://bs4bk1jk28hsl"]
 
-[ext_resource type="Script" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
-[ext_resource type="Script" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
-
-[sub_resource type="Resource" id="Resource_e7etf"]
-metadata/__load_path__ = "res://Market (shops, items)/Scenes/ingredient_container.tscn"
-
-[sub_resource type="Resource" id="Resource_rser8"]
-metadata/__load_path__ = "res://Market (shops, items)/Scenes/basket_container.tscn"
+[ext_resource type="PackedScene" uid="uid://bdhmvto5108fr" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_rser8"]
+[ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
+[ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_ov0xs"]
+[ext_resource type="Script" uid="uid://swimyrubf05e" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
+[ext_resource type="PackedScene" uid="uid://7haemyq012gx" path="res://Market (shops, items)/Scenes/basket_container.tscn" id="5_mojl1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxshy"]
 
@@ -28,24 +25,15 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Shops" parent="Panel"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Shops" parent="Panel" instance=ExtResource("1_rser8")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0590278
-anchor_top = 0.237654
-anchor_right = 0.462674
-anchor_bottom = 0.714506
-script = null
-metadata/_edit_use_anchors_ = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = 166.0
+offset_right = -542.0
+offset_bottom = -154.0
 
 [node name="TabContainer" type="TabContainer" parent="Panel"]
 layout_mode = 1
@@ -62,7 +50,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 layout_mode = 2
 script = ExtResource("2_pc21n")
-ingredient_scene = SubResource("Resource_e7etf")
+ingredient_scene = ExtResource("3_ov0xs")
 metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/Available"]
@@ -91,7 +79,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
 layout_mode = 2
 script = ExtResource("4_mojl1")
-basket_scene = SubResource("Resource_rser8")
+basket_scene = ExtResource("5_mojl1")
 metadata/_tab_index = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/TabContainer/Basket"]
