@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=8 format=3 uid="uid://bs4bk1jk28hsl"]
 
-[ext_resource type="PackedScene" uid="uid://ck02vn5ftbsjf" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_4m8jw"]
+[ext_resource type="PackedScene" uid="uid://bdhmvto5108fr" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_nxshy"]
 [ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
 [ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_svmds"]
-[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="4_7wuk6"]
 [ext_resource type="Script" uid="uid://swimyrubf05e" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
 [ext_resource type="PackedScene" uid="uid://7haemyq012gx" path="res://Market (shops, items)/Scenes/basket_container.tscn" id="5_nxshy"]
-[ext_resource type="Texture2D" uid="uid://boa7yblbt5fl1" path="res://Market (shops, items)/Assets/Logos/icons8-trash-25.png" id="5_ov0xs"]
+[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="6_mojl1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxshy"]
 
@@ -27,18 +26,14 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Shops" parent="Panel" instance=ExtResource("1_4m8jw")]
+[node name="Shops" parent="Panel" instance=ExtResource("1_nxshy")]
 layout_mode = 1
-anchor_left = 0.0885417
-anchor_top = 0.222222
-anchor_right = 0.453125
-anchor_bottom = 0.765432
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 3.05176e-05
-grow_horizontal = 1
-grow_vertical = 1
+anchors_preset = -1
+anchor_left = 0.0590278
+anchor_top = 0.237654
+anchor_right = 0.462674
+anchor_bottom = 0.714506
+metadata/_edit_use_anchors_ = true
 
 [node name="TabContainer" type="TabContainer" parent="Panel"]
 layout_mode = 1
@@ -48,10 +43,11 @@ anchor_top = 0.222222
 anchor_right = 0.946181
 anchor_bottom = 0.75
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Available" type="TabBar" parent="Panel/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("2_pc21n")
 ingredient_scene = ExtResource("3_svmds")
@@ -81,7 +77,6 @@ columns = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("4_mojl1")
 basket_scene = ExtResource("5_nxshy")
@@ -93,9 +88,11 @@ anchors_preset = -1
 anchor_left = 0.0455446
 anchor_top = 0.0610932
 anchor_right = 0.954456
-anchor_bottom = 0.810289
+anchor_bottom = 0.755627
+offset_bottom = 1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
+vertical_scroll_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer2" type="GridContainer" parent="Panel/TabContainer/Basket/ScrollContainer"]
@@ -111,67 +108,77 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_nxshy")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Basket"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0455446
+anchor_top = 0.787781
+anchor_right = 0.954456
+anchor_bottom = 0.961414
+grow_horizontal = 2
+grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer"]
+[node name="TotalLabel" type="Label" parent="Panel/TabContainer/Basket/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
-texture = ExtResource("4_7wuk6")
-expand_mode = 2
+text = "TOTAL COINS"
 
-[node name="Label" type="Label" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer"]
+[node name="TotalPriceLabel" type="Label" parent="Panel/TabContainer/Basket/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(114.095, 41.605)
 layout_mode = 2
-size_flags_horizontal = 2
-text = "pizza"
+size_flags_horizontal = 10
+text = "3000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "20"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Label3" type="Label" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer/HBoxContainer/PanelContainer"]
-custom_minimum_size = Vector2(88.615, 0)
-layout_mode = 2
-size_flags_vertical = 1
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-
-[node name="Button" type="Button" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "  +  "
-
-[node name="Button2" type="Button" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "  -  "
-
-[node name="PanelContainer2" type="PanelContainer" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="Button" type="TextureButton" parent="Panel/TabContainer/Basket/ScrollContainer/GridContainer2/Container/HBoxContainer/HBoxContainer/PanelContainer2"]
-layout_direction = 3
+[node name="BuyButton" type="Button" parent="Panel/TabContainer/Basket/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("5_ov0xs")
-stretch_mode = 5
+text = "BUY"
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.615451
+anchor_top = 0.0555556
+anchor_right = 0.845486
+anchor_bottom = 0.143519
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_mojl1")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "100"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("6_mojl1")
+stretch_mode = 3
+
+[node name="Label2" type="Label" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "100"
+
+[node name="Button" type="Button" parent="Panel/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(62.3, 0)
+layout_mode = 2
+text = ">"
+
+[connection signal="pressed" from="Panel/TabContainer/Basket/HBoxContainer/BuyButton" to="Panel/TabContainer/Basket" method="_on_buy_button_pressed"]

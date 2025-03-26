@@ -1,49 +1,107 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck02vn5ftbsjf"]
+[gd_scene load_steps=7 format=3 uid="uid://bdhmvto5108fr"]
 
-[ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market (shops, items)/Scripts/shops.gd" id="1_5dwnq"]
-[ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_o6wdg"]
+[ext_resource type="Texture2D" uid="uid://bbc0qogvitob4" path="res://Market (shops, items)/Assets/Logos/Icon-color.png" id="1_8ydwp"]
+[ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market (shops, items)/Scripts/shops.gd" id="1_dli60"]
+[ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_l8jim"]
+[ext_resource type="Texture2D" uid="uid://m00u05fllv6" path="res://Market (shops, items)/Assets/Logos/left-arrow.png" id="2_fsdkg"]
+[ext_resource type="Texture2D" uid="uid://bnkmgxmqtlbyx" path="res://Market (shops, items)/Assets/Logos/right-arrow.png" id="2_xd5ag"]
+[ext_resource type="Texture2D" uid="uid://bmpxdjtvjm0e0" path="res://Market (shops, items)/Assets/Logos/long-left-arrow.png" id="3_wvf3p"]
 
-[node name="Shops" type="PanelContainer"]
-anchors_preset = -1
-anchor_left = 0.0772569
-anchor_top = 0.177469
-anchor_right = 0.421007
-anchor_bottom = 0.666667
-offset_left = 39.0
-offset_top = 29.0
-offset_right = 39.0
-offset_bottom = 29.0
+[node name="PanelContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5dwnq")
-metadata/_edit_use_anchors_ = true
+script = ExtResource("1_dli60")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.401925
+anchor_bottom = 0.472814
+offset_right = -194.018
+offset_bottom = -128.383
+scale = Vector2(1.72126, 1.72126)
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="LeftButton" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "<-"
-
-[node name="ShopNameLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Market Name"
-
-[node name="RightButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
-text = "->"
 
-[node name="ShopRect" type="TextureRect" parent="VBoxContainer"]
+[node name="SettingButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 42.485)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+icon = ExtResource("1_8ydwp")
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_wvf3p")
+icon_alignment = 1
+
+[node name="LeftButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(44.87, 40)
+layout_mode = 2
+size_flags_vertical = 6
+icon = ExtResource("2_fsdkg")
+icon_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="ShopNameLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("1_o6wdg")
+theme_override_font_sizes/font_size = 10
+text = "Eacakes"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/RightButton" to="." method="_on_right_button_pressed"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(173.125, 142.55)
+layout_mode = 2
+
+[node name="ShopRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer3/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_l8jim")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NoClipButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+text = "->"
+
+[node name="NoClipButton2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+show_behind_parent = true
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "->"
+
+[node name="RightButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(44.87, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+icon = ExtResource("2_xd5ag")
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/RightButton" to="." method="_on_right_button_pressed"]

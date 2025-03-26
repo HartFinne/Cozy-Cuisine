@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 var current_index: int = 0
 var shop_list: Array = []
@@ -61,6 +61,25 @@ func load_shops():
 	shop_list = shop_dict.values()
 
 	print("Loaded shops:", shop_list)
+	
+func update_shop_display():
+	if shop_list.size() > 0:
+		var shop_data = shop_list[current_index]
+		shop_name_label.text = shop_data["name"]
+
+		# Load and set shop image
+		var image_path = shop_data["image"]
+		if image_path:
+			var texture = load(image_path)
+			if texture:
+				shop_rect.texture = texture
+			else:
+				print("Error loading shop image:", image_path)
+		else:
+			shop_rect.texture = null
+	else:
+		shop_name_label.text = "No Shops Available"
+		shop_rect.texture = null
 
 func select_shop(index):
 	print("Emitting signal: shop_selected with index", index)
@@ -81,22 +100,11 @@ func _on_right_button_pressed() -> void:
 		current_index = 0
 	update_shop_display()
 	select_shop(current_index)
+	
 
-func update_shop_display():
-	if shop_list.size() > 0:
-		var shop_data = shop_list[current_index]
-		shop_name_label.text = shop_data["name"]
+func _on_setting_button_pressed() -> void:
+	print("Next Update: Setting Button")
+	
 
-		# Load and set shop image
-		var image_path = shop_data["image"]
-		if image_path:
-			var texture = load(image_path)
-			if texture:
-				shop_rect.texture = texture
-			else:
-				print("Error loading shop image:", image_path)
-		else:
-			shop_rect.texture = null
-	else:
-		shop_name_label.text = "No Shops Available"
-		shop_rect.texture = null
+func _on_back_button_pressed() -> void:
+	print("Working")

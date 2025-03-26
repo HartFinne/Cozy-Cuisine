@@ -15,16 +15,14 @@ func _ready() -> void:
 func set_item_data(ingredient: Dictionary):
 	ingredient_name = ingredient["name"]  # Assign the name
 	ingredient_label.text = ingredient_name
-	price_label.text = "P" + str(ingredient["price"])
-	quantity_label.text = str(ingredient["quantity"])
+	price_label.text = str(int(ingredient["price"]))
+	quantity_label.text = str(int(ingredient["quantity"]))
 	
 	# Load and set the item image
 	var texture = load(ingredient["image"])
 	if texture:
 		ingredient_rect.texture = texture
 		
-
-
 
 func _on_add_button_pressed() -> void:
 	print(ingredient_name)
@@ -48,6 +46,6 @@ func _on_remove_texture_button_pressed() -> void:
 func update_display():
 	var item = BasketManager.basket_data.get(ingredient_name)
 	if item:
-		quantity_label.text = str(item["quantity"])
+		quantity_label.text = str(int(item["quantity"]))
 	else:
 		queue_free()  # Remove if item is no longer in the basket

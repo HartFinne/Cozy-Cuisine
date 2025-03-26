@@ -1,34 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://8i4jm2lq5am"]
+[gd_scene load_steps=6 format=3 uid="uid://8i4jm2lq5am"]
 
 [ext_resource type="Script" uid="uid://bqjnh73w7kabw" path="res://Market (shops, items)/Scripts/ingredient_container.gd" id="1_aq5bi"]
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_sfash"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="3_oeswt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sac5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_208av"]
+
 [node name="IngredientContainer" type="PanelContainer"]
 anchors_preset = -1
 anchor_right = 0.113715
 anchor_bottom = 0.29321
-offset_right = -91.0
+offset_right = -91.0003
 offset_bottom = -150.0
 script = ExtResource("1_aq5bi")
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 9
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3sac5")
 
-[node name="IngredientLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="IngredientLabel" type="Label" parent="VBoxContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -36,33 +33,48 @@ size_flags_vertical = 0
 text = "Ingredient Name"
 horizontal_alignment = 1
 
-[node name="IngredientRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="IngredientRect" type="TextureRect" parent="VBoxContainer/MarginContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("1_sfash")
 stretch_mode = 5
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_208av")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MarginContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="CoinRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="CoinRect" type="TextureRect" parent="VBoxContainer/MarginContainer/PanelContainer/HBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 4
 texture = ExtResource("3_oeswt")
 stretch_mode = 4
 
-[node name="PriceLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="PriceLabel" type="Label" parent="VBoxContainer/MarginContainer/PanelContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 text = "10"
 horizontal_alignment = 1
 
-[node name="AddToBasketButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="AddToBasketButton" type="Button" parent="VBoxContainer/MarginContainer/PanelContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "+"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/AddToBasketButton" to="." method="_on_add_to_basket_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/PanelContainer/HBoxContainer2/AddToBasketButton" to="." method="_on_add_to_basket_button_pressed"]

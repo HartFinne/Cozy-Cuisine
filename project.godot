@@ -22,6 +22,7 @@ BasketManager="*res://Market (shops, items)/Autoloader/basket_manager.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [file_customization]

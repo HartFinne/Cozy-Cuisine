@@ -20,6 +20,7 @@ func _on_shop_selected(shop_index: int):
 	
 	# Fetch shop_list from shops.gd
 	var shops_node = get_parent().get_parent().get_node("Shops")  # Adjust this path as needed
+	print(shops_node)
 	if shops_node:
 		shop_list = shops_node.shop_list  # Get updated shop list
 	
