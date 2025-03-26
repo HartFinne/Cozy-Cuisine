@@ -21,11 +21,11 @@ IngredientLoader="*res://Market (shops, items)/Autoloader/ingredient_loader.gd"
 BasketManager="*res://Market (shops, items)/Autoloader/basket_manager.gd"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
-
 [display]
+
 window/size/mode=2
 window/stretch/mode="viewport"
-
+DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
 [file_customization]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmdpryd7wwxsc"]
 
-[ext_resource type="Script" uid="uid://c7klgrksjbc33" path="res://Game (movements, npcs, world map, inventory)/Scenes/EndOfDayPopUp(parts)/EndOfDayTrigger.gd" id="1_tbc5e"]
+[ext_resource type="Script" uid="uid://c7klgrksjbc33" path="res://Game (movements, npcs, world map, inventory)/Scenes/EndOfDayPopUp(parts)/Scripts/EndOfDayTrigger.gd" id="1_tbc5e"]
 [ext_resource type="Texture2D" uid="uid://dmmowbo7tgf88" path="res://Game (movements, npcs, world map, inventory)/Assets/Tilesets/UI books & more.png" id="2_h8ly0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pfe6p"]
