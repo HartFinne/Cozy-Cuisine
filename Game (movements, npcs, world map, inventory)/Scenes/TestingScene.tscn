@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bemkisqu7td26"]
+[gd_scene load_steps=3 format=3 uid="uid://ch345th86ffhb"]
 
 [ext_resource type="PackedScene" uid="uid://candx65meavuq" path="res://Game (movements, npcs, world map, inventory)/Scenes/EndOfDayPopUp.tscn" id="1_0t0ee"]
 [ext_resource type="PackedScene" uid="uid://dmdpryd7wwxsc" path="res://Game (movements, npcs, world map, inventory)/Scenes/EndOfDayPopUp(parts)/EndOfDayButton(trigger).tscn" id="2_fb6au"]
