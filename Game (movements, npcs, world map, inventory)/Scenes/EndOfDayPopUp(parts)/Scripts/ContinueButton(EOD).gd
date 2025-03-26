@@ -1,4 +1,5 @@
-extends Node
+# logic for after displaying the pop up closing and moving to the new day scene
+extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.

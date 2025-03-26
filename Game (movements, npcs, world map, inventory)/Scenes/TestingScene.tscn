@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bemkisqu7td26"]
+
+[ext_resource type="PackedScene" uid="uid://candx65meavuq" path="res://Game (movements, npcs, world map, inventory)/Scenes/EndOfDayPopUp.tscn" id="1_0t0ee"]
+[ext_resource type="PackedScene" uid="uid://dmdpryd7wwxsc" path="res://Game (movements, npcs, world map, inventory)/Scenes/EndOfDayPopUp(parts)/EndOfDayButton(trigger).tscn" id="2_fb6au"]
+
+[node name="TestingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndOfDayPopUp" parent="." instance=ExtResource("1_0t0ee")]
+visible = false
+layout_mode = 1
+
+[node name="EndOfDayButton(trigger)" parent="." instance=ExtResource("2_fb6au")]
+layout_mode = 1
+offset_left = 472.0
+offset_right = -584.0
