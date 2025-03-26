@@ -24,11 +24,11 @@ BasketManager="*res://Market (shops, items)/Autoloader/basket_manager.gd"
 
 window/size/mode=2
 window/stretch/mode="viewport"
+DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
 [file_customization]
 
 folder_colors={
-"res://AutoloadScripts/": "teal",
 "res://Cooking (mechanics and ui)/": "red",
 "res://Game (movements, npcs, world map, inventory)/": "pink",
 "res://JSON (dictionaries, data)/": "blue",

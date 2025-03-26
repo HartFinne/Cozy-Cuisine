@@ -1,0 +1,11 @@
+{
+	"budget": 1000,
+	"days": 1,
+	"expenses": 0,
+	"inventory": {
+
+	},
+	"profit": 0,
+	"revenue": 0,
+	"total_profit": 0
+}
