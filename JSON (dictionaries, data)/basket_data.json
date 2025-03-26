@@ -15,13 +15,19 @@
 		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
 		"name": "Oil",
 		"price": 10.0,
-		"quantity": 1.0
+		"quantity": 3.0
 	},
 	"Pepperoni": {
 		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
 		"name": "Pepperoni",
 		"price": 12.0,
 		"quantity": 1.0
+	},
+	"Potatoes": {
+		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
+		"name": "Potatoes",
+		"price": 5,
+		"quantity": 2
 	},
 	"Salt": {
 		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",

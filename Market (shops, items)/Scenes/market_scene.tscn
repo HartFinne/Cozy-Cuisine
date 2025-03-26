@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=8 format=3 uid="uid://bs4bk1jk28hsl"]
 
 [ext_resource type="PackedScene" uid="uid://bdhmvto5108fr" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_rser8"]
-[ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
+[ext_resource type="Script" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
 [ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_ov0xs"]
-[ext_resource type="Script" uid="uid://swimyrubf05e" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
+[ext_resource type="Script" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
 [ext_resource type="PackedScene" uid="uid://7haemyq012gx" path="res://Market (shops, items)/Scenes/basket_container.tscn" id="5_mojl1"]
+[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="6_mojl1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxshy"]
 
@@ -155,6 +156,7 @@ size_flags_horizontal = 10
 
 [node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
+texture = ExtResource("6_mojl1")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer"]
@@ -167,6 +169,7 @@ size_flags_horizontal = 6
 
 [node name="TextureRect2" type="TextureRect" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
+texture = ExtResource("6_mojl1")
 stretch_mode = 3
 
 [node name="Label2" type="Label" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer2"]
