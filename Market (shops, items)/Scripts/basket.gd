@@ -44,17 +44,34 @@ func update_basket_display():
 		
 # Handle the buy button press
 signal purchase_completed(total_cost)
+@onready var error_popup: AcceptDialog = %ErrorPopup
 
 func _on_buy_button_pressed() -> void:
 	load_inventory_data()
 	print("Buy button Working")
+	
+	var total_cost = calculate_total_cost()
+	
+	if total_cost > MoneyManager.budget:
+		error_popup.dialog_text = "Not enough money!"  # Set the error message
+		error_popup.title = "Warning"
+		error_popup.popup_centered()  # Show the pop-up in the center
+		return  # Stop the function if there's not enough budget
 
 	merge_basket_into_inventory()
 	save_inventory_data()
 
+# Calculate total cost before purchase
+func calculate_total_cost() -> float:
+	var total_cost = 0
+	for item_name in basket_data.keys():
+		var ingredient = basket_data[item_name]
+		total_cost += ingredient["price"] * ingredient["quantity"]
+	return total_cost
+
 # Merge basket_data into inventory_data
 func merge_basket_into_inventory() -> void:
-	var total_cost = 0
+	var total_cost = calculate_total_cost()
 	for item_name in basket_data.keys():
 		var ingredient = basket_data[item_name]
 		if item_name in inventory_data:

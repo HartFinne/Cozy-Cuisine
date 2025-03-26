@@ -10,10 +10,10 @@
 
 [node name="IngredientContainer" type="PanelContainer"]
 anchors_preset = -1
-anchor_right = 0.113715
-anchor_bottom = 0.29321
-offset_right = -91.0003
-offset_bottom = -150.0
+anchor_right = 0.131944
+anchor_bottom = 0.300926
+offset_right = -112.001
+offset_bottom = -155.0
 script = ExtResource("1_aq5bi")
 metadata/_edit_use_anchors_ = true
 

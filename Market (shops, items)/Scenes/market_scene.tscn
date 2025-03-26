@@ -136,11 +136,17 @@ size_flags_horizontal = 3
 text = "BUY"
 
 [node name="MoneyContainer" parent="Panel" instance=ExtResource("6_mojl1")]
+visible = false
 layout_mode = 1
 anchor_left = 0.622396
 anchor_top = 0.0709877
 anchor_right = 0.828993
 anchor_bottom = 0.157407
 offset_right = 0.0
+
+[node name="ErrorPopup" type="AcceptDialog" parent="Panel"]
+unique_name_in_owner = true
+initial_position = 2
+size = Vector2i(470, 235)
 
 [connection signal="pressed" from="Panel/TabContainer/Basket/HBoxContainer/BuyButton" to="Panel/TabContainer/Basket" method="_on_buy_button_pressed"]
