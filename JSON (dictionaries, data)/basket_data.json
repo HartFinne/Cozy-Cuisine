@@ -1,38 +1,3 @@
 {
-	"Cheese": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Cheese",
-		"price": 10.0,
-		"quantity": 4.0
-	},
-	"Meat": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Meat",
-		"price": 15.0,
-		"quantity": 3.0
-	},
-	"Oil": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Oil",
-		"price": 10.0,
-		"quantity": 3.0
-	},
-	"Pepperoni": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Pepperoni",
-		"price": 12.0,
-		"quantity": 1.0
-	},
-	"Potatoes": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Potatoes",
-		"price": 5,
-		"quantity": 2
-	},
-	"Salt": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Salt",
-		"price": 2.0,
-		"quantity": 1.0
-	}
+
 }

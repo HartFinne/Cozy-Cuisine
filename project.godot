@@ -19,11 +19,12 @@ config/icon="res://icon.svg"
 
 IngredientLoader="*res://Market (shops, items)/Autoloader/ingredient_loader.gd"
 BasketManager="*res://Market (shops, items)/Autoloader/basket_manager.gd"
+MoneyManager="*res://Market (shops, items)/Autoloader/money_manager.gd"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
 [display]
 
-window/size/mode=2
+window/size/mode=1
 window/stretch/mode="viewport"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 

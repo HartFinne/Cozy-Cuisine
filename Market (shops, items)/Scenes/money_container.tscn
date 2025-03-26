@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://x0go4prl867m"]
+
+[ext_resource type="Script" uid="uid://dh3hlyylw2dmn" path="res://Market (shops, items)/Scripts/money_cointainer.gd" id="1_kxisy"]
+[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="1_tmxi1"]
+
+[node name="MoneyContainer" type="PanelContainer"]
+anchors_preset = -1
+anchor_right = 0.206597
+anchor_bottom = 0.0864198
+offset_right = -73.0
+size_flags_horizontal = 3
+script = ExtResource("1_kxisy")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 13
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CoinRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("1_tmxi1")
+stretch_mode = 3
+
+[node name="CoinLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "100"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="GemRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture = ExtResource("1_tmxi1")
+stretch_mode = 3
+
+[node name="GemLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "100"
+
+[node name="MoreButton" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(43.09, 0)
+layout_mode = 2
+text = ">"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MoreButton" to="." method="_on_more_button_pressed"]

@@ -1,11 +1,28 @@
 {
-	"budget": 1000,
-	"days": 1,
-	"expenses": 0,
+	"budget": 995.0,
+	"days": 1.0,
+	"expenses": 0.0,
 	"inventory": {
-
+		"Oil": {
+			"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
+			"name": "Oil",
+			"price": 10.0,
+			"quantity": 5.0
+		},
+		"Potatoes": {
+			"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
+			"name": "Potatoes",
+			"price": 5.0,
+			"quantity": 11.0
+		},
+		"Salt": {
+			"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
+			"name": "Salt",
+			"price": 2.0,
+			"quantity": 3.0
+		}
 	},
-	"profit": 0,
-	"revenue": 0,
-	"total_profit": 0
+	"profit": 0.0,
+	"revenue": 0.0,
+	"total_profit": 0.0
 }

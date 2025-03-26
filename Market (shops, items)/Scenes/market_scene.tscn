@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bs4bk1jk28hsl"]
 
 [ext_resource type="PackedScene" uid="uid://bdhmvto5108fr" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_rser8"]
-[ext_resource type="Script" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
+[ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
 [ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_ov0xs"]
-[ext_resource type="Script" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
+[ext_resource type="Script" uid="uid://swimyrubf05e" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
 [ext_resource type="PackedScene" uid="uid://7haemyq012gx" path="res://Market (shops, items)/Scenes/basket_container.tscn" id="5_mojl1"]
-[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="6_mojl1"]
+[ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="6_mojl1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxshy"]
 
@@ -28,13 +28,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Shops" parent="Panel" instance=ExtResource("1_rser8")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 74.0
-offset_top = 166.0
-offset_right = -542.0
-offset_bottom = -154.0
+anchor_left = 0.0642361
+anchor_top = 0.256173
+anchor_right = 0.478299
+anchor_bottom = 0.762346
 
 [node name="TabContainer" type="TabContainer" parent="Panel"]
 layout_mode = 1
@@ -44,11 +41,10 @@ anchor_top = 0.222222
 anchor_right = 0.946181
 anchor_bottom = 0.75
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Available" type="TabBar" parent="Panel/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("2_pc21n")
 ingredient_scene = ExtResource("3_ov0xs")
@@ -78,6 +74,7 @@ columns = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("4_mojl1")
 basket_scene = ExtResource("5_mojl1")
@@ -138,48 +135,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "BUY"
 
-[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+[node name="MoneyContainer" parent="Panel" instance=ExtResource("6_mojl1")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.615451
-anchor_top = 0.0555556
-anchor_right = 0.845486
-anchor_bottom = 0.143519
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/PanelContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-
-[node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("6_mojl1")
-stretch_mode = 3
-
-[node name="Label" type="Label" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "100"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-
-[node name="TextureRect2" type="TextureRect" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture = ExtResource("6_mojl1")
-stretch_mode = 3
-
-[node name="Label2" type="Label" parent="Panel/PanelContainer/HBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "100"
-
-[node name="Button" type="Button" parent="Panel/PanelContainer/HBoxContainer"]
-custom_minimum_size = Vector2(62.3, 0)
-layout_mode = 2
-text = ">"
+anchor_left = 0.622396
+anchor_top = 0.0709877
+anchor_right = 0.828993
+anchor_bottom = 0.157407
+offset_right = 0.0
 
 [connection signal="pressed" from="Panel/TabContainer/Basket/HBoxContainer/BuyButton" to="Panel/TabContainer/Basket" method="_on_buy_button_pressed"]
