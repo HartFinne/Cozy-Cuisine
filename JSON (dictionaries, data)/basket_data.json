@@ -1,20 +1,8 @@
 {
-	"Oil": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Oil",
-		"price": 10,
-		"quantity": 1
-	},
 	"Potatoes": {
 		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
 		"name": "Potatoes",
 		"price": 5.0,
 		"quantity": 1.0
-	},
-	"Salt": {
-		"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
-		"name": "Salt",
-		"price": 2,
-		"quantity": 1
 	}
 }

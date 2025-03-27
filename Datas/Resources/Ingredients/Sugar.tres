@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cfq6v30fxi15"]
+
+[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_gngdm"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_obgo5"]
+
+[resource]
+script = ExtResource("1_obgo5")
+name = "Sugar"
+image = ExtResource("1_gngdm")
+label = "Sugar"
+price = 3
+description = "Sweetens the milkshake for a delightful taste."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://ciat4xp6oefgm"]
+
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_84la0"]
+[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_kwwa1"]
+
+[resource]
+script = ExtResource("1_84la0")
+name = "Choco"
+image = ExtResource("1_kwwa1")
+label = "Chocolate Ice Cream"
+price = 8
+description = "Rich and creamy chocolate-flavored frozen dessert."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

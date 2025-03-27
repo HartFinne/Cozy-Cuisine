@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MenuItem" load_steps=7 format=3 uid="uid://b2hnb8gqm1owi"]
+
+[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_k7nat"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="2_c5276"]
+[ext_resource type="Resource" uid="uid://b01c51ox1yoyd" path="res://Datas/Resources/Ingredients/potatoes.tres" id="3_f7vho"]
+[ext_resource type="Resource" uid="uid://lhwep3uxmmrc" path="res://Datas/Resources/Ingredients/Oil.tres" id="4_sjxtt"]
+[ext_resource type="Resource" uid="uid://cxv68611b5731" path="res://Datas/Resources/Ingredients/Salt.tres" id="5_noydj"]
+[ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="6_bfkl3"]
+
+[resource]
+script = ExtResource("6_bfkl3")
+name = "Fries"
+description = "Crispy, golden-brown potato fries, deep-fried to perfection."
+price = 20
+image = ExtResource("1_k7nat")
+ingredients = Array[ExtResource("2_c5276")]([ExtResource("3_f7vho"), ExtResource("4_sjxtt"), ExtResource("5_noydj")])
+metadata/_custom_type_script = "uid://c4j6jnotdiglp"

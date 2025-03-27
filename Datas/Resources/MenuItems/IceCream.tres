@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="MenuItem" load_steps=8 format=3 uid="uid://banb0nmxl0p43"]
+
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_0uuwb"]
+[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_8j4hs"]
+[ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="2_opvon"]
+[ext_resource type="Resource" uid="uid://ciat4xp6oefgm" path="res://Datas/Resources/Ingredients/Choco.tres" id="3_dawfg"]
+[ext_resource type="Resource" uid="uid://8l5ikej0cwtc" path="res://Datas/Resources/Ingredients/Vanilla.tres" id="4_xg7ru"]
+[ext_resource type="Resource" uid="uid://b1q0ig1t0mqk0" path="res://Datas/Resources/Ingredients/Strawberry.tres" id="5_mwwwn"]
+[ext_resource type="Resource" uid="uid://b0dgdmdsr8mbw" path="res://Datas/Resources/Ingredients/Milk.tres" id="6_gpm3k"]
+
+[resource]
+script = ExtResource("2_opvon")
+name = "IceCream"
+description = "A delicious frozen dessert available in multiple flavors like chocolate, vanilla, and strawberry."
+price = 33
+image = ExtResource("1_8j4hs")
+ingredients = Array[ExtResource("1_0uuwb")]([ExtResource("3_dawfg"), ExtResource("4_xg7ru"), ExtResource("5_mwwwn"), ExtResource("6_gpm3k")])
+metadata/_custom_type_script = "uid://c4j6jnotdiglp"

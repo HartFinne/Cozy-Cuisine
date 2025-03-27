@@ -17,14 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-IngredientLoader="*res://Market (shops, items)/Autoloader/ingredient_loader.gd"
-BasketManager="*res://Market (shops, items)/Autoloader/basket_manager.gd"
+BasketManager="*res://Singleton/basket_manager.gd"
 MoneyManager="*res://Market (shops, items)/Autoloader/money_manager.gd"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
 [display]
 
-window/size/mode=1
 window/stretch/mode="viewport"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
@@ -32,15 +30,16 @@ DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScri
 
 folder_colors={
 "res://Cooking (mechanics and ui)/": "red",
+"res://Datas/": "yellow",
 "res://Game (movements, npcs, world map, inventory)/": "pink",
 "res://JSON (dictionaries, data)/": "blue",
 "res://Kiosk (restaurant)/": "green",
 "res://Market (shops, items)/": "purple",
-"res://Menu/": "orange"
+"res://Menu/": "orange",
+"res://Singleton/": "teal"
 }
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://dmtxrfvdxbfc8"]
+
+[ext_resource type="Texture2D" uid="uid://ccmggcp273p04" path="res://Market (shops, items)/Assets/Ingredients/81_pizza.png" id="1_j4dpv"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="2_ns7g4"]
+
+[resource]
+script = ExtResource("2_ns7g4")
+name = "PizzaSauce"
+image = ExtResource("1_j4dpv")
+label = "PizzaSauce"
+price = 5
+description = "A rich and tangy tomato-based sauce for pizza."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

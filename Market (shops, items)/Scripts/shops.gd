@@ -9,7 +9,7 @@ signal shop_selected(current_index)
 @onready var shop_rect: TextureRect = %ShopRect
 
 func _ready() -> void:
-	load_shops()
+	load_shops_from_resources()
 	var tab_container = get_parent().get_node("TabContainer")  
 	if not (tab_container is TabContainer):
 		return  
@@ -25,56 +25,36 @@ func _ready() -> void:
 	update_shop_display()
 	select_shop(current_index)
 
-func load_shops():
-	var data = IngredientLoader.ingredients_data  # Access global data
+func load_shops_from_resources():
+	var shop_files = [
+		"res://Datas/Resources/Markets/shop_1.tres",
+		"res://Datas/Resources/Markets/shop_2.tres",
+		"res://Datas/Resources/Markets/shop_3.tres"
+	]
+
+	shop_list.clear()
+	print(shop_files)
 	
-	if data.is_empty():
-		print("Error: No data loaded from ingredient_loader")
-		return
+	for shop_file in shop_files:
+		var shop_resource = load(shop_file) as Resource
+		if shop_resource:
+			shop_list.append(shop_resource)
+		else:
+			print("Error: Unable to load shop resource:", shop_file)
 
-	var shops_data = data.get("Shops", {})
-	var ingredients_data = data.get("Ingredients", {})
+	if shop_list.is_empty():
+		print("Error: No shop data found in resources")
+	else:
+		print("Loaded", shop_list.size(), "shops successfully.")
 
-	var shop_dict := {}
-
-	for key in ingredients_data.keys():
-		var ingredient = ingredients_data[key]
-		var shop_name = ingredient["Shop"]
-		var price = ingredient["Price"]
-		var ingredient_image = ingredient.get("Image", "")  # Get ingredient image
-
-		if not shop_dict.has(shop_name):
-			shop_dict[shop_name] = {
-				"name": shop_name,
-				"image": shops_data.get(shop_name, {}).get("Image", ""),  # Fetch shop image
-				"ingredients": []
-			}
-
-		# Store ingredient name, price, and image under its shop
-		shop_dict[shop_name]["ingredients"].append({
-			"name": key,
-			"price": price,
-			"image": ingredient_image  # Store ingredient image
-		})
-
-	# Convert dictionary to array format
-	shop_list = shop_dict.values()
-
-	print("Loaded shops:", shop_list)
-	
 func update_shop_display():
 	if shop_list.size() > 0:
-		var shop_data = shop_list[current_index]
-		shop_name_label.text = shop_data["name"]
+		var market: Market = shop_list[current_index]
+		shop_name_label.text = market.shop_name
 
-		# Load and set shop image
-		var image_path = shop_data["image"]
-		if image_path:
-			var texture = load(image_path)
-			if texture:
-				shop_rect.texture = texture
-			else:
-				print("Error loading shop image:", image_path)
+		# Use shop_image directly from Market resource
+		if market.shop_image:
+			shop_rect.texture = market.shop_image
 		else:
 			shop_rect.texture = null
 	else:
@@ -100,11 +80,9 @@ func _on_right_button_pressed() -> void:
 		current_index = 0
 	update_shop_display()
 	select_shop(current_index)
-	
 
 func _on_setting_button_pressed() -> void:
 	print("Next Update: Setting Button")
-	
 
 func _on_back_button_pressed() -> void:
 	print("Working")

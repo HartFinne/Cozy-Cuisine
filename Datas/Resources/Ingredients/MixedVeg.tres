@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cfuuhl4ycu0cp"]
+
+[ext_resource type="Texture2D" uid="uid://ccmggcp273p04" path="res://Market (shops, items)/Assets/Ingredients/81_pizza.png" id="1_s7bte"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_x68wv"]
+
+[resource]
+script = ExtResource("1_x68wv")
+name = "MixedVeg"
+image = ExtResource("1_s7bte")
+label = "Mixed Vegetables"
+price = 6
+description = "A blend of fresh vegetables for a nutritious side dish."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"
