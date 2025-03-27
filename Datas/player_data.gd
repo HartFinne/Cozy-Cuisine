@@ -8,6 +8,7 @@ class_name PlayerData
 @export var profit: float = 0.0
 @export var revenue: float = 0.0
 @export var total_profit: float = 0.0
+@export var selected_ingredients: Dictionary = {}  # Store selected ingredients
 
 # Save the player data as a resource file
 func save(file_path: String = "user://player_data.tres"):
@@ -19,5 +20,24 @@ static func load_data(file_path: String = "user://player_data.tres") -> PlayerDa
 		return ResourceLoader.load(file_path) as PlayerData
 	return PlayerData.new()  # Return default if file doesn't exist
 
-static func print_hello_workd():
-	print("hello")
+func _return_selected_ingredients_to_inventory():
+	for slot_id in selected_ingredients.keys():
+		var ingredient = selected_ingredients[slot_id]
+		var item_name = ingredient.get("name")
+
+		if not item_name.is_empty():
+			if item_name in inventory:
+				inventory[item_name]["quantity"] += 1
+			else:
+				inventory[item_name] = {
+					"name": ingredient.get("name"),
+					"quantity": 1,
+					"price": ingredient.get("price"),
+					"image": ingredient.get("image"),
+				}
+
+	# Clear selected ingredients
+	selected_ingredients.clear()
+	# **Force save to persist changes**
+	save()
+	

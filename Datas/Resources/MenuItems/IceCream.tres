@@ -16,4 +16,5 @@ description = "A delicious frozen dessert available in multiple flavors like cho
 price = 33
 image = ExtResource("1_8j4hs")
 ingredients = Array[ExtResource("1_0uuwb")]([ExtResource("3_dawfg"), ExtResource("4_xg7ru"), ExtResource("5_mwwwn"), ExtResource("6_gpm3k")])
+time_to_cooked = 3
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"

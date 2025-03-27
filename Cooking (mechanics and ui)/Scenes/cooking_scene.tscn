@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=7 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_0mdmw"]
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Script" uid="uid://dksnl7jm68i8h" path="res://Cooking (mechanics and ui)/Scripts/ingredient.gd" id="2_lwslm"]
 [ext_resource type="Script" uid="uid://oox1pt4tv8mf" path="res://Cooking (mechanics and ui)/Scripts/ingredient_popup.gd" id="4_oxed2"]
+[ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iv1l6"]
 
@@ -12,8 +13,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_right = 16.0
+offset_left = -2.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -51,6 +54,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot"]
 layout_mode = 2
+stretch_mode = 5
 script = ExtResource("2_lwslm")
 
 [node name="IngredientSlot2" type="PanelContainer" parent="PanelContainer/MarginContainer/Ingredients"]
@@ -125,6 +129,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot9"]
 layout_mode = 2
 
+[node name="CookButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.180556
+anchor_top = 0.817901
+anchor_right = 0.28559
+anchor_bottom = 0.885802
+text = "Cook"
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -175,9 +189,10 @@ metadata/_edit_use_anchors_ = true
 [node name="IngredientPopup" type="PopupPanel" parent="."]
 unique_name_in_owner = true
 initial_position = 2
-size = Vector2i(590, 575)
+size = Vector2i(545, 451)
 visible = true
 script = ExtResource("4_oxed2")
+ingredient_container = ExtResource("5_fph4g")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="IngredientPopup"]
 anchors_preset = 15
@@ -206,3 +221,5 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 10
 text = "close"
+
+[connection signal="pressed" from="CookButton" to="." method="_on_cook_button_pressed"]

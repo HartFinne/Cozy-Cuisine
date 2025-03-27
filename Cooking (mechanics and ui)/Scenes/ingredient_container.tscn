@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfq7velefot8o"]
+
+[ext_resource type="Script" uid="uid://du2eeublchj65" path="res://Cooking (mechanics and ui)/Scripts/ingredient_container.gd" id="1_ahl8v"]
+[ext_resource type="Texture2D" uid="uid://ccmggcp273p04" path="res://Market (shops, items)/Assets/Ingredients/81_pizza.png" id="2_ahl8v"]
+
+[node name="IngredientContainer" type="PanelContainer"]
+anchors_preset = -1
+anchor_right = 0.580729
+anchor_bottom = 0.282407
+size_flags_horizontal = 3
+script = ExtResource("1_ahl8v")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="IngredientRect" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("2_ahl8v")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="IngredientLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ingredient Name"
+
+[node name="PriceLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Price"
+
+[node name="QuantityLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quantity"

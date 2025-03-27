@@ -21,6 +21,7 @@ DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScri
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 

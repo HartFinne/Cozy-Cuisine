@@ -16,4 +16,5 @@ description = "A juicy grilled beef patty served with steak sauce and mixed vege
 price = 40
 image = ExtResource("1_q8rjn")
 ingredients = Array[ExtResource("1_uvteh")]([ExtResource("3_pv6ob"), ExtResource("4_eo2fe"), ExtResource("5_d1f6o"), ExtResource("6_ia0dk")])
+time_to_cooked = 5
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"

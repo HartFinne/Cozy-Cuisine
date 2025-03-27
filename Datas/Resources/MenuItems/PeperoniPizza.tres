@@ -16,4 +16,5 @@ description = "A classic pizza topped with spicy pepperoni slices, melted cheese
 price = 35
 image = ExtResource("1_it05m")
 ingredients = Array[ExtResource("1_qejpc")]([ExtResource("3_6t6as"), ExtResource("4_einm4"), ExtResource("5_gi4ga"), ExtResource("6_bln4i")])
+time_to_cooked = 4
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"
