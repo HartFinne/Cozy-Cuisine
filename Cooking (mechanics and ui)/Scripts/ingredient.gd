@@ -4,10 +4,11 @@ extends TextureButton
 
 var ingredient_name = ""
 
-
+var player_data: PlayerData = PlayerData.load_data()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	connect("pressed", _on_ingredient_clicked)
+	player_data.print_hello_workd()
 	# print(ingredient_popup)
 	
 	

@@ -11,6 +11,7 @@
 [resource]
 script = ExtResource("2_x2dh8")
 name = "Milkshake"
+label = "Milkshake"
 description = "A smooth and creamy drink blended with milk, ice cream, and sugar."
 price = 22
 image = ExtResource("1_whsm6")

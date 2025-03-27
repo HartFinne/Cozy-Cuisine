@@ -10,6 +10,7 @@
 [resource]
 script = ExtResource("6_bfkl3")
 name = "Fries"
+label = "French Fries"
 description = "Crispy, golden-brown potato fries, deep-fried to perfection."
 price = 20
 image = ExtResource("1_k7nat")

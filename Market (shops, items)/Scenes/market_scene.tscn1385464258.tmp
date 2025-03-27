@@ -74,7 +74,6 @@ columns = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
-unique_name_in_owner = true
 visible = false
 layout_mode = 2
 script = ExtResource("4_mojl1")

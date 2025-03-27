@@ -17,8 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-BasketManager="*res://Singleton/basket_manager.gd"
-MoneyManager="*res://Market (shops, items)/Autoloader/money_manager.gd"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
 [display]
@@ -35,8 +33,7 @@ folder_colors={
 "res://JSON (dictionaries, data)/": "blue",
 "res://Kiosk (restaurant)/": "green",
 "res://Market (shops, items)/": "purple",
-"res://Menu/": "orange",
-"res://Singleton/": "teal"
+"res://Menu/": "orange"
 }
 
 [rendering]

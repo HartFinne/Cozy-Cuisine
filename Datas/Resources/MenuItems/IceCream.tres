@@ -11,6 +11,7 @@
 [resource]
 script = ExtResource("2_opvon")
 name = "IceCream"
+label = "Ice Cream"
 description = "A delicious frozen dessert available in multiple flavors like chocolate, vanilla, and strawberry."
 price = 33
 image = ExtResource("1_8j4hs")

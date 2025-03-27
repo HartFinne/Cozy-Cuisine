@@ -2,25 +2,26 @@ extends PanelContainer
 
 @onready var coin_label: Label = %CoinLabel
 @onready var gem_label: Label = %GemLabel
+@onready var basket: TabBar = %Basket
+
+var player_data: PlayerData = PlayerData.load_data()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var basket_gd = get_parent().get_node("TabContainer/Basket")
-	basket_gd.purchase_completed.connect(_on_purchase_completed)
-	
-	MoneyManager.load_player_data()  # Load budget from JSON
+	basket.purchase_completed.connect(_on_purchase_completed)
 	update_money_ui();
 	
 func update_money_ui():
 	# Update UI labels if they display currency
-	coin_label.text = str(int(MoneyManager.budget))
+	coin_label.text = str(int(player_data.budget))
 	
 func _on_purchase_completed(total_cost: float) -> void:
 	# Deduct total cost from budget
 	print(total_cost, "onpurchased")
-	MoneyManager.deduct_money(total_cost)  # Deduct money from budget
+	# minus the budget
+	player_data.budget -= total_cost
 	update_money_ui()  # Refresh UI after deduction
-	print("Budget updated:", MoneyManager.budget)
+	print("Budget updated:", player_data.budget)
 
 func _on_more_button_pressed() -> void:
 	print("working")

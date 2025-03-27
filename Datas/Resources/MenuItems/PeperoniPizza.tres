@@ -11,6 +11,7 @@
 [resource]
 script = ExtResource("2_08xup")
 name = "PepperoniPizza"
+label = "Pepperoni Pizza"
 description = "A classic pizza topped with spicy pepperoni slices, melted cheese, and rich tomato sauce."
 price = 35
 image = ExtResource("1_it05m")

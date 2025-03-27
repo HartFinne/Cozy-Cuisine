@@ -4,10 +4,10 @@ extends PanelContainer
 @onready var price_label: Label = %PriceLabel
 @onready var ingredient_rect: TextureRect = %IngredientRect
 
+@onready var basket: Basket = Basket.load_basket()
 var ingredient_resource: Ingredient  # Store the ingredient resource
 
-func _ready() -> void:
-	pass
+signal basket_updated
 
 func set_ingredient_display(ingredient: Ingredient):
 	ingredient_label = %IngredientLabel
@@ -31,11 +31,9 @@ func set_ingredient_display(ingredient: Ingredient):
 func _on_add_to_basket_button_pressed() -> void:
 	print("Added to basket:", ingredient_resource.name)
 
-	var basket_entry = {
-		"name": ingredient_resource.name,
-		"price": ingredient_resource.price,
-		"image": ingredient_resource.image.resource_path if ingredient_resource.image else "",
-		"quantity": 1
-	}
-	
-	BasketManager.add_to_basket(basket_entry)
+	# Add ingredient to basket resource
+	basket.add_item(ingredient_resource, 1)
+	basket.save_basket()  # Save changes
+
+	# Debugging output
+	print("Current Basket:", basket.items)
