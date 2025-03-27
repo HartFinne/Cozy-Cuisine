@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5iffkvr4adi3"
-path="res://.godot/imported/idle_left_vip1-Sheet.png-9d1b36a5d88831ce685a9b1da16f37da.ctex"
+path="res://.godot/imported/idle_left_vip1-Sheet.png-78bb80b7a0bd828c7ae80704c56d58ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/VIP BOY/idle_left_vip1-Sheet.png"
-dest_files=["res://.godot/imported/idle_left_vip1-Sheet.png-9d1b36a5d88831ce685a9b1da16f37da.ctex"]
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/VIP BOY/idle_left_vip1-Sheet.png"
+dest_files=["res://.godot/imported/idle_left_vip1-Sheet.png-78bb80b7a0bd828c7ae80704c56d58ef.ctex"]
 
 [params]
 

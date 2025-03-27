@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cji20lryoi40m"
-path="res://.godot/imported/hair_left_vip1.png-bef334b7f4c70ef23f338f19b5fdb2a6.ctex"
+path="res://.godot/imported/hair_left_vip1.png-d787c867cf513cfe62edb32605758df8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/VIP BOY/HAIR FRONT/hair_left_vip1.png"
-dest_files=["res://.godot/imported/hair_left_vip1.png-bef334b7f4c70ef23f338f19b5fdb2a6.ctex"]
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/VIP BOY/HAIR FRONT/hair_left_vip1.png"
+dest_files=["res://.godot/imported/hair_left_vip1.png-d787c867cf513cfe62edb32605758df8.ctex"]
 
 [params]
 

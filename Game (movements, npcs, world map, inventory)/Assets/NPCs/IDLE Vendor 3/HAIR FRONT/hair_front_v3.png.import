@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3a7kd211stkt"
-path="res://.godot/imported/hair_front_v3.png-81cce9533984cc66baecb6aab7d1b5f0.ctex"
+path="res://.godot/imported/hair_front_v3.png-23a403a9cd8880e1c82a7ccf6fe5a853.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/IDLE Vendor 3/HAIR FRONT/hair_front_v3.png"
-dest_files=["res://.godot/imported/hair_front_v3.png-81cce9533984cc66baecb6aab7d1b5f0.ctex"]
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/IDLE Vendor 3/HAIR FRONT/hair_front_v3.png"
+dest_files=["res://.godot/imported/hair_front_v3.png-23a403a9cd8880e1c82a7ccf6fe5a853.ctex"]
 
 [params]
 

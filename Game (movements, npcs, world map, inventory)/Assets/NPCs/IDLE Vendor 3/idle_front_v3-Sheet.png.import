@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxswsqtavuhmf"
-path="res://.godot/imported/idle_front_v3-Sheet.png-4e6ffd7ee4b7b0f21ff31f8845e79de8.ctex"
+path="res://.godot/imported/idle_front_v3-Sheet.png-1146e9d75c227a57dd9fccffe8902ac1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/IDLE Vendor 3/idle_front_v3-Sheet.png"
-dest_files=["res://.godot/imported/idle_front_v3-Sheet.png-4e6ffd7ee4b7b0f21ff31f8845e79de8.ctex"]
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/IDLE Vendor 3/idle_front_v3-Sheet.png"
+dest_files=["res://.godot/imported/idle_front_v3-Sheet.png-1146e9d75c227a57dd9fccffe8902ac1.ctex"]
 
 [params]
 

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgjsm65djmm4o"]
+
+[ext_resource type="Texture2D" uid="uid://bvw037yprx5r7" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/Customer Female/idle_left_c4-Sheet.png" id="1_1vdd8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj6b5"]
+atlas = ExtResource("1_1vdd8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2ita"]
+atlas = ExtResource("1_1vdd8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctpf3"]
+atlas = ExtResource("1_1vdd8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob0ep"]
+atlas = ExtResource("1_1vdd8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkrp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj6b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2ita")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctpf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob0ep")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6gqm"]
+size = Vector2(6.125, 10)
+
+[node name="customer_female" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wkrp5")
+animation = &"idle_left"
+frame_progress = 0.34088
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0625, 11)
+shape = SubResource("RectangleShape2D_e6gqm")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnsr6luhdmum5"
-path="res://.godot/imported/hair_left_vip2.png-083a2de118ce4bb5bd8324846de42ebe.ctex"
+path="res://.godot/imported/hair_left_vip2.png-e56cd3135fd26b6b6c7775376f892938.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/VIP GIRL/HAIR LEFT/hair_left_vip2.png"
-dest_files=["res://.godot/imported/hair_left_vip2.png-083a2de118ce4bb5bd8324846de42ebe.ctex"]
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/VIP GIRL/HAIR LEFT/hair_left_vip2.png"
+dest_files=["res://.godot/imported/hair_left_vip2.png-e56cd3135fd26b6b6c7775376f892938.ctex"]
 
 [params]
 
