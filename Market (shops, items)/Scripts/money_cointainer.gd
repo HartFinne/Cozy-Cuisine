@@ -17,6 +17,7 @@ func update_money_ui():
 	
 func _on_purchase_completed(total_cost: float) -> void:
 	# Deduct total cost from budget
+	print(total_cost, "onpurchased")
 	MoneyManager.deduct_money(total_cost)  # Deduct money from budget
 	update_money_ui()  # Refresh UI after deduction
 	print("Budget updated:", MoneyManager.budget)

@@ -13,6 +13,7 @@ var basket_data
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_basket_display()
+	BasketManager.basket_updated.connect(update_basket_display)  # Listen for changes
 
 
 func update_basket_display():
@@ -39,7 +40,6 @@ func update_basket_display():
 	
 	# Update total price label
 	total_price_label.text = str(total_price)
-	BasketManager.basket_updated.connect(update_basket_display)  # Listen for changes
 		
 		
 # Handle the buy button press
@@ -51,6 +51,7 @@ func _on_buy_button_pressed() -> void:
 	print("Buy button Working")
 	
 	var total_cost = calculate_total_cost()
+	print(total_cost)
 	
 	if total_cost > MoneyManager.budget:
 		error_popup.dialog_text = "Not enough money!"  # Set the error message
@@ -78,8 +79,7 @@ func merge_basket_into_inventory() -> void:
 			inventory_data[item_name]["quantity"] += ingredient["quantity"]
 		else:
 			inventory_data[item_name] = ingredient
-			
-		total_cost += ingredient["price"] * ingredient["quantity"]
+		
 	
 	# Emit signal with total cost
 	purchase_completed.emit(total_cost)

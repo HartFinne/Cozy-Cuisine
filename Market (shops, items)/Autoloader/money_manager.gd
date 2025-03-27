@@ -17,8 +17,19 @@ func load_player_data():
 
 		
 func deduct_money(total_cost: float):
-	budget -= total_cost
-	save_player_money_data()
+	print("deduct moneuy", total_cost)
+	if total_cost <= budget:  # ✅ Ensure no negative budget
+		budget -= total_cost
+		
+		save_player_money_data()
+	else:
+		print("ERROR: Not enough funds!")  # Failsafe check
+
+	# Prevent negative values (failsafe)
+	if budget < 0:
+		budget = 0.0
+		save_player_money_data()  # Save the corrected budget
+	
 	
 # Save updated budget to JSON
 func save_player_money_data():

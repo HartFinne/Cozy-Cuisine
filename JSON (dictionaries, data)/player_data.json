@@ -1,13 +1,13 @@
 {
-	"budget": 5.0,
+	"budget": 0.0,
 	"days": 1.0,
 	"expenses": 0.0,
 	"inventory": {
 		"MixedVeg": {
 			"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
 			"name": "MixedVeg",
-			"price": 6,
-			"quantity": 1
+			"price": 6.0,
+			"quantity": 1.0
 		},
 		"Oil": {
 			"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
@@ -19,7 +19,7 @@
 			"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
 			"name": "Potatoes",
 			"price": 5.0,
-			"quantity": 11.0
+			"quantity": 22.0
 		},
 		"Salt": {
 			"image": "res://Market (shops, items)/Assets/Ingredients/81_pizza.png",
