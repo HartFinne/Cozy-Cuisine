@@ -11,11 +11,11 @@ class_name PlayerData
 @export var selected_ingredients: Dictionary = {}  # Store selected ingredients
 
 # Save the player data as a resource file
-func save(file_path: String = "user://player_data.tres"):
+func save(file_path: String = "user://player_data.res"):
 	ResourceSaver.save(self, file_path)
 
 # Load player data from a resource file
-static func load_data(file_path: String = "user://player_data.tres") -> PlayerData:
+static func load_data(file_path: String = "user://player_data.res") -> PlayerData:
 	if ResourceLoader.exists(file_path):
 		return ResourceLoader.load(file_path) as PlayerData
 	return PlayerData.new()  # Return default if file doesn't exist

@@ -91,7 +91,7 @@ anchor_bottom = 0.755627
 offset_bottom = 1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
-vertical_scroll_mode = 3
+vertical_scroll_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer2" type="GridContainer" parent="Panel/TabContainer/Basket/ScrollContainer"]
