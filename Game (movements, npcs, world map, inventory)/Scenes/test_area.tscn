@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://col24atqb513n"]
+
+[ext_resource type="PackedScene" uid="uid://b8lpbb08xsg6e" path="res://Game (movements, npcs, world map, inventory)/Scenes/Player/player_boy.tscn" id="1_y2b7i"]
+[ext_resource type="PackedScene" uid="uid://bl5s2j6kdthb" path="res://Game (movements, npcs, world map, inventory)/Scenes/NPC/stall_1.tscn" id="2_s6j5j"]
+
+[node name="testArea" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(277, 376)
+zoom = Vector2(2, 2)
+
+[node name="player_boy" parent="." instance=ExtResource("1_y2b7i")]
+position = Vector2(223, 285)
+
+[node name="stall_1" parent="." instance=ExtResource("2_s6j5j")]
+position = Vector2(461, 266)
+
+[node name="stall_2" parent="." instance=ExtResource("2_s6j5j")]
+position = Vector2(394, 266)
+
+[node name="stall_3" parent="." instance=ExtResource("2_s6j5j")]
+position = Vector2(327, 266)
