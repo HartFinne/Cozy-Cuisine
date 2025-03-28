@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func show_popup(ingredient_slot):
-	print(ingredient_slot, "working")
+	print(ingredient_slot, "working112312213132")
 	selected_ingredient_slot = ingredient_slot  # Store the clicked slot
 	visible = true  # Show popup
 
@@ -42,6 +42,7 @@ func update_popup_ui():
 			# Connect a click event to send selected ingredient back
 			ingredient_instance.connect("gui_input", Callable(self, "_on_ingredient_selected").bind(ingredient_data))
 			
+			
 			v_box_container.add_child(ingredient_instance)
 
 	print("Popup UI updated with", inventory_data.inventory.size(), "ingredients")
@@ -49,6 +50,9 @@ func update_popup_ui():
 func _on_ingredient_selected(event: InputEvent, ingredient_data: Dictionary):
 	if event is InputEventMouseButton and event.pressed:
 		print("Ingredient selected:", ingredient_data)
-		ingredient_selected.emit(ingredient_data)  # Emit the signal with selected data
+		
+		if selected_ingredient_slot:
+			print(selected_ingredient_slot)
+			selected_ingredient_slot._on_ingredient_selected(ingredient_data)
 		# Close popup
 		visible = false  

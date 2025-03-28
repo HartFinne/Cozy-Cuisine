@@ -23,15 +23,18 @@ static func load_data(file_path: String = "user://player_data.tres") -> PlayerDa
 func _return_selected_ingredients_to_inventory():
 	for slot_id in selected_ingredients.keys():
 		var ingredient = selected_ingredients[slot_id]
+		print(ingredient, "123mictext")
 		var item_name = ingredient.get("name")
+		
+		print(item_name, "123mictext")
 
 		if not item_name.is_empty():
 			if item_name in inventory:
-				inventory[item_name]["quantity"] += 1
+				inventory[item_name]["quantity"] += ingredient.get("quantity")
 			else:
 				inventory[item_name] = {
 					"name": ingredient.get("name"),
-					"quantity": 1,
+					"quantity": ingredient.get("quantity"),
 					"price": ingredient.get("price"),
 					"image": ingredient.get("image"),
 				}
