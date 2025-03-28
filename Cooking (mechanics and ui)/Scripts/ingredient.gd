@@ -57,8 +57,6 @@ func _on_ingredient_selected(new_ingredient_data: Dictionary):
 		ingredient_obj.price = ingredient_data.get("price")
 
 		cooking_script.select_ingredient(ingredient_obj)  # Now sending an Object instead of Dictionary
-	# Refresh popup UI
-	ingredient_popup.update_popup_ui()
 
 func saving_ingredient_in_selected_ingredients(selected_ingredient: Dictionary):
 	#print("selected", selected_ingredient)

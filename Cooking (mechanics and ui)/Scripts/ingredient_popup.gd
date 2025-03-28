@@ -1,6 +1,7 @@
 extends PopupPanel
 
-@onready var v_box_container: VBoxContainer = $VBoxContainer
+
+@onready var v_box_container: VBoxContainer = %VBoxContainer
 @export var ingredient_container: PackedScene
 
 var selected_ingredient_slot = null  # Store the clicked ingredient slot
@@ -54,5 +55,6 @@ func _on_ingredient_selected(event: InputEvent, ingredient_data: Dictionary):
 		if selected_ingredient_slot:
 			print(selected_ingredient_slot)
 			selected_ingredient_slot._on_ingredient_selected(ingredient_data)
+			update_popup_ui()
 		# Close popup
 		visible = false  
