@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl5s2j6kdthb"]
+
+[ext_resource type="Texture2D" uid="uid://di4wdkcywigqk" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/stall-Sheet.png" id="1_tr1xj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42aty"]
+atlas = ExtResource("1_tr1xj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr3t6"]
+atlas = ExtResource("1_tr1xj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pmnl"]
+atlas = ExtResource("1_tr1xj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74vlt"]
+atlas = ExtResource("1_tr1xj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgsnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42aty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr3t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pmnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74vlt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_288jq"]
+size = Vector2(58, 53)
+
+[node name="stall_1" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hgsnp")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.109937
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_288jq")
