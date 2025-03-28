@@ -16,4 +16,5 @@ description = "A smooth and creamy drink blended with milk, ice cream, and sugar
 price = 22
 image = ExtResource("1_whsm6")
 ingredients = Array[ExtResource("1_peovi")]([ExtResource("3_6w7tt"), ExtResource("4_5d033"), ExtResource("5_qrus4"), ExtResource("6_2kp0h")])
+time_to_cooked = 9
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"

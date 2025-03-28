@@ -20,6 +20,7 @@ func _on_purchase_completed(total_cost: float) -> void:
 	print(total_cost, "onpurchased")
 	# minus the budget
 	player_data.budget -= total_cost
+	player_data.save()
 	update_money_ui()  # Refresh UI after deduction
 	print("Budget updated:", player_data.budget)
 

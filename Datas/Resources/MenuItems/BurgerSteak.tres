@@ -1,12 +1,10 @@
-[gd_resource type="Resource" script_class="MenuItem" load_steps=8 format=3 uid="uid://db13to0ewnmod"]
+[gd_resource type="Resource" script_class="MenuItem" load_steps=6 format=3 uid="uid://db13to0ewnmod"]
 
 [ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_q8rjn"]
 [ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_uvteh"]
 [ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="2_vpi4i"]
 [ext_resource type="Resource" uid="uid://iep3148uvl3e" path="res://Datas/Resources/Ingredients/Meat.tres" id="3_pv6ob"]
-[ext_resource type="Resource" uid="uid://b83rk3b5824m1" path="res://Datas/Resources/Ingredients/Mushroom.tres" id="4_eo2fe"]
-[ext_resource type="Resource" uid="uid://cntrryp3abr4" path="res://Datas/Resources/Ingredients/SteakSauce.tres" id="5_d1f6o"]
-[ext_resource type="Resource" uid="uid://cfuuhl4ycu0cp" path="res://Datas/Resources/Ingredients/MixedVeg.tres" id="6_ia0dk"]
+[ext_resource type="Resource" uid="uid://lhwep3uxmmrc" path="res://Datas/Resources/Ingredients/Oil.tres" id="4_msd08"]
 
 [resource]
 script = ExtResource("2_vpi4i")
@@ -15,5 +13,6 @@ label = "Burger Steak"
 description = "A juicy grilled beef patty served with steak sauce and mixed vegetables."
 price = 40
 image = ExtResource("1_q8rjn")
-ingredients = Array[ExtResource("1_uvteh")]([ExtResource("3_pv6ob"), ExtResource("4_eo2fe"), ExtResource("5_d1f6o"), ExtResource("6_ia0dk")])
+ingredients = Array[ExtResource("1_uvteh")]([ExtResource("3_pv6ob"), ExtResource("4_msd08")])
+time_to_cooked = 5
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"
