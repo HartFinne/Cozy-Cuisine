@@ -194,7 +194,6 @@ expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.611111
@@ -215,7 +214,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HiddenOutputLabel" type="Label" parent="PanelContainer3"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="IngredientPopup" type="PopupPanel" parent="."]

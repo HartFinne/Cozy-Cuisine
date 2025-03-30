@@ -213,11 +213,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="HiddenOutputLabel" type="Label" parent="PanelContainer3"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
 [node name="IngredientPopup" type="PopupPanel" parent="."]
 unique_name_in_owner = true
 initial_position = 2
@@ -255,9 +250,5 @@ text = "close"
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="CookTimer" type="Timer" parent="."]
-unique_name_in_owner = true
-
 [connection signal="pressed" from="CookButton" to="." method="_on_cook_button_pressed"]
 [connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]
-[connection signal="timeout" from="CookTimer" to="." method="_on_cook_timer_timeout"]

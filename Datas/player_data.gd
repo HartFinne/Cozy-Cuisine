@@ -9,13 +9,18 @@ class_name PlayerData
 @export var revenue: float = 0.0
 @export var total_profit: float = 0.0
 @export var selected_ingredients: Dictionary = {}  # Store selected ingredients
+@export var dishes: Dictionary = {}
 
 # Save the player data as a resource file
-func save(file_path: String = "user://player_data.res"):
-	ResourceSaver.save(self, file_path)
+func save(file_path: String = "user://player_data.tres"):
+	var error = ResourceSaver.save(self, file_path)
+	if error != OK:
+		print("❌ Failed to save PlayerData!")
+	else:
+		print("✅ PlayerData saved successfully.")
 
 # Load player data from a resource file
-static func load_data(file_path: String = "user://player_data.res") -> PlayerData:
+static func load_data(file_path: String = "user://player_data.tres") -> PlayerData:
 	if ResourceLoader.exists(file_path):
 		return ResourceLoader.load(file_path) as PlayerData
 	return PlayerData.new()  # Return default if file doesn't exist
