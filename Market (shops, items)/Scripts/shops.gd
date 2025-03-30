@@ -6,7 +6,7 @@ var shop_list: Array = []
 signal shop_selected(current_index)
 
 @onready var shop_name_label: Label = %ShopNameLabel
-@onready var shop_rect: TextureRect = %ShopRect
+@onready var shop_rect: AnimatedSprite2D = %ShopRect
 
 func _ready() -> void:
 	load_shops_from_resources()
@@ -54,12 +54,13 @@ func update_shop_display():
 
 		# Use shop_image directly from Market resource
 		if market.shop_image:
-			shop_rect.texture = market.shop_image
+			shop_rect.sprite_frames = market.shop_image
+			shop_rect.play("shop_image") 
 		else:
-			shop_rect.texture = null
+			shop_rect.sprite_frames = null
 	else:
 		shop_name_label.text = "No Shops Available"
-		shop_rect.texture = null
+		shop_rect.sprite_frames = null
 
 func select_shop(index):
 	print("Emitting signal: shop_selected with index", index)

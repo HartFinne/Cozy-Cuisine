@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MenuItem" load_steps=3 format=3 uid="uid://banb0nmxl0p43"]
 
-[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_8j4hs"]
+[ext_resource type="Texture2D" uid="uid://dwiemnbb61d08" path="res://Datas/Assets/Dishes/eyes_cream-o-Sheet.png" id="1_0uuwb"]
 [ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="2_opvon"]
 
 [resource]
@@ -9,7 +9,7 @@ name = "IceCream"
 label = "Ice Cream"
 description = "A delicious frozen dessert available in multiple flavors like chocolate, vanilla, and strawberry."
 price = 33
-image = ExtResource("1_8j4hs")
+image = ExtResource("1_0uuwb")
 ingredients = {
 "Choco": 1
 }

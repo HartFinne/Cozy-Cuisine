@@ -162,8 +162,6 @@ func _finish_cooking() -> void:
 		current_recipe = null  # Reset cooking state
 
 
-	
-
 func _show_message(text: String) -> void:
 	show_panel_for_seconds(1.5)
 	output_label.text = text
@@ -229,7 +227,6 @@ func _on_output_rect_clicked(event: InputEvent):
 
 	print("Saved Dish:", player_data.dishes)
 	player_data.save()
-
 
 	
 func show_panel_for_seconds(seconds: float):

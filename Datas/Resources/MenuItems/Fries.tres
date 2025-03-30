@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MenuItem" load_steps=3 format=3 uid="uid://b2hnb8gqm1owi"]
 
-[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_k7nat"]
+[ext_resource type="Texture2D" uid="uid://drsnxumar1fpb" path="res://Datas/Assets/Dishes/french_fried-Sheet.png" id="1_qfmh0"]
 [ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="6_bfkl3"]
 
 [resource]
@@ -9,7 +9,7 @@ name = "Fries"
 label = "French Fries"
 description = "Crispy, golden-brown potato fries, deep-fried to perfection."
 price = 20
-image = ExtResource("1_k7nat")
+image = ExtResource("1_qfmh0")
 ingredients = {
 "Potatoes": 4
 }

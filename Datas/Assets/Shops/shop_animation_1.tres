@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dsbdqnksjbyg5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hvnnw"]
+load_path = "res://.godot/imported/stall-0.png-5a484d4baae0432cfd196618bd4abc4c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x534t"]
+load_path = "res://.godot/imported/stall-1.png-f0d52b4b16bc7074ce919bf920ecc158.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l01ue"]
+load_path = "res://.godot/imported/stall-2.png-fd43236bff6fab723c0145d89345210c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oicuw"]
+load_path = "res://.godot/imported/stall-3.png-682b7183efc7ef9d7adb0ecec6bcb582.ctex"
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hvnnw")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_x534t")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_l01ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_oicuw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]

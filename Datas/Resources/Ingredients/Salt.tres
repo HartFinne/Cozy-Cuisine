@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cxv68611b5731"]
 
-[ext_resource type="Texture2D" uid="uid://ccmggcp273p04" path="res://Market (shops, items)/Assets/Ingredients/81_pizza.png" id="1_meh50"]
+[ext_resource type="Texture2D" uid="uid://davn0l8yta4pj" path="res://Datas/Assets/Ingredients/asinagang.png" id="1_meh50"]
 [ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_nq8r5"]
 
 [resource]

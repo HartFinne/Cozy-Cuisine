@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdhmvto5108fr"]
+[gd_scene load_steps=6 format=3 uid="uid://bdhmvto5108fr"]
 
 [ext_resource type="Texture2D" uid="uid://bbc0qogvitob4" path="res://Market (shops, items)/Assets/Logos/Icon-color.png" id="1_8ydwp"]
 [ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market (shops, items)/Scripts/shops.gd" id="1_dli60"]
 [ext_resource type="Texture2D" uid="uid://m00u05fllv6" path="res://Market (shops, items)/Assets/Logos/left-arrow.png" id="2_fsdkg"]
 [ext_resource type="Texture2D" uid="uid://bnkmgxmqtlbyx" path="res://Market (shops, items)/Assets/Logos/right-arrow.png" id="2_xd5ag"]
 [ext_resource type="Texture2D" uid="uid://bmpxdjtvjm0e0" path="res://Market (shops, items)/Assets/Logos/long-left-arrow.png" id="3_wvf3p"]
-[ext_resource type="SpriteFrames" uid="uid://dsbdqnksjbyg5" path="res://Datas/Assets/Shops/shop_animation_1.tres" id="5_wvf3p"]
 
 [node name="PanelContainer" type="Control"]
 layout_mode = 3
@@ -70,10 +69,6 @@ layout_mode = 2
 
 [node name="ShopRect" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer/VBoxContainer3/PanelContainer"]
 unique_name_in_owner = true
-position = Vector2(86.785, 70.3074)
-scale = Vector2(2.005, 2.005)
-sprite_frames = ExtResource("5_wvf3p")
-autoplay = "default"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2

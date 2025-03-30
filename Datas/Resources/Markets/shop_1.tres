@@ -5,11 +5,11 @@
 [ext_resource type="Script" uid="uid://e2lpmi2i670t" path="res://Datas/market.gd" id="2_uvdm1"]
 [ext_resource type="Resource" uid="uid://lhwep3uxmmrc" path="res://Datas/Resources/Ingredients/Oil.tres" id="3_qfmqi"]
 [ext_resource type="Resource" uid="uid://iep3148uvl3e" path="res://Datas/Resources/Ingredients/Meat.tres" id="4_a2op1"]
-[ext_resource type="Texture2D" uid="uid://ccmggcp273p04" path="res://Market (shops, items)/Assets/Ingredients/81_pizza.png" id="6_qfmqi"]
+[ext_resource type="SpriteFrames" uid="uid://dsbdqnksjbyg5" path="res://Datas/Assets/Shops/shop_animation_1.tres" id="6_g2qf1"]
 
 [resource]
 script = ExtResource("2_uvdm1")
 shop_name = "Shop 1"
-shop_image = ExtResource("6_qfmqi")
+shop_image = ExtResource("6_g2qf1")
 ingredients = Array[ExtResource("1_xquie")]([ExtResource("2_3lduo"), ExtResource("3_qfmqi"), ExtResource("4_a2op1")])
 metadata/_custom_type_script = "uid://e2lpmi2i670t"

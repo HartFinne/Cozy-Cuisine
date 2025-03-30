@@ -6,11 +6,11 @@
 [ext_resource type="Resource" uid="uid://clclb0xpk4vne" path="res://Datas/Resources/Ingredients/Peperoni.tres" id="3_4s3ak"]
 [ext_resource type="Resource" uid="uid://cntrryp3abr4" path="res://Datas/Resources/Ingredients/SteakSauce.tres" id="4_84gfw"]
 [ext_resource type="Resource" uid="uid://cxv68611b5731" path="res://Datas/Resources/Ingredients/Salt.tres" id="5_stwem"]
-[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="7_4s3ak"]
+[ext_resource type="SpriteFrames" uid="uid://dsbdqnksjbyg5" path="res://Datas/Assets/Shops/shop_animation_1.tres" id="7_t4uv2"]
 
 [resource]
 script = ExtResource("2_4ka34")
 shop_name = "Shop 3"
-shop_image = ExtResource("7_4s3ak")
+shop_image = ExtResource("7_t4uv2")
 ingredients = Array[ExtResource("1_mpwom")]([ExtResource("2_japdg"), ExtResource("3_4s3ak"), ExtResource("4_84gfw"), ExtResource("5_stwem")])
 metadata/_custom_type_script = "uid://e2lpmi2i670t"
