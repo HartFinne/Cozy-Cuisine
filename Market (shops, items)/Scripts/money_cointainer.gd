@@ -8,7 +8,8 @@ var player_data: PlayerData = PlayerData.load_data()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	basket.purchase_completed.connect(_on_purchase_completed)
+	if basket != null and basket.has_signal("purchase_completed"):
+		basket.purchase_completed.connect(_on_purchase_completed)
 	update_money_ui();
 	
 func update_money_ui():

@@ -8,7 +8,7 @@ var last_direction = Vector2.DOWN
 func _ready():
 	add_to_group("player")  
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	handle_manual_input()
 
 func handle_manual_input():

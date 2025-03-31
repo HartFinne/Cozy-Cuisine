@@ -11,6 +11,8 @@ class_name PlayerData
 @export var selected_ingredients: Dictionary = {}  # Store selected ingredients
 @export var dishes: Dictionary = {}
 
+@export var player_position: Vector2 = Vector2.ZERO  # ✅ Add Player Position
+
 # Save the player data as a resource file
 func save(file_path: String = "user://player_data.tres"):
 	var error = ResourceSaver.save(self, file_path)

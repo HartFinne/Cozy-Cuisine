@@ -6,7 +6,9 @@ var shop_list: Array = []
 signal shop_selected(current_index)
 
 @onready var shop_name_label: Label = %ShopNameLabel
-@onready var shop_rect: TextureRect = %ShopRect
+@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
+
+var game_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
 
 func _ready() -> void:
 	load_shops_from_resources()
@@ -54,12 +56,13 @@ func update_shop_display():
 
 		# Use shop_image directly from Market resource
 		if market.shop_image:
-			shop_rect.texture = market.shop_image
+			animated_sprite_2d.sprite_frames = market.shop_image
+			animated_sprite_2d.play("default")
 		else:
-			shop_rect.texture = null
+			animated_sprite_2d.sprite_frames = null
 	else:
 		shop_name_label.text = "No Shops Available"
-		shop_rect.texture = null
+		animated_sprite_2d.sprite_frames = null
 
 func select_shop(index):
 	print("Emitting signal: shop_selected with index", index)
@@ -86,3 +89,4 @@ func _on_setting_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	print("Working")
+	get_tree().change_scene_to_packed(game_scene)

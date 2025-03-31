@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwn621t0jlbq2"
-path="res://.godot/imported/namelogo.png-87b14ff2252bc36440c0da4a987ccda0.ctex"
+uid="uid://c3yfprup687su"
+path="res://.godot/imported/mixed_gulay-Sheet.png-d6d6042ec4997d0f5e8c7b2125c2ed57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/Assets/namelogo.png"
-dest_files=["res://.godot/imported/namelogo.png-87b14ff2252bc36440c0da4a987ccda0.ctex"]
+source_file="res://Datas/Assets/Ingredients/mixed_gulay-Sheet.png"
+dest_files=["res://.godot/imported/mixed_gulay-Sheet.png-d6d6042ec4997d0f5e8c7b2125c2ed57.ctex"]
 
 [params]
 

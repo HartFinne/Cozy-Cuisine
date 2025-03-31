@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnq27xg3v6hs3"]
+
+[ext_resource type="SpriteFrames" uid="uid://dsbdqnksjbyg5" path="res://Datas/Assets/Shops/shop_animation_1.tres" id="1_fut8y"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_fut8y")
+autoplay = "default"
+frame_progress = 0.0719454

@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn7pxyittn3xa"]
+
+[ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
+[ext_resource type="Texture2D" uid="uid://cwn621t0jlbq2" path="res://Menu/Assets/Logos/namelogo.png" id="2_ji7ig"]
+[ext_resource type="Theme" uid="uid://db03w6ddj0fmx" path="res://Menu/Assets/Themes/menu_buttons_theme.tres" id="3_7ja22"]
+[ext_resource type="Texture2D" uid="uid://dgdfg24ylxrl0" path="res://Menu/Assets/Logos/Setting.png" id="4_xlu0j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vjv"]
+bg_color = Color(1, 0.917647, 0.772549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1vw1"]
+bg_color = Color(0.423529, 0.305882, 0.192157, 1)
+border_color = Color(0.266667, 0.266667, 0.266667, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+anti_aliasing = false
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fv1yw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p8vjv")
+
+[node name="Title" type="TextureRect" parent="Panel"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -263.0
+offset_right = 130.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ji7ig")
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -67.0
+offset_right = -255.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(15.145, 15.145)
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1vw1")
+
+[node name="StartButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -22.5
+offset_right = 250.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_7ja22")
+text = "START"
+
+[node name="TutorialButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 46.5
+offset_right = 250.0
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_7ja22")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TUTORIAL"
+
+[node name="QuitButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 116.035
+offset_right = 250.0
+offset_bottom = 161.035
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_7ja22")
+text = "QUIT"
+
+[node name="SettingButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 55.0
+offset_right = 100.315
+offset_bottom = 92.0
+scale = Vector2(1.735, 1.735)
+texture_normal = ExtResource("4_xlu0j")
+
+[connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
