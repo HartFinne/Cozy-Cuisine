@@ -158,4 +158,9 @@ dialog_text = "Error Messages"
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_nxshy")
 
+[node name="PopupMenu" type="Popup" parent="."]
+mode = 1
+title = "fasdfadf"
+visible = true
+
 [connection signal="pressed" from="Panel/TabContainer/Basket/HBoxContainer/BuyButton" to="Panel/TabContainer/Basket" method="_on_buy_button_pressed"]

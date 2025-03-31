@@ -7,9 +7,22 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	left.pressed.connect(on_button_pressed.bind(left))
+	left.released.connect(on_button_released.bind(left))
 
+	right.pressed.connect(on_button_pressed.bind(right))
+	right.released.connect(on_button_released.bind(right))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	up.pressed.connect(on_button_pressed.bind(up))
+	up.released.connect(on_button_released.bind(up))
+
+	down.pressed.connect(on_button_pressed.bind(down))
+	down.released.connect(on_button_released.bind(down))
+
+# Function to lighten the button when pressed
+func on_button_pressed(button: TouchScreenButton) -> void:
+	button.modulate = Color(1.2, 1.2, 1.2, 1)  # Lighten the button
+
+# Function to return to normal when released
+func on_button_released(button: TouchScreenButton) -> void:
+	button.modulate = Color(1, 1, 1, 1)  # Reset to normal
