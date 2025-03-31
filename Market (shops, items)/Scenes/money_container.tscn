@@ -35,7 +35,7 @@ stretch_mode = 3
 
 [node name="CoinLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "100"
 
@@ -51,7 +51,7 @@ stretch_mode = 3
 
 [node name="GemLabel" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 text = "100"
 

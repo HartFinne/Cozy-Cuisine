@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwn621t0jlbq2"
-path="res://.godot/imported/namelogo.png-87b14ff2252bc36440c0da4a987ccda0.ctex"
+uid="uid://dp5pltsttlvaa"
+path="res://.godot/imported/down.png-4a63acd9d2625fa6968b9659f61c14aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/Assets/namelogo.png"
-dest_files=["res://.godot/imported/namelogo.png-87b14ff2252bc36440c0da4a987ccda0.ctex"]
+source_file="res://Kiosk (restaurant)/Assets/TouchControls/down.png"
+dest_files=["res://.godot/imported/down.png-4a63acd9d2625fa6968b9659f61c14aa.ctex"]
 
 [params]
 

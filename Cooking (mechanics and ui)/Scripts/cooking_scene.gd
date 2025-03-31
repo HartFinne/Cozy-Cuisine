@@ -23,7 +23,8 @@ var recipes: Array[MenuItem] = []  # Holds loaded RecipeData resources
 
 func _ready() -> void:
 	load_recipes()
-	output_rect.gui_input.connect(_on_output_rect_clicked)
+	if not output_rect.gui_input.is_connected(_on_output_rect_clicked):
+		output_rect.gui_input.connect(_on_output_rect_clicked)
 
 func load_recipes():
 	var recipe_files = [
@@ -101,9 +102,9 @@ func _deduct_ingredients(required_ingredients: Dictionary) -> bool:
 		if selected_ingredients[ingredient_name]["quantity"] <= 0:
 			selected_ingredients.erase(ingredient_name)
 
-	# ✅ Save changes immediately
-	player_data.selected_ingredients = selected_ingredients
-	player_data.save()
+	if selected_ingredients != player_data.selected_ingredients:
+		player_data.selected_ingredients = selected_ingredients
+		player_data.save()
 
 	print("After Deduction, Selected Ingredients:", selected_ingredients)
 	print("After Deduction, Player Inventory:", player_data.inventory)
@@ -230,11 +231,15 @@ func _on_output_rect_clicked(event: InputEvent):
 
 	
 func show_panel_for_seconds(seconds: float):
-	panel_container_3.visible = true  # Show the panel
-	timer.wait_time = seconds  # Set the wait time
-	print(timer.wait_time, "wait itme")
-	timer.start()  # Start the timer
-	timer.timeout.connect(_on_timer_timeout)  # Connect signal to function
+	panel_container_3.visible = true  
+	timer.wait_time = seconds  
+	timer.start()  
+
+	# ✅ Disconnect before reconnecting
+	if timer.timeout.is_connected(_on_timer_timeout):
+		timer.timeout.disconnect(_on_timer_timeout)
+
+	timer.timeout.connect(_on_timer_timeout)
 
 func _on_timer_timeout():
 	panel_container_3.visible = false  # Hide the panel when timer runs out
