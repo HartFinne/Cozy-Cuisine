@@ -49,20 +49,33 @@ func load_shops_from_resources():
 	else:
 		print("Loaded", shop_list.size(), "shops successfully.")
 
+@onready var panel_container: PanelContainer = %PanelContainer
 func update_shop_display():
 	if shop_list.size() > 0:
 		var market: Market = shop_list[current_index]
 		shop_name_label.text = market.shop_name
 
-		# Use shop_image directly from Market resource
+		# Ensure shop_image is a valid PackedScene before instantiating
 		if market.shop_image:
-			animated_sprite_2d.sprite_frames = market.shop_image
-			animated_sprite_2d.play("default")
+			var sprite_instance = market.shop_image.instantiate()
+			if sprite_instance is AnimatedSprite2D:
+				animated_sprite_2d = sprite_instance
+				panel_container.add_child(animated_sprite_2d)  # Add to PanelContainer
+
+				# Set position and scale
+				animated_sprite_2d.position = Vector2(86.505, 70.307)
+				animated_sprite_2d.scale = Vector2(2.0, 2.0)
+				
+				animated_sprite_2d.play("default")
+			else:
+				print("shop_image is not an AnimatedSprite2D")
 		else:
 			animated_sprite_2d.sprite_frames = null
 	else:
 		shop_name_label.text = "No Shops Available"
 		animated_sprite_2d.sprite_frames = null
+
+
 
 func select_shop(index):
 	print("Emitting signal: shop_selected with index", index)

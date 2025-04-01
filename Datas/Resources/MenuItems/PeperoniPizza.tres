@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MenuItem" load_steps=3 format=3 uid="uid://bkymbc8cjl3sm"]
 
-[ext_resource type="Texture2D" uid="uid://ccmggcp273p04" path="res://Market (shops, items)/Assets/Ingredients/81_pizza.png" id="1_it05m"]
+[ext_resource type="Texture2D" uid="uid://dlpdw8sjfo8i3" path="res://Datas/Assets/Dishes/pizza-Sheet.png" id="1_qejpc"]
 [ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="2_08xup"]
 
 [resource]
@@ -9,7 +9,7 @@ name = "PepperoniPizza"
 label = "Pepperoni Pizza"
 description = "A classic pizza topped with spicy pepperoni slices, melted cheese, and rich tomato sauce."
 price = 35
-image = ExtResource("1_it05m")
+image = ExtResource("1_qejpc")
 ingredients = {
 "Meat": 2
 }

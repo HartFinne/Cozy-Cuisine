@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://mfisgq68y4y1"]
+
+[node name="StartConversation" type="Control"]
+layout_mode = 3
+anchor_left = 0.00694444
+anchor_right = 0.125
+anchor_bottom = 0.111111
+offset_left = -72.0
+offset_top = -80.0
+offset_right = -72.0
+offset_bottom = -80.0
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+offset_left = 24.0
+offset_top = -16.0
+offset_right = 112.0
+offset_bottom = 24.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 2
+anchor_left = -0.0454545
+anchor_top = 0.6
+anchor_right = 0.954545
+anchor_bottom = 1.6
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 9
+text = "Press To Get Order"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

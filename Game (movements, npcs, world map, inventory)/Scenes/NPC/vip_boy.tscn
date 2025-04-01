@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0alkyptlpybn"]
+[gd_scene load_steps=12 format=3 uid="uid://c0alkyptlpybn"]
 
+[ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_l545x"]
 [ext_resource type="Texture2D" uid="uid://5iffkvr4adi3" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/VIP BOY/idle_left_vip1-Sheet.png" id="1_mmhby"]
+[ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/dialogue.tscn" id="3_yr3wf"]
+[ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/start_conversation.tscn" id="4_x5gsc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l545x"]
 atlas = ExtResource("1_mmhby")
@@ -41,13 +44,39 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gua46"]
 size = Vector2(6, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmhby"]
+size = Vector2(42, 24)
+
 [node name="vip_boy" type="CharacterBody2D"]
+script = ExtResource("1_l545x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bx85m")
 animation = &"idle_left"
-frame_progress = 0.243935
+autoplay = "idle_left"
+frame_progress = 0.912232
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_gua46")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11, 4)
+shape = SubResource("RectangleShape2D_mmhby")
+
+[node name="Dialogue" parent="." instance=ExtResource("3_yr3wf")]
+unique_name_in_owner = true
+visible = false
+
+[node name="StartConversation" parent="." instance=ExtResource("4_x5gsc")]
+unique_name_in_owner = true
+visible = false
+offset_left = -64.0
+offset_top = -48.0
+offset_right = -64.0
+offset_bottom = -48.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

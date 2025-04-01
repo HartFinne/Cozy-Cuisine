@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://clclb0xpk4vne" path="res://Datas/Resources/Ingredients/Peperoni.tres" id="3_4s3ak"]
 [ext_resource type="Resource" uid="uid://cntrryp3abr4" path="res://Datas/Resources/Ingredients/SteakSauce.tres" id="4_84gfw"]
 [ext_resource type="Resource" uid="uid://cxv68611b5731" path="res://Datas/Resources/Ingredients/Salt.tres" id="5_stwem"]
-[ext_resource type="SpriteFrames" uid="uid://dsbdqnksjbyg5" path="res://Datas/Assets/Shops/shop_animation_1.tres" id="7_t4uv2"]
+[ext_resource type="PackedScene" uid="uid://cnq27xg3v6hs3" path="res://Datas/Assets/Shops/shop_animation_1.tscn" id="7_t4uv2"]
 
 [resource]
 script = ExtResource("2_4ka34")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Customer" load_steps=5 format=3 uid="uid://6oimyi2pg2u6"]
+
+[ext_resource type="Script" uid="uid://c3j24prkhkpue" path="res://Datas/customer.gd" id="1_2my7f"]
+[ext_resource type="PackedScene" uid="uid://c0alkyptlpybn" path="res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn" id="1_u8gxw"]
+[ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="2_5klvp"]
+[ext_resource type="Resource" uid="uid://bkymbc8cjl3sm" path="res://Datas/Resources/MenuItems/PeperoniPizza.tres" id="3_5klvp"]
+
+[resource]
+script = ExtResource("1_2my7f")
+name = "John"
+dialog = "Hey there! I'd love a quick bite."
+character_scene = ExtResource("1_u8gxw")
+order = Dictionary[ExtResource("2_5klvp"), int]({
+ExtResource("3_5klvp"): 2
+})
+metadata/_custom_type_script = "uid://c3j24prkhkpue"

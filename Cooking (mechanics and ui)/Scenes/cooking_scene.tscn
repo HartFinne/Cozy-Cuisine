@@ -1,12 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=13 format=3 uid="uid://66ftxmjmu23p"]
 
-[ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_0mdmw"]
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
+[ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
 [ext_resource type="Script" uid="uid://dksnl7jm68i8h" path="res://Cooking (mechanics and ui)/Scripts/ingredient.gd" id="2_lwslm"]
+[ext_resource type="Texture2D" uid="uid://rhrms2vi5gd2" path="res://Cooking (mechanics and ui)/Assets/UI cooking.png" id="3_wobfx"]
 [ext_resource type="Script" uid="uid://oox1pt4tv8mf" path="res://Cooking (mechanics and ui)/Scripts/ingredient_popup.gd" id="4_oxed2"]
 [ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iv1l6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wobfx"]
+atlas = ExtResource("2_5a071")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a071"]
+atlas = ExtResource("2_5a071")
+region = Rect2(80, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d7ps"]
+atlas = ExtResource("3_wobfx")
+region = Rect2(83, 51, 43, 39)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqh86"]
+texture = SubResource("AtlasTexture_5d7ps")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqh86"]
+atlas = ExtResource("3_wobfx")
+region = Rect2(481, 129, 46, 46)
+filter_clip = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xmic6"]
+texture = SubResource("AtlasTexture_qqh86")
 
 [node name="CookingScene" type="Control"]
 layout_mode = 3
@@ -18,14 +40,33 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_iv1l6")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0277778
+anchor_top = 0.0246914
+anchor_right = 0.069375
+anchor_bottom = 0.098642
+offset_right = -31.92
+offset_bottom = -31.92
+scale = Vector2(2.995, 2.995)
+texture_normal = SubResource("AtlasTexture_wobfx")
+texture_pressed = SubResource("AtlasTexture_5a071")
+metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.111111
-anchor_top = 0.0987654
-anchor_right = 0.5
-anchor_bottom = 0.790123
+anchor_left = 0.159722
+anchor_top = 0.17284
+anchor_right = 0.490278
+anchor_bottom = 0.760493
+offset_right = 67.2
+offset_bottom = 67.2
+scale = Vector2(0.85, 0.85)
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -45,7 +86,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot"]
 layout_mode = 2
@@ -56,7 +97,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot2"]
 layout_mode = 2
@@ -67,7 +108,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot3"]
 layout_mode = 2
@@ -78,7 +119,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot4"]
 layout_mode = 2
@@ -89,7 +130,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot5"]
 layout_mode = 2
@@ -100,7 +141,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot6"]
 layout_mode = 2
@@ -111,7 +152,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot7"]
 layout_mode = 2
@@ -122,7 +163,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot8"]
 layout_mode = 2
@@ -133,7 +174,7 @@ script = ExtResource("2_lwslm")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iv1l6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
 [node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot9"]
 layout_mode = 2
@@ -143,20 +184,21 @@ script = ExtResource("2_lwslm")
 [node name="CookButton" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-anchor_left = 0.171875
-anchor_top = 0.817901
-anchor_right = 0.276909
-anchor_bottom = 0.885802
+anchor_left = 0.198785
+anchor_top = 0.796296
+anchor_right = 0.303819
+anchor_bottom = 0.864197
 text = "Cook"
 metadata/_edit_use_anchors_ = true
 
 [node name="ClearButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 387.0
-offset_top = 530.0
-offset_right = 507.999
-offset_bottom = 574.0
+anchor_left = 0.34809
+anchor_top = 0.796296
+anchor_right = 0.453124
+anchor_bottom = 0.864198
 text = "Clear"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -172,10 +214,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_left = 767.0
-offset_top = 192.0
-offset_right = 961.0
-offset_bottom = 386.0
+anchor_left = 0.665799
+anchor_top = 0.296296
+anchor_right = 0.834201
+anchor_bottom = 0.595679
+offset_bottom = 3.05176e-05
+theme_override_styles/panel = SubResource("StyleBoxTexture_xmic6")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
@@ -189,7 +233,6 @@ theme_override_constants/margin_bottom = 11
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_0mdmw")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -222,7 +265,6 @@ layout_mode = 2
 unique_name_in_owner = true
 initial_position = 2
 size = Vector2i(545, 451)
-visible = true
 script = ExtResource("4_oxed2")
 ingredient_container = ExtResource("5_fph4g")
 
@@ -258,6 +300,7 @@ text = "close"
 [node name="CookTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CookButton" to="." method="_on_cook_button_pressed"]
 [connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]
 [connection signal="timeout" from="CookTimer" to="." method="_on_cook_timer_timeout"]

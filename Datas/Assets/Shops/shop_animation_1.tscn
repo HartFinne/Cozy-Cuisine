@@ -5,4 +5,4 @@
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_fut8y")
 autoplay = "default"
-frame_progress = 0.0719454
+frame_progress = 0.408487

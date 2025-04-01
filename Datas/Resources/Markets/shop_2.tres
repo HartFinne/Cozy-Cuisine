@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://b83rk3b5824m1" path="res://Datas/Resources/Ingredients/Mushroom.tres" id="2_omv6o"]
 [ext_resource type="Resource" uid="uid://cfuuhl4ycu0cp" path="res://Datas/Resources/Ingredients/MixedVeg.tres" id="3_5s77b"]
 [ext_resource type="Resource" uid="uid://bf8a4igrmgpbc" path="res://Datas/Resources/Ingredients/Dough.tres" id="4_mog8a"]
-[ext_resource type="SpriteFrames" uid="uid://dsbdqnksjbyg5" path="res://Datas/Assets/Shops/shop_animation_1.tres" id="6_lrwvv"]
+[ext_resource type="PackedScene" uid="uid://cnq27xg3v6hs3" path="res://Datas/Assets/Shops/shop_animation_1.tscn" id="6_lrwvv"]
 
 [resource]
 script = ExtResource("2_huf27")
