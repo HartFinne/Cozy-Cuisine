@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn85mysnmeu87"]
+
+[ext_resource type="Texture2D" uid="uid://noo82gamf4yc" path="res://assets/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-dishes/Cabinet-Animation-Dishes-Sprite-Sheet.png" id="1_y82qq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lggcj"]
+atlas = ExtResource("1_y82qq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh320"]
+atlas = ExtResource("1_y82qq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nix0v"]
+atlas = ExtResource("1_y82qq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib4uu"]
+atlas = ExtResource("1_y82qq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51nuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lggcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh320")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nix0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib4uu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="cabinet-with-dishes" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_51nuw")
+autoplay = "default"
