@@ -30,6 +30,8 @@ texture = ExtResource("1_gkl6w")
 6:21/size_in_atlas = Vector2i(3, 3)
 6:21/0 = 0
 6:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 16, -24, 16, 24, -24, 24)
+18:87/size_in_atlas = Vector2i(3, 3)
+18:87/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1

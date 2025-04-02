@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-var cooking_scene = load("res://Cooking (mechanics and ui)/Scenes/cooking_scene.tscn")
-const TRIGGER_DISTANCE = 1000.0  # Adjust this value as needed
 var player_data: PlayerData = PlayerData.load_data()
 @onready var main_character: CharacterBody2D = $"../mainCharacter"
 @onready var dialogue: Control = $Dialogue
