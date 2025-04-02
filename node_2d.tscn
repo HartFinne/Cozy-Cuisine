@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://0bww7wnb8npo"]
+
+[ext_resource type="Script" uid="uid://ci2yc084amyey" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="Resource" uid="uid://6oimyi2pg2u6" path="res://Datas/Resources/Customer/rich_boy.tres" id="2_epypp"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0e48y")
+customer = ExtResource("2_epypp")

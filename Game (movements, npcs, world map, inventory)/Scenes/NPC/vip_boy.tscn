@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0alkyptlpybn"]
+[gd_scene load_steps=13 format=3 uid="uid://c0alkyptlpybn"]
 
 [ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_l545x"]
 [ext_resource type="Texture2D" uid="uid://5iffkvr4adi3" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/VIP BOY/idle_left_vip1-Sheet.png" id="1_mmhby"]
+[ext_resource type="Resource" uid="uid://6oimyi2pg2u6" path="res://Datas/Resources/Customer/rich_boy.tres" id="2_2sui8"]
 [ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/dialogue.tscn" id="3_yr3wf"]
 [ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/start_conversation.tscn" id="4_x5gsc"]
 
@@ -49,6 +50,7 @@ size = Vector2(42, 24)
 
 [node name="vip_boy" type="CharacterBody2D"]
 script = ExtResource("1_l545x")
+customer = ExtResource("2_2sui8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bx85m")

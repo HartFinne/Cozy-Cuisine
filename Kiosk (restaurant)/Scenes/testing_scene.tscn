@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=12 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://cf8usis5fxio3" path="res://Game (movements, npcs, world map, inventory)/Scenes/Player/main_character.tscn" id="1_mvijt"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://xy2q2dc116es" path="res://Kiosk (restaurant)/Scripts/Cook.gd" id="5_2qw1t"]
 [ext_resource type="PackedScene" uid="uid://c08dmsrhc5iei" path="res://Kiosk (restaurant)/Scenes/touch_controls.tscn" id="5_wvgkv"]
 [ext_resource type="Texture2D" uid="uid://3pqak6r75tnb" path="res://Kiosk (restaurant)/Assets/Interiors_free/image.png" id="8_442mg"]
-[ext_resource type="PackedScene" uid="uid://c0alkyptlpybn" path="res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn" id="10_btmqb"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_442mg"]
 a = Vector2(176, 88)
@@ -130,9 +129,5 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="TouchControls" parent="UI" instance=ExtResource("5_wvgkv")]
-
-[node name="vip_boy" parent="." instance=ExtResource("10_btmqb")]
-position = Vector2(688, 386)
-scale = Vector2(2, 2)
 
 [connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer" to="." method="_on_h_box_container_gui_input"]

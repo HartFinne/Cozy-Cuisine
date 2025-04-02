@@ -6,11 +6,13 @@ extends Node2D
 var market_scene = load("res://Market (shops, items)/Scenes/market_scene.tscn")
 var player_data: PlayerData = PlayerData.load_data()
 @export var customers: Dictionary = {}
+@onready var touch_controls: CanvasLayer = $UI/TouchControls
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	h_box_container.mouse_filter = Control.MOUSE_FILTER_STOP  # ✅ Allow it to receive input
 	if player_data:  # ✅ Check if data is loaded
 		var player = get_node_or_null("mainCharacter")  # Make sure the node exists
@@ -29,7 +31,7 @@ func spawn_customers():
 	var spawn_positions = [Vector2(1000, 224.0)]  # Example position
 
 	# ✅ Load customer manually
-	var customer_res = preload("res://Datas/Resources/Customer/rich_boy.tres")
+	var customer_res = preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn")
 
 	if customer_res:
 		spawn_customer(customer_res, spawn_positions[0])  # ✅ Pass manually loaded customer
@@ -38,23 +40,20 @@ func spawn_customers():
 		
 
 # ✅ Spawn a single customer and move them to the counter
-func spawn_customer(customer: Customer, position: Vector2):
-	if customer.character_scene:
-		var customer_instance = customer.character_scene.instantiate()
-		add_child(customer_instance)
+func spawn_customer(customer_scene: PackedScene, position: Vector2):
+	var customer_instance = customer_scene.instantiate()  # ✅ Correct way to instantiate
+	add_child(customer_instance)
 
-		customer_instance.position = position
-		customer_instance.set_meta("customer_data", customer)
-		customer_instance.scale = Vector2(2.0, 2.0)
+	customer_instance.position = position
+	customer_instance.scale = Vector2(2.0, 2.0)
 
-		# ✅ Define the counter position
-		var counter_position = Vector2(696.0, 240.0)  # Adjust as needed
+	# ✅ Define the counter position
+	var counter_position = Vector2(696.0, 240.0)  # Adjust as needed
 
-		# ✅ Create a Tween node for smooth movement
-		var tween = get_tree().create_tween()
-		tween.tween_property(customer_instance, "position", counter_position, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-		print("🚶 Customer is moving to the counter...")
+	# ✅ Create a Tween node for smooth movement
+	var tween = get_tree().create_tween()
+	tween.tween_property(customer_instance, "position", counter_position, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	print("🚶 Customer is moving to the counter...")
 
 
 func _on_h_box_container_gui_input(event: InputEvent) -> void:
