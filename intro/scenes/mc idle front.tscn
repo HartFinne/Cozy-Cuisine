@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://4rbvdvhwbp1v"]
+
+[ext_resource type="Texture2D" uid="uid://buqbpr0gyp01f" path="res://intro/assets/characters/idle_front_girl-Sheet.png" id="1_yc5nw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6vl1"]
+atlas = ExtResource("1_yc5nw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6s5m"]
+atlas = ExtResource("1_yc5nw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlp1l"]
+atlas = ExtResource("1_yc5nw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbm6p"]
+atlas = ExtResource("1_yc5nw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gcf5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6vl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6s5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlp1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbm6p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkuii"]
+radius = 7.07107
+
+[node name="mc" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -19)
+scale = Vector2(1.34375, 1.34375)
+sprite_frames = SubResource("SpriteFrames_gcf5n")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.964318
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_gkuii")

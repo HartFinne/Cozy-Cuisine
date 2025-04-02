@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://yhkvppvxkpkb"]
+
+[ext_resource type="Texture2D" uid="uid://dljykboltuy8i" path="res://assets/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-Cleaning-Products/Cabinet-Animation-with-Cleaning-Products-Sprite-Sheet.png" id="1_ym1ik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syd62"]
+atlas = ExtResource("1_ym1ik")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koi06"]
+atlas = ExtResource("1_ym1ik")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_debe0"]
+atlas = ExtResource("1_ym1ik")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqv4"]
+atlas = ExtResource("1_ym1ik")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ucq4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syd62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koi06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_debe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqv4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="cabinet cleaning products" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ucq4b")
+autoplay = "default"
+frame_progress = 0.204353
