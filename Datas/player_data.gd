@@ -2,7 +2,7 @@ extends Resource
 class_name PlayerData
 
 @export var budget: float = 1000.0
-@export var days: float = 1.0
+@export var days: int = 1
 @export var expenses: float = 0.0
 @export var inventory: Dictionary = {}
 @export var profit: float = 0.0
@@ -10,11 +10,12 @@ class_name PlayerData
 @export var total_profit: float = 0.0
 @export var selected_ingredients: Dictionary = {}  # Store selected ingredients
 @export var dishes: Dictionary = {}
+@export var order: Dictionary = {}
 
 @export var player_position: Vector2 = Vector2(136.0, 128.0)  # Example starting position
 
 # Save the player data as a resource file
-func save(file_path: String = "user://player_data.res"):
+func save(file_path: String = "user://player_data.tres"):
 	var error = ResourceSaver.save(self, file_path)
 	if error != OK:
 		print("❌ Failed to save PlayerData!")
@@ -22,7 +23,7 @@ func save(file_path: String = "user://player_data.res"):
 		print("✅ PlayerData saved successfully.")
 
 # Load player data from a resource file
-static func load_data(file_path: String = "user://player_data.res") -> PlayerData:
+static func load_data(file_path: String = "user://player_data.tres") -> PlayerData:
 	if ResourceLoader.exists(file_path):
 		return ResourceLoader.load(file_path) as PlayerData
 	return PlayerData.new()  # Return default if file doesn't exist

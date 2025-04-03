@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxbmbqwvjgd0b"]
+[gd_scene load_steps=4 format=3 uid="uid://cxbmbqwvjgd0b"]
 
 [ext_resource type="Texture2D" uid="uid://cesncnr03wfto" path="res://Kiosk (restaurant)/Assets/Icons, UI, and window popup.png" id="1_3vxlj"]
+[ext_resource type="Script" uid="uid://xh4f8shujq4" path="res://Kiosk (restaurant)/Scripts/dialogue.gd" id="1_nvrqj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrqj"]
 atlas = ExtResource("1_3vxlj")
 region = Rect2(8, 167, 87, 81)
 
 [node name="Dialogue" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nvrqj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -22,17 +25,37 @@ offset_right = 40.0
 offset_bottom = -16.0
 texture = SubResource("AtlasTexture_nvrqj")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+[node name="NameLabel" type="Label" parent="NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 105.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+text = "john"
+
+[node name="DialogueLabel" type="RichTextLabel" parent="NinePatchRect"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0909091
-anchor_right = 0.727273
-anchor_bottom = 1.0
+anchor_left = 0.113636
+anchor_top = -0.0357143
+anchor_right = 0.818182
+anchor_bottom = 0.964286
 offset_right = 88.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/normal_font_size = 13
 text = "I love you my niggas"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

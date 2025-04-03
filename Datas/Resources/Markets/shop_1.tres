@@ -1,15 +1,16 @@
-[gd_resource type="Resource" script_class="Market" load_steps=7 format=3 uid="uid://cd6gs1cs7sguo"]
+[gd_resource type="Resource" script_class="Market" load_steps=8 format=3 uid="uid://cd6gs1cs7sguo"]
 
 [ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_xquie"]
 [ext_resource type="Resource" uid="uid://b01c51ox1yoyd" path="res://Datas/Resources/Ingredients/potatoes.tres" id="2_3lduo"]
 [ext_resource type="Script" uid="uid://e2lpmi2i670t" path="res://Datas/market.gd" id="2_uvdm1"]
 [ext_resource type="Resource" uid="uid://lhwep3uxmmrc" path="res://Datas/Resources/Ingredients/Oil.tres" id="3_qfmqi"]
 [ext_resource type="Resource" uid="uid://iep3148uvl3e" path="res://Datas/Resources/Ingredients/Meat.tres" id="4_a2op1"]
+[ext_resource type="Resource" uid="uid://bw6o8702xmo2p" path="res://Datas/Resources/Ingredients/Ice.tres" id="5_p1425"]
 [ext_resource type="PackedScene" uid="uid://cnq27xg3v6hs3" path="res://Datas/Assets/Shops/shop_animation_1.tscn" id="6_g2qf1"]
 
 [resource]
 script = ExtResource("2_uvdm1")
 shop_name = "Shop 1"
 shop_image = ExtResource("6_g2qf1")
-ingredients = Array[ExtResource("1_xquie")]([ExtResource("2_3lduo"), ExtResource("3_qfmqi"), ExtResource("4_a2op1")])
+ingredients = Array[ExtResource("1_xquie")]([ExtResource("2_3lduo"), ExtResource("3_qfmqi"), ExtResource("4_a2op1"), ExtResource("5_p1425")])
 metadata/_custom_type_script = "uid://e2lpmi2i670t"

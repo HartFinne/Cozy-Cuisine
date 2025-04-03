@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://hdpbwg8q74xy"]
+[gd_scene load_steps=9 format=3 uid="uid://hdpbwg8q74xy"]
 
 [ext_resource type="Texture2D" uid="uid://bcedapvnxm6ud" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/Customer Old/idle_left_c1-Sheet.png" id="1_dpirw"]
+[ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_n0r8f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0r8f"]
 atlas = ExtResource("1_dpirw")
@@ -42,6 +43,7 @@ animations = [{
 size = Vector2(6, 10)
 
 [node name="customer_old" type="CharacterBody2D"]
+script = ExtResource("1_n0r8f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m1n3a")

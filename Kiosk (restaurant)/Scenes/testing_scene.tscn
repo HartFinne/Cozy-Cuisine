@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://xy2q2dc116es" path="res://Kiosk (restaurant)/Scripts/Cook.gd" id="5_2qw1t"]
 [ext_resource type="PackedScene" uid="uid://c08dmsrhc5iei" path="res://Kiosk (restaurant)/Scenes/touch_controls.tscn" id="5_wvgkv"]
 [ext_resource type="Texture2D" uid="uid://3pqak6r75tnb" path="res://Kiosk (restaurant)/Assets/Interiors_free/image.png" id="8_442mg"]
-[ext_resource type="PackedScene" uid="uid://c0alkyptlpybn" path="res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn" id="10_btmqb"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_442mg"]
 a = Vector2(176, 88)
@@ -17,6 +16,12 @@ b = Vector2(96, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qw1t"]
 size = Vector2(64, 64)
+
+[sub_resource type="Curve2D" id="Curve2D_btmqb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1224, 131, 0, 0, 0, 0, 696, 131, 0, 0, 0, 0, 696, 155, 0, 0, 0, 0, 1256, 155)
+}
+point_count = 4
 
 [node name="TestingScene" type="Node2D"]
 script = ExtResource("1_5hxfs")
@@ -131,8 +136,50 @@ stretch_mode = 4
 
 [node name="TouchControls" parent="UI" instance=ExtResource("5_wvgkv")]
 
-[node name="vip_boy" parent="." instance=ExtResource("10_btmqb")]
-position = Vector2(688, 386)
-scale = Vector2(2, 2)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_btmqb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(698.405, 131)
+rotation = 3.14159
+progress = 525.42
+rotates = false
+
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(0, 71)
+curve = SubResource("Curve2D_btmqb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(1224, 131)
+rotation = 3.14159
+rotates = false
+
+[node name="Path2D3" type="Path2D" parent="."]
+position = Vector2(0, 141)
+curve = SubResource("Curve2D_btmqb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2(1224, 131)
+rotation = 3.14159
+rotates = false
+
+[node name="Path2D4" type="Path2D" parent="."]
+position = Vector2(0, 207)
+curve = SubResource("Curve2D_btmqb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2(1224, 131)
+rotation = 3.14159
+rotates = false
+
+[node name="Path2D5" type="Path2D" parent="."]
+position = Vector2(0, 279)
+curve = SubResource("Curve2D_btmqb")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
+position = Vector2(696.502, 130.773)
+rotation = 3.14159
+progress = 527.22
+rotates = false
 
 [connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer" to="." method="_on_h_box_container_gui_input"]

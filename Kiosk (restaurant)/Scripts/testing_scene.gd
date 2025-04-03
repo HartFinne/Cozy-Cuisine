@@ -5,56 +5,148 @@ extends Node2D
 
 var market_scene = load("res://Market (shops, items)/Scenes/market_scene.tscn")
 var player_data: PlayerData = PlayerData.load_data()
-@export var customers: Dictionary = {}
+@export var customers: Array = []
+@onready var touch_controls: CanvasLayer = $UI/TouchControls
+@onready var money_container: PanelContainer = $UI/CanvasLayer/MoneyContainer
 
 
+@onready var paths := [
+	$Path2D/PathFollow2D, 
+	$Path2D2/PathFollow2D, 
+	#$Path2D3/PathFollow2D, 
+	#$Path2D4/PathFollow2D, 
+	#$Path2D5/PathFollow2D
+]  # ✅ Store all PathFollow2D nodes
+
+var customer_scene = preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	h_box_container.mouse_filter = Control.MOUSE_FILTER_STOP  # ✅ Allow it to receive input
+	# Clear customers array before loading new data
+	customers.clear()
+	
+	# Load saved customer data if any
+	var saved_customers = GameData.load_customers()
+	if saved_customers:
+		for data in saved_customers:
+			var customer_instance = load(data["scene"]).instantiate()
+			var path = paths[data["path_index"]]  # Find the path using path_index
+			if path:
+				path.add_child(customer_instance)
+				path.progress = data["progress"]  # Set the progress instead of position
+				
+				# Apply the rotation and scale from the saved data
+				customer_instance.rotation_degrees = data["rotation"]  # Set the rotation
+				customer_instance.scale = Vector2(2.0, 2.0)  # Set the scale
+				
+				
+				# Set customer to follow the path from the correct position
+				move_customer_along_path(path, customer_instance, data["path_index"], path, customer_instance)
+				# Create customer data object
+				var customer_data = {
+					"path_index": data["path_index"],  # Store path index
+					"progress": data["progress"],  # Store progress instead of global position
+					"scene": data["scene"],
+					"rotation_degrees": customer_instance.rotation_degrees,
+					"path_follow": path
+				}
+				
+
+					# Add the customer to the customers array if not already present
+				customers.append(customer_data)
+				
+			else:
+				print("Invalid path index for customer!")
+	
+	if h_box_container:
+		h_box_container.mouse_filter = Control.MOUSE_FILTER_STOP  # ✅ Allow it to receive input
+	else:
+		print("hbox not seen")
 	if player_data:  # ✅ Check if data is loaded
 		var player = get_node_or_null("mainCharacter")  # Make sure the node exists
 		if player:
 			player.global_position = player_data.player_position  # ✅ Restore last position
 	else:
 		print("⚠️ Player data failed to load!")
-		
-	  # ✅ Make sure there's a customer to spawn
-	print("Customers:", customers)
-	spawn_customers()
+
+	spawn_customers_with_intervals()
 	
-# Spawn the customers
-# ✅ Load and spawn customers without player_data
-func spawn_customers():
-	var spawn_positions = [Vector2(1000, 224.0)]  # Example position
+func spawn_customers_with_intervals():
+	for i in range(5):
+		await get_tree().create_timer(i * 2).timeout
+		spawn_customer_on_random_path()
+	
+func spawn_customer_on_random_path():
+	# Get a list of available (empty) paths
+	var available_paths = paths.filter(func(path): return path.get_child_count() == 0)  # Only paths with no customers
 
-	# ✅ Load customer manually
-	var customer_res = preload("res://Datas/Resources/Customer/rich_boy.tres")
+	if available_paths.size() == 0:
+		print("⚠️ No available paths for customers!")
+		return
+	
+	# Pick a random available path
+	var random_path = available_paths.pick_random()
+	
+	# Check that we picked a valid path
+	if customer_scene and random_path:
+		var customer_instance = customer_scene.instantiate()
+		random_path.add_child(customer_instance)
+		
+		customer_instance.scale = Vector2(2.0, 2.0)
+		customer_instance.rotation_degrees = -180  # Adjust rotation
+		
+		# Initialize the customer's position on the path (start point)
+		random_path.progress = 0.0
 
-	if customer_res:
-		spawn_customer(customer_res, spawn_positions[0])  # ✅ Pass manually loaded customer
+
+		# Use index to find the correct path index
+		var path_index = paths.find(random_path)
+		# Move customer along the path
+		move_customer_along_path(random_path, customer_instance, path_index, random_path, customer_instance)
+		
 	else:
-		print("⚠️ Customer resource failed to load!")
+		print("⚠️ Customer resource failed to load or invalid path")
+
+		
+func move_customer_along_path(path_follow: PathFollow2D, customer, path_index, random_path, customer_instance):
+	var tween = get_tree().create_tween()
+	tween.tween_property(path_follow, "progress", 527.22, 3.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	await tween.finished
+	print("Customer stopped at counter: ", path_follow)
+	
+	# Notify the npc script that they reached the counter
+	if customer.has_method("reach_counter"):
+		customer.reach_counter(path_follow)
+		
+	var customer_data = {
+			"path_index": path_index,  # Store path index
+			"progress": random_path.progress,  # Store progress instead of global position
+			"scene": customer_scene.resource_path,
+			"rotation_degrees": customer_instance.rotation_degrees,
+			"path_follow": random_path
+		}
+		# Append to GameData's customers_data
+	customers.append(customer_data)  # Append to the GameData array
 		
 
-# ✅ Spawn a single customer and move them to the counter
-func spawn_customer(customer: Customer, position: Vector2):
-	if customer.character_scene:
-		var customer_instance = customer.character_scene.instantiate()
-		add_child(customer_instance)
-
-		customer_instance.position = position
-		customer_instance.set_meta("customer_data", customer)
-		customer_instance.scale = Vector2(2.0, 2.0)
-
-		# ✅ Define the counter position
-		var counter_position = Vector2(696.0, 240.0)  # Adjust as needed
-
-		# ✅ Create a Tween node for smooth movement
-		var tween = get_tree().create_tween()
-		tween.tween_property(customer_instance, "position", counter_position, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-		print("🚶 Customer is moving to the counter...")
+func resume_customer_movement(path_follow: PathFollow2D):
+	money_container.update_money_ui()
+	var tween = get_tree().create_tween()
+	tween.tween_property(path_follow, "progress", 1000, 3.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	await tween.finished  # Wait for tween to complete
+	
+	# Remove customer from path after leaving
+	if path_follow.get_child_count() > 0:
+		var customer = path_follow.get_child(0)
+		customer.queue_free()             # Free instance to allow new one
+		await get_tree().process_frame
+		
+	# Allow new customers to spawn on this path
+	spawn_customer_on_random_path()
+	
+	print("Customer leaves after payment")
 
 
 func _on_h_box_container_gui_input(event: InputEvent) -> void:
@@ -67,9 +159,8 @@ func _on_h_box_container_gui_input(event: InputEvent) -> void:
 		else:
 			print("⚠️ Failed to save position. Player or data missing!")
 
-		# ✅ Ensure scene switch only if market_scene is loaded
-		if market_scene:
-			get_tree().change_scene_to_packed(market_scene)  
-		else:
-			print("❌ Market scene failed to load!")
+
+		GameData.save_customers(customers)  # Save their state
+		get_tree().change_scene_to_file("res://Market (shops, items)/Scenes/market_scene.tscn")
+			
 			
