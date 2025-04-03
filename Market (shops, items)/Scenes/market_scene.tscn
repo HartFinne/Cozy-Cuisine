@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=11 format=3 uid="uid://bs4bk1jk28hsl"]
 
+[ext_resource type="Script" uid="uid://b6gvx0w6l0xb1" path="res://Market (shops, items)/Scripts/market_scene.gd" id="1_nxshy"]
 [ext_resource type="PackedScene" uid="uid://bdhmvto5108fr" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_rser8"]
 [ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
 [ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_ov0xs"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nxshy")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

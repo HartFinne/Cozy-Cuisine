@@ -8,6 +8,7 @@ atlas = ExtResource("1_3vxlj")
 region = Rect2(8, 167, 87, 81)
 
 [node name="Dialogue" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,9 +45,9 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.113636
-anchor_top = -0.142857
+anchor_top = -0.0357143
 anchor_right = 0.818182
-anchor_bottom = 0.857143
+anchor_bottom = 0.964286
 offset_right = 88.0
 offset_bottom = 56.0
 grow_horizontal = 2
@@ -56,14 +57,5 @@ theme_override_font_sizes/normal_font_size = 13
 text = "I love you my niggas"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 40.0
-offset_right = 146.0
-offset_bottom = 71.0
-scale = Vector2(0.31, 0.31)
-text = "Take Order"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

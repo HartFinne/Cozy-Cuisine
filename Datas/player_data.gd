@@ -2,7 +2,7 @@ extends Resource
 class_name PlayerData
 
 @export var budget: float = 1000.0
-@export var days: float = 1.0
+@export var days: int = 1
 @export var expenses: float = 0.0
 @export var inventory: Dictionary = {}
 @export var profit: float = 0.0
