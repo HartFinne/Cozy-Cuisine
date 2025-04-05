@@ -22,6 +22,7 @@ func go_to_market():
 		market_scene.visible = true  # Make the market scene visible if it's already loaded
 		market_scene.set_process(true)  # Enable processing
 		market_scene.set_physics_process(true)  # Enable physics processing
+
 	
 	
 func go_to_cooking():

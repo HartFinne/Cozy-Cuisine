@@ -26,5 +26,8 @@ func _on_purchase_completed(total_cost: float) -> void:
 	print("Budget updated:", player_data.budget)
 
 func _on_more_button_pressed() -> void:
+	$".".visible = false
+	get_tree().paused = false
+	print(get_tree())
 	print("working")
 	pass # Replace with function body.

@@ -148,3 +148,12 @@ func _on_h_box_container_gui_input(event: InputEvent) -> void:
 		SceneManager.go_to_market()
 			
 			
+			
+
+
+
+func _on_pause_button_pressed() -> void:
+	get_tree().paused = true
+	%MenuPanel.show()
+	pass
+	

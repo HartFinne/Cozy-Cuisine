@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=35 format=4 uid="uid://bs4bk1jk28hsl"]
 
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="1_5hnv5"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="1_8nt3w"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_8nt3w"]
 [ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_ov0xs"]
+[ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="4_7irf3"]
 [ext_resource type="Script" uid="uid://swimyrubf05e" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
 [ext_resource type="PackedScene" uid="uid://7haemyq012gx" path="res://Market (shops, items)/Scenes/basket_container.tscn" id="5_mojl1"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="6_mojl1"]
@@ -20,6 +21,29 @@
 shader = ExtResource("1_5hnv5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mojl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ly688"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk8s7"]
+atlas = ExtResource("4_7irf3")
+region = Rect2(65, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mt4o"]
+texture = SubResource("AtlasTexture_bk8s7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enou5"]
+atlas = ExtResource("4_7irf3")
+region = Rect2(81, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bligb"]
+texture = SubResource("AtlasTexture_enou5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_are2g"]
+atlas = ExtResource("4_7irf3")
+region = Rect2(65, 129, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nwphe"]
+texture = SubResource("AtlasTexture_are2g")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2uio"]
 bg_color = Color(0.686275, 0.509804, 0.376471, 0.392157)
@@ -117,6 +141,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mojl1")
 metadata/_edit_use_anchors_ = true
+
+[node name="BackButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 24.0
+offset_right = 70.0
+offset_bottom = 64.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ly688")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7mt4o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bligb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nwphe")
+icon_alignment = 1
 
 [node name="Panel2" type="Panel" parent="Panel"]
 layout_mode = 1
@@ -305,4 +341,5 @@ mode = 1
 title = "fasdfadf"
 visible = true
 
+[connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Panel/TabContainer/Basket/HBoxContainer/BuyButton" to="Panel/TabContainer/Basket" method="_on_buy_button_pressed"]
