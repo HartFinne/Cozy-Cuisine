@@ -25,7 +25,6 @@ func save_customers(customers):
 			"progress": customer.progress,  
 			"path_index": customer.path_index,  
 			"rotation": customer.rotation_degrees,
-			"path_follow": customer.path_follow
 		})
 		
 		existing_path_indexes.append(customer.path_index)  # Add new index to tracking list

@@ -31,6 +31,8 @@ func _ready() -> void:
 		for data in saved_customers:
 			var customer_instance = load(data["scene"]).instantiate()
 			var path = paths[data["path_index"]]  # Find the path using path_index
+			print(paths, "paths to")
+			print(path, "path eto")
 			if path:
 				path.add_child(customer_instance)
 				path.progress = data["progress"]  # Set the progress instead of position
@@ -48,7 +50,6 @@ func _ready() -> void:
 					"progress": data["progress"],  # Store progress instead of global position
 					"scene": data["scene"],
 					"rotation_degrees": customer_instance.rotation_degrees,
-					"path_follow": path
 				}
 				
 
@@ -124,7 +125,6 @@ func move_customer_along_path(path_follow: PathFollow2D, customer, path_index, r
 			"progress": random_path.progress,  # Store progress instead of global position
 			"scene": customer_scene.resource_path,
 			"rotation_degrees": customer_instance.rotation_degrees,
-			"path_follow": random_path
 		}
 		# Append to GameData's customers_data
 	customers.append(customer_data)  # Append to the GameData array
