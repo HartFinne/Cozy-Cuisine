@@ -1,11 +1,139 @@
-[gd_scene load_steps=6 format=3 uid="uid://7haemyq012gx"]
+[gd_scene load_steps=33 format=3 uid="uid://7haemyq012gx"]
 
 [ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_dob7p"]
 [ext_resource type="Script" uid="uid://dooa84gxppsfk" path="res://Market (shops, items)/Scripts/basket_container.gd" id="1_prr7f"]
 [ext_resource type="Texture2D" uid="uid://boa7yblbt5fl1" path="res://Market (shops, items)/Assets/Logos/icons8-trash-25.png" id="2_prr7f"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_hthyj"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="3_m3go3"]
+[ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="6_7fa1t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3go3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.92549, 0.784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 0.731992, 0.426034, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hthyj"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.578928, 0.428048, 0.283059, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eplc"]
+content_margin_left = 5.0
+content_margin_top = 7.0
+content_margin_right = 5.0
+content_margin_bottom = 7.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.580392, 0.427451, 0.282353, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7eplc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3sac5"]
+load_path = "res://.godot/imported/UiCozyFree.png-8d6842a5c8c47f8e1369a4a87f633519.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fa1t"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(65, 49, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7eplc"]
+texture = SubResource("AtlasTexture_7fa1t")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trnif"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(81, 50, 14, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ecohk"]
+texture = SubResource("AtlasTexture_trnif")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqkr5"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(65, 113, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyf84"]
+texture = SubResource("AtlasTexture_fqkr5")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trnif"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd0pg"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(97, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dxfi"]
+texture = SubResource("AtlasTexture_yd0pg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56agh"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(113, 66, 14, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pesuj"]
+texture = SubResource("AtlasTexture_56agh")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgf0g"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(97, 129, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ka0ck"]
+texture = SubResource("AtlasTexture_dgf0g")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fa1t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7fa1t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecohk"]
+atlas = ExtResource("6_7fa1t")
+region = Rect2(65, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fqkr5"]
+texture = SubResource("AtlasTexture_ecohk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyf84"]
+atlas = ExtResource("6_7fa1t")
+region = Rect2(81, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yd0pg"]
+texture = SubResource("AtlasTexture_fyf84")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eplc"]
+atlas = ExtResource("6_7fa1t")
+region = Rect2(65, 129, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trnif"]
+content_margin_left = 30.0
+content_margin_right = 20.0
+texture = SubResource("AtlasTexture_7eplc")
 
 [node name="BasketContainer" type="PanelContainer"]
 anchors_preset = -1
@@ -16,74 +144,113 @@ grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_m3go3")
 script = ExtResource("1_prr7f")
-metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="IngredientRect" type="TextureRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 4
 texture = ExtResource("1_dob7p")
 expand_mode = 3
 
 [node name="IngredientLabel" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.196078, 0.172549, 0.168627, 1)
+theme_override_fonts/font = ExtResource("3_hthyj")
+theme_override_font_sizes/font_size = 32
 text = "Pizza"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CoinRect" type="TextureRect" parent="HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(88.615, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_hthyj")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 8
+
+[node name="CoinRect" type="TextureRect" parent="HBoxContainer/PanelContainer/HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("3_m3go3")
 stretch_mode = 3
 
-[node name="PriceLabel" type="Label" parent="HBoxContainer"]
+[node name="PriceLabel" type="Label" parent="HBoxContainer/PanelContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_fonts/font = ExtResource("3_hthyj")
+theme_override_font_sizes/font_size = 32
 text = "20"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_7eplc")
 
 [node name="QuantityLabel" type="Label" parent="HBoxContainer/HBoxContainer/PanelContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(88.615, 0)
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hthyj")
+theme_override_font_sizes/font_size = 32
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="AddButton" type="Button" parent="HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7eplc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7eplc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ecohk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fyf84")
 text = "  +  "
 
 [node name="MinusButton" type="Button" parent="HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_trnif")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7dxfi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pesuj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ka0ck")
 text = "  -  "
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7fa1t")
 
 [node name="RemoveTextureButton" type="TextureButton" parent="HBoxContainer/HBoxContainer/PanelContainer2"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("2_prr7f")
 stretch_mode = 3
 
+[node name="RemoveButton" type="Button" parent="HBoxContainer/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7fa1t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fqkr5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yd0pg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_trnif")
+
 [connection signal="pressed" from="HBoxContainer/HBoxContainer/VBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/HBoxContainer/VBoxContainer/MinusButton" to="." method="_on_minus_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/HBoxContainer/PanelContainer2/RemoveTextureButton" to="." method="_on_remove_texture_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/PanelContainer2/RemoveButton" to="." method="_on_remove_button_pressed"]

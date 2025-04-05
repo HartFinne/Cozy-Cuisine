@@ -46,7 +46,7 @@ func _on_minus_button_pressed() -> void:
 	update_display()
 
 # Remove from basket
-func _on_remove_texture_button_pressed() -> void:
+func _on_remove_button_pressed() -> void:
 	basket.remove_item(ingredient_name)
 	basket.save_basket()
 	queue_free()  # Remove from UI

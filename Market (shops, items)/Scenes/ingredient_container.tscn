@@ -1,19 +1,83 @@
-[gd_scene load_steps=6 format=3 uid="uid://8i4jm2lq5am"]
+[gd_scene load_steps=16 format=3 uid="uid://8i4jm2lq5am"]
 
 [ext_resource type="Script" uid="uid://bqjnh73w7kabw" path="res://Market (shops, items)/Scripts/ingredient_container.gd" id="1_aq5bi"]
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_sfash"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="2_208av"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="3_oeswt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ph1ar"]
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.92549, 0.784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 0.733333, 0.427451, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sac5"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.423529, 0.305882, 0.192157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_208av"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_208av"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3sac5"]
+load_path = "res://.godot/imported/UiCozyFree.png-8d6842a5c8c47f8e1369a4a87f633519.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0ryu"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(65, 49, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mrqqo"]
+texture = SubResource("AtlasTexture_j0ryu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph1ar"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(81, 50, 14, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0ryu"]
+texture = SubResource("AtlasTexture_ph1ar")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_208av"]
+atlas = SubResource("CompressedTexture2D_3sac5")
+region = Rect2(65, 113, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ph1ar"]
+texture = SubResource("AtlasTexture_208av")
 
 [node name="IngredientContainer" type="PanelContainer"]
 anchors_preset = -1
-anchor_right = 0.131944
-anchor_bottom = 0.300926
+anchor_right = 0.229168
+anchor_bottom = 0.540123
 offset_right = -112.001
 offset_bottom = -155.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ph1ar")
 script = ExtResource("1_aq5bi")
 metadata/_edit_use_anchors_ = true
 
@@ -30,6 +94,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_208av")
+theme_override_font_sizes/font_size = 16
 text = "Ingredient Name"
 horizontal_alignment = 1
 
@@ -75,6 +141,11 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+size_flags_stretch_ratio = 0.6
+theme_override_styles/focus = SubResource("StyleBoxEmpty_208av")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mrqqo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j0ryu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ph1ar")
 text = "+"
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer/PanelContainer/HBoxContainer2/AddToBasketButton" to="." method="_on_add_to_basket_button_pressed"]
