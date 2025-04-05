@@ -1,7 +1,8 @@
 [gd_scene load_steps=27 format=4 uid="uid://bs4bk1jk28hsl"]
-[ext_resource type="Script" uid="uid://b6gvx0w6l0xb1" path="res://Market (shops, items)/Scripts/market_scene.gd" id="1_nxshy"]
+
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="1_5hnv5"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="1_8nt3w"]
+[ext_resource type="Script" uid="uid://b6gvx0w6l0xb1" path="res://Market (shops, items)/Scripts/market_scene.gd" id="1_nxshy"]
 [ext_resource type="PackedScene" uid="uid://bdhmvto5108fr" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_rser8"]
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="2_nxshy"]
 [ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
@@ -88,8 +89,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hnv5"]
-
 [sub_resource type="TileSet" id="TileSet_nxshy"]
 
 [node name="MarketScene" type="Control"]
@@ -166,10 +165,11 @@ theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r7y4f")
 theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_8nt3w")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_2y00d")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Available" type="TabBar" parent="Panel/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("2_pc21n")
 ingredient_scene = ExtResource("3_ov0xs")
@@ -200,7 +200,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 script = ExtResource("4_mojl1")
 basket_scene = ExtResource("5_mojl1")
@@ -278,14 +277,7 @@ theme_override_font_sizes/font_size = 32
 text = "3000"
 vertical_alignment = 1
 
-[node name="BuyButton" type="Button" parent="Panel/TabContainer/Basket/HBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_5hnv5")
-text = "BUY"
-
-[node name="buybtn" type="TextureButton" parent="Panel/TabContainer/Basket/HBoxContainer"]
+[node name="BuyButton" type="TextureButton" parent="Panel/TabContainer/Basket/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("8_0hl7s")
 texture_pressed = ExtResource("9_8nt3w")

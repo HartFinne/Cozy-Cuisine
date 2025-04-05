@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-var cooking_scene = load("res://Cooking (mechanics and ui)/Scenes/cooking_scene.tscn")
 const TRIGGER_DISTANCE = 30.0  # Adjust this value as needed
 var player_data: PlayerData = PlayerData.load_data()
 
@@ -30,4 +29,8 @@ func _process(delta: float) -> void:
 			print("⚠️ Failed to save position. No player_data found.")
 
 		# ✅ Change scene
-		get_tree().change_scene_to_packed(cooking_scene)
+		SceneManager.gameplay_scene = get_tree().current_scene
+		SceneManager.touch_controls = get_parent().get_node("UI/TouchControls")
+		SceneManager.canvas_layer = get_parent().get_node("UI/CanvasLayer")
+		print(SceneManager.touch_controls)
+		SceneManager.go_to_cooking()

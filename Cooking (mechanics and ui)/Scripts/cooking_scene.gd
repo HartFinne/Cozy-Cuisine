@@ -28,9 +28,7 @@ func _ready() -> void:
 		
 
 func _on_back_button_pressed() -> void:
-	var game_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
-	get_tree().change_scene_to_packed(game_scene)
-	print("working")
+	SceneManager.return_to_game()
 
 
 func load_recipes():

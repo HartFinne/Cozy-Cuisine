@@ -101,5 +101,4 @@ func _on_setting_button_pressed() -> void:
 	print("Next Update: Setting Button")
 
 func _on_back_button_pressed() -> void:
-	print("Working")
-	get_tree().change_scene_to_packed(game_scene)
+	SceneManager.return_to_game()

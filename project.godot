@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MenuManagers="*res://Datas/Manager/MenuManager.gd"
 GameData="*res://Datas/Manager/game_data.gd"
+SceneManager="*res://Datas/Manager/SceneManager.gd"
 
 [display]
 
