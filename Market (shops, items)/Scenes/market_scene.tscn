@@ -1,15 +1,94 @@
-[gd_scene load_steps=10 format=3 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=27 format=4 uid="uid://bs4bk1jk28hsl"]
 
+[ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="1_5hnv5"]
+[ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="1_8nt3w"]
 [ext_resource type="PackedScene" uid="uid://bdhmvto5108fr" path="res://Market (shops, items)/Scenes/shops.tscn" id="1_rser8"]
+[ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="2_nxshy"]
 [ext_resource type="Script" uid="uid://hstmd3lrmg37" path="res://Market (shops, items)/Scripts/available.gd" id="2_pc21n"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_8nt3w"]
 [ext_resource type="PackedScene" uid="uid://8i4jm2lq5am" path="res://Market (shops, items)/Scenes/ingredient_container.tscn" id="3_ov0xs"]
 [ext_resource type="Script" uid="uid://swimyrubf05e" path="res://Market (shops, items)/Scripts/basket.gd" id="4_mojl1"]
 [ext_resource type="PackedScene" uid="uid://7haemyq012gx" path="res://Market (shops, items)/Scenes/basket_container.tscn" id="5_mojl1"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="6_mojl1"]
+[ext_resource type="Texture2D" uid="uid://cu8x8ha8wspud" path="res://Market (shops, items)/Assets/BUY/1.png" id="8_0hl7s"]
+[ext_resource type="Texture2D" uid="uid://b1x0h2xe77gow" path="res://Market (shops, items)/Assets/BUY/3.png" id="9_8nt3w"]
+[ext_resource type="Texture2D" uid="uid://m6lckfhsy84c" path="res://Market (shops, items)/Assets/BUY/2.png" id="10_5hnv5"]
+[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="10_34bus"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34bus"]
+shader = ExtResource("1_5hnv5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mojl1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2uio"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.392157)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmesk"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.894118, 0.772549, 0.619608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hl7s"]
+bg_color = Color(0.636774, 0.501165, 0.961595, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7y4f"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.894118, 0.772549, 0.619608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8nt3w"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.798272, 0.621777, 0.490244, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y00d"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.501961, 0.239216, 0.231373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxshy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34bus"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.784314)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.858824, 0.709804, 0.784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hnv5"]
 
 [sub_resource type="TileSet" id="TileSet_nxshy"]
 
@@ -21,6 +100,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Bgmarket" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_34bus")
+position = Vector2(627, 330)
+scale = Vector2(0.250735, 0.250735)
+texture = ExtResource("1_8nt3w")
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -31,20 +118,52 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_mojl1")
 metadata/_edit_use_anchors_ = true
 
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.0
+offset_top = -207.0
+offset_right = 547.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d2uio")
+
 [node name="Shops" parent="Panel" instance=ExtResource("1_rser8")]
 layout_mode = 1
-anchor_left = 0.0642361
-anchor_top = 0.256173
-anchor_right = 0.478299
-anchor_bottom = 0.762346
+anchor_left = 0.118924
+anchor_top = 0.277778
+anchor_right = 0.470486
+anchor_bottom = 0.783951
+offset_left = -63.0
+offset_top = -12.0
+offset_right = -63.0
+offset_bottom = -12.0
+grow_horizontal = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Panel"]
+position = Vector2(585.001, 144)
+tile_map_data = PackedByteArray("AAAAAAIAAAAeACgAAAAAAAMAAAAdACkAAAAAAAQAAAAdACoAAAAAAAUAAAAdACsAAAAAAAYAAAAdACwAAAAAAAcAAAAdACkAAAABAAIAAAAdACgAAAABAAMAAAAdACkAAAABAAQAAAAdACoAAAABAAUAAAAdACsAAAABAAYAAAAdACkAAAABAAcAAAAdACoAAAACAAIAAAAeACgAAAACAAMAAAAeACkAAAACAAQAAAAeACoAAAACAAUAAAAeACsAAAACAAYAAAAeACkAAAACAAcAAAAeACoAAAADAAIAAAAfACgAAAADAAMAAAAdACkAAAADAAQAAAAdACoAAAADAAUAAAAdACsAAAADAAYAAAAfACkAAAADAAcAAAAfACoAAAAEAAIAAAAgACgAAAAEAAMAAAAeACkAAAAEAAQAAAAeACoAAAAEAAUAAAAeACsAAAAEAAYAAAAgACkAAAAEAAcAAAAgACoAAAAFAAIAAAAeACgAAAAFAAMAAAAfACkAAAAFAAQAAAAfACoAAAAFAAUAAAAfACsAAAAFAAYAAAAdACkAAAAFAAcAAAAdACoAAAAGAAIAAAAfACgAAAAHAAIAAAAdACgAAAAIAAIAAAAeACgAAAAbAAIAAAAeACgAAAAcAAIAAAAfACgAAAAdAAIAAAAgACgAAAAeAAIAAAAgACgAAAAJAAIAAAAfACgAAAAKAAIAAAAgACgAAAALAAIAAAAdACgAAAAMAAIAAAAeACgAAAANAAIAAAAfACgAAAAOAAIAAAAgACgAAAAPAAIAAAAdACgAAAAQAAIAAAAeACgAAAARAAIAAAAfACgAAAASAAIAAAAgACgAAAATAAIAAAAdACgAAAAUAAIAAAAeACgAAAAVAAIAAAAfACgAAAAWAAIAAAAgACgAAAAXAAIAAAAdACgAAAAYAAIAAAAeACgAAAAZAAIAAAAfACgAAAAaAAIAAAAgACgAAAAAABAAAAAdACoAAAAAABEAAAAdACsAAAAAABIAAAAdACwAAAAAABMAAAAdACsAAAAAABQAAAAdACwAAAAbABUAAAAgAC0AAAAcABUAAAAeAC0AAAAdABUAAAAfAC0AAAAeABUAAAAgAC0AAAAAABUAAAAdAC0AAAABABMAAAAdACwAAAABABQAAAAdACwAAAABABUAAAAdAC0AAAACABMAAAAeACwAAAACABQAAAAeACwAAAACABUAAAAeAC0AAAADABMAAAAfACwAAAADABQAAAAfACwAAAADABUAAAAfAC0AAAAEABMAAAAdACwAAAAEABQAAAAdACwAAAAEABUAAAAdAC0AAAAAAAgAAAAdACoAAAAAAAkAAAAdACsAAAAAAAoAAAAdACwAAAAAAAsAAAAdACkAAAAAAAwAAAAdACoAAAAAAA0AAAAdACsAAAAAAA4AAAAdACwAAAAAAA8AAAAdACkAAAAeAAMAAAAgACkAAAAeAAQAAAAgACoAAAAeAAUAAAAgACsAAAAeAAYAAAAgACwAAAAeAAcAAAAgACkAAAAeAAgAAAAgACoAAAAeAAkAAAAgACsAAAAeAAoAAAAgACwAAAAeAAsAAAAgACkAAAAeAAwAAAAgACoAAAAeAA0AAAAgACsAAAAeAA4AAAAgACwAAAAeAA8AAAAgACkAAAAeABAAAAAgACoAAAAeABEAAAAgACsAAAAeABIAAAAgACwAAAAeABMAAAAgACsAAAAeABQAAAAgACwAAAAfAAIAAAAhACgAAAAfAAMAAAAhACkAAAAfAAQAAAAhACoAAAAfAAUAAAAhACsAAAAfAAYAAAAhACwAAAAfAAcAAAAhACkAAAAfAAgAAAAhACoAAAAfAAkAAAAhACsAAAAfAAoAAAAhACwAAAAfAAsAAAAhACkAAAAfAAwAAAAhACoAAAAfAA0AAAAhACsAAAAfAA4AAAAhACwAAAAfAA8AAAAhACkAAAAfABAAAAAhACoAAAAfABEAAAAhACsAAAAfABIAAAAhACwAAAAfABMAAAAhACsAAAAfABQAAAAhACwAAAAfABUAAAAhAC0AAAAFABQAAAAeACwAAAAFABUAAAAeAC0AAAAGABQAAAAfACwAAAAGABUAAAAfAC0AAAAHABQAAAAgACwAAAAHABUAAAAgAC0AAAAIABQAAAAdACwAAAAIABUAAAAdAC0AAAAJABQAAAAeACwAAAAJABUAAAAeAC0AAAAKABQAAAAfACwAAAAKABUAAAAfAC0AAAALABQAAAAgACwAAAALABUAAAAgAC0AAAAMABQAAAAdACwAAAAMABUAAAAdAC0AAAANABQAAAAeACwAAAANABUAAAAeAC0AAAAOABQAAAAfACwAAAAOABUAAAAfAC0AAAAPABQAAAAgACwAAAAPABUAAAAgAC0AAAAQABQAAAAdACwAAAAQABUAAAAdAC0AAAARABQAAAAeACwAAAARABUAAAAeAC0AAAASABQAAAAfACwAAAASABUAAAAfAC0AAAATABQAAAAgACwAAAATABUAAAAgAC0AAAAUABQAAAAdACwAAAAUABUAAAAdAC0AAAAVABQAAAAeACwAAAAVABUAAAAeAC0AAAAWABQAAAAdACwAAAAWABUAAAAfAC0AAAAXABQAAAAeACwAAAAXABUAAAAgAC0AAAAYABQAAAAfACwAAAAYABUAAAAdAC0AAAAZABQAAAAgACwAAAAZABUAAAAeAC0AAAAaABQAAAAdACwAAAAaABUAAAAfAC0AAAAbABQAAAAeACwAAAAGAAMAAAAgACkAAAAGAAQAAAAgACoAAAAGAAUAAAAgACsAAAAGAAYAAAAeACkAAAAHAAMAAAAdACkAAAAHAAQAAAAdACoAAAAHAAUAAAAdACsAAAAHAAYAAAAfACkAAAAIAAMAAAAeACkAAAAIAAQAAAAeACoAAAAIAAUAAAAeACsAAAAIAAYAAAAgACkAAAAJAAMAAAAfACkAAAAJAAQAAAAfACoAAAAJAAUAAAAfACsAAAAJAAYAAAAdACkAAAAKAAMAAAAgACkAAAAKAAQAAAAgACoAAAAKAAUAAAAgACsAAAAKAAYAAAAeACkAAAALAAMAAAAdACkAAAALAAQAAAAdACoAAAALAAUAAAAdACsAAAALAAYAAAAfACkAAAAMAAMAAAAeACkAAAAMAAQAAAAeACoAAAAMAAUAAAAeACsAAAAMAAYAAAAgACkAAAANAAMAAAAfACkAAAANAAQAAAAfACoAAAANAAUAAAAfACsAAAANAAYAAAAdACkAAAAOAAMAAAAgACkAAAAOAAQAAAAgACoAAAAOAAUAAAAgACsAAAAOAAYAAAAeACkAAAAPAAMAAAAdACkAAAAPAAQAAAAdACoAAAAPAAUAAAAdACsAAAAPAAYAAAAfACkAAAAQAAMAAAAeACkAAAAQAAQAAAAeACoAAAAQAAUAAAAeACsAAAAQAAYAAAAgACkAAAARAAMAAAAfACkAAAARAAQAAAAfACoAAAARAAUAAAAfACsAAAARAAYAAAAdACkAAAASAAMAAAAgACkAAAASAAQAAAAgACoAAAASAAUAAAAgACsAAAASAAYAAAAeACkAAAATAAMAAAAdACkAAAATAAQAAAAdACoAAAATAAUAAAAdACsAAAATAAYAAAAfACkAAAAUAAMAAAAeACkAAAAUAAQAAAAeACoAAAAUAAUAAAAeACsAAAAUAAYAAAAgACkAAAAVAAMAAAAfACkAAAAVAAQAAAAfACoAAAAVAAUAAAAfACsAAAAVAAYAAAAdACkAAAAWAAMAAAAgACkAAAAWAAQAAAAgACoAAAAWAAUAAAAgACsAAAAWAAYAAAAeACkAAAAXAAMAAAAdACkAAAAXAAQAAAAdACoAAAAXAAUAAAAdACsAAAAXAAYAAAAfACkAAAAYAAMAAAAeACkAAAAYAAQAAAAeACoAAAAYAAUAAAAeACsAAAAYAAYAAAAgACkAAAAZAAMAAAAfACkAAAAZAAQAAAAfACoAAAAZAAUAAAAfACsAAAAZAAYAAAAdACkAAAAaAAMAAAAgACkAAAAaAAQAAAAgACoAAAAaAAUAAAAdACkAAAAaAAYAAAAdACoAAAAbAAMAAAAdACkAAAAbAAQAAAAdACoAAAAbAAUAAAAeACkAAAAbAAYAAAAeACoAAAAcAAMAAAAeACkAAAAcAAQAAAAeACoAAAAcAAUAAAAfACkAAAAcAAYAAAAfACoAAAAdAAMAAAAfACkAAAAdAAQAAAAfACoAAAAdAAUAAAAgACkAAAAdAAYAAAAgACoAAAABAAgAAAAdACsAAAABAAkAAAAdACkAAAACAAgAAAAeACsAAAACAAkAAAAeACkAAAADAAgAAAAfACsAAAADAAkAAAAfACkAAAAEAAgAAAAgACsAAAAEAAkAAAAgACkAAAAFAAgAAAAdACsAAAAFAAkAAAAdACwAAAAGAAcAAAAeACoAAAAGAAgAAAAeACsAAAAGAAkAAAAeACwAAAAHAAcAAAAfACoAAAAHAAgAAAAfACsAAAAHAAkAAAAfACwAAAAIAAcAAAAgACoAAAAIAAgAAAAgACsAAAAIAAkAAAAgACwAAAAJAAcAAAAdACoAAAAJAAgAAAAdACsAAAAJAAkAAAAdACwAAAAKAAcAAAAeACoAAAAKAAgAAAAeACsAAAAKAAkAAAAeACwAAAALAAcAAAAfACoAAAALAAgAAAAfACsAAAALAAkAAAAfACwAAAAMAAcAAAAgACoAAAAMAAgAAAAgACsAAAAMAAkAAAAgACwAAAANAAcAAAAdACoAAAANAAgAAAAdACsAAAANAAkAAAAdACkAAAAOAAcAAAAeACoAAAAOAAgAAAAeACsAAAAOAAkAAAAeACkAAAAPAAcAAAAfACoAAAAPAAgAAAAfACsAAAAPAAkAAAAfACkAAAAQAAcAAAAgACoAAAAQAAgAAAAgACsAAAAQAAkAAAAgACkAAAARAAcAAAAdACoAAAARAAgAAAAdACsAAAARAAkAAAAdACwAAAASAAcAAAAeACoAAAASAAgAAAAeACsAAAASAAkAAAAeACwAAAATAAcAAAAfACoAAAATAAgAAAAfACsAAAATAAkAAAAfACwAAAAUAAcAAAAgACoAAAAUAAgAAAAgACsAAAAUAAkAAAAgACwAAAAVAAcAAAAdACoAAAAVAAgAAAAdACsAAAAVAAkAAAAdACwAAAAWAAcAAAAeACoAAAAWAAgAAAAeACsAAAAWAAkAAAAeACwAAAAXAAcAAAAfACoAAAAXAAgAAAAfACsAAAAXAAkAAAAfACwAAAAYAAcAAAAgACoAAAAYAAgAAAAgACsAAAAYAAkAAAAgACwAAAAZAAcAAAAdACoAAAAZAAgAAAAdACsAAAAZAAkAAAAdACwAAAAaAAcAAAAdACsAAAAaAAgAAAAdACwAAAAaAAkAAAAdACkAAAAbAAcAAAAeACsAAAAbAAgAAAAeACwAAAAbAAkAAAAeACkAAAAcAAcAAAAfACsAAAAcAAgAAAAfACwAAAAcAAkAAAAfACkAAAABAAoAAAAdACoAAAABAAsAAAAdACsAAAABAAwAAAAdACwAAAACAAoAAAAeACoAAAACAAsAAAAeACsAAAACAAwAAAAeACwAAAADAAoAAAAfACoAAAADAAsAAAAfACsAAAADAAwAAAAfACwAAAAEAAoAAAAgACoAAAAEAAsAAAAgACsAAAAEAAwAAAAgACwAAAABAA0AAAAdACkAAAABAA4AAAAdACoAAAABAA8AAAAdACsAAAABABAAAAAdACkAAAACAA0AAAAeACkAAAACAA4AAAAeACoAAAACAA8AAAAeACsAAAACABAAAAAeACkAAAADAA0AAAAfACkAAAADAA4AAAAfACoAAAADAA8AAAAfACsAAAADABAAAAAfACkAAAAEAA0AAAAgACkAAAAEAA4AAAAdACkAAAAEAA8AAAAdACoAAAAEABAAAAAdACkAAAABABEAAAAdACoAAAABABIAAAAdACsAAAACABEAAAAeACoAAAACABIAAAAeACsAAAADABEAAAAfACoAAAADABIAAAAfACsAAAAEABEAAAAdACoAAAAEABIAAAAdACsAAAAFAAoAAAAdACkAAAAFAAsAAAAdACoAAAAFAAwAAAAdACsAAAAFAA0AAAAdACwAAAAGAAoAAAAeACkAAAAGAAsAAAAeACoAAAAGAAwAAAAeACsAAAAGAA0AAAAeACwAAAAHAAoAAAAfACkAAAAHAAsAAAAfACoAAAAHAAwAAAAfACsAAAAHAA0AAAAfACwAAAAIAAoAAAAdACkAAAAIAAsAAAAdACoAAAAIAAwAAAAdACkAAAAIAA0AAAAdACoAAAAFAA4AAAAeACkAAAAFAA8AAAAeACoAAAAFABAAAAAeACkAAAAFABEAAAAeACoAAAAGAA4AAAAfACkAAAAGAA8AAAAfACoAAAAGABAAAAAfACkAAAAGABEAAAAfACoAAAAHAA4AAAAgACkAAAAHAA8AAAAgACoAAAAHABAAAAAgACkAAAAHABEAAAAgACoAAAAIAA4AAAAdACsAAAAIAA8AAAAdACwAAAAIABAAAAAdACkAAAAIABEAAAAdACoAAAAJAA4AAAAeACsAAAAJAA8AAAAeACwAAAAJABAAAAAeACkAAAAJABEAAAAeACoAAAAKAA4AAAAfACsAAAAKAA8AAAAfACwAAAAKABAAAAAfACkAAAAKABEAAAAfACoAAAALAA4AAAAgACsAAAALAA8AAAAgACwAAAALABAAAAAgACkAAAALABEAAAAgACoAAAAMAA4AAAAdACsAAAAMAA8AAAAdACwAAAAMABAAAAAdACkAAAAMABEAAAAdACoAAAANAA4AAAAeACsAAAANAA8AAAAeACwAAAANABAAAAAeACkAAAANABEAAAAeACoAAAAOAA4AAAAfACsAAAAOAA8AAAAfACwAAAAOABAAAAAfACkAAAAOABEAAAAfACoAAAAPAA4AAAAgACsAAAAPAA8AAAAgACwAAAAPABAAAAAgACkAAAAPABEAAAAgACoAAAAQAA4AAAAdACsAAAAQAA8AAAAdACwAAAAQABAAAAAdACkAAAAQABEAAAAdACoAAAARAA4AAAAeACsAAAARAA8AAAAeACwAAAARABAAAAAeACkAAAARABEAAAAeACoAAAASAA4AAAAfACsAAAASAA8AAAAfACwAAAASABAAAAAfACkAAAASABEAAAAfACoAAAATAA4AAAAgACsAAAATAA8AAAAgACwAAAATABAAAAAgACkAAAATABEAAAAgACoAAAAQAAoAAAAgACoAAAAQAAsAAAAgACkAAAAQAAwAAAAdACkAAAAQAA0AAAAdACoAAAARAAoAAAAeACkAAAARAAsAAAAeACoAAAARAAwAAAAeACkAAAARAA0AAAAeACoAAAASAAoAAAAfACkAAAASAAsAAAAfACoAAAASAAwAAAAfACkAAAASAA0AAAAfACoAAAATAAoAAAAgACkAAAATAAsAAAAgACoAAAATAAwAAAAgACkAAAATAA0AAAAgACoAAAAUAAoAAAAdACkAAAAUAAsAAAAdACoAAAAUAAwAAAAdACkAAAAUAA0AAAAdACoAAAAVAAoAAAAeACkAAAAVAAsAAAAeACoAAAAVAAwAAAAeACkAAAAVAA0AAAAeACoAAAAWAAoAAAAfACkAAAAWAAsAAAAfACoAAAAWAAwAAAAfACkAAAAWAA0AAAAdACkAAAAXAAoAAAAgACkAAAAXAAsAAAAgACoAAAAXAAwAAAAgACkAAAAXAA0AAAAeACkAAAAYAAoAAAAdACkAAAAYAAsAAAAdACoAAAAYAAwAAAAdACsAAAAYAA0AAAAfACkAAAAZAAoAAAAeACkAAAAZAAsAAAAeACoAAAAZAAwAAAAeACsAAAAZAA0AAAAgACkAAAAaAAoAAAAdACoAAAAaAAsAAAAdACsAAAAaAAwAAAAdACwAAAAaAA0AAAAdACkAAAAbAAoAAAAeACoAAAAbAAsAAAAeACsAAAAbAAwAAAAeACwAAAAbAA0AAAAeACkAAAAYAA4AAAAfACoAAAAYAA8AAAAfACsAAAAYABAAAAAfACwAAAAYABEAAAAfACkAAAAZAA4AAAAgACoAAAAZAA8AAAAgACsAAAAZABAAAAAgACwAAAAZABEAAAAgACkAAAAaAA4AAAAdACoAAAAaAA8AAAAdACsAAAAaABAAAAAdACwAAAAaABEAAAAdACkAAAAbAA4AAAAeACoAAAAbAA8AAAAeACsAAAAbABAAAAAeACwAAAAbABEAAAAeACkAAAAJAAoAAAAeACkAAAAJAAsAAAAeACoAAAAJAAwAAAAeACkAAAAJAA0AAAAeACoAAAAKAAoAAAAfACkAAAAKAAsAAAAfACoAAAAKAAwAAAAfACkAAAAKAA0AAAAfACoAAAALAAoAAAAdACkAAAALAAsAAAAdACoAAAALAAwAAAAgACkAAAALAA0AAAAgACoAAAANAAoAAAAfACkAAAANAAsAAAAdACkAAAANAAwAAAAeACkAAAAOAAoAAAAgACkAAAAOAAsAAAAeACkAAAAOAAwAAAAfACkAAAAPAAoAAAAfACoAAAAPAAsAAAAfACkAAAAPAAwAAAAgACkAAAAMAAsAAAAeACoAAAAMAAwAAAAdACkAAAAMAA0AAAAdACoAAAANAA0AAAAeACoAAAAOAA0AAAAfACoAAAAMAAoAAAAeACkAAAAPAA0AAAAgACoAAAAFABIAAAAeACsAAAAFABMAAAAeACwAAAAGABIAAAAfACsAAAAGABMAAAAfACwAAAAHABIAAAAgACsAAAAHABMAAAAgACwAAAAIABIAAAAdACsAAAAIABMAAAAdACwAAAAJABIAAAAeACsAAAAJABMAAAAeACwAAAAKABIAAAAfACsAAAAKABMAAAAfACwAAAALABIAAAAgACsAAAALABMAAAAgACwAAAAUAA4AAAAdACsAAAAUAA8AAAAdACwAAAAVAA4AAAAeACsAAAAVAA8AAAAeACwAAAAWAA4AAAAdACoAAAAWAA8AAAAdACsAAAAXAA4AAAAeACoAAAAXAA8AAAAeACsAAAAUABAAAAAdACkAAAAUABEAAAAdACoAAAAUABIAAAAdACsAAAAUABMAAAAdACwAAAAVABAAAAAeACkAAAAVABEAAAAeACoAAAAVABIAAAAeACsAAAAVABMAAAAeACwAAAAWABAAAAAdACwAAAAWABEAAAAdACkAAAAWABIAAAAdACoAAAAWABMAAAAdACsAAAAXABAAAAAeACwAAAAXABEAAAAeACkAAAAXABIAAAAeACoAAAAXABMAAAAeACsAAAAQABIAAAAdACsAAAAQABMAAAAdACwAAAARABIAAAAeACsAAAARABMAAAAeACwAAAASABIAAAAfACsAAAASABMAAAAfACwAAAATABIAAAAgACsAAAATABMAAAAgACwAAAAMABIAAAAdACsAAAAMABMAAAAdACwAAAANABIAAAAeACsAAAANABMAAAAeACwAAAAOABIAAAAfACsAAAAOABMAAAAfACwAAAAPABIAAAAgACsAAAAPABMAAAAgACwAAAAYABIAAAAfACoAAAAYABMAAAAfACsAAAAZABIAAAAgACoAAAAZABMAAAAgACsAAAAaABIAAAAdACoAAAAaABMAAAAdACsAAAAbABIAAAAeACoAAAAbABMAAAAeACsAAAAcABAAAAAfACwAAAAcABEAAAAfACkAAAAcABIAAAAfACoAAAAcABMAAAAfACsAAAAdABAAAAAgACwAAAAdABEAAAAgACkAAAAdABIAAAAgACoAAAAdABMAAAAgACsAAAAdAAcAAAAgACsAAAAdAAgAAAAgACwAAAAcAAoAAAAfACoAAAAcAAsAAAAfACsAAAAcAAwAAAAfACwAAAAdAAkAAAAgACkAAAAdAAoAAAAgACoAAAAdAAsAAAAgACsAAAAdAAwAAAAgACwAAAAcAA0AAAAfACkAAAAcAA4AAAAfACoAAAAcAA8AAAAfACsAAAAdAA0AAAAgACkAAAAdAA4AAAAgACoAAAAdAA8AAAAgACsAAAAcABQAAAAfACwAAAAdABQAAAAgACwAAAD//wIAAAAcACgAAAD//xMAAAAcACsAAAD//xQAAAAcACwAAAD//xUAAAAcAC0AAAD//wMAAAAcACkAAAD//wQAAAAcACoAAAD//wUAAAAcACsAAAD//wYAAAAcACwAAAD//wcAAAAcACkAAAD//wgAAAAcACoAAAD//wkAAAAcACsAAAD//woAAAAcACwAAAD//wsAAAAcACkAAAD//wwAAAAcACoAAAD//w0AAAAcACsAAAD//w4AAAAcACwAAAD//w8AAAAcACkAAAD//xAAAAAcACoAAAD//xEAAAAcACsAAAD//xIAAAAcACwAAAA=")
+tile_set = ExtResource("2_nxshy")
 
 [node name="TabContainer" type="TabContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.507813
-anchor_top = 0.222222
-anchor_right = 0.946181
-anchor_bottom = 0.75
+anchor_left = 0.487847
+anchor_top = 0.228395
+anchor_right = 0.957465
+anchor_bottom = 0.734568
+theme_override_fonts/font = ExtResource("3_8nt3w")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_wmesk")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0hl7s")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r7y4f")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_8nt3w")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_2y00d")
 tab_alignment = 1
 current_tab = 0
 metadata/_edit_use_anchors_ = true
@@ -102,8 +221,8 @@ metadata/_edit_use_anchors_ = true
 [node name="GridContainer2" type="GridContainer" parent="Panel/TabContainer/Basket/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme_override_constants/v_separation = 10
 metadata/_edit_use_anchors_ = true
 
@@ -114,39 +233,69 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nxshy")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Basket"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0455446
-anchor_top = 0.787781
-anchor_right = 0.954456
-anchor_bottom = 0.961414
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -72.0
+offset_right = 185.0
 grow_horizontal = 2
 grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="TotalLabel" type="Label" parent="Panel/TabContainer/Basket/HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Panel/TabContainer/Basket/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_34bus")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/TabContainer/Basket/HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TotalLabel" type="Label" parent="Panel/TabContainer/Basket/HBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8nt3w")
+theme_override_font_sizes/font_size = 32
 text = "TOTAL COINS"
 
-[node name="TotalPriceLabel" type="Label" parent="Panel/TabContainer/Basket/HBoxContainer"]
+[node name="CoinRect" type="TextureRect" parent="Panel/TabContainer/Basket/HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_34bus")
+stretch_mode = 3
+
+[node name="TotalPriceLabel" type="Label" parent="Panel/TabContainer/Basket/HBoxContainer/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(114.095, 41.605)
+custom_minimum_size = Vector2(30, 41.605)
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_8nt3w")
+theme_override_font_sizes/font_size = 32
 text = "3000"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BuyButton" type="Button" parent="Panel/TabContainer/Basket/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hnv5")
 text = "BUY"
+
+[node name="buybtn" type="TextureButton" parent="Panel/TabContainer/Basket/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_0hl7s")
+texture_pressed = ExtResource("9_8nt3w")
+texture_hover = ExtResource("10_5hnv5")
 
 [node name="MoneyContainer" parent="Panel" instance=ExtResource("6_mojl1")]
 layout_mode = 1
-anchor_left = 0.622396
-anchor_top = 0.0709877
-anchor_right = 0.828993
-anchor_bottom = 0.157407
+anchor_left = 0.625
+anchor_top = 0.0493827
+anchor_right = 0.875
+anchor_bottom = 0.121914
 offset_right = 0.0
 
 [node name="ErrorPopup" type="AcceptDialog" parent="Panel"]

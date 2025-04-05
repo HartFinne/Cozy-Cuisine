@@ -1,10 +1,101 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdhmvto5108fr"]
+[gd_scene load_steps=31 format=4 uid="uid://bdhmvto5108fr"]
 
 [ext_resource type="Texture2D" uid="uid://bbc0qogvitob4" path="res://Market (shops, items)/Assets/Logos/Icon-color.png" id="1_8ydwp"]
 [ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market (shops, items)/Scripts/shops.gd" id="1_dli60"]
-[ext_resource type="Texture2D" uid="uid://m00u05fllv6" path="res://Market (shops, items)/Assets/Logos/left-arrow.png" id="2_fsdkg"]
-[ext_resource type="Texture2D" uid="uid://bnkmgxmqtlbyx" path="res://Market (shops, items)/Assets/Logos/right-arrow.png" id="2_xd5ag"]
 [ext_resource type="Texture2D" uid="uid://bmpxdjtvjm0e0" path="res://Market (shops, items)/Assets/Logos/long-left-arrow.png" id="3_wvf3p"]
+[ext_resource type="Texture2D" uid="uid://booebbwjpl4lb" path="res://Market (shops, items)/Assets/rotated.png" id="4_f8skc"]
+[ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="4_vc4qh"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="5_f8skc"]
+[ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="5_wvf3p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gpfha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk8s7"]
+atlas = ExtResource("4_vc4qh")
+region = Rect2(65, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbmef"]
+texture = SubResource("AtlasTexture_bk8s7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enou5"]
+atlas = ExtResource("4_vc4qh")
+region = Rect2(81, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0giux"]
+texture = SubResource("AtlasTexture_enou5")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_are2g"]
+atlas = ExtResource("4_vc4qh")
+region = Rect2(65, 129, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bm6fq"]
+texture = SubResource("AtlasTexture_are2g")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vc4qh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rin8u"]
+atlas = ExtResource("4_f8skc")
+region = Rect2(177, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bk8s7"]
+texture = SubResource("AtlasTexture_rin8u")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbmef"]
+atlas = ExtResource("4_f8skc")
+region = Rect2(161, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_enou5"]
+texture = SubResource("AtlasTexture_fbmef")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc4qh"]
+atlas = ExtResource("4_f8skc")
+region = Rect2(177, 97, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gpfha"]
+texture = SubResource("AtlasTexture_vc4qh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vc4qh"]
+content_margin_top = 7.0
+content_margin_bottom = 7.0
+bg_color = Color(0.552941, 0.286275, 0.227451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8skc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8skc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8skc"]
+atlas = ExtResource("4_vc4qh")
+region = Rect2(65, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc4qh"]
+texture = SubResource("AtlasTexture_f8skc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpfha"]
+atlas = ExtResource("4_vc4qh")
+region = Rect2(81, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jss3"]
+texture = SubResource("AtlasTexture_gpfha")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jss3"]
+atlas = ExtResource("4_vc4qh")
+region = Rect2(65, 97, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rin8u"]
+texture = SubResource("AtlasTexture_8jss3")
 
 [node name="PanelContainer" type="Control"]
 layout_mode = 3
@@ -14,6 +105,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dli60")
 metadata/_edit_use_anchors_ = true
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = -42.0
+offset_top = -144.0
+offset_right = -2.0
+offset_bottom = -104.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gpfha")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fbmef")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0giux")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bm6fq")
+icon_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -34,21 +137,20 @@ layout_mode = 2
 size_flags_horizontal = 10
 
 [node name="SettingButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 10
 icon = ExtResource("1_8ydwp")
 
-[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-icon = ExtResource("3_wvf3p")
-icon_alignment = 1
-
 [node name="LeftButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(44.87, 40)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_vertical = 6
-icon = ExtResource("2_fsdkg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vc4qh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bk8s7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_enou5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gpfha")
 icon_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
@@ -57,7 +159,9 @@ layout_mode = 2
 [node name="ShopNameLabel" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+theme_override_fonts/font = ExtResource("5_f8skc")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_vc4qh")
 text = "Eacakes"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -66,12 +170,18 @@ vertical_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(173.125, 142.55)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f8skc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="VBoxContainer/HBoxContainer/VBoxContainer3/PanelContainer"]
+tile_map_data = PackedByteArray("AAAAAAAAAAAcACgAAAAAAAEAAAAcACkAAAAAAAIAAAAcACoAAAAAAAMAAAAcACsAAAABAAAAAAAdACgAAAABAAEAAAAdACkAAAABAAIAAAAdACoAAAABAAMAAAAdACkAAAACAAAAAAAeACgAAAACAAEAAAAeACkAAAACAAIAAAAeACoAAAACAAMAAAAeACkAAAAHAAAAAAAeACgAAAAHAAEAAAAeACkAAAAHAAIAAAAeACoAAAAHAAMAAAAeACsAAAAHAAQAAAAeACkAAAAIAAAAAAAfACgAAAAIAAEAAAAfACkAAAAIAAIAAAAfACoAAAAIAAMAAAAfACsAAAAIAAQAAAAfACkAAAAJAAAAAAAgACgAAAAJAAEAAAAgACkAAAAJAAIAAAAgACoAAAAJAAMAAAAgACsAAAAJAAQAAAAgACkAAAAKAAAAAAAhACgAAAAKAAEAAAAhACkAAAAKAAIAAAAhACoAAAAKAAMAAAAhACsAAAAKAAQAAAAhACwAAAAAAAYAAAAcACwAAAAAAAcAAAAcACwAAAAAAAgAAAAcAC0AAAABAAYAAAAdACwAAAABAAcAAAAdACwAAAABAAgAAAAdAC0AAAACAAYAAAAeACwAAAACAAcAAAAeACwAAAACAAgAAAAeAC0AAAAIAAYAAAAfACsAAAAIAAcAAAAfACwAAAAIAAgAAAAfAC0AAAAJAAYAAAAgACsAAAAJAAcAAAAgACwAAAAJAAgAAAAgAC0AAAAKAAYAAAAhACsAAAAKAAcAAAAhACwAAAAKAAgAAAAhAC0AAAADAAAAAAAdACgAAAADAAEAAAAdACkAAAADAAIAAAAdACoAAAADAAMAAAAfACkAAAADAAQAAAAdACkAAAAEAAAAAAAeACgAAAAEAAEAAAAeACkAAAAEAAIAAAAeACoAAAAEAAMAAAAgACkAAAAEAAQAAAAeACkAAAAFAAAAAAAfACgAAAAFAAEAAAAfACkAAAAFAAIAAAAfACoAAAAFAAMAAAAfACsAAAAFAAQAAAAfACkAAAAGAAAAAAAgACgAAAAGAAEAAAAgACkAAAAGAAIAAAAgACoAAAAGAAMAAAAgACsAAAAGAAQAAAAdACkAAAAAAAQAAAAcACoAAAAAAAUAAAAcACsAAAABAAQAAAAdACoAAAABAAUAAAAdACsAAAACAAQAAAAeACoAAAACAAUAAAAeACsAAAADAAUAAAAdACoAAAADAAYAAAAdACsAAAAEAAUAAAAeACoAAAAEAAYAAAAeACsAAAAEAAcAAAAeACwAAAAFAAUAAAAfACoAAAAFAAYAAAAfACsAAAAFAAcAAAAfACwAAAAGAAUAAAAdACoAAAAGAAYAAAAdACsAAAAGAAcAAAAdACwAAAAHAAUAAAAeACoAAAAHAAYAAAAeACsAAAAHAAcAAAAeACwAAAADAAcAAAAdACwAAAAIAAUAAAAfACoAAAAJAAUAAAAgACoAAAAKAAUAAAAhACoAAAADAAgAAAAdAC0AAAAEAAgAAAAdAC0AAAAFAAgAAAAeAC0AAAAGAAgAAAAfAC0AAAAHAAgAAAAgAC0AAAA=")
+tile_set = ExtResource("5_wvf3p")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="NoClipButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+visible = false
 clip_children = 1
 layout_mode = 2
 size_flags_horizontal = 3
@@ -79,6 +189,7 @@ size_flags_vertical = 10
 icon = ExtResource("1_8ydwp")
 
 [node name="NoClipButton2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+visible = false
 show_behind_parent = true
 clip_children = 1
 layout_mode = 2
@@ -87,14 +198,17 @@ size_flags_vertical = 4
 icon = ExtResource("3_wvf3p")
 
 [node name="RightButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(44.87, 40)
+custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-icon = ExtResource("2_xd5ag")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f8skc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vc4qh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8jss3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_rin8u")
 icon_alignment = 1
 
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/RightButton" to="." method="_on_right_button_pressed"]
