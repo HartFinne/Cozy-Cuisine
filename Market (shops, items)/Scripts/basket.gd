@@ -50,6 +50,9 @@ func _on_buy_button_pressed() -> void:
 	print("Buy button Working")
 	
 	var total_cost = basket.get_total_price()
+	
+	#player_data.expenses = total_cost
+	player_data.save()
 	print(total_cost)
 	
 	print(player_data.budget)

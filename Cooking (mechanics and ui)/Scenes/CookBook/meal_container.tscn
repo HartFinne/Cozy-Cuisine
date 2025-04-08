@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvrsq05cl5y3i"]
+
+[ext_resource type="Script" uid="uid://cmvv3sd1g5x1u" path="res://Cooking (mechanics and ui)/Scripts/CookBook/meal_container.gd" id="1_wgo7k"]
+[ext_resource type="Texture2D" uid="uid://bcmgfab66d5xq" path="res://Datas/Assets/Dishes/berjerk_stick-Sheet.png" id="2_4igd0"]
+
+[node name="MealContainer" type="PanelContainer"]
+size_flags_vertical = 3
+script = ExtResource("1_wgo7k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("2_4igd0")

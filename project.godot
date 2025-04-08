@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MenuManagers="*res://Datas/Manager/MenuManager.gd"
 GameData="*res://Datas/Manager/game_data.gd"
 SceneManager="*res://Datas/Manager/SceneManager.gd"
+MenuManager="*res://Datas/Manager/menu_manager.gd"
 
 [display]
 

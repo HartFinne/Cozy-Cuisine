@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://u7h1rfmnxkre"]
+
+[ext_resource type="Script" uid="uid://bonrejv4k7kbv" path="res://Cooking (mechanics and ui)/Scripts/cook_book.gd" id="1_ulscd"]
+[ext_resource type="Script" uid="uid://vrbrc881cfhh" path="res://Cooking (mechanics and ui)/Scripts/food.gd" id="1_vokew"]
+[ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="2_vokew"]
+
+[node name="CookBook" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ulscd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+current_tab = 0
+
+[node name="Food" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+layout_mode = 2
+script = ExtResource("1_vokew")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food"]
+layout_mode = 2
+
+[node name="Meal" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Meals"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 5
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+layout_mode = 2
+text = "Ingredients"
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer/GridContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer/GridContainer2/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_vokew")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer/GridContainer2/PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thingf" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MealImage" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_vokew")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 65
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MealName" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "Dish name"
+horizontal_alignment = 1
+vertical_alignment = 1

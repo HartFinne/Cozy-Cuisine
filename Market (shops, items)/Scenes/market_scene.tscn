@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=41 format=4 uid="uid://bs4bk1jk28hsl"]
 
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="1_5hnv5"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="1_8nt3w"]
@@ -96,6 +96,31 @@ border_width_top = 3
 border_width_right = 2
 border_width_bottom = 3
 border_color = Color(0.686275, 0.509804, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7irf3"]
+bg_color = Color(0.928399, 0.431801, 0.245925, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 6.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ly688"]
+color = Color(0.941176, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bligb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly688"]
+expand_margin_left = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwphe"]
+
+[sub_resource type="Theme" id="Theme_bligb"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_7irf3")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxLine_ly688")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_bligb")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_ly688")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_nwphe")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxshy"]
 
@@ -201,11 +226,10 @@ theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r7y4f")
 theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_8nt3w")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_2y00d")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Available" type="TabBar" parent="Panel/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("2_pc21n")
 ingredient_scene = ExtResource("3_ov0xs")
@@ -221,6 +245,7 @@ anchor_right = 0.914852
 anchor_bottom = 0.945337
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_bligb")
 vertical_scroll_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -236,6 +261,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 script = ExtResource("4_mojl1")
 basket_scene = ExtResource("5_mojl1")

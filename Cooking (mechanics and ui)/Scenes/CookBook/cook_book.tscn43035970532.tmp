@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=3 uid="uid://u7h1rfmnxkre"]
+
+[ext_resource type="Script" uid="uid://bonrejv4k7kbv" path="res://Cooking (mechanics and ui)/Scripts/CookBook/cook_book.gd" id="1_ulscd"]
+[ext_resource type="Script" uid="uid://vrbrc881cfhh" path="res://Cooking (mechanics and ui)/Scripts/CookBook/food.gd" id="1_vokew"]
+[ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="2_vokew"]
+[ext_resource type="PackedScene" uid="uid://dh6fmrglcedt" path="res://Cooking (mechanics and ui)/Scenes/CookBook/ingredient_container.tscn" id="3_kmy4b"]
+
+[node name="CookBook" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ulscd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+current_tab = 0
+
+[node name="Food" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+layout_mode = 2
+script = ExtResource("1_vokew")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food"]
+layout_mode = 2
+
+[node name="Meal" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Meals"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+
+[node name="Ingredients" type="Label" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+layout_mode = 2
+text = "Ingredients"
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 5
+
+[node name="IngredientContainer" parent="VBoxContainer/HBoxContainer/TabContainer/Food/VBoxContainer/GridContainer2" instance=ExtResource("3_kmy4b")]
+layout_mode = 2
+
+[node name="Thingf" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 31
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MealImage" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_vokew")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 47
+
+[node name="MealName" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "Dish name"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Description:"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="DescriptionOutput" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "aksdfjasdlk"
+autowrap_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Price2" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Price:"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="PriceOutput" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer/VBoxContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+
+[node name="Ingredient" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ingredients:"
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+auto_height = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 100

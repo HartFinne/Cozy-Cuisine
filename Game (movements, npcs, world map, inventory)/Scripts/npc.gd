@@ -13,6 +13,8 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
+var random_names = ["John", "Anna", "Marco", "Ella", "Tina", "Leo", "Sophia", "Ben"]
+
 
 func _ready():
 	# ✅ Ensure UI is fully loaded before accessing XButton
@@ -43,21 +45,23 @@ func show_customer_order():
 	# Hide the take button after taking the order
 	hide_taken_button_if_order_taken()
 	if customer and customer.order:
-		var name_text = customer.name + "'s Order:\n"
+		var display_name = random_names.pick_random()
+		var name_text = display_name + "'s Order:\n"
 		var order_text: String
 
 		for item_name in customer.order.keys():
-			var menu_item = MenuManagers.menu_items.get(item_name)  # ✅ Fetch from global menu
-
-			if menu_item:
-				order_text += str(customer.order[item_name]) + " " + menu_item.label
-			else:
-				order_text += item_name
-
+			var found_recipe = null
+			for recipe in MenuManager.recipes:
+				if recipe.name == item_name:
+					found_recipe = recipe
+				
+			if found_recipe:
+				order_text += str(customer.order[item_name]) + " x " + found_recipe.label + "\n"
+				
 		print("Debug - Order Text:", order_text)
 		dialogue.set_dialog_text(name_text, order_text)
 	else:
-		print("⚠️ Order data is missing or empty!")
+		print("Order data is missing or empty")
 
 
 func _on_take_button_pressed():
@@ -107,6 +111,7 @@ func serve_dish_to_customer():
 		return  
 
 	var total_price = 0.0  # Initialize total price
+	var total_expense := 0.0
 
 	# Loop through the customer's order and check if player has enough of each dish
 	for dish_name in customer.order.keys():
@@ -123,7 +128,19 @@ func serve_dish_to_customer():
 
 		print(player_quantity, "workins")  # Debugging print
 		print(required_quantity, "kimh")  # Debugging print
-
+		print(dish, "asdkjfhasdjksafhsakljfdhfjfhalkjfdhfsljkahfljsahfdafsakjfh")
+		
+		if dish.has("ingredients"):
+			for ingredient_name in dish["ingredients"].keys():
+				var quantity = dish["ingredients"][ingredient_name] * required_quantity  # <-- Multiply by quantity ordered
+				var ingredient_path = "res://Datas/Resources/Ingredients/" + ingredient_name + ".tres"
+				var ingredient_res = load(ingredient_path)
+				if ingredient_res and ingredient_res is Ingredient:
+					total_expense += ingredient_res.price * quantity
+					print("Used ", quantity, "x ", ingredient_name, " (", ingredient_res.price, " each)")
+				else:
+					print("⚠️ Could not load ingredient: ", ingredient_name)
+			
 		if player_quantity < required_quantity:
 			dialogue.set_dialog_text(customer.name + "'s Order", "Sorry, I don't have enough " + dish_name)
 			print("Not enough ", dish_name, " to serve ", customer.name)
@@ -143,36 +160,16 @@ func serve_dish_to_customer():
 		print("Serving ", required_quantity, " of ", dish_name, " to ", customer.name)
 
 	# Remove the order after serving all dishes
+	player_data.expenses += total_expense
 	player_data.order.erase(customer.name)
 	player_data.save()
 
-	# Inform the customer
-	dialogue.set_dialog_text(customer.name + "'s Order Served", "Here is your order!")
-
-	# Call customer_pays with the calculated total price
-	customer_pays(total_price)
-
-	# Order is complete
-	print("Order completed for ", customer.name)
-
-
-
-func customer_pays(total_price: float):
 	if total_price <= 0:
 		print("No payment needed. Customer has no order.")
 		return  
 
-	# Update financials
-	player_data.revenue += total_price  
-	player_data.profit = player_data.revenue - player_data.expenses  
-	player_data.total_profit += total_price  
-	player_data.budget += total_price  
-
 	print(customer.name, " paid ", total_price, " coins.")
 	dialogue.set_dialog_text(customer.name + "'s Payment", "Thank you! Here is " + str(total_price) + " coins.")
-
-	# Save updated data
-	player_data.save()
 
 	# Hide UI elements after payment
 	dialogue.visible = false
@@ -190,10 +187,9 @@ func customer_pays(total_price: float):
 		print(test_scene_node, "parent")
 		if test_scene_node and test_scene_node.has_method("resume_customer_movement"):
 			test_scene_node.resume_customer_movement(path_follow)
+			test_scene_node.customer_paid(total_price)
 		else:
 			print("Error: TestScene node not found or missing method!")
-
-
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

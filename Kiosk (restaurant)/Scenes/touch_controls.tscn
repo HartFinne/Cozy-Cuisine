@@ -11,22 +11,22 @@
 script = ExtResource("1_28geh")
 
 [node name="Left" type="TouchScreenButton" parent="."]
-position = Vector2(72, 488.624)
+position = Vector2(60, 488.624)
 texture_normal = ExtResource("1_b0ha3")
 action = "left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
-position = Vector2(154, 488.624)
+position = Vector2(164, 488.624)
 texture_normal = ExtResource("2_28geh")
 action = "right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
-position = Vector2(120, 440.624)
+position = Vector2(120, 430.624)
 texture_normal = ExtResource("3_y11mh")
 action = "up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
-position = Vector2(120, 521.624)
+position = Vector2(120, 532.624)
 texture_normal = ExtResource("4_y4fnw")
 action = "down"
 

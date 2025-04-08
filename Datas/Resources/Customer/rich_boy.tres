@@ -6,6 +6,7 @@
 script = ExtResource("1_2my7f")
 name = "John"
 order = {
+"BurgerSteak": 1,
 "PepperoniPizza": 1
 }
 metadata/_custom_type_script = "uid://c3j24prkhkpue"

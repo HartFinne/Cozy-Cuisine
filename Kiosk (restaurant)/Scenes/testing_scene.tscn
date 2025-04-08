@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=15 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://cf8usis5fxio3" path="res://Game (movements, npcs, world map, inventory)/Scenes/Player/main_character.tscn" id="1_mvijt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c08dmsrhc5iei" path="res://Kiosk (restaurant)/Scenes/touch_controls.tscn" id="5_wvgkv"]
 [ext_resource type="Texture2D" uid="uid://3pqak6r75tnb" path="res://Kiosk (restaurant)/Assets/Interiors_free/image.png" id="8_442mg"]
 [ext_resource type="PackedScene" uid="uid://cckq8jik7rii1" path="res://Kiosk (restaurant)/Scenes/menu_panel.tscn" id="9_btmqb"]
+[ext_resource type="PackedScene" uid="uid://oxnlrlkqkmk2" path="res://Kiosk (restaurant)/Scenes/end_of_day.tscn" id="10_ex6bc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_442mg"]
 a = Vector2(176, 88)
@@ -122,6 +123,30 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI"]
 
+[node name="StartDayButton" type="Button" parent="UI/CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.465278
+anchor_right = 0.534722
+anchor_bottom = 0.0478395
+grow_horizontal = 2
+text = "Start Day"
+metadata/_edit_use_anchors_ = true
+
+[node name="GoalContainer" type="PanelContainer" parent="UI/CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.430556
+anchor_right = 0.570313
+anchor_bottom = 0.0864198
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GoalLabel" type="Label" parent="UI/CanvasLayer/GoalContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Goal: 100 / 0"
+
 [node name="PauseButton" type="Button" parent="UI/CanvasLayer"]
 offset_right = 55.0
 offset_bottom = 31.0
@@ -139,28 +164,38 @@ offset_bottom = -31.0
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.846354
-anchor_top = 0.148148
-anchor_right = 0.971354
-anchor_bottom = 0.209877
-offset_left = 1.0
-offset_top = -13.0
-offset_right = 1.0
-offset_bottom = -13.0
+anchor_left = 0.847222
+anchor_top = 0.128086
+anchor_right = 0.972222
+anchor_bottom = 0.189815
+offset_left = -6.10352e-05
 metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer/PanelContainer"]
+[node name="Button" type="Button" parent="UI/CanvasLayer/PanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer/PanelContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/PanelContainer/Button/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "COOK BOOK"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/PanelContainer/Button/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 texture = ExtResource("3_xd6dw")
-expand_mode = 2
-stretch_mode = 4
+expand_mode = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="UI/CanvasLayer"]
 anchors_preset = -1
@@ -190,9 +225,15 @@ stretch_mode = 4
 unique_name_in_owner = true
 visible = false
 
+[node name="EndOfDay" parent="UI/CanvasLayer" instance=ExtResource("10_ex6bc")]
+process_mode = 2
+mode = 1
+initial_position = 1
+
 [node name="IntantiateScenes" type="CanvasLayer" parent="UI"]
 
 [node name="TouchControls" parent="UI" instance=ExtResource("5_wvgkv")]
 
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/PanelContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer" to="." method="_on_h_box_container_gui_input"]

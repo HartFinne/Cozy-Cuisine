@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://hdpbwg8q74xy"]
+[gd_scene load_steps=13 format=3 uid="uid://hdpbwg8q74xy"]
 
 [ext_resource type="Texture2D" uid="uid://bcedapvnxm6ud" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/Customer Old/idle_left_c1-Sheet.png" id="1_dpirw"]
 [ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_n0r8f"]
+[ext_resource type="Resource" uid="uid://c6lg6gtvtmiie" path="res://Datas/Resources/Customer/old.tres" id="2_y1bmf"]
+[ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/dialogue.tscn" id="3_puhk6"]
+[ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/start_conversation.tscn" id="4_y1bmf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0r8f"]
 atlas = ExtResource("1_dpirw")
@@ -42,8 +45,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpnal"]
 size = Vector2(6, 10)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0r8f"]
+size = Vector2(42, 24)
+
 [node name="customer_old" type="CharacterBody2D"]
 script = ExtResource("1_n0r8f")
+customer = ExtResource("2_y1bmf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m1n3a")
@@ -53,3 +60,26 @@ frame_progress = 0.88868
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_kpnal")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-11, 4)
+shape = SubResource("RectangleShape2D_n0r8f")
+
+[node name="Dialogue" parent="." instance=ExtResource("3_puhk6")]
+unique_name_in_owner = true
+visible = false
+offset_top = 11.0
+offset_bottom = 11.0
+
+[node name="StartConversation" parent="." instance=ExtResource("4_y1bmf")]
+unique_name_in_owner = true
+visible = false
+offset_left = -64.0
+offset_top = -40.0
+offset_right = -64.0
+offset_bottom = -40.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

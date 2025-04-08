@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Customer" load_steps=2 format=3 uid="uid://bqvb3bvkbdarj"]
+
+[ext_resource type="Script" uid="uid://c3j24prkhkpue" path="res://Datas/customer.gd" id="1_8wqs2"]
+
+[resource]
+script = ExtResource("1_8wqs2")
+name = "Harry"
+order = {
+"PepperoniPizza": 2
+}
+metadata/_custom_type_script = "uid://c3j24prkhkpue"

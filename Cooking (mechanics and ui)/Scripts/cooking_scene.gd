@@ -19,10 +19,10 @@ var current_recipe: MenuItem = null  # Store the currently cooking dish
 
 var player_data: PlayerData = PlayerData.load_data()
 var selected_ingredients: Dictionary = {}
-var recipes: Array[MenuItem] = []  # Holds loaded RecipeData resources
+
 
 func _ready() -> void:
-	load_recipes()
+	MenuManager.load_recipes()
 	if not output_rect.gui_input.is_connected(_on_output_rect_clicked):
 		output_rect.gui_input.connect(_on_output_rect_clicked)
 		
@@ -30,19 +30,6 @@ func _ready() -> void:
 func _on_back_button_pressed() -> void:
 	SceneManager.return_to_game()
 
-
-func load_recipes():
-	var recipe_files = [
-		"res://Datas/Resources/MenuItems/BurgerSteak.tres",
-		"res://Datas/Resources/MenuItems/MilkShake.tres",
-		"res://Datas/Resources/MenuItems/PeperoniPizza.tres"
-	]
-	
-	for path in recipe_files:
-		var recipe = load(path) as MenuItem
-		if recipe:
-			recipes.append(recipe)
-			print("Loaded Recipe - Ingredients:", recipe.ingredients, "Result:", recipe.name)
 
 
 func select_ingredient(ingredient: Ingredient):
@@ -67,7 +54,7 @@ func _on_cook_button_pressed() -> void:
 		_show_message("Already cooking a dish!")
 		return  # Prevent multiple dishes from being cooked at the same time
 
-	for recipe in recipes:
+	for recipe in MenuManager.recipes:
 		var selected_counts = {}
 		for key in selected_ingredients.keys():
 			selected_counts[key] = selected_ingredients[key].get("quantity", 0)
@@ -207,7 +194,7 @@ func _on_output_rect_clicked(event: InputEvent):
 		return
 
 	# 🔍 Find the corresponding MenuItem (recipe)
-	var cooked_recipe = recipes.filter(func(recipe): return recipe.name == dish_name).front() if recipes else null
+	var cooked_recipe = MenuManager.recipes.filter(func(recipe): return recipe.name == dish_name).front() if MenuManager.recipes else null
 	
 	if cooked_recipe == null:
 		print("Error: Recipe not found!")

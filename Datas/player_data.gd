@@ -14,6 +14,9 @@ class_name PlayerData
 
 @export var player_position: Vector2 = Vector2(136.0, 128.0)  # Example starting position
 
+@export var goal_profit_per_day: float = 300.0  # You can change the number as needed
+
+
 # Save the player data as a resource file
 func save(file_path: String = "user://player_data.tres"):
 	var error = ResourceSaver.save(self, file_path)
