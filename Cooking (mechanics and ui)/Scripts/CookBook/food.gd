@@ -33,11 +33,11 @@ func update_ingredient_ui():
 		ingredient_instance.connect("ingredient_selected", Callable(self, "_on_ingredient_selected"))
 		
 func _on_meal_selected(meal):
-	var cook_book = get_parent().get_parent().get_parent().get_parent()
+	var cook_book = get_parent().get_parent().get_parent().get_parent().get_parent()
 	print(cook_book.name, "cook")
 	cook_book.show_meal_details(meal)
 	
 func _on_ingredient_selected(ingredient):
-	var cook_book = get_parent().get_parent().get_parent().get_parent()
+	var cook_book = get_parent().get_parent().get_parent().get_parent().get_parent()
 	if cook_book:
 		cook_book.show_ingredient_details(ingredient)

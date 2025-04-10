@@ -20,6 +20,7 @@ var current_scene_index = 1
 var tween
 
 signal change_scene_requested(scene_name)
+signal finished_displaying
 
 func _ready():
 	print("Starting state: State.READY")
@@ -66,6 +67,11 @@ func _process(delta):
 			if Input.is_action_just_pressed("ui_accept"):
 				change_state(State.READY)
 				hide_textbox()
+				
+				# Emit signal if nothing left to say
+				if text_queue.is_empty():
+					emit_signal("finished_displaying")
+
 
 func queue_text(next_text, scene_to_change_to = ""):
 	
@@ -105,7 +111,7 @@ func display_text():
 	await tween.finished
 	end_symbol.text = "v"
 	change_state(State.FINISHED)
-
+	
 func change_state(next_state):
 	current_state = next_state
 	match current_state:

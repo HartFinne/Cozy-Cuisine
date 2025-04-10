@@ -9,6 +9,11 @@ var intro_scenes = {
 	"intro6": preload("res://intro/scenes/kiosk.tscn")
 }
 
+@onready var fade_layer: ColorRect = $FadeLayer
+
+
+var game_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
+
 var current_scene = null
 var textbox_scene = preload("res://intro/scenes/textbox.tscn")
 var textbox_instance = null
@@ -23,6 +28,7 @@ func _ready():
 	
 	
 	textbox_instance.connect("change_scene_requested", Callable(self, "_on_change_scene_requested"))
+	textbox_instance.connect("finished_displaying", Callable(self, "_on_textbox_finished"))
 
 func change_scene(scene_name):
 	
@@ -37,8 +43,28 @@ func change_scene(scene_name):
 		
 		move_child(current_scene, 0)
 		print("Changed scene to: " + scene_name)
+		
+		if scene_name == "intro6":
+			await textbox_instance.finished_displaying
+			await get_tree().create_timer(2.0).timeout
+			await fade_out()
+			get_tree().change_scene_to_packed(game_scene)
 	else:
 		print("Scene not found: " + scene_name)
 
 func _on_change_scene_requested(scene_name):
 	change_scene(scene_name)
+	
+func _on_textbox_finished():
+	print("textbox is gone")
+	
+	
+func fade_out(duration: float = 1.0):
+	var tween = create_tween()
+	tween.tween_property(fade_layer, "modulate:a", 1.0, duration)
+	await tween.finished
+	
+func fade_in(duration: float = 1.0):
+	var tween = create_tween()
+	tween.tween_property(fade_layer, "modulate:a", 0.0, duration)
+	await tween.finished

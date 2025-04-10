@@ -75,12 +75,11 @@ offset_top = 8.0
 offset_bottom = 8.0
 
 [node name="StartConversation" parent="." instance=ExtResource("4_x5gsc")]
-unique_name_in_owner = true
 visible = false
-offset_left = -64.0
-offset_top = -40.0
-offset_right = -64.0
-offset_bottom = -40.0
+offset_left = -47.0
+offset_top = -24.0
+offset_right = 48.57
+offset_bottom = -5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

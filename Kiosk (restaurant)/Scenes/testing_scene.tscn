@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
-[ext_resource type="PackedScene" uid="uid://cf8usis5fxio3" path="res://Game (movements, npcs, world map, inventory)/Scenes/Player/main_character.tscn" id="1_mvijt"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
 [ext_resource type="TileSet" uid="uid://c7couursgthsf" path="res://Kiosk (restaurant)/Assets/TileSets/restaurant_tile_set.tres" id="2_ssy2t"]
 [ext_resource type="TileSet" uid="uid://bu2r531ao1kao" path="res://Kiosk (restaurant)/Assets/TileSets/interiors_tile_sets.tres" id="3_hi7x0"]
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="3_xd6dw"]
+[ext_resource type="PackedScene" uid="uid://dldj5wvaik0li" path="res://Game (movements, npcs, world map, inventory)/Scenes/Player/player_girl.tscn" id="4_dostw"]
 [ext_resource type="Script" uid="uid://xy2q2dc116es" path="res://Kiosk (restaurant)/Scripts/Cook.gd" id="5_2qw1t"]
 [ext_resource type="PackedScene" uid="uid://c08dmsrhc5iei" path="res://Kiosk (restaurant)/Scenes/touch_controls.tscn" id="5_wvgkv"]
 [ext_resource type="Texture2D" uid="uid://3pqak6r75tnb" path="res://Kiosk (restaurant)/Assets/Interiors_free/image.png" id="8_442mg"]
@@ -46,13 +46,15 @@ tile_set = ExtResource("3_hi7x0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldMap/Area2D"]
 shape = SubResource("SegmentShape2D_442mg")
 
-[node name="mainCharacter" parent="." instance=ExtResource("1_mvijt")]
+[node name="player_girl" parent="." groups=["player"] instance=ExtResource("4_dostw")]
 z_index = 1
-position = Vector2(248, 192)
+position = Vector2(158, 233)
 scale = Vector2(2, 2)
-move_speed = 200.0
+move_speed = 150.0
 
-[node name="Camera2D" type="Camera2D" parent="mainCharacter"]
+[node name="Camera2D" type="Camera2D" parent="player_girl"]
+position = Vector2(0.5, 9.5)
+scale = Vector2(2, 2)
 zoom = Vector2(1.555, 1.555)
 
 [node name="Cook" type="StaticBody2D" parent="."]
@@ -61,6 +63,7 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("5_2qw1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cook"]
+show_behind_parent = true
 texture = ExtResource("8_442mg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cook"]
@@ -127,8 +130,9 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = 0.465278
-anchor_right = 0.534722
-anchor_bottom = 0.0478395
+anchor_top = 0.0185185
+anchor_right = 0.557292
+anchor_bottom = 0.0972222
 grow_horizontal = 2
 text = "Start Day"
 metadata/_edit_use_anchors_ = true
@@ -145,12 +149,16 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Goal: 100 / 0"
+text = "Profit Goal: 100 / 0"
 
 [node name="PauseButton" type="Button" parent="UI/CanvasLayer"]
-offset_right = 55.0
-offset_bottom = 31.0
+anchors_preset = -1
+anchor_left = 0.0208333
+anchor_top = 0.0185185
+anchor_right = 0.112847
+anchor_bottom = 0.0972222
 text = "Pause"
+metadata/_edit_use_anchors_ = true
 
 [node name="MoneyContainer" parent="UI/CanvasLayer" instance=ExtResource("2_8xr7h")]
 anchor_left = 0.765625
@@ -229,6 +237,7 @@ visible = false
 process_mode = 2
 mode = 1
 initial_position = 1
+visible = false
 
 [node name="IntantiateScenes" type="CanvasLayer" parent="UI"]
 

@@ -1,14 +1,14 @@
 extends PanelContainer
-@onready var v_box_container: VBoxContainer = %VBoxContainer
+@onready var margin_container: MarginContainer = $VBoxContainer/MarginContainer/HBoxContainer/MarginContainer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	v_box_container.visible = false
+	margin_container.visible = false
 	pass # Replace with function body.
 
 func show_meal_details(meal):
-	v_box_container.visible = true
+	margin_container.visible = true
 	print("working", meal.image)
 	var meal_image = %MealImage
 	var meal_name = %MealName
@@ -30,7 +30,7 @@ func show_meal_details(meal):
 		
 		
 func show_ingredient_details(ingredient):
-	v_box_container.visible = true
+	margin_container.visible = true
 	print("working", ingredient.label)
 	var meal_image = %MealImage
 	var meal_name = %MealName

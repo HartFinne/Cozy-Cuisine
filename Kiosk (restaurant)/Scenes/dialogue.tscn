@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxbmbqwvjgd0b"]
 
-[ext_resource type="Texture2D" uid="uid://cesncnr03wfto" path="res://Kiosk (restaurant)/Assets/Icons, UI, and window popup.png" id="1_3vxlj"]
 [ext_resource type="Script" uid="uid://xh4f8shujq4" path="res://Kiosk (restaurant)/Scripts/dialogue.gd" id="1_nvrqj"]
+[ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="2_nvrqj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvrqj"]
-atlas = ExtResource("1_3vxlj")
-region = Rect2(8, 167, 87, 81)
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm776"]
+atlas = ExtResource("2_nvrqj")
+region = Rect2(163, 642, 90, 94)
 
 [node name="Dialogue" type="Control"]
 z_index = 1
@@ -23,22 +23,23 @@ offset_left = -48.0
 offset_top = -72.0
 offset_right = 40.0
 offset_bottom = -16.0
-texture = SubResource("AtlasTexture_nvrqj")
+texture = SubResource("AtlasTexture_dm776")
 
 [node name="NameLabel" type="Label" parent="NinePatchRect"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 105.0
-offset_bottom = 7.0
+anchors_preset = -1
+anchor_left = 0.102273
+anchor_top = 0.107143
+anchor_right = 1.525
+anchor_bottom = 0.507143
+offset_right = 52.8
+offset_bottom = 33.6
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.4, 0.4)
 text = "john"
+metadata/_edit_use_anchors_ = true
 
 [node name="DialogueLabel" type="RichTextLabel" parent="NinePatchRect"]
 unique_name_in_owner = true

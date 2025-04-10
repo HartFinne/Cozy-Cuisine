@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var player_data: PlayerData = PlayerData.load_data()
 
+@onready var start_conversation: NinePatchRect = $StartConversation
+
 @onready var dialogue: Control = $Dialogue
 @export var customer: Customer
 
@@ -29,7 +31,7 @@ func _ready():
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("accept"):
 		dialogue.visible = true
-		%StartConversation.visible = false
+		start_conversation.visible = false
 		x_button.visible = false
 		show_customer_order()
 		
@@ -197,14 +199,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"): # Ensure it's the player
 		player_in_area = true
 		print("Player entered NPC area")
-		%StartConversation.visible = true
-		
+		start_conversation.visible = true
+
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_area = false
 		print("Player left NPC area")
 		dialogue.visible = false
-		%StartConversation.visible = false
+		start_conversation.visible = false
 		x_button.visible = true
 		take_button.visible = false
 		serve_button.visible = false

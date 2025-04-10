@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dooj82c87h1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lraxa"]
+expand_margin_left = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmy4b"]
+expand_margin_left = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrx8r"]
+expand_margin_left = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo2hy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86swa"]
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_lraxa")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_kmy4b")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_rrx8r")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_bo2hy")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_86swa")
