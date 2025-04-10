@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=17 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
 [ext_resource type="Script" uid="uid://c58sj2tm5iwnd" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
 [ext_resource type="PackedScene" uid="uid://c87xmv0o4p1cn" path="res://Cooking (mechanics and ui)/Scenes/order_container.tscn" id="7_wobfx"]
-[ext_resource type="Script" uid="uid://cp743csr6i015" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
+[ext_resource type="PackedScene" uid="uid://keqadk5s6vut" path="res://Cooking (mechanics and ui)/Scenes/dish_container.tscn" id="9_qqh86"]
+[ext_resource type="Script" uid="uid://vsvtijk877aw" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wobfx"]
 atlas = ExtResource("2_5a071")
@@ -265,95 +266,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Orders" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 2
-anchor_left = 0.777778
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource("7_5d7ps")
-metadata/_edit_use_anchors_ = true
-
-[node name="OrderBackButton" type="Button" parent="Orders"]
-layout_mode = 2
-size_flags_vertical = 4
-text = "->"
-
-[node name="PanelContainer" type="PanelContainer" parent="Orders"]
-layout_mode = 2
-size_flags_horizontal = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Orders/PanelContainer"]
-layout_mode = 2
-
-[node name="OrderVbox" type="VBoxContainer" parent="Orders/PanelContainer/ScrollContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="PanelContainer" parent="Orders/PanelContainer/ScrollContainer/OrderVbox" instance=ExtResource("7_wobfx")]
-layout_mode = 2
-mouse_filter = 0
-
-[node name="Dishes" type="HBoxContainer" parent="."]
-visible = false
-layout_mode = 2
-anchor_left = 0.505208
-anchor_right = 0.72743
-anchor_bottom = 1.0
-offset_left = 314.0
-offset_right = 314.0
-script = ExtResource("9_xmic6")
-metadata/_edit_use_anchors_ = true
-
-[node name="DishBackButton" type="Button" parent="Dishes"]
-layout_mode = 2
-size_flags_vertical = 4
-text = "->"
-
-[node name="PanelContainer" type="PanelContainer" parent="Dishes"]
-layout_mode = 2
-size_flags_horizontal = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Dishes/PanelContainer"]
-layout_mode = 2
-
-[node name="DishVbox" type="VBoxContainer" parent="Dishes/PanelContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="PanelContainer" parent="Dishes/PanelContainer/ScrollContainer/DishVbox" instance=ExtResource("7_wobfx")]
-layout_mode = 2
-mouse_filter = 0
-
-[node name="OrdersButton" type="Button" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.919271
-anchor_top = 0.0246914
-anchor_right = 0.97309
-anchor_bottom = 0.0725309
-offset_left = -0.000610352
-grow_horizontal = 0
-scale = Vector2(1.5, 1.5)
-mouse_filter = 1
-text = "Orders"
-metadata/_edit_use_anchors_ = true
-
-[node name="DishButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1059.0
-offset_top = 78.0
-offset_right = 1121.0
-offset_bottom = 109.0
-scale = Vector2(1.5, 1.5)
-text = "Dishes"
-
 [node name="IngredientPopup" type="PopupPanel" parent="."]
 unique_name_in_owner = true
 initial_position = 2
@@ -391,11 +303,93 @@ text = "close"
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CookTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="Orders" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.777778
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("7_5d7ps")
+metadata/_edit_use_anchors_ = true
+
+[node name="OrderBackButton" type="Button" parent="Orders"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "->"
+
+[node name="PanelContainer" type="PanelContainer" parent="Orders"]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Orders/PanelContainer"]
+layout_mode = 2
+
+[node name="OrderVbox" type="VBoxContainer" parent="Orders/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" parent="Orders/PanelContainer/ScrollContainer/OrderVbox" instance=ExtResource("7_wobfx")]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="Dishes" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+anchor_left = 0.777778
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("9_xmic6")
+metadata/_edit_use_anchors_ = true
+
+[node name="DishBackButton" type="Button" parent="Dishes"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "->"
+
+[node name="PanelContainer" type="PanelContainer" parent="Dishes"]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="DishVbox" type="VBoxContainer" parent="Dishes/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DishContainer" parent="Dishes/PanelContainer/DishVbox" instance=ExtResource("9_qqh86")]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="OrdersButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.919271
+anchor_top = 0.0246914
+anchor_right = 0.97309
+anchor_bottom = 0.0725309
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+text = "Orders"
+metadata/_edit_use_anchors_ = true
+
+[node name="DishButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_right = 540.0
+offset_bottom = 31.0
+text = "Dishes"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CookButton" to="." method="_on_cook_button_pressed"]
 [connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]
-[connection signal="pressed" from="Orders/OrderBackButton" to="Orders" method="_on_order_back_button_pressed"]
-[connection signal="pressed" from="Dishes/DishBackButton" to="Dishes" method="_on_dish_back_button_pressed"]
-[connection signal="pressed" from="OrdersButton" to="Orders" method="_on_orders_button_pressed"]
 [connection signal="timeout" from="CookTimer" to="." method="_on_cook_timer_timeout"]
+[connection signal="pressed" from="Orders/OrderBackButton" to="Orders" method="_on_order_back_button_pressed"]
+[connection signal="pressed" from="Dishes/DishBackButton" to="Dishes" method="_on_order_back_button_pressed"]
+[connection signal="pressed" from="OrdersButton" to="Orders" method="_on_orders_button_pressed"]
+[connection signal="pressed" from="DishButton" to="Orders" method="_on_dish_button_pressed"]
+[connection signal="pressed" from="DishButton" to="Dishes" method="_on_dish_button_pressed"]

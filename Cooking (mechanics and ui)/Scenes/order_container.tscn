@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c87xmv0o4p1cn"]
+
+[ext_resource type="Script" uid="uid://bkpcto0std3pu" path="res://Cooking (mechanics and ui)/Scripts/order_container.gd" id="1_dtkrm"]
+[ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="1_hjxkv"]
+
+[node name="PanelContainer" type="NinePatchRect"]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = -1
+anchor_right = 0.1875
+anchor_bottom = 0.231481
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture = ExtResource("1_hjxkv")
+region_rect = Rect2(163, 642, 90, 94)
+script = ExtResource("1_dtkrm")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 43.395)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Order"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+
+[node name="Order" type="Label" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "burger"
