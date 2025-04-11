@@ -29,3 +29,8 @@ func _on_tutorial_pressed() -> void:
 	
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_setting_button_pressed() -> void:
+	get_tree().paused = true
+	popup_panel.show()

@@ -3242,6 +3242,7 @@ text = "OK"
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Panel/quit" to="." method="_on_quit_pressed"]
