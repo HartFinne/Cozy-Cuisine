@@ -244,10 +244,10 @@ metadata/_edit_use_anchors_ = true
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.611111
-anchor_top = 0.222222
-anchor_right = 0.888889
-anchor_bottom = 0.257137
+anchor_left = 0.486111
+anchor_top = 0.266975
+anchor_right = 0.763889
+anchor_bottom = 0.30189
 offset_bottom = 6.375
 metadata/_edit_use_anchors_ = true
 

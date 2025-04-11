@@ -2,9 +2,13 @@ extends HBoxContainer
 
 var order_container_scene = preload("res://Cooking (mechanics and ui)/Scenes/order_container.tscn")
 var player_data: PlayerData = PlayerData.load_data()
+var dishes = player_data.dishes
+
 @onready var order_vbox: VBoxContainer = %OrderVbox
 @onready var orders_button: Button = %OrdersButton
 @onready var dish_button: Button = $"../DishButton"
+
+
 
 
 @onready var order_back_button: Button = $OrderBackButton
@@ -12,6 +16,7 @@ var player_data: PlayerData = PlayerData.load_data()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	populate_order_container()
+	get_parent().connect("dish_collected", Callable(self, "populate_order_container"))
 	pass
 	
 func populate_order_container():
@@ -29,7 +34,7 @@ func populate_order_container():
 		var order_instance = order_container_scene.instantiate()
 		
 		if order_instance.has_method("set_order_data"):
-			order_instance.set_order_data(dish_list, player_name)
+			order_instance.set_order_data(dish_list, player_name, dishes)
 			
 		order_vbox.add_child(order_instance)
 			
@@ -38,9 +43,11 @@ func populate_order_container():
 
 func _on_orders_button_pressed() -> void:
 	print("working")
+	populate_order_container()
 	self.visible = true
 	orders_button.visible = false
 	dish_button.visible = false
+	
 	pass # Replace with function body.
 
 
@@ -50,14 +57,3 @@ func _on_order_back_button_pressed() -> void:
 	dish_button.visible = true
 	pass # Replace with function body.
 	
-
-# ------------------------------------------------------------------------------------------------------
-
-
-func _on_dish_button_pressed() -> void:
-	var dishes_node = get_node("/root/CookingScene/Dishes")
-	var order_node = get_node("/root/CookingScene/Orders")
-	print(dishes_node)
-	print(order_node)
-	print("working")
-	pass # Replace with function body.

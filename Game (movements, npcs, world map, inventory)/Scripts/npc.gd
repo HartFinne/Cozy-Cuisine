@@ -15,9 +15,6 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
-var random_names = ["John", "Anna", "Marco", "Ella", "Tina", "Leo", "Sophia", "Ben"]
-
-
 func _ready():
 	# ✅ Ensure UI is fully loaded before accessing XButton
 	print(customer)
@@ -45,10 +42,10 @@ func _process(delta: float) -> void:
 
 func show_customer_order():
 	# Hide the take button after taking the order
+	var dishes = player_data.dishes
 	hide_taken_button_if_order_taken()
 	if customer and customer.order:
-		var display_name = random_names.pick_random()
-		var name_text = display_name + "'s Order:\n"
+		var name_text = customer.name + "'s Order:\n"
 		var order_text: String
 
 		for item_name in customer.order.keys():
@@ -58,7 +55,10 @@ func show_customer_order():
 					found_recipe = recipe
 				
 			if found_recipe:
-				order_text += str(customer.order[item_name]) + " x " + found_recipe.label + "\n"
+				if dishes.has(item_name):
+					order_text += str(int(dishes[item_name].get("quantity", 0))) + " / " + str(customer.order[item_name]) + " x " + found_recipe.label + "\n"
+				else:
+					order_text += "0 /" + str(customer.order[item_name]) + " x " + found_recipe.label + "\n"
 				
 		print("Debug - Order Text:", order_text)
 		dialogue.set_dialog_text(name_text, order_text)
@@ -190,6 +190,8 @@ func serve_dish_to_customer():
 		if test_scene_node and test_scene_node.has_method("resume_customer_movement"):
 			test_scene_node.resume_customer_movement(path_follow)
 			test_scene_node.customer_paid(total_price)
+			test_scene_node.get_node("UI/CanvasLayer/Inventory").populate_inventory_container()
+			
 		else:
 			print("Error: TestScene node not found or missing method!")
 

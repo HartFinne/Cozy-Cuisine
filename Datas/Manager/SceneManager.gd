@@ -2,8 +2,11 @@ extends Node
 
 var gameplay_scene: Node = null
 var market_scene: Node = null
+
 var cook_book_scene: Node = null
+
 var cooking_scene: Node = null
+
 var touch_controls: CanvasLayer = null
 var canvas_layer: CanvasLayer = null
 
@@ -42,8 +45,10 @@ func go_to_cooking():
 	if not cooking_scene:
 		cooking_scene = preload("res://Cooking (mechanics and ui)/Scenes/cooking_scene.tscn").instantiate()
 		gameplay_scene.get_node("UI/IntantiateScenes").add_child(cooking_scene)
+		cooking_scene.get_node("Orders").populate_order_container
 	else:
 		cooking_scene.visible = true  # Make it visible if it's already added to the scene
+		cooking_scene.get_node("Orders").populate_order_container
 
 
 func return_to_game():
@@ -67,6 +72,8 @@ func return_to_game():
 		
 		# just to update the moneycontienr in the testing scene
 		canvas_layer.get_node("MoneyContainer").update_money_ui()
+		canvas_layer.get_node("Inventory").populate_inventory_container()
+		canvas_layer.get_node("Inventory/BagPopupPanel").populate_inventory_container()
 		touch_controls.visible = true
 		canvas_layer.visible = true
 		

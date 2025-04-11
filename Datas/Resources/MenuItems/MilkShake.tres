@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MenuItem" load_steps=3 format=3 uid="uid://u6lqsx6aeg3i"]
 
-[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="1_whsm6"]
+[ext_resource type="Texture2D" uid="uid://b23acry1d1ir8" path="res://intro/assets/foods/melkshek-Sheet.png" id="1_peovi"]
 [ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="2_x2dh8"]
 
 [resource]
@@ -9,7 +9,7 @@ name = "Milkshake"
 label = "Milkshake"
 description = "A smooth and creamy drink blended with milk, ice cream, and sugar."
 price = 22
-image = ExtResource("1_whsm6")
+image = ExtResource("1_peovi")
 ingredients = {
 "Ice": 2,
 "Sugar": 1

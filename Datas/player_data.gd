@@ -6,12 +6,13 @@ class_name PlayerData
 @export var is_intro_watched = false
 @export var is_tutorial_watched = false
 @export var expenses: float = 0.0
-@export var inventory: Dictionary = {}
 @export var profit: float = 0.0
 @export var revenue: float = 0.0
 @export var total_profit: float = 0.0
+@export var inventory: Dictionary = {}
 @export var selected_ingredients: Dictionary = {}  # Store selected ingredients
 @export var dishes: Dictionary = {}
+@export var dish_order: Array = []
 @export var order: Dictionary = {}
 
 @export var player_position: Vector2 = Vector2(136.0, 128.0)  # Example starting position

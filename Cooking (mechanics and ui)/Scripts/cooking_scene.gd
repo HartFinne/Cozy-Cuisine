@@ -172,6 +172,7 @@ func _on_clear_button_pressed() -> void:
 	# Update UI popup
 	ingredient_popup.update_popup_ui()
 	
+signal dish_collected
 
 func _on_output_rect_clicked(event: InputEvent):
 	if not (event is InputEventMouseButton and event.pressed):
@@ -213,6 +214,8 @@ func _on_output_rect_clicked(event: InputEvent):
 			"ingredients": cooked_recipe.ingredients,
 			"quantity": 1
 		}
+		
+	emit_signal("dish_collected")
 
 	# ✅ Clear output and disable clicking
 	output_rect.texture = null

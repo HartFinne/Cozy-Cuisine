@@ -69,13 +69,18 @@ shape = SubResource("RectangleShape2D_31iww")
 
 [node name="Dialogue" parent="." instance=ExtResource("3_h6h62")]
 unique_name_in_owner = true
+visible = false
 offset_top = 11.0
 offset_bottom = 11.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="StartConversation" parent="CanvasLayer" instance=ExtResource("4_oq4kr")]
+[node name="StartConversation" parent="." instance=ExtResource("4_oq4kr")]
 visible = false
+offset_left = -47.0
+offset_top = -24.0
+offset_right = 48.57
+offset_bottom = -4.99998
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=16 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://3pqak6r75tnb" path="res://Kiosk (restaurant)/Assets/Interiors_free/image.png" id="8_442mg"]
 [ext_resource type="PackedScene" uid="uid://cckq8jik7rii1" path="res://Kiosk (restaurant)/Scenes/menu_panel.tscn" id="9_btmqb"]
 [ext_resource type="PackedScene" uid="uid://oxnlrlkqkmk2" path="res://Kiosk (restaurant)/Scenes/end_of_day.tscn" id="10_ex6bc"]
+[ext_resource type="PackedScene" uid="uid://sl0ilsl8ji6j" path="res://Kiosk (restaurant)/Scenes/Inventory/inventory.tscn" id="11_dostw"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_442mg"]
 a = Vector2(176, 88)
@@ -229,8 +230,12 @@ texture = ExtResource("3_xd6dw")
 expand_mode = 2
 stretch_mode = 4
 
+[node name="Inventory" parent="UI/CanvasLayer" instance=ExtResource("11_dostw")]
+offset_bottom = -0.000427246
+
 [node name="MenuPanel" parent="UI/CanvasLayer" instance=ExtResource("9_btmqb")]
 unique_name_in_owner = true
+visible = false
 
 [node name="EndOfDay" parent="UI/CanvasLayer" instance=ExtResource("10_ex6bc")]
 process_mode = 2

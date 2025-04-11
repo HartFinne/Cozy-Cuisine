@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://mjequ4v8il8q"]
+
+[ext_resource type="Script" uid="uid://i1sh5f6w7l4" path="res://Kiosk (restaurant)/Scripts/Inventory/inventory_container.gd" id="1_fkckc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkckc"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="InventoryContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(70, 71.001)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fkckc")
+script = ExtResource("1_fkckc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

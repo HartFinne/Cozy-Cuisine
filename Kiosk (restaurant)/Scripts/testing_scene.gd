@@ -23,20 +23,20 @@ var expenses = 0
 
 @onready var paths := [
 	$Path2D/PathFollow2D, 
-	#$Path2D2/PathFollow2D, 
-	#$Path2D3/PathFollow2D, 
-	#$Path2D4/PathFollow2D, 
-	#$Path2D5/PathFollow2D
+	$Path2D2/PathFollow2D, 
+	$Path2D3/PathFollow2D, 
+	$Path2D4/PathFollow2D, 
+	$Path2D5/PathFollow2D
 ]  # ✅ Store all PathFollow2D nodes
 
-var random_names = ["John", "Anna", "Marco", "Ella", "Tina", "Leo", "Sophia", "Ben"]
+
 
 var customer_scene = [
 	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn"),
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_girl.tscn"),
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_young.tscn"),
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_girl.tscn"),
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_young.tscn"),
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
 ]
 
 # Called when the node enters the scene tree for the first time.

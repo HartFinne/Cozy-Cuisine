@@ -67,15 +67,19 @@ shape = SubResource("RectangleShape2D_pfita")
 position = Vector2(-23, 4)
 shape = SubResource("RectangleShape2D_scmok")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Dialogue" parent="CanvasLayer" instance=ExtResource("3_5h2sl")]
+[node name="Dialogue" parent="." instance=ExtResource("3_5h2sl")]
 unique_name_in_owner = true
 visible = false
+offset_top = 16.0
+offset_bottom = 16.0
 
-[node name="StartConversation" parent="CanvasLayer" instance=ExtResource("4_xkjyl")]
+[node name="StartConversation" parent="." instance=ExtResource("4_xkjyl")]
 unique_name_in_owner = true
 visible = false
+offset_left = -47.0
+offset_top = -24.0
+offset_right = 48.57
+offset_bottom = -4.99998
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
