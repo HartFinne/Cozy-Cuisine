@@ -19,6 +19,9 @@ var scene_changes = {}
 var current_scene_index = 1  
 var tween
 
+var tapped := false
+
+
 signal change_scene_requested(scene_name)
 signal finished_displaying
 
@@ -58,19 +61,29 @@ func _process(delta):
 			if !text_queue.is_empty():
 				display_text()
 		State.READING:
-			if Input.is_action_just_pressed("ui_accept"):
+			if was_screen_tapped():
 				label.visible_ratio = 1.0
 				tween.kill()
 				end_symbol.text = "v"
 				change_state(State.FINISHED)
 		State.FINISHED:
-			if Input.is_action_just_pressed("ui_accept"):
+			if was_screen_tapped():
 				change_state(State.READY)
 				hide_textbox()
 				
 				# Emit signal if nothing left to say
 				if text_queue.is_empty():
 					emit_signal("finished_displaying")
+					
+func _input(event):
+	if event is InputEventScreenTouch and event.pressed:
+		tapped = true
+
+func was_screen_tapped() -> bool:
+	if tapped:
+		tapped = false
+		return true
+	return false
 
 
 func queue_text(next_text, scene_to_change_to = ""):

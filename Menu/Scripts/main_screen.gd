@@ -4,6 +4,7 @@ var basket: Basket = Basket.load_basket()
 var player_data: PlayerData = PlayerData.load_data()
 var world_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
 var intro_scene = preload("res://intro/scenes/Main.tscn")
+@onready var popup_panel: PopupPanel = $Panel/PopupPanel
 
 func _on_play_pressed() -> void:
 	player_data.is_intro_watched
@@ -22,7 +23,9 @@ func _on_play_pressed() -> void:
 	
 func _on_tutorial_pressed() -> void:
 	print("Tutorialssss")
+	get_tree().paused = true
+	popup_panel.show()
+	
 	
 func _on_quit_pressed() -> void:
-	
-	print("quit button")
+	get_tree().quit()

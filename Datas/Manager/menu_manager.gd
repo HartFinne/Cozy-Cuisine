@@ -10,6 +10,7 @@ func _ready():
 	load_recipes()
 	load_ingredients()
 	
+	
 
 func load_recipes():
 	var recipes_path = [

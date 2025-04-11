@@ -231,7 +231,6 @@ stretch_mode = 4
 
 [node name="MenuPanel" parent="UI/CanvasLayer" instance=ExtResource("9_btmqb")]
 unique_name_in_owner = true
-visible = false
 
 [node name="EndOfDay" parent="UI/CanvasLayer" instance=ExtResource("10_ex6bc")]
 process_mode = 2

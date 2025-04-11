@@ -7,6 +7,13 @@ var player_data: PlayerData = PlayerData.load_data()
 
 var testing_scene: Node2D
 
+func _ready() -> void:
+	connect("visibility_changed", _on_visibility_changed)
+
+func _on_visibility_changed():
+	if not self.visible:
+		get_tree().paused = false
+
 func set_testing_script(testing_script: Node2D) -> void:
 	testing_scene = testing_script
 
