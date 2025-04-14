@@ -1,9 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh6fmrglcedt"]
+[gd_scene load_steps=4 format=3 uid="uid://dh6fmrglcedt"]
 
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_5av5f"]
 [ext_resource type="Script" uid="uid://bvn0exwc4dk44" path="res://Cooking (mechanics and ui)/Scripts/CookBook/ingredient_container.gd" id="1_76ah7"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coxrg"]
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.92549, 0.784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 0.733333, 0.427451, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
 [node name="IngredientContainer" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_coxrg")
 script = ExtResource("1_76ah7")
 
 [node name="TextureRect" type="TextureRect" parent="."]

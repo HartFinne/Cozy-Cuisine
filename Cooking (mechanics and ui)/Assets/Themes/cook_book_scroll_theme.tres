@@ -1,17 +1,22 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://dooj82c87h1t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lraxa"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.784314)
 expand_margin_left = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmy4b"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
 expand_margin_left = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrx8r"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
 expand_margin_left = 15.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo2hy"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86swa"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
 
 [resource]
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_lraxa")

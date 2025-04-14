@@ -1,10 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvrsq05cl5y3i"]
+[gd_scene load_steps=4 format=3 uid="uid://bvrsq05cl5y3i"]
 
 [ext_resource type="Script" uid="uid://cmvv3sd1g5x1u" path="res://Cooking (mechanics and ui)/Scripts/CookBook/meal_container.gd" id="1_wgo7k"]
 [ext_resource type="Texture2D" uid="uid://bcmgfab66d5xq" path="res://Datas/Assets/Dishes/berjerk_stick-Sheet.png" id="2_4igd0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgo7k"]
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.92549, 0.784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 0.733333, 0.427451, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
 [node name="MealContainer" type="PanelContainer"]
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wgo7k")
 script = ExtResource("1_wgo7k")
 
 [node name="TextureRect" type="TextureRect" parent="."]

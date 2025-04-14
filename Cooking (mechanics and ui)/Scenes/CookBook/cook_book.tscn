@@ -1,9 +1,210 @@
-[gd_scene load_steps=5 format=3 uid="uid://u7h1rfmnxkre"]
+[gd_scene load_steps=39 format=4 uid="uid://u7h1rfmnxkre"]
 
 [ext_resource type="Script" uid="uid://bonrejv4k7kbv" path="res://Cooking (mechanics and ui)/Scripts/CookBook/cook_book.gd" id="1_ulscd"]
 [ext_resource type="Script" uid="uid://vrbrc881cfhh" path="res://Cooking (mechanics and ui)/Scripts/CookBook/food.gd" id="1_vokew"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="2_86swa"]
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="2_vokew"]
+[ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="2_y5jva"]
 [ext_resource type="Theme" uid="uid://dooj82c87h1t" path="res://Cooking (mechanics and ui)/Assets/Themes/cook_book_scroll_theme.tres" id="3_kmy4b"]
+[ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="3_rcxoc"]
+[ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="4_dpysw"]
+[ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="4_rrx8r"]
+[ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="5_bo2hy"]
+[ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="10_rcxoc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dpysw"]
+shader = ExtResource("2_y5jva")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvrcm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpysw"]
+atlas = ExtResource("4_dpysw")
+region = Rect2(65, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvrcm"]
+texture = SubResource("AtlasTexture_dpysw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyvso"]
+atlas = ExtResource("4_dpysw")
+region = Rect2(81, 65, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3f1s"]
+texture = SubResource("AtlasTexture_jyvso")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o63vb"]
+atlas = ExtResource("4_dpysw")
+region = Rect2(65, 129, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jyvso"]
+texture = SubResource("AtlasTexture_o63vb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvrcm"]
+content_margin_left = 25.0
+content_margin_top = 20.0
+content_margin_right = 25.0
+content_margin_bottom = 20.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.392157)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l12xd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo2hy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86swa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5jva"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 20.0
+bg_color = Color(0.894118, 0.772549, 0.619608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+expand_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcxoc"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 20.0
+bg_color = Color(0.8, 0.623529, 0.490196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+expand_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l12xd"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 20.0
+bg_color = Color(0.501961, 0.239216, 0.231373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+expand_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo2hy"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.552941, 0.286275, 0.227451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86swa"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.552941, 0.286275, 0.227451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o63vb"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpysw"]
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.196078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyvso"]
+content_margin_left = 30.0
+content_margin_top = 5.0
+content_margin_right = 30.0
+content_margin_bottom = 5.0
+bg_color = Color(0.501961, 0.239216, 0.231373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(1, 0.858824, 0.709804, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3f1s"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.501961, 0.239216, 0.231373, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5jva"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1j31"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.501961, 0.239216, 0.231373, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwh43"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwh43"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.501961, 0.239216, 0.231373, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpysw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jnh3l"]
+content_margin_top = 10.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 0)
 
 [node name="CookBook" type="PanelContainer"]
 anchors_preset = 15
@@ -15,8 +216,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ulscd")
 
+[node name="Bgmarket" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_dpysw")
+position = Vector2(627, 330)
+scale = Vector2(0.250735, 0.250735)
+texture = ExtResource("3_rcxoc")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -24,20 +234,27 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 20
 
 [node name="Button" type="Button" parent="VBoxContainer/MarginContainer2"]
-custom_minimum_size = Vector2(50, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yvrcm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yvrcm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k3f1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jyvso")
 text = "x"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "Cook Book"
+theme_override_fonts/font = ExtResource("5_bo2hy")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_yvrcm")
+text = "Items"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -46,16 +263,30 @@ theme_override_constants/margin_right = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-size_flags_vertical = 0
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 8
+theme_override_colors/font_unselected_color = Color(0.894118, 0.772549, 0.619608, 1)
+theme_override_colors/font_selected_color = Color(0.501961, 0.239216, 0.231373, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_l12xd")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_bo2hy")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_86swa")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_y5jva")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_rcxoc")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_l12xd")
 current_tab = 0
 
+[node name="TileMapLayer" type="TileMapLayer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
+position = Vector2(0, 31)
+tile_map_data = PackedByteArray("AAAAAAAAAAAcACgAAAABAAAAAAAeACgAAAACAAAAAAAfACgAAAADAAAAAAAgACgAAAAAAAEAAAAcACkAAAAAAAIAAAAcACoAAAAAAAMAAAAcACsAAAAAAAQAAAAcACwAAAAAAAUAAAAcACkAAAAAAAYAAAAcACoAAAAAAAcAAAAcACsAAAAAAAgAAAAcACwAAAAAAAkAAAAcACkAAAAAAAoAAAAcACoAAAAAAAsAAAAcACsAAAAAAAwAAAAcACkAAAAAAA4AAAAcACsAAAAAAA8AAAAcACwAAAAAABAAAAAcACsAAAAAABEAAAAcACwAAAAAABIAAAAcACkAAAAAABMAAAAcACkAAAAAABQAAAAcACoAAAAAABUAAAAcACsAAAAAABYAAAAcACwAAAAAAA0AAAAcACoAAAAAABcAAAAcACwAAAAAABgAAAAcACsAAAABABgAAAAdACwAAAACABgAAAAeACwAAAADABgAAAAfACwAAAAEABgAAAAgACwAAAAFABgAAAAdACwAAAAGABgAAAAeACwAAAAHABgAAAAfACwAAAAIABgAAAAgACwAAAAJABgAAAAdACwAAAAKABgAAAAeACwAAAALABgAAAAfACwAAAAMABgAAAAgACwAAAANABgAAAAdACwAAAAOABgAAAAeACwAAAAPABgAAAAfACwAAAAQABgAAAAgACwAAAARABgAAAAdACwAAAASABgAAAAeACwAAAATABgAAAAfACwAAAAUABgAAAAgACwAAAAVABgAAAAdACwAAAAWABgAAAAeACwAAAAXABgAAAAfACwAAAAYABgAAAAdACwAAAAZABgAAAAeACwAAAAaABgAAAAfACwAAAAcABgAAAAeACwAAAAbABgAAAAgACwAAAAEAAAAAAAdACgAAAAFAAAAAAAeACgAAAAGAAAAAAAfACgAAAAHAAAAAAAgACgAAAAIAAAAAAAdACgAAAAJAAAAAAAdACgAAAAKAAAAAAAeACgAAAALAAAAAAAfACgAAAAMAAAAAAAgACgAAAANAAAAAAAdACgAAAAOAAAAAAAeACgAAAAPAAAAAAAfACgAAAAQAAAAAAAgACgAAAARAAAAAAAdACgAAAASAAAAAAAeACgAAAATAAAAAAAfACgAAAAUAAAAAAAgACgAAAAVAAAAAAAdACgAAAAWAAAAAAAeACgAAAAXAAAAAAAfACgAAAAYAAAAAAAgACgAAAAZAAAAAAAdACgAAAAaAAAAAAAeACgAAAAbAAAAAAAfACgAAAAcAAAAAAAgACgAAAAcAAEAAAAeACkAAAAcAAIAAAAeACoAAAAcAAMAAAAeACsAAAAcAAQAAAAeACkAAAAcAAUAAAAeACoAAAAcAAYAAAAeACsAAAAcAAcAAAAeACwAAAAcAAgAAAAeACkAAAAcAAkAAAAeACoAAAAcAAoAAAAeACsAAAAcAAsAAAAeACwAAAAcAAwAAAAeACkAAAAcAA0AAAAeACoAAAAcAA4AAAAeACsAAAAcAA8AAAAeACwAAAAcABAAAAAeACkAAAAcABEAAAAeACoAAAAcABIAAAAeACsAAAAcABMAAAAeACwAAAAcABQAAAAeACkAAAAcABUAAAAeACkAAAAcABYAAAAeACoAAAAcABcAAAAeACsAAAABAAEAAAAdACkAAAABAAIAAAAdACoAAAABAAMAAAAdACsAAAABAAQAAAAdACwAAAACAAEAAAAeACkAAAACAAIAAAAeACoAAAACAAMAAAAeACsAAAACAAQAAAAeACwAAAADAAEAAAAfACkAAAADAAIAAAAfACoAAAADAAMAAAAfACsAAAADAAQAAAAfACwAAAAEAAEAAAAgACkAAAAEAAIAAAAgACoAAAAEAAMAAAAgACsAAAAEAAQAAAAgACwAAAAFAAEAAAAdACkAAAAFAAIAAAAdACoAAAAFAAMAAAAdACsAAAAFAAQAAAAdACwAAAAGAAEAAAAeACkAAAAGAAIAAAAeACoAAAAGAAMAAAAeACsAAAAGAAQAAAAeACwAAAAHAAEAAAAfACkAAAAHAAIAAAAfACoAAAAHAAMAAAAfACsAAAAHAAQAAAAfACwAAAAIAAEAAAAgACkAAAAIAAIAAAAgACoAAAAIAAMAAAAgACsAAAAIAAQAAAAgACwAAAAJAAEAAAAdACkAAAAJAAIAAAAdACoAAAAJAAMAAAAdACsAAAAJAAQAAAAdACwAAAAKAAEAAAAeACkAAAAKAAIAAAAeACoAAAAKAAMAAAAeACsAAAAKAAQAAAAeACwAAAALAAEAAAAfACkAAAALAAIAAAAfACoAAAALAAMAAAAfACsAAAALAAQAAAAfACwAAAAMAAEAAAAgACkAAAAMAAIAAAAgACoAAAAMAAMAAAAgACsAAAAMAAQAAAAgACwAAAABAAUAAAAdACkAAAABAAYAAAAdACoAAAABAAcAAAAdACsAAAABAAgAAAAdACwAAAACAAUAAAAeACkAAAACAAYAAAAeACoAAAACAAcAAAAeACsAAAACAAgAAAAeACwAAAADAAUAAAAfACkAAAADAAYAAAAfACoAAAADAAcAAAAfACsAAAADAAgAAAAfACwAAAAEAAUAAAAgACkAAAAEAAYAAAAgACoAAAAEAAcAAAAgACsAAAAEAAgAAAAgACwAAAABAAkAAAAdACkAAAABAAoAAAAdACoAAAABAAsAAAAdACsAAAABAAwAAAAdACwAAAACAAkAAAAeACkAAAACAAoAAAAeACoAAAACAAsAAAAeACsAAAACAAwAAAAeACwAAAADAAkAAAAfACkAAAADAAoAAAAfACoAAAADAAsAAAAfACsAAAADAAwAAAAfACwAAAAEAAkAAAAgACkAAAAEAAoAAAAgACoAAAAEAAsAAAAgACsAAAAEAAwAAAAgACwAAAABAA0AAAAdACkAAAABAA4AAAAdACoAAAABAA8AAAAdACsAAAABABAAAAAdACwAAAACAA0AAAAeACkAAAACAA4AAAAeACoAAAACAA8AAAAeACsAAAACABAAAAAeACwAAAADAA0AAAAfACkAAAADAA4AAAAfACoAAAADAA8AAAAfACsAAAADABAAAAAfACwAAAAEAA0AAAAgACkAAAAEAA4AAAAgACoAAAAEAA8AAAAgACsAAAAEABAAAAAgACwAAAABABEAAAAdACkAAAABABIAAAAdACoAAAABABMAAAAdACsAAAABABQAAAAdACwAAAACABEAAAAeACkAAAACABIAAAAeACoAAAACABMAAAAeACsAAAACABQAAAAeACwAAAADABEAAAAfACkAAAADABIAAAAfACoAAAADABMAAAAfACsAAAADABQAAAAfACwAAAAEABEAAAAgACkAAAAEABIAAAAgACoAAAAEABMAAAAgACsAAAAEABQAAAAgACwAAAAFAAUAAAAdACkAAAAFAAYAAAAdACoAAAAFAAcAAAAdACsAAAAFAAgAAAAdACwAAAAGAAUAAAAeACkAAAAGAAYAAAAeACoAAAAGAAcAAAAeACsAAAAGAAgAAAAeACwAAAAHAAUAAAAfACkAAAAHAAYAAAAfACoAAAAHAAcAAAAfACsAAAAHAAgAAAAfACwAAAAIAAUAAAAgACkAAAAIAAYAAAAgACoAAAAIAAcAAAAgACsAAAAIAAgAAAAgACwAAAAFAAkAAAAdACkAAAAFAAoAAAAdACoAAAAFAAsAAAAdACsAAAAFAAwAAAAdACwAAAAGAAkAAAAeACkAAAAGAAoAAAAeACoAAAAGAAsAAAAeACsAAAAGAAwAAAAeACwAAAAHAAkAAAAfACkAAAAHAAoAAAAfACoAAAAHAAsAAAAfACsAAAAHAAwAAAAfACwAAAAIAAkAAAAgACkAAAAIAAoAAAAgACoAAAAIAAsAAAAgACsAAAAIAAwAAAAgACwAAAAFAA0AAAAdACkAAAAFAA4AAAAdACoAAAAFAA8AAAAdACsAAAAFABAAAAAdACwAAAAGAA0AAAAeACkAAAAGAA4AAAAeACoAAAAGAA8AAAAeACsAAAAGABAAAAAeACwAAAAHAA0AAAAfACkAAAAHAA4AAAAfACoAAAAHAA8AAAAfACsAAAAHABAAAAAfACwAAAAIAA0AAAAgACkAAAAIAA4AAAAgACoAAAAIAA8AAAAgACsAAAAIABAAAAAgACwAAAAFABEAAAAdACkAAAAFABIAAAAdACoAAAAFABMAAAAdACsAAAAFABQAAAAdACwAAAAGABEAAAAeACkAAAAGABIAAAAeACoAAAAGABMAAAAeACsAAAAGABQAAAAeACwAAAAHABEAAAAfACkAAAAHABIAAAAfACoAAAAHABMAAAAfACsAAAAHABQAAAAfACwAAAAIABEAAAAgACkAAAAIABIAAAAgACoAAAAIABMAAAAgACsAAAAIABQAAAAgACwAAAAJAAUAAAAdACkAAAAJAAYAAAAdACoAAAAJAAcAAAAdACsAAAAJAAgAAAAdACwAAAAKAAUAAAAeACkAAAAKAAYAAAAeACoAAAAKAAcAAAAeACsAAAAKAAgAAAAeACwAAAALAAUAAAAfACkAAAALAAYAAAAfACoAAAALAAcAAAAfACsAAAALAAgAAAAfACwAAAAMAAUAAAAgACkAAAAMAAYAAAAgACoAAAAMAAcAAAAgACsAAAAMAAgAAAAgACwAAAAJAAkAAAAdACkAAAAJAAoAAAAdACoAAAAJAAsAAAAdACsAAAAJAAwAAAAdACwAAAAKAAkAAAAeACkAAAAKAAoAAAAeACoAAAAKAAsAAAAeACsAAAAKAAwAAAAeACwAAAALAAkAAAAfACkAAAALAAoAAAAfACoAAAALAAsAAAAfACsAAAALAAwAAAAfACwAAAAMAAkAAAAgACkAAAAMAAoAAAAgACoAAAAMAAsAAAAgACsAAAAMAAwAAAAgACwAAAAJAA0AAAAdACkAAAAJAA4AAAAdACoAAAAJAA8AAAAdACsAAAAJABAAAAAdACwAAAAKAA0AAAAeACkAAAAKAA4AAAAeACoAAAAKAA8AAAAeACsAAAAKABAAAAAeACwAAAALAA0AAAAfACkAAAALAA4AAAAfACoAAAALAA8AAAAfACsAAAALABAAAAAfACwAAAAMAA0AAAAgACkAAAAMAA4AAAAgACoAAAAMAA8AAAAgACsAAAAMABAAAAAgACwAAAAJABEAAAAdACkAAAAJABIAAAAdACoAAAAJABMAAAAdACsAAAAJABQAAAAdACwAAAAKABEAAAAeACkAAAAKABIAAAAeACoAAAAKABMAAAAeACsAAAAKABQAAAAeACwAAAALABEAAAAfACkAAAALABIAAAAfACoAAAALABMAAAAfACsAAAALABQAAAAfACwAAAAMABEAAAAgACkAAAAMABIAAAAgACoAAAAMABMAAAAgACsAAAAMABQAAAAgACwAAAANAAEAAAAdACkAAAANAAIAAAAdACoAAAANAAMAAAAdACsAAAANAAQAAAAdACwAAAAOAAEAAAAeACkAAAAOAAIAAAAeACoAAAAOAAMAAAAeACsAAAAOAAQAAAAeACwAAAAPAAEAAAAfACkAAAAPAAIAAAAfACoAAAAPAAMAAAAfACsAAAAPAAQAAAAfACwAAAAQAAEAAAAgACkAAAAQAAIAAAAgACoAAAAQAAMAAAAgACsAAAAQAAQAAAAgACwAAAANAAUAAAAdACkAAAANAAYAAAAdACoAAAANAAcAAAAdACsAAAANAAgAAAAdACwAAAAOAAUAAAAeACkAAAAOAAYAAAAeACoAAAAOAAcAAAAeACsAAAAOAAgAAAAeACwAAAAPAAUAAAAfACkAAAAPAAYAAAAfACoAAAAPAAcAAAAfACsAAAAPAAgAAAAfACwAAAAQAAUAAAAgACkAAAAQAAYAAAAgACoAAAAQAAcAAAAgACsAAAAQAAgAAAAgACwAAAANAAkAAAAdACkAAAANAAoAAAAdACoAAAANAAsAAAAdACsAAAANAAwAAAAdACwAAAAOAAkAAAAeACkAAAAOAAoAAAAeACoAAAAOAAsAAAAeACsAAAAOAAwAAAAeACwAAAAPAAkAAAAfACkAAAAPAAoAAAAfACoAAAAPAAsAAAAfACsAAAAPAAwAAAAfACwAAAAQAAkAAAAgACkAAAAQAAoAAAAgACoAAAAQAAsAAAAgACsAAAAQAAwAAAAgACwAAAANAA0AAAAdACkAAAANAA4AAAAdACoAAAANAA8AAAAdACsAAAANABAAAAAdACwAAAAOAA0AAAAeACkAAAAOAA4AAAAeACoAAAAOAA8AAAAeACsAAAAOABAAAAAeACwAAAAPAA0AAAAfACkAAAAPAA4AAAAfACoAAAAPAA8AAAAfACsAAAAPABAAAAAfACwAAAAQAA0AAAAgACkAAAAQAA4AAAAgACoAAAAQAA8AAAAgACsAAAAQABAAAAAgACwAAAANABEAAAAdACkAAAANABIAAAAdACoAAAANABMAAAAdACsAAAANABQAAAAdACwAAAAOABEAAAAeACkAAAAOABIAAAAeACoAAAAOABMAAAAeACsAAAAOABQAAAAeACwAAAAPABEAAAAfACkAAAAPABIAAAAfACoAAAAPABMAAAAfACsAAAAPABQAAAAfACwAAAAQABEAAAAgACkAAAAQABIAAAAgACoAAAAQABMAAAAgACsAAAAQABQAAAAgACwAAAARAAEAAAAdACkAAAARAAIAAAAdACoAAAARAAMAAAAdACsAAAARAAQAAAAdACwAAAASAAEAAAAeACkAAAASAAIAAAAeACoAAAASAAMAAAAeACsAAAASAAQAAAAeACwAAAATAAEAAAAfACkAAAATAAIAAAAfACoAAAATAAMAAAAfACsAAAATAAQAAAAfACwAAAAUAAEAAAAgACkAAAAUAAIAAAAgACoAAAAUAAMAAAAgACsAAAAUAAQAAAAgACwAAAARAAUAAAAdACkAAAARAAYAAAAdACoAAAARAAcAAAAdACsAAAARAAgAAAAdACwAAAASAAUAAAAeACkAAAASAAYAAAAeACoAAAASAAcAAAAeACsAAAASAAgAAAAeACwAAAATAAUAAAAfACkAAAATAAYAAAAfACoAAAATAAcAAAAfACsAAAATAAgAAAAfACwAAAAUAAUAAAAgACkAAAAUAAYAAAAgACoAAAAUAAcAAAAgACsAAAAUAAgAAAAgACwAAAARAAkAAAAdACkAAAARAAoAAAAdACoAAAARAAsAAAAdACsAAAARAAwAAAAdACwAAAASAAkAAAAeACkAAAASAAoAAAAeACoAAAASAAsAAAAeACsAAAASAAwAAAAeACwAAAATAAkAAAAfACkAAAATAAoAAAAfACoAAAATAAsAAAAfACsAAAATAAwAAAAfACwAAAAUAAkAAAAgACkAAAAUAAoAAAAgACoAAAAUAAsAAAAgACsAAAAUAAwAAAAgACwAAAARAA0AAAAdACkAAAARAA4AAAAdACoAAAARAA8AAAAdACsAAAARABAAAAAdACwAAAASAA0AAAAeACkAAAASAA4AAAAeACoAAAASAA8AAAAeACsAAAASABAAAAAeACwAAAATAA0AAAAfACkAAAATAA4AAAAfACoAAAATAA8AAAAfACsAAAATABAAAAAfACwAAAAUAA0AAAAgACkAAAAUAA4AAAAgACoAAAAUAA8AAAAgACsAAAAUABAAAAAgACwAAAARABEAAAAdACkAAAARABIAAAAdACoAAAARABMAAAAdACsAAAARABQAAAAdACwAAAASABEAAAAeACkAAAASABIAAAAeACoAAAASABMAAAAeACsAAAASABQAAAAeACwAAAATABEAAAAfACkAAAATABIAAAAfACoAAAATABMAAAAfACsAAAATABQAAAAfACwAAAAUABEAAAAgACkAAAAUABIAAAAgACoAAAAUABMAAAAgACsAAAAUABQAAAAgACwAAAAVAAEAAAAdACkAAAAVAAIAAAAdACoAAAAVAAMAAAAdACsAAAAVAAQAAAAdACwAAAAWAAEAAAAeACkAAAAWAAIAAAAeACoAAAAWAAMAAAAeACsAAAAWAAQAAAAeACwAAAAXAAEAAAAfACkAAAAXAAIAAAAfACoAAAAXAAMAAAAfACsAAAAXAAQAAAAfACwAAAAYAAEAAAAgACkAAAAYAAIAAAAgACoAAAAYAAMAAAAgACsAAAAYAAQAAAAgACwAAAAVAAUAAAAdACkAAAAVAAYAAAAdACoAAAAVAAcAAAAdACsAAAAVAAgAAAAdACwAAAAWAAUAAAAeACkAAAAWAAYAAAAeACoAAAAWAAcAAAAeACsAAAAWAAgAAAAeACwAAAAXAAUAAAAfACkAAAAXAAYAAAAfACoAAAAXAAcAAAAfACsAAAAXAAgAAAAfACwAAAAYAAUAAAAgACkAAAAYAAYAAAAgACoAAAAYAAcAAAAgACsAAAAYAAgAAAAgACwAAAAVAAkAAAAdACkAAAAVAAoAAAAdACoAAAAVAAsAAAAdACsAAAAVAAwAAAAdACwAAAAWAAkAAAAeACkAAAAWAAoAAAAeACoAAAAWAAsAAAAeACsAAAAWAAwAAAAeACwAAAAXAAkAAAAfACkAAAAXAAoAAAAfACoAAAAXAAsAAAAfACsAAAAXAAwAAAAfACwAAAAYAAkAAAAgACkAAAAYAAoAAAAgACoAAAAYAAsAAAAgACsAAAAYAAwAAAAgACwAAAAVAA0AAAAdACkAAAAVAA4AAAAdACoAAAAVAA8AAAAdACsAAAAVABAAAAAdACwAAAAWAA0AAAAeACkAAAAWAA4AAAAeACoAAAAWAA8AAAAeACsAAAAWABAAAAAeACwAAAAXAA0AAAAfACkAAAAXAA4AAAAfACoAAAAXAA8AAAAfACsAAAAXABAAAAAfACwAAAAYAA0AAAAgACkAAAAYAA4AAAAgACoAAAAYAA8AAAAgACsAAAAYABAAAAAgACwAAAAVABEAAAAdACkAAAAVABIAAAAdACoAAAAVABMAAAAdACsAAAAVABQAAAAdACwAAAAWABEAAAAeACkAAAAWABIAAAAeACoAAAAWABMAAAAeACsAAAAWABQAAAAeACwAAAAXABEAAAAfACkAAAAXABIAAAAfACoAAAAXABMAAAAfACsAAAAXABQAAAAfACwAAAAYABEAAAAgACkAAAAYABIAAAAgACoAAAAYABMAAAAgACsAAAAYABQAAAAgACwAAAAZAAEAAAAdACkAAAAZAAIAAAAdACoAAAAZAAMAAAAdACsAAAAaAAEAAAAeACkAAAAaAAIAAAAeACoAAAAaAAMAAAAeACsAAAAbAAEAAAAfACkAAAAbAAIAAAAfACoAAAAbAAMAAAAfACsAAAAZAAQAAAAdACkAAAAZAAUAAAAdACoAAAAZAAYAAAAdACsAAAAaAAQAAAAeACkAAAAaAAUAAAAeACoAAAAaAAYAAAAeACsAAAAbAAQAAAAfACkAAAAbAAUAAAAfACoAAAAbAAYAAAAfACsAAAAZAAcAAAAdACkAAAAZAAgAAAAdACoAAAAZAAkAAAAdACsAAAAaAAcAAAAeACkAAAAaAAgAAAAeACoAAAAaAAkAAAAeACsAAAAbAAcAAAAfACkAAAAbAAgAAAAfACoAAAAbAAkAAAAfACsAAAAZAAoAAAAdACkAAAAZAAsAAAAdACoAAAAZAAwAAAAdACsAAAAaAAoAAAAeACkAAAAaAAsAAAAeACoAAAAaAAwAAAAeACsAAAAbAAoAAAAfACkAAAAbAAsAAAAfACoAAAAbAAwAAAAfACsAAAAZAA0AAAAdACkAAAAZAA4AAAAdACoAAAAZAA8AAAAdACsAAAAaAA0AAAAeACkAAAAaAA4AAAAeACoAAAAaAA8AAAAeACsAAAAbAA0AAAAfACkAAAAbAA4AAAAfACoAAAAbAA8AAAAfACsAAAAZABAAAAAdACkAAAAZABEAAAAdACoAAAAZABIAAAAdACsAAAAaABAAAAAeACkAAAAaABEAAAAeACoAAAAaABIAAAAeACsAAAAbABAAAAAfACkAAAAbABEAAAAfACoAAAAbABIAAAAfACsAAAAZABMAAAAdACkAAAAZABQAAAAdACoAAAAZABUAAAAdACkAAAAaABMAAAAeACkAAAAaABQAAAAeACoAAAAaABUAAAAeACkAAAAbABMAAAAfACkAAAAbABQAAAAfACoAAAAbABUAAAAfACkAAAAZABYAAAAdACoAAAAZABcAAAAdACsAAAAaABYAAAAeACoAAAAaABcAAAAeACsAAAAbABYAAAAfACoAAAAbABcAAAAfACsAAAABABUAAAAdACkAAAABABYAAAAdACoAAAABABcAAAAdACwAAAACABUAAAAeACkAAAACABYAAAAeACoAAAACABcAAAAeACwAAAADABUAAAAfACkAAAADABYAAAAfACoAAAADABcAAAAfACwAAAAEABUAAAAdACkAAAAEABYAAAAdACoAAAAEABcAAAAgACwAAAAFABUAAAAeACkAAAAFABYAAAAeACoAAAAFABcAAAAdACwAAAAGABUAAAAfACkAAAAGABYAAAAfACoAAAAGABcAAAAeACwAAAAHABUAAAAdACkAAAAHABYAAAAdACoAAAAHABcAAAAfACwAAAAIABUAAAAeACkAAAAIABYAAAAeACoAAAAIABcAAAAgACwAAAAJABUAAAAfACkAAAAJABYAAAAfACoAAAAJABcAAAAfACsAAAAKABUAAAAdACkAAAAKABYAAAAdACoAAAAKABcAAAAdACsAAAALABUAAAAeACkAAAALABYAAAAeACoAAAALABcAAAAeACsAAAAMABUAAAAfACkAAAAMABYAAAAfACoAAAAMABcAAAAfACsAAAANABUAAAAdACkAAAANABYAAAAdACoAAAANABcAAAAdACsAAAAOABUAAAAeACkAAAAOABYAAAAeACoAAAAOABcAAAAeACsAAAAPABUAAAAfACkAAAAPABYAAAAfACoAAAAPABcAAAAfACsAAAAQABUAAAAdACkAAAAQABYAAAAdACoAAAAQABcAAAAdACsAAAARABUAAAAeACkAAAARABYAAAAeACoAAAARABcAAAAeACsAAAASABUAAAAfACkAAAASABYAAAAfACoAAAASABcAAAAfACsAAAATABUAAAAdACkAAAATABYAAAAdACoAAAATABcAAAAdACsAAAAUABUAAAAeACkAAAAUABYAAAAeACoAAAAUABcAAAAeACsAAAAVABUAAAAfACkAAAAVABYAAAAfACoAAAAVABcAAAAfACsAAAAWABUAAAAdACkAAAAWABYAAAAdACoAAAAWABcAAAAdACsAAAAXABUAAAAeACkAAAAXABYAAAAeACoAAAAXABcAAAAeACsAAAAYABUAAAAfACkAAAAYABYAAAAfACoAAAAYABcAAAAfACsAAAAAABkAAAAcAC0AAAABABkAAAAdAC0AAAACABkAAAAeAC0AAAADABkAAAAfAC0AAAAEABkAAAAgAC0AAAAcABkAAAAfAC0AAAAYABkAAAAdAC0AAAAZABkAAAAeAC0AAAAaABkAAAAfAC0AAAAbABkAAAAgAC0AAAAUABkAAAAdAC0AAAAVABkAAAAeAC0AAAAWABkAAAAfAC0AAAAXABkAAAAgAC0AAAAQABkAAAAdAC0AAAARABkAAAAeAC0AAAASABkAAAAfAC0AAAATABkAAAAgAC0AAAAMABkAAAAfAC0AAAANABkAAAAgAC0AAAAOABkAAAAfAC0AAAAPABkAAAAgAC0AAAAIABkAAAAgAC0AAAAJABkAAAAeAC0AAAAKABkAAAAdAC0AAAALABkAAAAeAC0AAAAFABkAAAAdAC0AAAAGABkAAAAeAC0AAAAHABkAAAAfAC0AAAAfAAAAAAAhACgAAAAfABkAAAAhAC0AAAAdABkAAAAfAC0AAAAeABkAAAAgAC0AAAAfAAEAAAAhACkAAAAfAAIAAAAhACoAAAAfAAMAAAAhACsAAAAfAAQAAAAhACwAAAAfAAUAAAAhACkAAAAfAAYAAAAhACoAAAAfAAcAAAAhACsAAAAfAAgAAAAhACwAAAAfAAkAAAAhACkAAAAfAAoAAAAhACoAAAAfAAsAAAAhACsAAAAfAAwAAAAhACkAAAAeAAkAAAAgACoAAAAeAAoAAAAgACsAAAAeAAsAAAAgACwAAAAeAAwAAAAgACkAAAAeAA0AAAAgACoAAAAeAA4AAAAgACsAAAAeAA8AAAAgACwAAAAeABAAAAAgACkAAAAfAA0AAAAhACoAAAAfAA4AAAAhACsAAAAfAA8AAAAhACwAAAAfABAAAAAhACkAAAAfABEAAAAhACoAAAAfABIAAAAhACsAAAAfABMAAAAhACwAAAAeABEAAAAgACoAAAAeABIAAAAgACsAAAAeABMAAAAgACwAAAAeABQAAAAgACkAAAAeABUAAAAgACkAAAAeABYAAAAgACoAAAAeABcAAAAgACsAAAAfABQAAAAhACkAAAAfABUAAAAhACkAAAAfABYAAAAhACoAAAAfABcAAAAhACsAAAAfABgAAAAhACwAAAAdAAEAAAAfACkAAAAdAAIAAAAfACoAAAAdAAMAAAAfACsAAAAdAAQAAAAfACkAAAAeAAEAAAAgACkAAAAeAAIAAAAgACoAAAAeAAMAAAAgACsAAAAeAAQAAAAgACkAAAAdAAUAAAAfACoAAAAdAAYAAAAfACsAAAAdAAcAAAAfACwAAAAeAAUAAAAgACoAAAAeAAYAAAAgACsAAAAeAAcAAAAgACwAAAAdAAgAAAAfACkAAAAdAAkAAAAfACoAAAAdAAoAAAAfACsAAAAdAAsAAAAfACwAAAAeAAgAAAAgACkAAAAdAAwAAAAfACkAAAAdAA0AAAAfACoAAAAdAA4AAAAfACsAAAAdAA8AAAAfACwAAAAdABAAAAAfACkAAAAdABEAAAAfACoAAAAdABIAAAAfACsAAAAdABMAAAAfACwAAAAdABQAAAAfACkAAAAdABUAAAAfACkAAAAdABYAAAAfACoAAAAdABcAAAAfACsAAAAdABgAAAAfACwAAAAeABgAAAAgACwAAAAdAAAAAAAfACgAAAAeAAAAAAAgACgAAAA=")
+tile_set = ExtResource("4_rrx8r")
+
 [node name="Food" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
-custom_minimum_size = Vector2(0, 400)
+custom_minimum_size = Vector2(0, 390)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -80,10 +311,14 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 
 [node name="Meal" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Food/Food222/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_bo2hy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bo2hy")
 text = "Meals"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Food/Food222/MarginContainer/VBoxContainer"]
@@ -93,18 +328,25 @@ theme_override_constants/margin_bottom = 50
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Food/Food222/MarginContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
 columns = 4
 
 [node name="Ingredients" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Food/Food222/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_bo2hy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_86swa")
 text = "Ingredients"
 
 [node name="GridContainer2" type="GridContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Food/Food222/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
 columns = 4
 
-[node name="Equioment" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
+[node name="Equipment" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
@@ -139,6 +381,7 @@ alignment = 1
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o63vb")
 
 [node name="DisplayContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer"]
 unique_name_in_owner = true
@@ -147,6 +390,7 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dpysw")
 
 [node name="MealImage" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/PanelContainer"]
 unique_name_in_owner = true
@@ -166,7 +410,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jyvso")
 text = "Dish name"
 horizontal_alignment = 1
 
@@ -176,7 +422,11 @@ layout_mode = 2
 [node name="Description" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Description:"
+theme_override_colors/font_color = Color(0.501961, 0.239216, 0.231373, 1)
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3f1s")
+text = "Description"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer"]
 layout_mode = 2
@@ -187,6 +437,9 @@ unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y5jva")
 text = "aksdfjasdlk"
 autowrap_mode = 1
 
@@ -195,26 +448,54 @@ layout_mode = 2
 
 [node name="Price2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Price:"
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.501961, 0.239216, 0.231373, 1)
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_l1j31")
+text = "Price"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 
-[node name="PriceOutput" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer2/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("10_rcxoc")
+stretch_mode = 3
+
+[node name="PriceOutput" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer/VBoxContainer2/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gwh43")
 text = "100"
 
 [node name="Ingredient" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Ingredients:"
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.501961, 0.239216, 0.231373, 1)
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_gwh43")
+text = "Ingredients"
 
 [node name="ItemList" type="ItemList" parent="VBoxContainer/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/PanelContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/v_separation = 20
+theme_override_fonts/font = ExtResource("2_86swa")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dpysw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_jnh3l")
 auto_height = true
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]

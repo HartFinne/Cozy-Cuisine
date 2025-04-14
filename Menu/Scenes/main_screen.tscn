@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cjlomdj2qaoaq" path="res://Menu/Assets/quitbutton/3.png" id="15_ownbj"]
 [ext_resource type="Texture2D" uid="uid://xafp1b2txbh" path="res://Menu/Assets/quitbutton/2.png" id="16_v7wqy"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
-[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vjv"]
 bg_color = Color(1, 0.917647, 0.772549, 1)
