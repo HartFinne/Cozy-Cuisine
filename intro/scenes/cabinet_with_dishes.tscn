@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cn85mysnmeu87"]
 
-[ext_resource type="Texture2D" uid="uid://noo82gamf4yc" path="res://assets/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-dishes/Cabinet-Animation-Dishes-Sprite-Sheet.png" id="1_y82qq"]
+[ext_resource type="Texture2D" uid="uid://noo82gamf4yc" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-dishes/Cabinet-Animation-Dishes-Sprite-Sheet.png" id="1_y82qq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lggcj"]
 atlas = ExtResource("1_y82qq")
