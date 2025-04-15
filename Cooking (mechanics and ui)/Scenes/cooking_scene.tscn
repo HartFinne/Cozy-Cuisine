@@ -1,22 +1,44 @@
-[gd_scene load_steps=16 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=62 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
 [ext_resource type="Script" uid="uid://dksnl7jm68i8h" path="res://Cooking (mechanics and ui)/Scripts/ingredient.gd" id="2_lwslm"]
+[ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="2_wk0hh"]
+[ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="3_rv0if"]
 [ext_resource type="Texture2D" uid="uid://rhrms2vi5gd2" path="res://Cooking (mechanics and ui)/Assets/UI cooking.png" id="3_wobfx"]
 [ext_resource type="Script" uid="uid://oox1pt4tv8mf" path="res://Cooking (mechanics and ui)/Scripts/ingredient_popup.gd" id="4_oxed2"]
 [ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
+[ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="5_hytrb"]
 [ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
+[ext_resource type="Texture2D" uid="uid://c73n2p2syccx" path="res://Cooking (mechanics and ui)/Assets/COOK/2.png" id="7_t4kcf"]
 [ext_resource type="PackedScene" uid="uid://c87xmv0o4p1cn" path="res://Cooking (mechanics and ui)/Scenes/order_container.tscn" id="7_wobfx"]
+[ext_resource type="Texture2D" uid="uid://b0cxuassnsu75" path="res://Cooking (mechanics and ui)/Assets/COOK/3.png" id="8_c66or"]
+[ext_resource type="Texture2D" uid="uid://b7pxdp5aqmkga" path="res://Cooking (mechanics and ui)/Assets/COOK/1.png" id="9_s5ke1"]
 [ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
+[ext_resource type="Texture2D" uid="uid://c2712n5jk0oy" path="res://Cooking (mechanics and ui)/Assets/CLEAR/3.png" id="10_4fvnn"]
+[ext_resource type="Texture2D" uid="uid://cl2qgahaw87a8" path="res://Cooking (mechanics and ui)/Assets/CLEAR/2.png" id="11_5ifc6"]
+[ext_resource type="Texture2D" uid="uid://bijjuwiasm1my" path="res://Cooking (mechanics and ui)/Assets/CLEAR/1.png" id="12_y42ar"]
+[ext_resource type="Texture2D" uid="uid://bx6rokpeupc27" path="res://Cooking (mechanics and ui)/Assets/ORDERS/2.png" id="16_bbj53"]
+[ext_resource type="Texture2D" uid="uid://doxqhtbey1mp4" path="res://Cooking (mechanics and ui)/Assets/ORDERS/3.png" id="17_hytrb"]
+[ext_resource type="Texture2D" uid="uid://dp55aoiblghnq" path="res://Cooking (mechanics and ui)/Assets/ORDERS/1.png" id="18_verp7"]
+[ext_resource type="Texture2D" uid="uid://dtqg3e75ckpf7" path="res://Cooking (mechanics and ui)/Assets/DISHES/2.png" id="19_j3u5v"]
+[ext_resource type="Texture2D" uid="uid://cg8wc7hgwannr" path="res://Cooking (mechanics and ui)/Assets/DISHES/3.png" id="20_bw05v"]
+[ext_resource type="Texture2D" uid="uid://er4ta2ol3f26" path="res://Cooking (mechanics and ui)/Assets/DISHES/1.png" id="21_ajps1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5t4in"]
+shader = ExtResource("2_wk0hh")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wobfx"]
 atlas = ExtResource("2_5a071")
-region = Rect2(64, 128, 16, 16)
+region = Rect2(65, 129, 14, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5a071"]
 atlas = ExtResource("2_5a071")
-region = Rect2(80, 128, 16, 16)
+region = Rect2(81, 65, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_verp7"]
+atlas = ExtResource("5_hytrb")
+region = Rect2(65, 65, 14, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5d7ps"]
 atlas = ExtResource("3_wobfx")
@@ -25,6 +47,26 @@ region = Rect2(83, 51, 43, 39)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqh86"]
 texture = SubResource("AtlasTexture_5d7ps")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bbj53"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hytrb"]
+texture = ExtResource("7_t4kcf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_verp7"]
+texture = ExtResource("8_c66or")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j3u5v"]
+texture = ExtResource("9_s5ke1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw05v"]
+texture = ExtResource("10_4fvnn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ajps1"]
+texture = ExtResource("11_5ifc6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5xmd4"]
+texture = ExtResource("12_y42ar")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqh86"]
 atlas = ExtResource("3_wobfx")
 region = Rect2(481, 129, 46, 46)
@@ -32,6 +74,76 @@ filter_clip = true
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xmic6"]
 texture = SubResource("AtlasTexture_qqh86")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_verp7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hytrb"]
+atlas = ExtResource("5_hytrb")
+region = Rect2(65, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_apnk7"]
+texture = SubResource("AtlasTexture_hytrb")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pqtk"]
+atlas = ExtResource("5_hytrb")
+region = Rect2(81, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vquki"]
+texture = SubResource("AtlasTexture_3pqtk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4n4q"]
+atlas = ExtResource("5_hytrb")
+region = Rect2(65, 97, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qccpg"]
+texture = SubResource("AtlasTexture_r4n4q")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hytrb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3u5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw05v"]
+atlas = ExtResource("5_hytrb")
+region = Rect2(65, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3pqtk"]
+texture = SubResource("AtlasTexture_bw05v")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vquki"]
+atlas = ExtResource("5_hytrb")
+region = Rect2(81, 33, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4n4q"]
+texture = SubResource("AtlasTexture_vquki")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qccpg"]
+atlas = ExtResource("5_hytrb")
+region = Rect2(65, 97, 14, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oysib"]
+texture = SubResource("AtlasTexture_qccpg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw05v"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7sy65"]
+texture = ExtResource("16_bbj53")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5mlcg"]
+texture = ExtResource("17_hytrb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_okkye"]
+texture = ExtResource("18_verp7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4awaf"]
+texture = ExtResource("19_j3u5v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fa8qe"]
+texture = ExtResource("20_bw05v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8bi1"]
+texture = ExtResource("21_ajps1")
 
 [node name="CookingScene" type="Control"]
 layout_mode = 3
@@ -44,6 +156,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_iv1l6")
 metadata/_edit_use_anchors_ = true
+
+[node name="Bgmarket" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5t4in")
+position = Vector2(628, 339)
+scale = Vector2(0.250735, 0.250735)
+texture = ExtResource("3_rv0if")
 
 [node name="BackButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
@@ -58,6 +178,7 @@ offset_bottom = -31.92
 scale = Vector2(2.995, 2.995)
 texture_normal = SubResource("AtlasTexture_wobfx")
 texture_pressed = SubResource("AtlasTexture_5a071")
+texture_hover = SubResource("AtlasTexture_verp7")
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -186,22 +307,33 @@ script = ExtResource("2_lwslm")
 
 [node name="CookButton" type="Button" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 anchor_left = 0.111111
 anchor_top = 0.839506
 anchor_right = 0.216145
 anchor_bottom = 0.907407
-text = "Cook"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bbj53")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hytrb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_verp7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j3u5v")
+text = "
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="ClearButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.260416
 anchor_top = 0.839506
 anchor_right = 0.36545
 anchor_bottom = 0.907408
-text = "Clear"
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_bw05v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ajps1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5xmd4")
+text = "
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
@@ -275,13 +407,18 @@ script = ExtResource("7_5d7ps")
 metadata/_edit_use_anchors_ = true
 
 [node name="OrderBackButton" type="Button" parent="Orders"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_vertical = 4
-text = "->"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_verp7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_apnk7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vquki")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qccpg")
 
 [node name="PanelContainer" type="PanelContainer" parent="Orders"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hytrb")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Orders/PanelContainer"]
@@ -305,17 +442,24 @@ anchor_right = 0.72743
 anchor_bottom = 1.0
 offset_left = 314.0
 offset_right = 314.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("9_xmic6")
 metadata/_edit_use_anchors_ = true
 
 [node name="DishBackButton" type="Button" parent="Dishes"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_vertical = 4
-text = "->"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j3u5v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3pqtk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r4n4q")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oysib")
 
 [node name="PanelContainer" type="PanelContainer" parent="Dishes"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bw05v")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Dishes/PanelContainer"]
@@ -325,6 +469,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 
 [node name="PanelContainer" parent="Dishes/PanelContainer/ScrollContainer/DishVbox" instance=ExtResource("7_wobfx")]
 layout_mode = 2
@@ -332,27 +477,33 @@ mouse_filter = 0
 
 [node name="OrdersButton" type="Button" parent="."]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 40)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.919271
-anchor_top = 0.0246914
-anchor_right = 0.97309
-anchor_bottom = 0.0725309
+anchor_left = 0.901042
+anchor_top = 0.0308642
+anchor_right = 0.954861
+anchor_bottom = 0.0787037
 offset_left = -0.000610352
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
 mouse_filter = 1
-text = "Orders"
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sy65")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5mlcg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_okkye")
 metadata/_edit_use_anchors_ = true
 
 [node name="DishButton" type="Button" parent="."]
+custom_minimum_size = Vector2(70, 40)
 layout_mode = 0
-offset_left = 1059.0
+offset_left = 1029.0
 offset_top = 78.0
-offset_right = 1121.0
-offset_bottom = 109.0
+offset_right = 1099.0
+offset_bottom = 118.0
 scale = Vector2(1.5, 1.5)
-text = "Dishes"
+theme_override_styles/hover = SubResource("StyleBoxTexture_4awaf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fa8qe")
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8bi1")
 
 [node name="IngredientPopup" type="PopupPanel" parent="."]
 unique_name_in_owner = true
