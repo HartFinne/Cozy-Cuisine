@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxbmbqwvjgd0b"]
+[gd_scene load_steps=5 format=3 uid="uid://cxbmbqwvjgd0b"]
 
 [ext_resource type="Script" uid="uid://xh4f8shujq4" path="res://Kiosk (restaurant)/Scripts/dialogue.gd" id="1_nvrqj"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="2_nvrqj"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_dm776"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dm776"]
 atlas = ExtResource("2_nvrqj")
@@ -30,31 +31,37 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.102273
-anchor_top = 0.107143
-anchor_right = 1.525
-anchor_bottom = 0.507143
+anchor_top = 0.25
+anchor_right = 0.831818
+anchor_bottom = 0.132143
 offset_right = 52.8
 offset_bottom = 33.6
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_dm776")
+theme_override_font_sizes/font_size = 16
 text = "john"
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogueLabel" type="RichTextLabel" parent="NinePatchRect"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.113636
-anchor_top = -0.0357143
-anchor_right = 0.818182
-anchor_bottom = 0.964286
+anchor_left = 0.102273
+anchor_top = 0.428571
+anchor_right = 0.431818
+anchor_bottom = 0.125
 offset_right = 88.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/normal_font_size = 13
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_dm776")
+theme_override_font_sizes/normal_font_size = 16
 text = "asdklfjads;lfjdsalfsdja"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
