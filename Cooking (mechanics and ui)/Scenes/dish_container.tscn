@@ -1,10 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://keqadk5s6vut"]
+[gd_scene load_steps=7 format=3 uid="uid://keqadk5s6vut"]
 
-[ext_resource type="Script" uid="uid://cgdvkwbgnqwi4" path="res://Cooking (mechanics and ui)/Scripts/dish_container.gd" id="1_l7edn"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/dish_container.gd" id="1_l7edn"]
 [ext_resource type="Texture2D" uid="uid://bcmgfab66d5xq" path="res://Datas/Assets/Dishes/berjerk_stick-Sheet.png" id="2_w5mkq"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_vlym5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5mkq"]
+bg_color = Color(1, 0.858824, 0.709804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.92549, 0.784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(1, 0.733333, 0.427451, 1)
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jntn"]
+content_margin_left = 10.0
+content_margin_top = 7.0
+content_margin_right = 10.0
+content_margin_bottom = 7.0
+bg_color = Color(0.552941, 0.286275, 0.227451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlym5"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
 
 [node name="DishContainer" type="NinePatchRect"]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(0, 125)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,6 +52,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l7edn")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w5mkq")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -22,18 +69,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jntn")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="DishImage" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
+[node name="DishImage" type="TextureRect" parent="VBoxContainer/PanelContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_w5mkq")
 stretch_mode = 5
 
-[node name="DishName" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="DishName" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vlym5")
+theme_override_font_sizes/font_size = 16
 text = "Dish Name"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -42,6 +95,10 @@ layout_mode = 2
 [node name="IngredientName" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.552941, 0.286275, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_vlym5")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vlym5")
 text = "IngredientName"
 
 [node name="IngredientImage" type="TextureRect" parent="VBoxContainer/HBoxContainer"]

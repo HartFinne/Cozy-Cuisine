@@ -1,7 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://c87xmv0o4p1cn"]
+[gd_scene load_steps=6 format=3 uid="uid://c87xmv0o4p1cn"]
 
-[ext_resource type="Script" uid="uid://bkpcto0std3pu" path="res://Cooking (mechanics and ui)/Scripts/order_container.gd" id="1_dtkrm"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/order_container.gd" id="1_dtkrm"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="1_hjxkv"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_fmj4p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl374"]
+content_margin_left = 8.0
+content_margin_top = 5.0
+content_margin_right = 8.0
+bg_color = Color(0.552941, 0.286275, 0.227451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5cw2"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="PanelContainer" type="NinePatchRect"]
 custom_minimum_size = Vector2(0, 150)
@@ -22,21 +51,36 @@ anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 43.395)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
 
-[node name="Name" type="RichTextLabel" parent="VBoxContainer/MarginContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vl374")
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/MarginContainer2/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_fmj4p")
+theme_override_font_sizes/normal_font_size = 30
 text = "Order"
+scroll_active = false
+context_menu_enabled = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
 
 [node name="Order" type="Label" parent="VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fmj4p")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_y5cw2")
 text = "burger"
+autowrap_mode = 2
+justification_flags = 171
