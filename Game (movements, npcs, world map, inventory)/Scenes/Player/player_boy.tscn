@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b8lpbb08xsg6e"]
+[gd_scene load_steps=53 format=3 uid="uid://b8lpbb08xsg6e"]
 
 [ext_resource type="Texture2D" uid="uid://0on0fh1l47rr" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Boy/IDLE/IDLE BACK/idle_back_boy-Sheet.png" id="1_iewc6"]
 [ext_resource type="Script" uid="uid://bawtckk8bw68s" path="res://Game (movements, npcs, world map, inventory)/Scripts/player_boy.gd" id="1_kil2e"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2b1djirsmnnh" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Boy/WALK-RUN/WALK-RUN FRONT/walkrun_front_boy-Sheet.png" id="6_xa8ye"]
 [ext_resource type="Texture2D" uid="uid://micutrr0h6r1" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Boy/WALK-RUN/WALK-RUN LEFT/walkrun_left_boy-Sheet.png" id="7_yhprx"]
 [ext_resource type="Texture2D" uid="uid://caelgwukj0io" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Boy/WALK-RUN/WALK-RUN RIGHT/walkrun_right_boy-Sheet.png" id="8_decrv"]
+[ext_resource type="AudioStream" uid="uid://bhdwp8f6svbjo" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/footsteps-boots.mp3" id="10_8ix64"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yo2g7"]
 atlas = ExtResource("1_iewc6")
@@ -255,7 +256,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_back",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -272,7 +273,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_front",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -301,7 +302,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -330,7 +331,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 9.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3bq65"]
@@ -346,8 +347,12 @@ script = ExtResource("1_kil2e")
 light_mask = 2
 sprite_frames = SubResource("SpriteFrames_uhnyj")
 animation = &"walk_front"
-frame_progress = 0.166944
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_3bq65")
+
+[node name="walk_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_8ix64")
+volume_db = -5.0
+bus = &"SFX"

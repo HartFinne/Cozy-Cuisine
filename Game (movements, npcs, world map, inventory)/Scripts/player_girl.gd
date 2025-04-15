@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed: float = 100
 
+@onready var walk_sfx: AudioStreamPlayer2D = $walk_sfx
 @onready var animated_sprite = $AnimatedSprite2D
 var last_direction = Vector2.DOWN  
 
@@ -23,8 +24,17 @@ func handle_manual_input():
 	if input_direction != Vector2.ZERO:
 		_play_walk_animation(input_direction)
 		last_direction = input_direction
+
+		# Play walking SFX only once
+		if not walk_sfx.playing:
+			walk_sfx.play()
 	else:
 		_play_idle_animation()
+
+		# Stop SFX when idle
+		if walk_sfx.playing:
+			walk_sfx.stop()
+
 
 func _play_walk_animation(direction: Vector2):
 	if abs(direction.x) > abs(direction.y):  

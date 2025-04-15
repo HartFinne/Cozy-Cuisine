@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cf8usis5fxio3"]
+[gd_scene load_steps=53 format=3 uid="uid://cf8usis5fxio3"]
 
 [ext_resource type="Script" uid="uid://bduw1rtxqkjr3" path="res://Game (movements, npcs, world map, inventory)/Scripts/main_character.gd" id="1_3x263"]
 [ext_resource type="Texture2D" uid="uid://ban3iyvbyp5sp" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Main Character [for cutscene]/IDLE/IDLE BACK/idle_back_mc-Sheet.png" id="1_4hkeg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b8g526030ho57" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Main Character [for cutscene]/WALK-RUN/WALK-RUN FRONT/walkrun_front_mc-Sheet.png" id="6_qap5o"]
 [ext_resource type="Texture2D" uid="uid://b6t56tfyoxjry" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Main Character [for cutscene]/WALK-RUN/WALK-RUN LEFT/walkrun_left_mc-Sheet.png" id="7_xsejs"]
 [ext_resource type="Texture2D" uid="uid://cqgqol2w28r0l" path="res://Game (movements, npcs, world map, inventory)/Assets/Players/Main Character [for cutscene]/WALK-RUN/WALK-RUN RIGHT/walkrun_right_mc-Sheet.png" id="8_s1v6x"]
+[ext_resource type="AudioStream" uid="uid://bhdwp8f6svbjo" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/footsteps-boots.mp3" id="10_frv66"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dapiw"]
 atlas = ExtResource("1_4hkeg")
@@ -255,7 +256,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_back",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -272,7 +273,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_front",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -301,7 +302,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -330,7 +331,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 9.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pj132"]
@@ -343,9 +344,13 @@ script = ExtResource("1_3x263")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_ddntd")
-animation = &"walk_right"
-frame_progress = 0.141326
+animation = &"walk_back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_pj132")
+
+[node name="walk_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_frv66")
+volume_db = -5.0
+bus = &"SFX"
