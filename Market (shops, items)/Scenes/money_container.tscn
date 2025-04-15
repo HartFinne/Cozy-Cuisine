@@ -1,8 +1,32 @@
-[gd_scene load_steps=4 format=4 uid="uid://x0go4prl867m"]
+[gd_scene load_steps=12 format=4 uid="uid://x0go4prl867m"]
 
 [ext_resource type="Script" uid="uid://dh3hlyylw2dmn" path="res://Market (shops, items)/Scripts/money_cointainer.gd" id="1_kxisy"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="1_tmxi1"]
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="2_jc5go"]
+[ext_resource type="Texture2D" uid="uid://q8ta6q0o5ap6" path="res://Kiosk (restaurant)/Assets/global.png" id="4_mne10"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgaey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mne10"]
+atlas = ExtResource("4_mne10")
+region = Rect2(82, 51, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rgaey"]
+texture = SubResource("AtlasTexture_mne10")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2tjb"]
+atlas = ExtResource("4_mne10")
+region = Rect2(82, 51, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6sroj"]
+texture = SubResource("AtlasTexture_c2tjb")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfrjm"]
+atlas = ExtResource("4_mne10")
+region = Rect2(82, 51, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_keo6b"]
+texture = SubResource("AtlasTexture_pfrjm")
 
 [node name="MoneyContainer" type="PanelContainer"]
 anchors_preset = -1
@@ -67,6 +91,9 @@ text = "100"
 [node name="MoreButton" type="Button" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(43.09, 0)
 layout_mode = 2
-text = ">"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgaey")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rgaey")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6sroj")
+theme_override_styles/normal = SubResource("StyleBoxTexture_keo6b")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MoreButton" to="." method="_on_more_button_pressed"]

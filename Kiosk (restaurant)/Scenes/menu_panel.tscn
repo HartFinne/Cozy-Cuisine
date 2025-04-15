@@ -1,39 +1,105 @@
-[gd_scene load_steps=2 format=3 uid="uid://cckq8jik7rii1"]
+[gd_scene load_steps=18 format=3 uid="uid://cckq8jik7rii1"]
 
 [ext_resource type="Script" path="res://Kiosk (restaurant)/Scripts/menu_panel.gd" id="1_mebl5"]
+[ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="3_wh31s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmlbk"]
+bg_color = Color(1, 0.858824, 0.709804, 0.588235)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.858824, 0.709804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlfyh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmlbk"]
+atlas = ExtResource("3_wh31s")
+region = Rect2(354, 674, 28, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wh31s"]
+texture = SubResource("AtlasTexture_nmlbk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4u6t"]
+atlas = ExtResource("3_wh31s")
+region = Rect2(354, 674, 28, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o03ny"]
+texture = SubResource("AtlasTexture_c4u6t")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_popjs"]
+atlas = ExtResource("3_wh31s")
+region = Rect2(354, 641, 28, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wh5ar"]
+texture = SubResource("AtlasTexture_popjs")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u40tp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrpen"]
+atlas = ExtResource("3_wh31s")
+region = Rect2(290, 674, 28, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bh5mg"]
+texture = SubResource("AtlasTexture_rrpen")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u40tp"]
+atlas = ExtResource("3_wh31s")
+region = Rect2(290, 674, 28, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3js1"]
+texture = SubResource("AtlasTexture_u40tp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlfyh"]
+atlas = ExtResource("3_wh31s")
+region = Rect2(290, 641, 28, 31)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqhdl"]
+texture = SubResource("AtlasTexture_nlfyh")
 
 [node name="MenuPanel" type="PopupPanel"]
 process_mode = 2
 auto_translate_mode = 1
 initial_position = 1
-size = Vector2i(315, 270)
+size = Vector2i(315, 100)
 visible = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_nmlbk")
 script = ExtResource("1_mebl5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 311.0
-offset_bottom = 266.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 310.0
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-metadata/_edit_use_anchors_ = true
+alignment = 1
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_vertical = 4
-text = "Resume"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nlfyh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wh31s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o03ny")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wh5ar")
 metadata/_edit_use_anchors_ = true
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 size_flags_vertical = 6
-text = "Quit"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u40tp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bh5mg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y3js1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sqhdl")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

@@ -1,38 +1,56 @@
-[gd_scene load_steps=7 format=3 uid="uid://c08dmsrhc5iei"]
+[gd_scene load_steps=8 format=3 uid="uid://c08dmsrhc5iei"]
 
 [ext_resource type="Script" uid="uid://5qme82khjtea" path="res://Kiosk (restaurant)/Scripts/touch_controls.gd" id="1_28geh"]
-[ext_resource type="Texture2D" uid="uid://dp41yk8upti86" path="res://Kiosk (restaurant)/Assets/TouchControls/left.png" id="1_b0ha3"]
-[ext_resource type="Texture2D" uid="uid://diudvpu6ki0mh" path="res://Kiosk (restaurant)/Assets/TouchControls/right.png" id="2_28geh"]
-[ext_resource type="Texture2D" uid="uid://cuyphs3mael8p" path="res://Kiosk (restaurant)/Assets/TouchControls/up.png" id="3_y11mh"]
-[ext_resource type="Texture2D" uid="uid://dp5pltsttlvaa" path="res://Kiosk (restaurant)/Assets/TouchControls/down.png" id="4_y4fnw"]
-[ext_resource type="Texture2D" uid="uid://bcekw3fq367ue" path="res://Kiosk (restaurant)/Assets/TouchControls/x-button.png" id="6_y11mh"]
+[ext_resource type="Texture2D" uid="uid://c7pae5m28uls6" path="res://Kiosk (restaurant)/Assets/WoodenControls.png" id="2_b0ha3"]
+[ext_resource type="Texture2D" uid="uid://dux0mdslf3dyk" path="res://woodcontroller.tres" id="3_28geh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y11mh"]
+atlas = ExtResource("2_b0ha3")
+region = Rect2(121, 4, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4fnw"]
+atlas = ExtResource("2_b0ha3")
+region = Rect2(137, 4, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tjim"]
+atlas = ExtResource("2_b0ha3")
+region = Rect2(166, 4, 9, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlo54"]
+atlas = ExtResource("2_b0ha3")
+region = Rect2(4, 4, 16, 16)
 
 [node name="TouchControls" type="CanvasLayer"]
 script = ExtResource("1_28geh")
 
 [node name="Left" type="TouchScreenButton" parent="."]
-position = Vector2(60, 488.624)
-texture_normal = ExtResource("1_b0ha3")
+position = Vector2(50, 488.624)
+scale = Vector2(6.5, 6.5)
+texture_normal = SubResource("AtlasTexture_y11mh")
 action = "left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
-position = Vector2(164, 488.624)
-texture_normal = ExtResource("2_28geh")
+position = Vector2(170, 488.624)
+scale = Vector2(6.5, 6.5)
+texture_normal = SubResource("AtlasTexture_y4fnw")
 action = "right"
 
 [node name="Up" type="TouchScreenButton" parent="."]
 position = Vector2(120, 430.624)
-texture_normal = ExtResource("3_y11mh")
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("3_28geh")
 action = "up"
 
 [node name="Down" type="TouchScreenButton" parent="."]
 position = Vector2(120, 532.624)
-texture_normal = ExtResource("4_y4fnw")
+scale = Vector2(6.5, 6.5)
+texture_normal = SubResource("AtlasTexture_6tjim")
 action = "down"
 
 [node name="XButton" type="TouchScreenButton" parent="."]
-position = Vector2(1000, 489)
-texture_normal = ExtResource("6_y11mh")
+position = Vector2(1000, 480)
+scale = Vector2(5, 5)
+texture_normal = SubResource("AtlasTexture_rlo54")
 action = "accept"
 
 [node name="TakeButton" type="Button" parent="."]

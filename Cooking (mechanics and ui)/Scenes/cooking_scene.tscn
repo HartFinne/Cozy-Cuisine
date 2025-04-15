@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=64 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
@@ -127,6 +127,8 @@ texture = SubResource("AtlasTexture_qccpg")
 content_margin_top = 20.0
 content_margin_bottom = 20.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajps1"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7sy65"]
 texture = ExtResource("16_bbj53")
 
@@ -135,6 +137,8 @@ texture = ExtResource("17_hytrb")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_okkye"]
 texture = ExtResource("18_verp7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xmd4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4awaf"]
 texture = ExtResource("19_j3u5v")
@@ -488,6 +492,7 @@ offset_left = -0.000610352
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
 mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ajps1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7sy65")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5mlcg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_okkye")
@@ -501,6 +506,7 @@ offset_top = 78.0
 offset_right = 1099.0
 offset_bottom = 118.0
 scale = Vector2(1.5, 1.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5xmd4")
 theme_override_styles/hover = SubResource("StyleBoxTexture_4awaf")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fa8qe")
 theme_override_styles/normal = SubResource("StyleBoxTexture_o8bi1")
