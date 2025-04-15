@@ -1020,6 +1020,7 @@ texture = ExtResource("8_442mg")
 shape = SubResource("RectangleShape2D_2qw1t")
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(0, 57)
 curve = SubResource("Curve2D_btmqb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -1029,7 +1030,7 @@ progress = 525.42
 rotates = false
 
 [node name="Path2D2" type="Path2D" parent="."]
-position = Vector2(0, 71)
+position = Vector2(0, 116)
 curve = SubResource("Curve2D_btmqb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
@@ -1038,7 +1039,7 @@ rotation = 3.14159
 rotates = false
 
 [node name="Path2D3" type="Path2D" parent="."]
-position = Vector2(0, 141)
+position = Vector2(0, 172)
 curve = SubResource("Curve2D_btmqb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
@@ -1047,7 +1048,7 @@ rotation = 3.14159
 rotates = false
 
 [node name="Path2D4" type="Path2D" parent="."]
-position = Vector2(0, 207)
+position = Vector2(0, 228)
 curve = SubResource("Curve2D_btmqb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
