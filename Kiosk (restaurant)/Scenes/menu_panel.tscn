@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cckq8jik7rii1"]
 
-[ext_resource type="Script" uid="uid://bu86b47i7jnfx" path="res://Kiosk (restaurant)/Scripts/menu_panel.gd" id="1_mebl5"]
+[ext_resource type="Script" path="res://Kiosk (restaurant)/Scripts/menu_panel.gd" id="1_mebl5"]
 
 [node name="MenuPanel" type="PopupPanel"]
 process_mode = 2
