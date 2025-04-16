@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=29 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -20,7 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://cjlomdj2qaoaq" path="res://Menu/Assets/quitbutton/3.png" id="15_ownbj"]
 [ext_resource type="Texture2D" uid="uid://xafp1b2txbh" path="res://Menu/Assets/quitbutton/2.png" id="16_v7wqy"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
-[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vjv"]
 bg_color = Color(1, 0.917647, 0.772549, 0)
@@ -3258,6 +3259,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "OK"
 
+[node name="Admob" type="Node" parent="."]
+script = ExtResource("22_e48ev")
+banner_position = 1
+debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
+metadata/_custom_type_script = "uid://cwhqet8b15kvi"
+
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
@@ -3266,3 +3274,4 @@ text = "OK"
 [connection signal="pressed" from="Panel/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Panel/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/PopupPanel/VBoxContainer/BackButton" to="Panel/PopupPanel" method="_on_back_button_pressed"]
+[connection signal="initialization_completed" from="Admob" to="." method="_on_admob_initialization_completed"]

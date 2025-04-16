@@ -5,6 +5,8 @@ var player_data: PlayerData = PlayerData.load_data()
 var world_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
 var intro_scene = preload("res://intro/scenes/Main.tscn")
 @onready var popup_panel: PopupPanel = $Panel/PopupPanel
+@onready var admob: Admob = $Admob
+var is_initialized: bool = false
 
 func _on_play_pressed() -> void:
 	player_data.is_intro_watched
@@ -34,3 +36,19 @@ func _on_quit_pressed() -> void:
 func _on_setting_button_pressed() -> void:
 	get_tree().paused = true
 	popup_panel.show()
+	
+func _ready() -> void:
+	admob.initialize()
+	admob.initialization_completed.connect(_on_admob_initialization_completed)
+
+
+func _on_admob_initialization_completed(status_data: InitializationStatus) -> void:
+	is_initialized = true
+	load_and_show_banner()
+	pass # Replace with function body.
+	
+func load_and_show_banner():
+	if is_initialized:
+		admob.load_banner_ad()
+		await admob.banner_ad_loaded
+		admob.show_banner_ad()
