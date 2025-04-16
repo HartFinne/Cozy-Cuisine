@@ -72,8 +72,8 @@ func return_to_game():
 		
 		# just to update the moneycontienr in the testing scene
 		canvas_layer.get_node("MoneyContainer").update_money_ui()
-		canvas_layer.get_node("Inventory").populate_inventory_container()
-		canvas_layer.get_node("Inventory/BagPopupPanel").populate_inventory_container()
+		canvas_layer.get_node("InventoryWrapper/Inventory").populate_inventory_container()
+		canvas_layer.get_node("InventoryWrapper/Inventory/BagPopupPanel").populate_inventory_container()
 		touch_controls.visible = true
 		canvas_layer.visible = true
 		

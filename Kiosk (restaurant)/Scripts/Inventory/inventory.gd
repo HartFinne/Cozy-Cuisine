@@ -5,9 +5,11 @@ var player_data: PlayerData = PlayerData.load_data()
 var dishes = player_data.dishes
 
 
+@onready var admob: Admob = $Admob
 @onready var grid_container: GridContainer = %GridContainer
 @onready var grid_container1: GridContainer = $PopupPanel/VBoxContainer/GridContainer
 @onready var bag_popup_panel: PopupPanel = $BagPopupPanel
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,3 +37,4 @@ func _on_bag_button_pressed() -> void:
 	bag_popup_panel.show()
 	print("working")
 	pass # Replace with function body.
+	

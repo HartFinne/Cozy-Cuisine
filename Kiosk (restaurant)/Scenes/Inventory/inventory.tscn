@@ -23,9 +23,11 @@ script = ExtResource("1_qka5t")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="GridContainer" type="GridContainer" parent="HBoxContainer/PanelContainer"]
 unique_name_in_owner = true
@@ -91,8 +93,8 @@ size_flags_vertical = 4
 text = "Bag"
 
 [node name="BagPopupPanel" type="PopupPanel" parent="."]
-initial_position = 1
-size = Vector2i(685, 390)
+position = Vector2i(233, 116)
+size = Vector2i(685, 350)
 visible = true
 script = ExtResource("5_2g18v")
 
@@ -100,7 +102,7 @@ script = ExtResource("5_2g18v")
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 681.0
-offset_bottom = 386.0
+offset_bottom = 346.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BagPopupPanel/VBoxContainer"]
 layout_mode = 2

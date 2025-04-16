@@ -5,29 +5,13 @@ var menu_items: Dictionary = {}  # Key: Name, Value: MenuItem resource
 var recipes: Array[MenuItem] = []
 var ingredients: Array[Ingredient] = []
 
-
-func _ready():
-	load_recipes()
-	load_ingredients()
-	
-	
-
-func load_recipes():
-	var recipes_path = [
+var recipes_path = [
 		"res://Datas/Resources/MenuItems/BurgerSteak.tres",
 		"res://Datas/Resources/MenuItems/MilkShake.tres",
 		"res://Datas/Resources/MenuItems/PepperoniPizza.tres"
 	]
-	
-	for path in recipes_path:
-		var recipe = load(path) as MenuItem
-		if recipe:
-			recipes.append(recipe)
-			print("Loaded Recipe - Ingredients:", recipe.ingredients, "Result:", recipe.name)
-			
-			
-func load_ingredients():
-	var ingredients_path = [
+
+var ingredients_path = [
 		"res://Datas/Resources/Ingredients/Cheese.tres",
 		"res://Datas/Resources/Ingredients/Choco.tres",
 		"res://Datas/Resources/Ingredients/Cone.tres",
@@ -46,6 +30,24 @@ func load_ingredients():
 		"res://Datas/Resources/Ingredients/Sugar.tres",
 		"res://Datas/Resources/Ingredients/Vanilla.tres",
 	]
+
+
+func _ready():
+	load_recipes()
+	load_ingredients()
+	
+	
+
+func load_recipes():
+	
+	for path in recipes_path:
+		var recipe = load(path) as MenuItem
+		if recipe:
+			recipes.append(recipe)
+			print("Loaded Recipe - Ingredients:", recipe.ingredients, "Result:", recipe.name)
+			
+			
+func load_ingredients():
 	
 	for path in ingredients_path:
 		var ingredient = load(path) as Ingredient

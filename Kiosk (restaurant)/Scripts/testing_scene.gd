@@ -197,6 +197,7 @@ func resume_customer_movement(path_follow: PathFollow2D):
 
 
 func _on_h_box_container_gui_input(event: InputEvent) -> void:
+	print("working")
 	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.pressed):
 	   
 		SceneManager.touch_controls = get_node("UI/TouchControls")

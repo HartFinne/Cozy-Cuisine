@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=22 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -11,9 +11,11 @@
 [ext_resource type="TileSet" uid="uid://bnewheuyetaub" path="res://Kiosk (restaurant)/Scenes/kk.tres" id="5_066vs"]
 [ext_resource type="PackedScene" uid="uid://c08dmsrhc5iei" path="res://Kiosk (restaurant)/Scenes/touch_controls.tscn" id="5_wvgkv"]
 [ext_resource type="Texture2D" uid="uid://3pqak6r75tnb" path="res://Kiosk (restaurant)/Assets/Interiors_free/image.png" id="8_442mg"]
+[ext_resource type="Script" uid="uid://bsmu82rkmlofo" path="res://Kiosk (restaurant)/Scripts/ui.gd" id="9_af7ar"]
 [ext_resource type="PackedScene" uid="uid://cckq8jik7rii1" path="res://Kiosk (restaurant)/Scenes/menu_panel.tscn" id="9_btmqb"]
 [ext_resource type="PackedScene" uid="uid://oxnlrlkqkmk2" path="res://Kiosk (restaurant)/Scenes/end_of_day.tscn" id="10_ex6bc"]
 [ext_resource type="PackedScene" uid="uid://sl0ilsl8ji6j" path="res://Kiosk (restaurant)/Scenes/Inventory/inventory.tscn" id="11_dostw"]
+[ext_resource type="Script" uid="uid://dyw2a1cgwahnn" path="res://addons/AdmobPlugin/Admob.gd" id="15_qmo28"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_066vs"]
 texture = ExtResource("2_s5p3n")
@@ -1073,6 +1075,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("9_af7ar")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI"]
@@ -1180,9 +1183,6 @@ texture = ExtResource("3_xd6dw")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Inventory" parent="UI/CanvasLayer" instance=ExtResource("11_dostw")]
-offset_bottom = -0.000427246
-
 [node name="MenuPanel" parent="UI/CanvasLayer" instance=ExtResource("9_btmqb")]
 unique_name_in_owner = true
 visible = false
@@ -1192,6 +1192,25 @@ process_mode = 2
 mode = 1
 initial_position = 1
 visible = false
+
+[node name="Admob" type="Node" parent="UI/CanvasLayer"]
+script = ExtResource("15_qmo28")
+banner_position = 1
+debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
+metadata/_custom_type_script = "uid://dyw2a1cgwahnn"
+
+[node name="InventoryWrapper" type="Control" parent="UI/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory" parent="UI/CanvasLayer/InventoryWrapper" instance=ExtResource("11_dostw")]
+layout_mode = 1
+offset_bottom = -0.000427246
 
 [node name="IntantiateScenes" type="CanvasLayer" parent="UI"]
 

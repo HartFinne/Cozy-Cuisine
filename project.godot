@@ -26,6 +26,10 @@ MenuManager="*res://Datas/Manager/menu_manager.gd"
 window/stretch/mode="viewport"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

@@ -1,23 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhwmyvftw4j24"]
-
-[ext_resource type="Resource" uid="uid://6oimyi2pg2u6" path="res://Datas/Resources/Customer/rich_boy.tres" id="2_epypp"]
-
-[sub_resource type="GDScript" id="GDScript_wtcfe"]
-script/source = "extends Node2D
-
-@export var customer = Customer
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	print(customer)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
+[gd_scene format=3 uid="uid://bhwmyvftw4j24"]
 
 [node name="Node2D" type="Node2D"]
-script = SubResource("GDScript_wtcfe")
-customer = ExtResource("2_epypp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 376.0
+offset_top = 104.0
+offset_right = 438.0
+offset_bottom = 127.0
+scale = Vector2(4.285, 4.285)
+text = "Loading"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 80.0
+offset_top = 272.0
+offset_right = 656.0
+offset_bottom = 304.0
+scale = Vector2(1.655, 1.655)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 376.0
+offset_right = 556.0
+offset_bottom = 407.0
+scale = Vector2(2.01, 2.01)
+text = "GO to next"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

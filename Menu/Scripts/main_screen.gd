@@ -3,8 +3,29 @@ extends Control
 var basket: Basket = Basket.load_basket()
 var player_data: PlayerData = PlayerData.load_data()
 var world_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
-var intro_scene = preload("res://intro/scenes/Main.tscn")
+var intro_scene = load("res://intro/scenes/Main.tscn")
 @onready var popup_panel: PopupPanel = $Panel/PopupPanel
+@onready var admob: Admob = $Admob
+
+var is_initialized: bool = false
+
+func _ready() -> void:
+	admob.initialize()
+	admob.initialization_completed.connect(_on_admob_initialization_completed)
+
+
+func _on_admob_initialization_completed(status_data: InitializationStatus) -> void:
+	is_initialized = true
+	load_and_show_banner()
+	
+func load_and_show_banner():
+	if is_initialized:
+		admob.load_banner_ad()
+		await admob.banner_ad_loaded
+		admob.show_banner_ad()
+	
+	
+
 
 func _on_play_pressed() -> void:
 	player_data.is_intro_watched
@@ -20,6 +41,7 @@ func _on_play_pressed() -> void:
 	else:
 		print("Failed to load")
 	print("Start Button")
+	pass
 	
 func _on_tutorial_pressed() -> void:
 	print("Tutorialssss")
