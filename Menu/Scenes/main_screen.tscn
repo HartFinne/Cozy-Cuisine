@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=37 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="3_e48ev"]
 [ext_resource type="Shader" uid="uid://cbc0rbr0ptjmo" path="res://Menu/Scenes/scroll.gdshader" id="3_xbo66"]
 [ext_resource type="Texture2D" uid="uid://pbk6yy4up0ey" path="res://Menu/Assets/bg food.png" id="4_6663p"]
-[ext_resource type="Texture2D" uid="uid://dgdfg24ylxrl0" path="res://Menu/Assets/Logos/Setting.png" id="4_xlu0j"]
 [ext_resource type="Texture2D" uid="uid://dpkbem28xusa" path="res://Menu/Assets/playbutton/1.png" id="8_sp1m5"]
 [ext_resource type="Texture2D" uid="uid://btghb88f1yo7t" path="res://Menu/Assets/playbutton/3.png" id="9_swnq6"]
 [ext_resource type="Texture2D" uid="uid://cmjh0aurfq8t" path="res://Menu/Assets/playbutton/2.png" id="10_n1qsx"]
@@ -20,8 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://cjlomdj2qaoaq" path="res://Menu/Assets/quitbutton/3.png" id="15_ownbj"]
 [ext_resource type="Texture2D" uid="uid://xafp1b2txbh" path="res://Menu/Assets/quitbutton/2.png" id="16_v7wqy"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
-[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
+[ext_resource type="Texture2D" uid="uid://bsu4na41r1e8p" path="res://Menu/Assets/OK/2.png" id="22_opkdy"]
+[ext_resource type="Texture2D" uid="uid://cng4ywrj3ulkx" path="res://Menu/Assets/OK/1.png" id="23_uec84"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vjv"]
 bg_color = Color(1, 0.917647, 0.772549, 0)
@@ -3035,6 +3037,45 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 anti_aliasing = false
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7wqy"]
+atlas = ExtResource("17_k410j")
+region = Rect2(290, 577, 28, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e48ev"]
+atlas = ExtResource("17_k410j")
+region = Rect2(290, 610, 28, 30)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwi2x"]
+bg_color = Color(0.552941, 0.286275, 0.227451, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
+shadow_size = 1
+shadow_offset = Vector2(0, 2.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38atv"]
+content_margin_left = 10.0
+content_margin_top = 20.0
+content_margin_right = 10.0
+content_margin_bottom = 20.0
+bg_color = Color(0.894118, 0.772549, 0.619608, 1)
+border_width_top = 10
+border_width_bottom = 10
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f6jv6"]
+texture = ExtResource("22_opkdy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lcydj"]
+texture = ExtResource("23_uec84")
+
 [node name="MainScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -3194,7 +3235,8 @@ offset_top = 55.0
 offset_right = 100.315
 offset_bottom = 92.0
 scale = Vector2(1.735, 1.735)
-texture_normal = ExtResource("4_xlu0j")
+texture_normal = SubResource("AtlasTexture_v7wqy")
+texture_pressed = SubResource("AtlasTexture_e48ev")
 
 [node name="play" type="TextureButton" parent="Panel"]
 layout_mode = 1
@@ -3237,27 +3279,37 @@ texture_hover = ExtResource("16_v7wqy")
 process_mode = 2
 title = "Next Update"
 initial_position = 1
-size = Vector2i(335, 220)
+size = Vector2i(342, 220)
 visible = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_gwi2x")
 script = ExtResource("18_tmrye")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/PopupPanel"]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 331.0
-offset_bottom = 216.0
+offset_left = 9.0
+offset_top = 6.5
+offset_right = 333.0
+offset_bottom = 208.5
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Label" type="Label" parent="Panel/PopupPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "For Next Update"
+theme_override_colors/font_shadow_color = Color(0.686275, 0.509804, 0.376471, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("21_phtfe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_38atv")
+text = "For the Next Update"
 
 [node name="BackButton" type="Button" parent="Panel/PopupPanel/VBoxContainer"]
+custom_minimum_size = Vector2(144, 72)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "OK"
+theme_override_styles/hover = SubResource("StyleBoxTexture_f6jv6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lcydj")
 
 [node name="Admob" type="Node" parent="."]
 script = ExtResource("22_e48ev")
