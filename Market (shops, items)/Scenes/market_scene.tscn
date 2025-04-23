@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=42 format=4 uid="uid://bs4bk1jk28hsl"]
 
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="1_5hnv5"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="1_8nt3w"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b1x0h2xe77gow" path="res://Market (shops, items)/Assets/BUY/3.png" id="9_8nt3w"]
 [ext_resource type="Texture2D" uid="uid://m6lckfhsy84c" path="res://Market (shops, items)/Assets/BUY/2.png" id="10_5hnv5"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="10_34bus"]
+[ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="17_ly688"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_34bus"]
 shader = ExtResource("1_5hnv5")
@@ -367,5 +368,13 @@ mode = 1
 title = "fasdfadf"
 visible = true
 
-[connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]
+[node name="Admob" type="Node" parent="."]
+script = ExtResource("17_ly688")
+banner_position = 1
+debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
+metadata/_custom_type_script = "uid://cwhqet8b15kvi"
+
+[connection signal="pressed" from="Panel/BackButton" to="Panel/Shops" method="_on_back_button_pressed"]
 [connection signal="pressed" from="Panel/TabContainer/Basket/HBoxContainer/BuyButton" to="Panel/TabContainer/Basket" method="_on_buy_button_pressed"]
+[connection signal="initialization_completed" from="Admob" to="." method="_on_admob_initialization_completed"]
