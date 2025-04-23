@@ -21,6 +21,8 @@ var player_data: PlayerData = PlayerData.load_data()
 var selected_ingredients: Dictionary = {}
 
 
+
+
 func _ready() -> void:
 	MenuManager.load_recipes()
 	if not output_rect.gui_input.is_connected(_on_output_rect_clicked):

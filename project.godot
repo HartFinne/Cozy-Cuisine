@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="CozyCuisine"
-run/main_scene="uid://cn7pxyittn3xa"
+run/main_scene="uid://cu7scive72cka"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://dapp5sucdeqq"
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,7 +25,7 @@ MenuManager="*res://Datas/Manager/menu_manager.gd"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 DailyScript="*res://Game (movements, npcs, world map, inventory)/Datas/DailyScript.gd"
 
 [editor_plugins]

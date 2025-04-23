@@ -1,15 +1,20 @@
 extends Control
-
+@onready var admob: Admob = $Admob
+var is_initialized : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	admob.initialize()
+	admob.initialization_completed.connect(_on_admob_initialization_completed)
+
+
+func _on_admob_initialization_completed(status_data: InitializationStatus) -> void:
+	is_initialized = true
+	load_and_show_banner()
+	pass # Replace with function body.
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_back_button_pressed() -> void:
-	SceneManager.return_to_game()
+func load_and_show_banner():
+	if is_initialized:
+		admob.load_banner_ad()
+		await admob.banner_ad_loaded
+		admob.show_banner_ad()
