@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c08dmsrhc5iei"]
+[gd_scene load_steps=22 format=3 uid="uid://c08dmsrhc5iei"]
 
 [ext_resource type="Script" uid="uid://5qme82khjtea" path="res://Kiosk (restaurant)/Scripts/touch_controls.gd" id="1_28geh"]
 [ext_resource type="Texture2D" uid="uid://c7pae5m28uls6" path="res://Kiosk (restaurant)/Assets/WoodenControls.png" id="2_b0ha3"]
 [ext_resource type="Texture2D" uid="uid://dux0mdslf3dyk" path="res://woodcontroller.tres" id="3_28geh"]
+[ext_resource type="Texture2D" uid="uid://dpqkohloelp1f" path="res://Kiosk (restaurant)/Assets/TAKE/2.png" id="4_y11mh"]
+[ext_resource type="Texture2D" uid="uid://dsmqmcwj8tm0" path="res://Kiosk (restaurant)/Assets/TAKE/3.png" id="5_y4fnw"]
+[ext_resource type="Texture2D" uid="uid://bqpua6woxt1uv" path="res://Kiosk (restaurant)/Assets/TAKE/1.png" id="6_6tjim"]
+[ext_resource type="Texture2D" uid="uid://bhdbss0qx7g0w" path="res://Kiosk (restaurant)/Assets/SERVE/2.png" id="7_2j1li"]
+[ext_resource type="Texture2D" uid="uid://dtivus0q1k3aq" path="res://Kiosk (restaurant)/Assets/SERVE/3.png" id="8_f3js8"]
+[ext_resource type="Texture2D" uid="uid://6c1c6qv7v380" path="res://Kiosk (restaurant)/Assets/SERVE/1.png" id="9_khsiu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y11mh"]
 atlas = ExtResource("2_b0ha3")
@@ -19,6 +25,28 @@ region = Rect2(166, 4, 9, 13)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlo54"]
 atlas = ExtResource("2_b0ha3")
 region = Rect2(4, 4, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2j1li"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f3js8"]
+texture = ExtResource("4_y11mh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_khsiu"]
+texture = ExtResource("5_y4fnw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bb288"]
+texture = ExtResource("6_6tjim")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bb288"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qr6k3"]
+texture = ExtResource("7_2j1li")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbb0a"]
+texture = ExtResource("8_f3js8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nyle2"]
+texture = ExtResource("9_khsiu")
 
 [node name="TouchControls" type="CanvasLayer"]
 script = ExtResource("1_28geh")
@@ -60,10 +88,15 @@ anchor_left = 0.833333
 anchor_top = 0.777778
 anchor_right = 0.962392
 anchor_bottom = 0.852647
-offset_right = -53.675
-offset_bottom = -17.515
+offset_left = -21.9996
+offset_top = -94.0001
+offset_right = -75.6746
+offset_bottom = -102.515
 scale = Vector2(1.565, 1.565)
-text = "Take Order"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j1li")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f3js8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_khsiu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bb288")
 metadata/_edit_use_anchors_ = true
 
 [node name="ServeButton" type="Button" parent="."]
@@ -73,8 +106,13 @@ anchor_left = 0.833333
 anchor_top = 0.777778
 anchor_right = 0.962392
 anchor_bottom = 0.852647
-offset_right = -53.675
-offset_bottom = -17.515
+offset_left = -21.9996
+offset_top = -94.0002
+offset_right = -75.6746
+offset_bottom = -102.515
 scale = Vector2(1.565, 1.565)
-text = "Serve Order"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bb288")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qr6k3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gbb0a")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nyle2")
 metadata/_edit_use_anchors_ = true
