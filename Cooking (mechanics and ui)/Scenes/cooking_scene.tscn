@@ -161,6 +161,11 @@ size_flags_vertical = 3
 script = ExtResource("1_iv1l6")
 metadata/_edit_use_anchors_ = true
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Bgmarket" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.470588)
 texture_repeat = 2
@@ -188,10 +193,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0763889
-anchor_top = 0.222222
-anchor_right = 0.406945
-anchor_bottom = 0.809875
+anchor_left = 0.0972222
+anchor_top = 0.123457
+anchor_right = 0.427778
+anchor_bottom = 0.71111
 offset_right = 67.2
 offset_bottom = 67.2
 scale = Vector2(0.85, 0.85)
@@ -313,10 +318,10 @@ script = ExtResource("2_lwslm")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-anchor_left = 0.111111
-anchor_top = 0.839506
-anchor_right = 0.216145
-anchor_bottom = 0.907407
+anchor_left = 0.152778
+anchor_top = 0.728395
+anchor_right = 0.257812
+anchor_bottom = 0.820988
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bbj53")
 theme_override_styles/hover = SubResource("StyleBoxTexture_hytrb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_verp7")
@@ -329,10 +334,10 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.260416
-anchor_top = 0.839506
-anchor_right = 0.36545
-anchor_bottom = 0.907408
+anchor_left = 0.270833
+anchor_top = 0.728395
+anchor_right = 0.375867
+anchor_bottom = 0.820988
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_bw05v")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ajps1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5xmd4")
@@ -343,10 +348,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.430556
-anchor_top = 0.37037
-anchor_right = 0.505208
-anchor_bottom = 0.604938
+anchor_left = 0.444444
+anchor_top = 0.28858
+anchor_right = 0.519096
+anchor_bottom = 0.523148
 theme_override_font_sizes/font_size = 111
 text = "="
 horizontal_alignment = 1
@@ -354,10 +359,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 2
-anchor_left = 0.534722
-anchor_top = 0.358025
-anchor_right = 0.703124
-anchor_bottom = 0.657408
+anchor_left = 0.541667
+anchor_top = 0.271605
+anchor_right = 0.710069
+anchor_bottom = 0.570988
 offset_bottom = 3.05176e-05
 theme_override_styles/panel = SubResource("StyleBoxTexture_xmic6")
 metadata/_edit_use_anchors_ = true
@@ -381,14 +386,15 @@ visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.486111
-anchor_top = 0.266975
+anchor_top = 0.160494
 anchor_right = 0.763889
-anchor_bottom = 0.30189
+anchor_bottom = 0.195409
 offset_bottom = 6.375
 metadata/_edit_use_anchors_ = true
 
 [node name="OutputLabel" type="Label" parent="PanelContainer3"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "Output Text"
