@@ -70,7 +70,8 @@ func start_day():
 func start_and_goal_update_ui():
 	start_day_button.text = "Start Day " + str(int(player_data.days))
 	
-	goal_label.text = "Profit Goal: " + str(int(player_data.goal_profit_per_day)) + " / " + str(int(profit))
+	goal_label.text = "Profit Goal: " + str(int(profit)) + " / " + str(int(player_data.goal_profit_per_day))
+	
 	
 func customer_paid(amount: int):
 	expenses = player_data.expenses
