@@ -5,7 +5,14 @@ extends PanelContainer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	margin_container.visible = false
+	#self.banner_ready.connect(_on_banner_ready)
 	pass # Replace with function body.
+	
+#func _on_banner_ready():
+	#var banner_height = 90
+	#var inventory = $CanvasLayer/Inventory
+	#$VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Food
+	#inventory.position.y -= banner_height
 
 func show_meal_details(meal):
 	margin_container.visible = true

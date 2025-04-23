@@ -1,11 +1,10 @@
-[gd_scene load_steps=37 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=36 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
 [ext_resource type="PackedScene" uid="uid://cnfvi6ryu2y40" path="res://Menu/Scenes/kioskbgg.tscn" id="2_heyad"]
 [ext_resource type="Texture2D" uid="uid://cwn621t0jlbq2" path="res://Menu/Assets/Logos/namelogo.png" id="2_ji7ig"]
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="2_v7wqy"]
-[ext_resource type="Theme" uid="uid://db03w6ddj0fmx" path="res://Menu/Assets/Themes/menu_buttons_theme.tres" id="3_7ja22"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="3_e48ev"]
 [ext_resource type="Shader" uid="uid://cbc0rbr0ptjmo" path="res://Menu/Scenes/scroll.gdshader" id="3_xbo66"]
 [ext_resource type="Texture2D" uid="uid://pbk6yy4up0ey" path="res://Menu/Assets/bg food.png" id="4_6663p"]
@@ -19,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cjlomdj2qaoaq" path="res://Menu/Assets/quitbutton/3.png" id="15_ownbj"]
 [ext_resource type="Texture2D" uid="uid://xafp1b2txbh" path="res://Menu/Assets/quitbutton/2.png" id="16_v7wqy"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
-[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
 [ext_resource type="Texture2D" uid="uid://bsu4na41r1e8p" path="res://Menu/Assets/OK/2.png" id="22_opkdy"]
@@ -3176,58 +3175,6 @@ grow_vertical = 2
 scale = Vector2(15.145, 15.145)
 theme_override_styles/panel = SubResource("StyleBoxFlat_b1vw1")
 
-[node name="StartButton" type="Button" parent="Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -22.5
-offset_right = 250.0
-offset_bottom = 22.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_7ja22")
-text = "START"
-
-[node name="TutorialButton" type="Button" parent="Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = 46.5
-offset_right = 250.0
-offset_bottom = 91.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_7ja22")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "TUTORIAL"
-
-[node name="QuitButton" type="Button" parent="Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = 116.035
-offset_right = 250.0
-offset_bottom = 161.035
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_7ja22")
-text = "QUIT"
-
 [node name="SettingButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
 offset_left = 65.0
@@ -3280,15 +3227,14 @@ process_mode = 2
 title = "Next Update"
 initial_position = 1
 size = Vector2i(342, 220)
-visible = true
 theme_override_styles/panel = SubResource("StyleBoxFlat_gwi2x")
 script = ExtResource("18_tmrye")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/PopupPanel"]
-offset_left = 9.0
-offset_top = 6.5
-offset_right = 333.0
-offset_bottom = 208.5
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 334.0
+offset_bottom = 212.0
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -3318,9 +3264,6 @@ debug_application_id = "ca-app-pub-3940256099942544~3347511713"
 debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
 metadata/_custom_type_script = "uid://cwhqet8b15kvi"
 
-[connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Panel/TutorialButton" to="." method="_on_tutorial_button_pressed"]
-[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/tutorial" to="." method="_on_tutorial_pressed"]

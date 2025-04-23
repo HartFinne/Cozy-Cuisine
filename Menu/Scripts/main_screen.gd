@@ -9,6 +9,7 @@ var intro_scene = preload("res://intro/scenes/Main.tscn")
 var is_initialized: bool = false
 
 func _on_play_pressed() -> void:
+	print("wiwer")
 	player_data.is_intro_watched
 	
 	if world_scene and player_data.is_intro_watched:

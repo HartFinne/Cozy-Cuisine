@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=51 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -20,6 +20,8 @@
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="12_fhl83"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="13_mj36q"]
 [ext_resource type="Texture2D" uid="uid://q8ta6q0o5ap6" path="res://Kiosk (restaurant)/Assets/global.png" id="16_fhl83"]
+[ext_resource type="Script" uid="uid://dt4jys3fl7s8g" path="res://Kiosk (restaurant)/Scripts/ui.gd" id="20_mj36q"]
+[ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_yecm4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_066vs"]
 texture = ExtResource("2_s5p3n")
@@ -1174,6 +1176,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("20_mj36q")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI"]
@@ -1344,6 +1347,14 @@ visible = false
 
 [node name="TouchControls" parent="UI" instance=ExtResource("5_wvgkv")]
 
+[node name="Admob" type="Node" parent="UI"]
+script = ExtResource("22_yecm4")
+banner_position = 1
+debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
+metadata/_custom_type_script = "uid://cwhqet8b15kvi"
+
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer" to="." method="_on_h_box_container_gui_input"]
+[connection signal="initialization_completed" from="UI/Admob" to="UI" method="_on_admob_initialization_completed"]
