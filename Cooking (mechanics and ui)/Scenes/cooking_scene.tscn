@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=68 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
@@ -9,15 +9,16 @@
 [ext_resource type="Script" uid="uid://oox1pt4tv8mf" path="res://Cooking (mechanics and ui)/Scripts/ingredient_popup.gd" id="4_oxed2"]
 [ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
 [ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="5_hytrb"]
-[ext_resource type="Script" uid="uid://c58sj2tm5iwnd" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
 [ext_resource type="Texture2D" uid="uid://c73n2p2syccx" path="res://Cooking (mechanics and ui)/Assets/COOK/2.png" id="7_t4kcf"]
 [ext_resource type="PackedScene" uid="uid://c87xmv0o4p1cn" path="res://Cooking (mechanics and ui)/Scenes/order_container.tscn" id="7_wobfx"]
 [ext_resource type="Texture2D" uid="uid://b0cxuassnsu75" path="res://Cooking (mechanics and ui)/Assets/COOK/3.png" id="8_c66or"]
 [ext_resource type="Texture2D" uid="uid://b7pxdp5aqmkga" path="res://Cooking (mechanics and ui)/Assets/COOK/1.png" id="9_s5ke1"]
-[ext_resource type="Script" uid="uid://cp743csr6i015" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
 [ext_resource type="Texture2D" uid="uid://c2712n5jk0oy" path="res://Cooking (mechanics and ui)/Assets/CLEAR/3.png" id="10_4fvnn"]
 [ext_resource type="Texture2D" uid="uid://cl2qgahaw87a8" path="res://Cooking (mechanics and ui)/Assets/CLEAR/2.png" id="11_5ifc6"]
 [ext_resource type="Texture2D" uid="uid://bijjuwiasm1my" path="res://Cooking (mechanics and ui)/Assets/CLEAR/1.png" id="12_y42ar"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="14_verp7"]
 [ext_resource type="Texture2D" uid="uid://bx6rokpeupc27" path="res://Cooking (mechanics and ui)/Assets/ORDERS/2.png" id="16_bbj53"]
 [ext_resource type="Texture2D" uid="uid://doxqhtbey1mp4" path="res://Cooking (mechanics and ui)/Assets/ORDERS/3.png" id="17_hytrb"]
 [ext_resource type="Texture2D" uid="uid://dp55aoiblghnq" path="res://Cooking (mechanics and ui)/Assets/ORDERS/1.png" id="18_verp7"]
@@ -58,6 +59,8 @@ texture = ExtResource("8_c66or")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j3u5v"]
 texture = ExtResource("9_s5ke1")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mlcg"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bw05v"]
 texture = ExtResource("10_4fvnn")
 
@@ -74,6 +77,16 @@ filter_clip = true
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xmic6"]
 texture = SubResource("AtlasTexture_qqh86")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7sy65"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3u5v"]
+bg_color = Color(1, 0.858824, 0.709804, 0.313726)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.423529, 0.305882, 0.192157, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_verp7"]
 
@@ -338,6 +351,7 @@ anchor_left = 0.270833
 anchor_top = 0.728395
 anchor_right = 0.375867
 anchor_bottom = 0.820988
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mlcg")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_bw05v")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ajps1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5xmd4")
@@ -390,13 +404,16 @@ anchor_top = 0.160494
 anchor_right = 0.763889
 anchor_bottom = 0.195409
 offset_bottom = 6.375
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7sy65")
 metadata/_edit_use_anchors_ = true
 
 [node name="OutputLabel" type="Label" parent="PanelContainer3"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("14_verp7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_j3u5v")
 text = "Output Text"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -404,7 +421,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HiddenOutputLabel" type="Label" parent="PanelContainer3"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="Orders" type="HBoxContainer" parent="."]
