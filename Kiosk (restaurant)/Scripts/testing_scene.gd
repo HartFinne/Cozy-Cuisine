@@ -8,6 +8,9 @@ var player_data: PlayerData = PlayerData.load_data()
 @export var customers: Array = []
 @onready var touch_controls: CanvasLayer = $UI/TouchControls
 @onready var money_container: PanelContainer = $UI/CanvasLayer/MoneyContainer
+@onready var coin_sfx: AudioStreamPlayer2D = $CoinSFX
+
+
 
 @onready var goal_label: Label = %GoalLabel
 @onready var goal_container: PanelContainer = $UI/CanvasLayer/GoalContainer
@@ -81,6 +84,8 @@ func customer_paid(amount: int):
 	
 	player_data.revenue = revenue
 	player_data.profit = profit
+	
+	coin_sfx.play()
 	
 	start_and_goal_update_ui()
 	check_if_day_should_end()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gsrn08cb3faa"
+path="res://.godot/imported/coin-clink.mp3-8e6afc9690947676723b4f4acfcde8a0.mp3str"
+
+[deps]
+
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/coin-clink.mp3"
+dest_files=["res://.godot/imported/coin-clink.mp3-8e6afc9690947676723b4f4acfcde8a0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

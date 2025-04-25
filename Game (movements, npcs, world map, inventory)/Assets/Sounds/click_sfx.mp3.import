@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx5umcj4b56uu"
+path="res://.godot/imported/click_sfx.mp3-1186e3c4e508da4211202ae002f669dc.mp3str"
+
+[deps]
+
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/click_sfx.mp3"
+dest_files=["res://.godot/imported/click_sfx.mp3-1186e3c4e508da4211202ae002f669dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=52 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://q8ta6q0o5ap6" path="res://Kiosk (restaurant)/Assets/global.png" id="16_fhl83"]
 [ext_resource type="Script" uid="uid://dt4jys3fl7s8g" path="res://Kiosk (restaurant)/Scripts/ui.gd" id="20_mj36q"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_yecm4"]
+[ext_resource type="AudioStream" uid="uid://gsrn08cb3faa" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/coin-clink.mp3" id="23_e3whk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_066vs"]
 texture = ExtResource("2_s5p3n")
@@ -1353,6 +1354,11 @@ banner_position = 1
 debug_application_id = "ca-app-pub-3940256099942544~3347511713"
 debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
 metadata/_custom_type_script = "uid://cwhqet8b15kvi"
+
+[node name="CoinSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_e3whk")
+bus = &"SFX"
+playback_type = 1
 
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/Button" to="." method="_on_button_pressed"]

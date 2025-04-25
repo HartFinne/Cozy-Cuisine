@@ -4,6 +4,7 @@ var basket: Basket = Basket.load_basket()
 var player_data: PlayerData = PlayerData.load_data()
 var world_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
 var intro_scene = preload("res://intro/scenes/Main.tscn")
+const settings = preload("res://Menu/Scenes/settings.tscn")
 @onready var popup_panel: PopupPanel = $Panel/PopupPanel
 @onready var admob: Admob = $Admob
 var is_initialized: bool = false
@@ -35,8 +36,9 @@ func _on_quit_pressed() -> void:
 
 
 func _on_setting_button_pressed() -> void:
-	get_tree().paused = true
-	popup_panel.show()
+	var settings_instance = settings.instantiate()
+	add_child(settings_instance)
+	
 	
 func _ready() -> void:
 	admob.initialize()
