@@ -34,4 +34,3 @@ func populate_inventory_container():
 func _on_bag_button_pressed() -> void:
 	bag_popup_panel.show()
 	print("working")
-	pass # Replace with function body.

@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://x0go4prl867m"]
+[gd_scene load_steps=13 format=4 uid="uid://x0go4prl867m"]
 
 [ext_resource type="Script" uid="uid://dh3hlyylw2dmn" path="res://Market (shops, items)/Scripts/money_cointainer.gd" id="1_kxisy"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="1_tmxi1"]
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="2_jc5go"]
 [ext_resource type="Texture2D" uid="uid://q8ta6q0o5ap6" path="res://Kiosk (restaurant)/Assets/global.png" id="4_mne10"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mne10"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgaey"]
 
@@ -32,8 +34,11 @@ texture = SubResource("AtlasTexture_pfrjm")
 anchors_preset = -1
 anchor_right = 0.313368
 anchor_bottom = 0.0725309
-offset_right = -73.0
+offset_top = 1.0
+offset_right = -72.9999
+offset_bottom = 1.0
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_mne10")
 script = ExtResource("1_kxisy")
 metadata/_edit_use_anchors_ = true
 

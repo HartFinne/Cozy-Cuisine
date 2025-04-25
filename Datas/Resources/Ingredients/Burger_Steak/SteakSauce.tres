@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cntrryp3abr4"]
+
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_kq00k"]
+[ext_resource type="Texture2D" uid="uid://dferr76x818i0" path="res://Datas/Assets/Ingredients/Burger_Steak/sows-Sheet.png" id="1_wt7gq"]
+
+[resource]
+script = ExtResource("1_kq00k")
+name = "SteakSauce"
+image = ExtResource("1_wt7gq")
+label = "Steak Sauce"
+price = 8
+description = "A savory sauce that enhances the taste of meat dishes."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

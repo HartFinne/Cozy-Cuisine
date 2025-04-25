@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cfq6v30fxi15"]
+
+[ext_resource type="Texture2D" uid="uid://dpo4v7q0iufud" path="res://Datas/Assets/Ingredients/Milkshake/sugar-Sheet.png" id="1_beeig"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="2_fgfs1"]
+
+[resource]
+script = ExtResource("2_fgfs1")
+name = "Sugar"
+image = ExtResource("1_beeig")
+label = "Sugar"
+price = 3
+description = "Sweetens the milkshake for a delightful taste."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

@@ -14,7 +14,8 @@ config/name="CozyCuisine"
 run/main_scene="uid://cu7scive72cka"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/image="uid://dapp5sucdeqq"
+boot_splash/fullsize=false
+boot_splash/image="uid://cwn621t0jlbq2"
 config/icon="res://icon.svg"
 
 [autoload]

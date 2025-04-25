@@ -1,6 +1,6 @@
 extends PopupPanel
 
-@onready var grid_container: GridContainer = $"Inventory UI/VBoxContainer/GridContainer"
+@onready var inventory_grid: GridContainer = %InventoryGrid
 var inventory_contianer_scene = preload("res://Kiosk (restaurant)/Scenes/Inventory/inventory_container.tscn")
 var player_data: PlayerData = PlayerData.load_data()
 var dishes = player_data.dishes
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func populate_inventory_container():
-	for child in grid_container.get_children():
+	for child in inventory_grid.get_children():
 		child.queue_free()
 
 	var max_items := 6
@@ -44,7 +44,7 @@ func populate_inventory_container():
 			# Send an empty dictionary to indicate no dish
 			inventory_instance.set_inventory_data({})  # Optional: Handle this inside your inventory container
 
-		grid_container.add_child(inventory_instance)
+		inventory_grid.add_child(inventory_instance)
 
 
 
@@ -56,16 +56,16 @@ func _on_inventory_clicked(container: PanelContainer) -> void:
 		selected_inventory = container
 		container.modulate = Color(1, 1, 0.5)
 	else:
-		var index_a = grid_container.get_children().find(selected_inventory)
-		var index_b = grid_container.get_children().find(container)
+		var index_a = inventory_grid.get_children().find(selected_inventory)
+		var index_b = inventory_grid.get_children().find(container)
 		
 		if index_a != -1 and index_b != -1 and index_a != index_b:
-			grid_container.move_child(selected_inventory, index_b)
-			grid_container.move_child(container, index_a)
+			inventory_grid.move_child(selected_inventory, index_b)
+			inventory_grid.move_child(container, index_a)
 			
 			# Save new order in player_data.dish_order
 			var new_order: Array = []
-			for child in grid_container.get_children():
+			for child in inventory_grid.get_children():
 				if child.has_method("get_dish_name"):
 					new_order.append(child.get_dish_name())
 

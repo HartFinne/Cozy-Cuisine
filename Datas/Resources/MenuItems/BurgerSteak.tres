@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MenuItem" load_steps=3 format=3 uid="uid://db13to0ewnmod"]
 
-[ext_resource type="Texture2D" uid="uid://c5qye3hino3uu" path="res://Market (shops, items)/Assets/Ingredients/82_pizza_dish.png" id="1_q8rjn"]
+[ext_resource type="Texture2D" uid="uid://bcmgfab66d5xq" path="res://Datas/Assets/Dishes/berjerk_stick-Sheet.png" id="1_uvteh"]
 [ext_resource type="Script" uid="uid://c4j6jnotdiglp" path="res://Datas/menu_item.gd" id="2_vpi4i"]
 
 [resource]
@@ -9,10 +9,12 @@ name = "BurgerSteak"
 label = "Burger Steak"
 description = "A juicy grilled beef patty served with steak sauce and mixed vegetables."
 price = 40
-image = ExtResource("1_q8rjn")
+image = ExtResource("1_uvteh")
 ingredients = {
 "Meat": 2,
-"Oil": 1
+"MixedVeg": 1,
+"Mushroom": 1,
+"SteakSauce": 1
 }
 time_to_cooked = 5
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"

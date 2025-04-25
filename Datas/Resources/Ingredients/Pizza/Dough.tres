@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://bf8a4igrmgpbc"]
+
+[ext_resource type="Texture2D" uid="uid://d28e8atvtnrxu" path="res://Datas/Assets/Ingredients/Pizza/doggie-Sheet.png" id="1_cvidc"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="2_7hf7a"]
+
+[resource]
+script = ExtResource("2_7hf7a")
+name = "Dough"
+image = ExtResource("1_cvidc")
+label = "Pizza Dough"
+price = 4
+description = "Ready-to-use dough for quick and easy pizza preparation."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

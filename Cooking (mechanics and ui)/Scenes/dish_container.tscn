@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://keqadk5s6vut"]
 
-[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/dish_container.gd" id="1_l7edn"]
+[ext_resource type="Script" uid="uid://cgdvkwbgnqwi4" path="res://Cooking (mechanics and ui)/Scripts/dish_container.gd" id="1_l7edn"]
 [ext_resource type="Texture2D" uid="uid://bcmgfab66d5xq" path="res://Datas/Assets/Dishes/berjerk_stick-Sheet.png" id="2_w5mkq"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_vlym5"]
 

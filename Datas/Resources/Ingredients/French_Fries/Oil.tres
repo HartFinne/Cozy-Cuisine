@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://lhwep3uxmmrc"]
+
+[ext_resource type="Texture2D" uid="uid://df6ap7783h2pd" path="res://Datas/Assets/Ingredients/French_Fries/owel.png" id="1_i33ss"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="2_g70wv"]
+
+[resource]
+script = ExtResource("2_g70wv")
+name = "Oil"
+image = ExtResource("1_i33ss")
+label = "Cooking Oil"
+price = 10
+description = "Essential for frying and cooking various dishes."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

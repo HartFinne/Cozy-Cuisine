@@ -21,6 +21,9 @@ var expenses = 0
 
 @onready var end_of_day: PopupPanel = $UI/CanvasLayer/EndOfDay
 
+@onready var panel_label_1: Label = $UI/CanvasLayer/PanelContainer/Button/HBoxContainer/Label
+@onready var panel_label_2: Label = $UI/CanvasLayer/PanelContainer2/HBoxContainer/Label
+
 @onready var paths := [
 	$Path2D/PathFollow2D, 
 	$Path2D2/PathFollow2D, 
@@ -63,6 +66,9 @@ func start_day():
 	
 	start_day_button.visible = false
 	goal_container.visible = true
+	
+	panel_label_1.visible = false
+	panel_label_2.visible = false
 
 	spawn_customers_with_intervals()
 
@@ -100,6 +106,9 @@ func end_day():
 	end_of_day.show()
 	end_of_day.set_testing_script(self)
 	end_of_day.end_day_update_ui()
+	
+	panel_label_1.visible = true
+	panel_label_2.visible = true
 	
 	revenue = 0
 	profit = 0
