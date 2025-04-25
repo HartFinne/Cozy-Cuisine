@@ -3,6 +3,7 @@ extends TextureButton
 @onready var sfx_slider: HSlider = $"../SFX_slider"
 @onready var click_sfx: AudioStreamPlayer2D = $"../../ClickSFX"
 
+var player_data: PlayerData = PlayerData.load_data()
 
 var is_muted := false
 var previous_volume := 1.0
@@ -11,6 +12,8 @@ func _ready() -> void:
 	toggle_mode = true
 	pressed.connect(_on_mute_toggled)
 	sfx_slider.value_changed.connect(_on_slider_changed)
+	
+	sfx_slider.value = player_data.sfx_volume
 
 func _on_mute_toggled() -> void:
 	
@@ -23,12 +26,17 @@ func _on_mute_toggled() -> void:
 	else:
 		sfx_slider.value = previous_volume
 		is_muted = false
+		
+	player_data.sfx_volume = sfx_slider.value
+	player_data.save()
 
 func _on_slider_changed(value: float) -> void:
 	if value > 0.0 and is_muted:
 		is_muted = false
 		button_pressed = false
-
+	
+	player_data.sfx_volume = sfx_slider.value
+	player_data.save()
 
 func play_click_sfx():
 	if click_sfx: 

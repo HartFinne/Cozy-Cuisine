@@ -41,6 +41,13 @@ func _on_setting_button_pressed() -> void:
 	
 	
 func _ready() -> void:
+	#When game starts, apply the saved volumes
+	var music_bus_index = AudioServer.get_bus_index("Music")
+	var sfx_bus_index = AudioServer.get_bus_index("SFX")
+
+	AudioServer.set_bus_volume_db(music_bus_index, linear_to_db(player_data.music_volume))
+	AudioServer.set_bus_volume_db(sfx_bus_index, linear_to_db(player_data.sfx_volume))
+
 	admob.initialize()
 	admob.initialization_completed.connect(_on_admob_initialization_completed)
 
