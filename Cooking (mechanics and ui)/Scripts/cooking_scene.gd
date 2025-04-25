@@ -166,7 +166,7 @@ func _on_clear_button_pressed() -> void:
 	player_data._return_selected_ingredients_to_inventory()
 	# Reset all ingredient slots in the UI
 	for slot in ingredients.get_children():
-		var ingredient = slot.get_node("Ingredient")
+		var ingredient = slot.get_node("MarginContainer/Ingredient")
 		if ingredient:
 			selected_ingredients = {}  # ✅ Reset to an empty dictionary
 			ingredient.reset_ingredient()
