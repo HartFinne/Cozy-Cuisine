@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sl0ilsl8ji6j"]
+[gd_scene load_steps=9 format=3 uid="uid://sl0ilsl8ji6j"]
 
 [ext_resource type="Script" uid="uid://dphaanv5s3uv2" path="res://Kiosk (restaurant)/Scripts/Inventory/inventory.gd" id="1_qka5t"]
 [ext_resource type="PackedScene" uid="uid://mjequ4v8il8q" path="res://Kiosk (restaurant)/Scenes/Inventory/inventory_container.tscn" id="2_2g18v"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://drsnxumar1fpb" path="res://Datas/Assets/Dishes/french_fried-Sheet.png" id="3_2g18v"]
 [ext_resource type="Texture2D" uid="uid://dlpdw8sjfo8i3" path="res://Datas/Assets/Dishes/pizza-Sheet.png" id="4_j8p71"]
 [ext_resource type="Script" uid="uid://dffnll0ydfwpi" path="res://Kiosk (restaurant)/Scripts/Inventory/bag_popup_panel.gd" id="5_2g18v"]
+[ext_resource type="Texture2D" uid="uid://5sqg4pf17a0r" path="res://Kiosk (restaurant)/Assets/ui_bg.png" id="6_j8p71"]
+[ext_resource type="Texture2D" uid="uid://bmpoyrwlnj27n" path="res://Kiosk (restaurant)/Assets/UI_x-button.png" id="7_wg8j1"]
 
 [node name="Inventory" type="HBoxContainer"]
 custom_minimum_size = Vector2(341, 71.001)
@@ -96,39 +98,51 @@ size = Vector2i(685, 320)
 visible = true
 script = ExtResource("5_2g18v")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BagPopupPanel"]
+[node name="Inventory UI" type="NinePatchRect" parent="BagPopupPanel"]
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 681.0
 offset_bottom = 316.0
+texture = ExtResource("6_j8p71")
+region_rect = Rect2(-0.313797, 0, 196.314, 171)
+patch_margin_left = 12
+patch_margin_top = 11
+patch_margin_right = 12
+patch_margin_bottom = 12
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BagPopupPanel/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BagPopupPanel/Inventory UI"]
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 664.0
+offset_bottom = 298.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BagPopupPanel/Inventory UI/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="BagPopupPanel/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="BagPopupPanel/Inventory UI/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Meals"
 
-[node name="Button" type="Button" parent="BagPopupPanel/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="BagPopupPanel/Inventory UI/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 10
-text = "x"
+icon = ExtResource("7_wg8j1")
 
-[node name="GridContainer" type="GridContainer" parent="BagPopupPanel/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="BagPopupPanel/Inventory UI/VBoxContainer"]
 custom_minimum_size = Vector2(0, 71.001)
 layout_mode = 2
 columns = 10
 
-[node name="InventoryContainer" parent="BagPopupPanel/VBoxContainer/GridContainer" instance=ExtResource("2_2g18v")]
+[node name="InventoryContainer" parent="BagPopupPanel/Inventory UI/VBoxContainer/GridContainer" instance=ExtResource("2_2g18v")]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="BagPopupPanel/VBoxContainer"]
+[node name="Label2" type="Label" parent="BagPopupPanel/Inventory UI/VBoxContainer"]
 layout_mode = 2
 text = "Ingredients"
 
-[node name="GridContainer2" type="GridContainer" parent="BagPopupPanel/VBoxContainer"]
+[node name="GridContainer2" type="GridContainer" parent="BagPopupPanel/Inventory UI/VBoxContainer"]
 layout_mode = 2
 
 [connection signal="pressed" from="HBoxContainer/BagButton" to="." method="_on_bag_button_pressed"]
-[connection signal="pressed" from="BagPopupPanel/VBoxContainer/HBoxContainer/Button" to="BagPopupPanel" method="_on_button_pressed"]
+[connection signal="pressed" from="BagPopupPanel/Inventory UI/VBoxContainer/HBoxContainer/Button" to="BagPopupPanel" method="_on_button_pressed"]

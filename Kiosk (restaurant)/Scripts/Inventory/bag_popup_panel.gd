@@ -1,6 +1,6 @@
 extends PopupPanel
 
-@onready var grid_container: GridContainer = $VBoxContainer/GridContainer
+@onready var grid_container: GridContainer = $"Inventory UI/VBoxContainer/GridContainer"
 var inventory_contianer_scene = preload("res://Kiosk (restaurant)/Scenes/Inventory/inventory_container.tscn")
 var player_data: PlayerData = PlayerData.load_data()
 var dishes = player_data.dishes
