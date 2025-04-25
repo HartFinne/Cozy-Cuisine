@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xpg6v4oybsap"
+path="res://.godot/imported/bipbip.mp3-d35b5e13c74c9585a631a45ac813ab92.mp3str"
+
+[deps]
+
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/bipbip.mp3"
+dest_files=["res://.godot/imported/bipbip.mp3-d35b5e13c74c9585a631a45ac813ab92.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

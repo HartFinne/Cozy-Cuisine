@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=53 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://dt4jys3fl7s8g" path="res://Kiosk (restaurant)/Scripts/ui.gd" id="20_mj36q"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_yecm4"]
 [ext_resource type="AudioStream" uid="uid://gsrn08cb3faa" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/coin-clink.mp3" id="23_e3whk"]
+[ext_resource type="AudioStream" uid="uid://bweeog8icd6ot" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/GameBGM.mp3" id="24_vhscd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_066vs"]
 texture = ExtResource("2_s5p3n")
@@ -1360,6 +1361,12 @@ metadata/_custom_type_script = "uid://cwhqet8b15kvi"
 stream = ExtResource("23_e3whk")
 bus = &"SFX"
 playback_type = 1
+
+[node name="GameBGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_vhscd")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/Button" to="." method="_on_button_pressed"]

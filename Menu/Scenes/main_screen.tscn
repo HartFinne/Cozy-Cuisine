@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=34 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
 [ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
+[ext_resource type="AudioStream" uid="uid://2ixwsrjj4ir0" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/MainBGM.mp3" id="21_v7wqy"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
 [ext_resource type="Texture2D" uid="uid://bsu4na41r1e8p" path="res://Menu/Assets/OK/2.png" id="22_opkdy"]
 [ext_resource type="Texture2D" uid="uid://cng4ywrj3ulkx" path="res://Menu/Assets/OK/1.png" id="23_uec84"]
@@ -3250,6 +3251,12 @@ banner_position = 1
 debug_application_id = "ca-app-pub-3940256099942544~3347511713"
 debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
 metadata/_custom_type_script = "uid://cwhqet8b15kvi"
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_v7wqy")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]

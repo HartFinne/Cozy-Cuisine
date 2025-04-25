@@ -6385,6 +6385,7 @@ offset_left = 147.0
 offset_top = -7.0
 offset_right = 178.0
 offset_bottom = 24.0
+toggle_mode = true
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_40kfa")
 texture_pressed = SubResource("AtlasTexture_jbsjo")
