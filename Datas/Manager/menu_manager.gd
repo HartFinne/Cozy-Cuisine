@@ -16,7 +16,9 @@ func load_recipes():
 	var recipes_path = [
 		"res://Datas/Resources/MenuItems/BurgerSteak.tres",
 		"res://Datas/Resources/MenuItems/MilkShake.tres",
-		"res://Datas/Resources/MenuItems/PepperoniPizza.tres"
+		"res://Datas/Resources/MenuItems/PepperoniPizza.tres",
+		"res://Datas/Resources/MenuItems/Fries.tres",
+		"res://Datas/Resources/MenuItems/IceCream.tres"
 	]
 	
 	for path in recipes_path:

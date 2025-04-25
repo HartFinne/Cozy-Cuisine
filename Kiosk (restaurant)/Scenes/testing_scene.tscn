@@ -1256,17 +1256,17 @@ offset_bottom = -31.0
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.847222
-anchor_top = 0.128086
-anchor_right = 0.972222
-anchor_bottom = 0.189815
-offset_left = -15.9997
-offset_top = 1.00027
-offset_right = -15.9996
-offset_bottom = 1.00027
+anchor_left = 0.777778
+anchor_top = 0.12963
+anchor_right = 0.958333
+anchor_bottom = 0.191358
+offset_left = 32.0
+offset_top = 1.52588e-05
+offset_right = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mj36q")
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="UI/CanvasLayer/PanelContainer"]
 layout_mode = 2
@@ -1297,9 +1297,10 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/PanelContainer/Button/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 texture = SubResource("AtlasTexture_a73q7")
 expand_mode = 3
+stretch_mode = 5
 
 [node name="PanelContainer2" type="PanelContainer" parent="UI/CanvasLayer"]
 anchors_preset = -1
@@ -1307,12 +1308,11 @@ anchor_left = 0.895833
 anchor_top = 0.234568
 anchor_right = 0.972222
 anchor_bottom = 0.296296
-offset_left = -35.9996
+offset_left = -38.9996
 offset_top = -20.0001
-offset_right = 15.0002
-offset_bottom = -20.0001
+offset_right = 16.0002
+offset_bottom = -20.9998
 theme_override_styles/panel = SubResource("StyleBoxEmpty_a73q7")
-metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer/PanelContainer2"]
 unique_name_in_owner = true
@@ -1327,6 +1327,7 @@ text = "SHOP"
 
 [node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/PanelContainer2/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 10
 texture = SubResource("AtlasTexture_pqflv")
 expand_mode = 2
 stretch_mode = 4

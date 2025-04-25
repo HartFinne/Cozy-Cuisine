@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://dmtxrfvdxbfc8"]
+
+[ext_resource type="Texture2D" uid="uid://behyf6fsut5ne" path="res://Datas/Assets/Ingredients/Pizza/tomato-sows-ginoo-Sheet.png" id="1_px0dp"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="2_lvut4"]
+
+[resource]
+script = ExtResource("2_lvut4")
+name = "PizzaSauce"
+image = ExtResource("1_px0dp")
+label = "PizzaSauce"
+price = 5
+description = "A rich and tangy tomato-based sauce for pizza."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

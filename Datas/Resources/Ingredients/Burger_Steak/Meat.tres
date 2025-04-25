@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://iep3148uvl3e"]
+
+[ext_resource type="Texture2D" uid="uid://cxlml5pte4mcj" path="res://Datas/Assets/Ingredients/Burger_Steak/ginenggeng-Sheet.png" id="1_rm1i7"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_tsunu"]
+
+[resource]
+script = ExtResource("1_tsunu")
+name = "Meat"
+image = ExtResource("1_rm1i7")
+label = "Ground Meat"
+price = 15
+description = "Freshly minced meat, ideal for making burger patties."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

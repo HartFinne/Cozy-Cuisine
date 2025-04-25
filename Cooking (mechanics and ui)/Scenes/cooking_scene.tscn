@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=70 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
@@ -9,19 +9,21 @@
 [ext_resource type="Script" uid="uid://oox1pt4tv8mf" path="res://Cooking (mechanics and ui)/Scripts/ingredient_popup.gd" id="4_oxed2"]
 [ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
 [ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="5_hytrb"]
-[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
+[ext_resource type="Script" uid="uid://c58sj2tm5iwnd" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
 [ext_resource type="Texture2D" uid="uid://c73n2p2syccx" path="res://Cooking (mechanics and ui)/Assets/COOK/2.png" id="7_t4kcf"]
 [ext_resource type="PackedScene" uid="uid://c87xmv0o4p1cn" path="res://Cooking (mechanics and ui)/Scenes/order_container.tscn" id="7_wobfx"]
 [ext_resource type="Texture2D" uid="uid://b0cxuassnsu75" path="res://Cooking (mechanics and ui)/Assets/COOK/3.png" id="8_c66or"]
 [ext_resource type="Texture2D" uid="uid://b7pxdp5aqmkga" path="res://Cooking (mechanics and ui)/Assets/COOK/1.png" id="9_s5ke1"]
-[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
+[ext_resource type="Script" uid="uid://cp743csr6i015" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
 [ext_resource type="Texture2D" uid="uid://c2712n5jk0oy" path="res://Cooking (mechanics and ui)/Assets/CLEAR/3.png" id="10_4fvnn"]
 [ext_resource type="Texture2D" uid="uid://cl2qgahaw87a8" path="res://Cooking (mechanics and ui)/Assets/CLEAR/2.png" id="11_5ifc6"]
 [ext_resource type="Texture2D" uid="uid://bijjuwiasm1my" path="res://Cooking (mechanics and ui)/Assets/CLEAR/1.png" id="12_y42ar"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="14_verp7"]
 [ext_resource type="Texture2D" uid="uid://bx6rokpeupc27" path="res://Cooking (mechanics and ui)/Assets/ORDERS/2.png" id="16_bbj53"]
+[ext_resource type="Theme" uid="uid://dooj82c87h1t" path="res://Cooking (mechanics and ui)/Assets/Themes/cook_book_scroll_theme.tres" id="16_j3u5v"]
 [ext_resource type="Texture2D" uid="uid://doxqhtbey1mp4" path="res://Cooking (mechanics and ui)/Assets/ORDERS/3.png" id="17_hytrb"]
 [ext_resource type="Texture2D" uid="uid://dp55aoiblghnq" path="res://Cooking (mechanics and ui)/Assets/ORDERS/1.png" id="18_verp7"]
+[ext_resource type="PackedScene" uid="uid://keqadk5s6vut" path="res://Cooking (mechanics and ui)/Scenes/dish_container.tscn" id="19_bw05v"]
 [ext_resource type="Texture2D" uid="uid://dtqg3e75ckpf7" path="res://Cooking (mechanics and ui)/Assets/DISHES/2.png" id="19_j3u5v"]
 [ext_resource type="Texture2D" uid="uid://cg8wc7hgwannr" path="res://Cooking (mechanics and ui)/Assets/DISHES/3.png" id="20_bw05v"]
 [ext_resource type="Texture2D" uid="uid://er4ta2ol3f26" path="res://Cooking (mechanics and ui)/Assets/DISHES/1.png" id="21_ajps1"]
@@ -173,11 +175,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_iv1l6")
 metadata/_edit_use_anchors_ = true
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Bgmarket" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.470588)
@@ -399,9 +396,9 @@ metadata/_edit_use_anchors_ = true
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.486111
+anchor_left = 0.493056
 anchor_top = 0.160494
-anchor_right = 0.763889
+anchor_right = 0.770834
 anchor_bottom = 0.195409
 offset_bottom = 6.375
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7sy65")
@@ -421,6 +418,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HiddenOutputLabel" type="Label" parent="PanelContainer3"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Orders" type="HBoxContainer" parent="."]
@@ -449,6 +447,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Orders/PanelContainer"]
 layout_mode = 2
+theme = ExtResource("16_j3u5v")
 
 [node name="OrderVbox" type="VBoxContainer" parent="Orders/PanelContainer/ScrollContainer"]
 unique_name_in_owner = true
@@ -461,7 +460,6 @@ layout_mode = 2
 mouse_filter = 0
 
 [node name="Dishes" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 anchor_left = 0.505208
 anchor_right = 0.72743
@@ -471,7 +469,6 @@ offset_right = 314.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_xmic6")
-metadata/_edit_use_anchors_ = true
 
 [node name="DishBackButton" type="Button" parent="Dishes"]
 custom_minimum_size = Vector2(40, 40)
@@ -490,6 +487,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Dishes/PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+vertical_scroll_mode = 2
 
 [node name="DishVbox" type="VBoxContainer" parent="Dishes/PanelContainer/ScrollContainer"]
 layout_mode = 2
@@ -497,12 +497,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 10
 
-[node name="PanelContainer" parent="Dishes/PanelContainer/ScrollContainer/DishVbox" instance=ExtResource("7_wobfx")]
+[node name="DishContainer" parent="Dishes/PanelContainer/ScrollContainer/DishVbox" instance=ExtResource("19_bw05v")]
 layout_mode = 2
-mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 2
 
 [node name="OrdersButton" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(70, 40)
 layout_mode = 1
 anchors_preset = -1
@@ -521,6 +523,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_okkye")
 metadata/_edit_use_anchors_ = true
 
 [node name="DishButton" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(70, 40)
 layout_mode = 0
 offset_left = 1029.0

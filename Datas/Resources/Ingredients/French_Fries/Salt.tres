@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cxv68611b5731"]
+
+[ext_resource type="Texture2D" uid="uid://davn0l8yta4pj" path="res://Datas/Assets/Ingredients/French_Fries/asinagang.png" id="1_meh50"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_nq8r5"]
+
+[resource]
+script = ExtResource("1_nq8r5")
+name = "Salt"
+image = ExtResource("1_meh50")
+label = "Salt"
+price = 2
+description = "A common seasoning used to enhance flavor."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

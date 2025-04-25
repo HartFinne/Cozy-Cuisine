@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://b01c51ox1yoyd"]
+
+[ext_resource type="Texture2D" uid="uid://cf2i0vie1i8yx" path="res://Datas/Assets/Ingredients/French_Fries/pre-cut patatas-Sheet.png" id="1_5yvuw"]
+[ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_8je51"]
+
+[resource]
+script = ExtResource("1_8je51")
+name = "Potatoes"
+image = ExtResource("1_5yvuw")
+label = "Pre-Cut Potatoes"
+price = 5
+description = "Freshly sliced potatoes, ready for deep frying."
+metadata/_custom_type_script = "uid://8ouvi3xs2uih"

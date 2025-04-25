@@ -11,7 +11,9 @@ description = "Crispy, golden-brown potato fries, deep-fried to perfection."
 price = 20
 image = ExtResource("1_qfmh0")
 ingredients = {
-"Potatoes": 4
+"Oil": 1,
+"Potatoes": 2,
+"Salt": 1
 }
 time_to_cooked = 7
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"

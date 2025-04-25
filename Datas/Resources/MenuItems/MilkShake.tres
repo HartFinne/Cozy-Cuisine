@@ -12,7 +12,9 @@ price = 22
 image = ExtResource("1_peovi")
 ingredients = {
 "Ice": 2,
-"Sugar": 1
+"Milk": 1,
+"Sugar": 1,
+"Vanilla": 2
 }
 time_to_cooked = 9
 metadata/_custom_type_script = "uid://c4j6jnotdiglp"
