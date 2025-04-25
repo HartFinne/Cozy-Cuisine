@@ -1,7 +1,7 @@
 extends TextureButton
 
 @onready var ingredient_popup: PopupPanel = %IngredientPopup
-@onready var cooking_script = get_parent().get_parent().get_parent().get_parent().get_parent()
+@onready var cooking_script = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
 
 signal ingredient_selected(ingredient)
 var ingredient_data: Dictionary  # Store ingredient data

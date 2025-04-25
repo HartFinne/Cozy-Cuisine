@@ -231,7 +231,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -242,7 +249,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot2"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot2/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -253,7 +267,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot3"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot3"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot3/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -264,7 +285,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot4"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot4"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot4/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -275,7 +303,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot5"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot5"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot5/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -286,7 +321,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot6"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot6"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot6/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -297,7 +339,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot7"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot7"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot7/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -308,7 +357,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot8"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot8"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot8/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")
@@ -319,7 +375,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_qqh86")
 
-[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot9"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot9"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Ingredient" type="TextureButton" parent="PanelContainer/MarginContainer/Ingredients/IngredientSlot9/MarginContainer"]
 layout_mode = 2
 stretch_mode = 5
 script = ExtResource("2_lwslm")

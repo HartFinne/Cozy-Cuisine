@@ -8,11 +8,6 @@ func _ready() -> void:
 	#self.banner_ready.connect(_on_banner_ready)
 	pass # Replace with function body.
 	
-#func _on_banner_ready():
-	#var banner_height = 90
-	#var inventory = $CanvasLayer/Inventory
-	#$VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Food
-	#inventory.position.y -= banner_height
 
 func show_meal_details(meal):
 	margin_container.visible = true
@@ -22,6 +17,7 @@ func show_meal_details(meal):
 	var item_list = %ItemList
 	var description = %DescriptionOutput
 	var price = %PriceOutput
+	var ingredient_name = %Ingredient
 
 	
 	meal_image.texture = meal.image
@@ -30,6 +26,8 @@ func show_meal_details(meal):
 	price.text = str(int(meal.price))
 	
 	item_list.clear()
+	item_list.show()
+	ingredient_name.visible = true
 
 	for ingredient in meal.ingredients.keys():
 		var amount = meal.ingredients[ingredient]
