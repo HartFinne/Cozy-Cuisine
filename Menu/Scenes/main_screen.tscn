@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=33 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -11,14 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://dpkbem28xusa" path="res://Menu/Assets/playbutton/1.png" id="8_sp1m5"]
 [ext_resource type="Texture2D" uid="uid://btghb88f1yo7t" path="res://Menu/Assets/playbutton/3.png" id="9_swnq6"]
 [ext_resource type="Texture2D" uid="uid://cmjh0aurfq8t" path="res://Menu/Assets/playbutton/2.png" id="10_n1qsx"]
-[ext_resource type="Texture2D" uid="uid://bqqdjk6kh0a2h" path="res://Menu/Assets/tutorialbutton/1.png" id="11_o2tyf"]
-[ext_resource type="Texture2D" uid="uid://ca0t78e2eakd1" path="res://Menu/Assets/tutorialbutton/3.png" id="12_k410j"]
-[ext_resource type="Texture2D" uid="uid://dvod1ttenybx6" path="res://Menu/Assets/tutorialbutton/2.png" id="13_tmrye"]
 [ext_resource type="Texture2D" uid="uid://cpc0xa42gyfha" path="res://Menu/Assets/quitbutton/1.png" id="14_heyad"]
 [ext_resource type="Texture2D" uid="uid://cjlomdj2qaoaq" path="res://Menu/Assets/quitbutton/3.png" id="15_ownbj"]
 [ext_resource type="Texture2D" uid="uid://xafp1b2txbh" path="res://Menu/Assets/quitbutton/2.png" id="16_v7wqy"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
-[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
 [ext_resource type="Texture2D" uid="uid://bsu4na41r1e8p" path="res://Menu/Assets/OK/2.png" id="22_opkdy"]
@@ -3193,31 +3190,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -64.0
-offset_top = -26.0
+offset_top = 4.0
 offset_right = 80.0
-offset_bottom = 46.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("8_sp1m5")
 texture_pressed = ExtResource("9_swnq6")
 texture_hover = ExtResource("10_n1qsx")
 
-[node name="tutorial" type="TextureButton" parent="Panel"]
-layout_mode = 0
-offset_left = 512.0
-offset_top = 364.0
-offset_right = 656.0
-offset_bottom = 436.0
-texture_normal = ExtResource("11_o2tyf")
-texture_pressed = ExtResource("12_k410j")
-texture_hover = ExtResource("13_tmrye")
-
 [node name="quit" type="TextureButton" parent="Panel"]
 layout_mode = 0
 offset_left = 512.0
-offset_top = 432.0
+offset_top = 392.0
 offset_right = 656.0
-offset_bottom = 504.0
+offset_bottom = 464.0
 texture_normal = ExtResource("14_heyad")
 texture_pressed = ExtResource("15_ownbj")
 texture_hover = ExtResource("16_v7wqy")
@@ -3266,7 +3253,6 @@ metadata/_custom_type_script = "uid://cwhqet8b15kvi"
 
 [connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Panel/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Panel/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/PopupPanel/VBoxContainer/BackButton" to="Panel/PopupPanel" method="_on_back_button_pressed"]
 [connection signal="initialization_completed" from="Admob" to="." method="_on_admob_initialization_completed"]
