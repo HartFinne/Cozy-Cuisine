@@ -1,14 +1,14 @@
 [gd_scene load_steps=29 format=4 uid="uid://cb6l1d325m5j0"]
 
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="1_0q1k6"]
-[ext_resource type="Shader" path="res://Menu/Assets/Themes/settings.gdshader" id="1_ne7l5"]
-[ext_resource type="Script" path="res://Menu/Scripts/settings.gd" id="1_nv1uq"]
+[ext_resource type="Shader" uid="uid://cuji2cqjx5m3y" path="res://Menu/Assets/Themes/settings.gdshader" id="1_ne7l5"]
+[ext_resource type="Script" uid="uid://c7gamm41g5btx" path="res://Menu/Scripts/settings.gd" id="1_nv1uq"]
 [ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="2_ghuux"]
 [ext_resource type="PackedScene" uid="uid://dwgijbku3oaun" path="res://Game (movements, npcs, world map, inventory)/Scenes/volume_slider.tscn" id="3_lpy8r"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="4_0q1k6"]
 [ext_resource type="Script" uid="uid://dd4af488v37on" path="res://Menu/Scripts/music_button.gd" id="4_lpy8r"]
 [ext_resource type="Script" uid="uid://c62g37edyaqe3" path="res://Menu/Scripts/sfx_button.gd" id="5_ne7l5"]
-[ext_resource type="Script" path="res://Menu/Scripts/SetiingsBackBtn.gd" id="9_40kfa"]
+[ext_resource type="Script" uid="uid://cxdb2p88yddwi" path="res://Menu/Scripts/SetiingsBackBtn.gd" id="9_40kfa"]
 [ext_resource type="AudioStream" uid="uid://bx5umcj4b56uu" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/click_sfx.mp3" id="10_jbsjo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nv1uq"]
@@ -6377,7 +6377,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_0q1k6")
 theme_override_font_sizes/font_size = 16
 text = "click me"
-uri = "https://www.youtube.com/watch?v=B33a8YkS-hU"
 
 [node name="back" type="TextureButton" parent="Panel"]
 layout_mode = 0
