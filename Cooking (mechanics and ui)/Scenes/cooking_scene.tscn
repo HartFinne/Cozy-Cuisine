@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=74 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
@@ -9,12 +9,12 @@
 [ext_resource type="Script" uid="uid://oox1pt4tv8mf" path="res://Cooking (mechanics and ui)/Scripts/ingredient_popup.gd" id="4_oxed2"]
 [ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
 [ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="5_hytrb"]
-[ext_resource type="Script" uid="uid://c58sj2tm5iwnd" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
 [ext_resource type="Texture2D" uid="uid://c73n2p2syccx" path="res://Cooking (mechanics and ui)/Assets/COOK/2.png" id="7_t4kcf"]
 [ext_resource type="PackedScene" uid="uid://c87xmv0o4p1cn" path="res://Cooking (mechanics and ui)/Scenes/order_container.tscn" id="7_wobfx"]
 [ext_resource type="Texture2D" uid="uid://b0cxuassnsu75" path="res://Cooking (mechanics and ui)/Assets/COOK/3.png" id="8_c66or"]
 [ext_resource type="Texture2D" uid="uid://b7pxdp5aqmkga" path="res://Cooking (mechanics and ui)/Assets/COOK/1.png" id="9_s5ke1"]
-[ext_resource type="Script" uid="uid://cp743csr6i015" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
 [ext_resource type="Texture2D" uid="uid://c2712n5jk0oy" path="res://Cooking (mechanics and ui)/Assets/CLEAR/3.png" id="10_4fvnn"]
 [ext_resource type="Texture2D" uid="uid://cl2qgahaw87a8" path="res://Cooking (mechanics and ui)/Assets/CLEAR/2.png" id="11_5ifc6"]
 [ext_resource type="Texture2D" uid="uid://bijjuwiasm1my" path="res://Cooking (mechanics and ui)/Assets/CLEAR/1.png" id="12_y42ar"]
@@ -42,6 +42,8 @@ region = Rect2(81, 65, 14, 14)
 [sub_resource type="AtlasTexture" id="AtlasTexture_verp7"]
 atlas = ExtResource("5_hytrb")
 region = Rect2(65, 65, 14, 14)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fa8qe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5d7ps"]
 atlas = ExtResource("3_wobfx")
@@ -164,6 +166,28 @@ texture = ExtResource("20_bw05v")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8bi1"]
 texture = ExtResource("21_ajps1")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw05v"]
+bg_color = Color(0.552941, 0.286275, 0.227451, 0.392157)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
+shadow_size = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okkye"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4awaf"]
+
 [node name="CookingScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -210,6 +234,7 @@ anchor_bottom = 0.71111
 offset_right = 67.2
 offset_bottom = 67.2
 scale = Vector2(0.85, 0.85)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fa8qe")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -603,20 +628,32 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_o8bi1")
 unique_name_in_owner = true
 initial_position = 2
 size = Vector2i(545, 451)
+visible = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_bw05v")
 script = ExtResource("4_oxed2")
 ingredient_container = ExtResource("5_fph4g")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="IngredientPopup"]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 541.0
-offset_bottom = 447.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 539.0
+offset_bottom = 445.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_okkye")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4awaf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="IngredientPopup/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="IngredientPopup/ScrollContainer/VBoxContainer"]

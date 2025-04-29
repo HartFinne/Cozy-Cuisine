@@ -1,13 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfq7velefot8o"]
+[gd_scene load_steps=7 format=3 uid="uid://dfq7velefot8o"]
 
 [ext_resource type="Script" uid="uid://du2eeublchj65" path="res://Cooking (mechanics and ui)/Scripts/ingredient_container.gd" id="1_ahl8v"]
 [ext_resource type="Texture2D" uid="uid://ccmggcp273p04" path="res://Market (shops, items)/Assets/Ingredients/81_pizza.png" id="2_ahl8v"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="3_i1ji5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1ji5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.196078)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1ji5"]
+content_margin_top = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7254g"]
+content_margin_bottom = 10.0
 
 [node name="IngredientContainer" type="PanelContainer"]
 anchors_preset = -1
 anchor_right = 0.580729
 anchor_bottom = 0.282407
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i1ji5")
 script = ExtResource("1_ahl8v")
 metadata/_edit_use_anchors_ = true
 
@@ -30,14 +53,25 @@ size_flags_vertical = 4
 [node name="IngredientLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.858824, 0.709804, 1)
+theme_override_fonts/font = ExtResource("3_i1ji5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i1ji5")
 text = "Ingredient Name"
 
 [node name="PriceLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.858824, 0.709804, 1)
+theme_override_fonts/font = ExtResource("3_i1ji5")
+theme_override_font_sizes/font_size = 32
 text = "Price"
 
 [node name="QuantityLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.858824, 0.709804, 1)
+theme_override_fonts/font = ExtResource("3_i1ji5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7254g")
 text = "Quantity"

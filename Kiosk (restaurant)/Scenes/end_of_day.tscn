@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://oxnlrlkqkmk2"]
 
-[ext_resource type="Script" uid="uid://c8wjlwtfcbu04" path="res://Kiosk (restaurant)/Scripts/end_of_day.gd" id="1_vapah"]
+[ext_resource type="Script" path="res://Kiosk (restaurant)/Scripts/end_of_day.gd" id="1_vapah"]
 [ext_resource type="TileSet" uid="uid://b8finquyyyrf3" path="res://Market (shops, items)/Assets/ui.tres" id="2_xgdu4"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="3_t2kod"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="4_pb7u7"]
