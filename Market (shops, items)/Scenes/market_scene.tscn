@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bs4bk1jk28hsl"]
+[gd_scene load_steps=38 format=4 uid="uid://bs4bk1jk28hsl"]
 
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="1_5hnv5"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="1_8nt3w"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://m6lckfhsy84c" path="res://Market (shops, items)/Assets/BUY/2.png" id="10_5hnv5"]
 [ext_resource type="Theme" uid="uid://dooj82c87h1t" path="res://Cooking (mechanics and ui)/Assets/Themes/cook_book_scroll_theme.tres" id="10_7mt4o"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="10_34bus"]
+[ext_resource type="Theme" uid="uid://b04vdbabpoen2" path="res://Market (shops, items)/Assets/themeacceptdialog.tres" id="18_7mt4o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_34bus"]
 shader = ExtResource("1_5hnv5")
@@ -113,6 +114,18 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bligb"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.917647, 0.772549, 1)
 
 [sub_resource type="TileSet" id="TileSet_nxshy"]
 
@@ -333,7 +346,10 @@ offset_right = 0.0
 [node name="ErrorPopup" type="AcceptDialog" parent="Panel"]
 unique_name_in_owner = true
 initial_position = 2
-size = Vector2i(470, 235)
+size = Vector2i(470, 150)
+theme = ExtResource("18_7mt4o")
+theme_override_styles/panel = SubResource("StyleBoxFlat_bligb")
+ok_button_text = ""
 dialog_text = "Error Messages"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
