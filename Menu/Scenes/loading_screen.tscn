@@ -1,13 +1,190 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu7scive72cka"]
+[gd_scene load_steps=40 format=3 uid="uid://cu7scive72cka"]
 
 [ext_resource type="Script" uid="uid://dn8lt56u50v2w" path="res://Menu/Scripts/loading_screen.gd" id="1_mdvgv"]
 [ext_resource type="PackedScene" uid="uid://cnfvi6ryu2y40" path="res://Menu/Scenes/kioskbgg.tscn" id="2_c4i3q"]
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="2_ml07r"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="3_tdowh"]
-[ext_resource type="Texture2D" uid="uid://ju1ullwiu3s4" path="res://Menu/Assets/bar_round_gloss_large.svg" id="6_32g36"]
+[ext_resource type="Texture2D" uid="uid://0vj6h7w8f4nl" path="res://Menu/Assets/loading_hanging_sign/frame_0_delay-0.1s.png" id="4_aciew"]
+[ext_resource type="Texture2D" uid="uid://duntug7qdcnkq" path="res://Menu/Assets/loading_hanging_sign/frame_1_delay-0.1s.png" id="5_nxqlp"]
+[ext_resource type="Texture2D" uid="uid://b2t7mq4cv6wxw" path="res://Menu/Assets/loading_unfilled.png" id="5_tdowh"]
+[ext_resource type="Texture2D" uid="uid://bbe6m2ngc41oa" path="res://Menu/Assets/cat-Sheet.png" id="5_xiv5y"]
+[ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="6_0ngkg"]
+[ext_resource type="Texture2D" uid="uid://d3ewoufknjgcr" path="res://Menu/Assets/loading_hanging_sign/frame_2_delay-0.1s.png" id="6_41rau"]
+[ext_resource type="Texture2D" uid="uid://cydblphgwqvgs" path="res://Menu/Assets/loadingfill/frame_00_delay-0.1s.png" id="7_1qne3"]
+[ext_resource type="Texture2D" uid="uid://c1ioaqtiy1nou" path="res://Menu/Assets/loading_hanging_sign/frame_3_delay-0.1s.png" id="7_32dnr"]
+[ext_resource type="Texture2D" uid="uid://b3hx52ii3rhl6" path="res://Menu/Assets/loading_hanging_sign/frame_4_delay-0.1s.png" id="8_s501g"]
+[ext_resource type="Texture2D" uid="uid://dwn13l11gs4tg" path="res://Menu/Assets/loadingfill/frame_01_delay-0.1s.png" id="8_u3yxi"]
+[ext_resource type="Texture2D" uid="uid://y4kyrh3amp8m" path="res://Menu/Assets/loading_hanging_sign/frame_5_delay-0.1s.png" id="9_1xjso"]
+[ext_resource type="Texture2D" uid="uid://bir1she5rcosc" path="res://Menu/Assets/loadingfill/frame_02_delay-0.1s.png" id="9_wg7vx"]
+[ext_resource type="Texture2D" uid="uid://ipxh1uja3v0q" path="res://Menu/Assets/loadingfill/frame_03_delay-0.1s.png" id="10_7ubws"]
+[ext_resource type="Texture2D" uid="uid://byvja0qowx6on" path="res://Menu/Assets/loading_hanging_sign/frame_6_delay-0.1s.png" id="10_406h5"]
+[ext_resource type="Texture2D" uid="uid://dofcuo7w7o0r6" path="res://Menu/Assets/loadingfill/frame_04_delay-0.1s.png" id="11_cj8ms"]
+[ext_resource type="Texture2D" uid="uid://cjwoe7tdf5cf8" path="res://Menu/Assets/loading_hanging_sign/frame_7_delay-0.1s.png" id="11_f1ugl"]
+[ext_resource type="Texture2D" uid="uid://dlatshwmytnuc" path="res://Menu/Assets/loading_hanging_sign/frame_8_delay-0.1s.png" id="12_jxp21"]
+[ext_resource type="Texture2D" uid="uid://dnp1b3goepn7o" path="res://Menu/Assets/loadingfill/frame_05_delay-0.1s.png" id="12_na7y6"]
+[ext_resource type="Texture2D" uid="uid://b4hrjkie6deac" path="res://Menu/Assets/loadingfill/frame_06_delay-0.1s.png" id="13_hgp0g"]
+[ext_resource type="Texture2D" uid="uid://cp2wfslkoyxwj" path="res://Menu/Assets/loadingfill/frame_07_delay-0.1s.png" id="14_anvcq"]
+[ext_resource type="Texture2D" uid="uid://2injuo2ebtt6" path="res://Menu/Assets/loadingfill/frame_08_delay-0.1s.png" id="15_qot1o"]
+[ext_resource type="Texture2D" uid="uid://br182cn5if61p" path="res://Menu/Assets/loadingfill/frame_09_delay-0.1s.png" id="16_aciew"]
+[ext_resource type="Texture2D" uid="uid://dq70chy7532ki" path="res://Menu/Assets/loadingfill/frame_10_delay-0.1s.png" id="17_nxqlp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdowh"]
 shader = ExtResource("2_ml07r")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qne3"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_aciew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nxqlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_41rau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_32dnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s501g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1xjso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_406h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_f1ugl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jxp21")
+}],
+"loop": true,
+"name": &"hanging_sign animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ngkg"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yreom"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1psoi"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncqnt"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tmjl"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq4im"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44rgj"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjr0o"]
+atlas = ExtResource("5_xiv5y")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lplri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ngkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yreom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1psoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncqnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tmjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq4im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44rgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjr0o")
+}],
+"loop": true,
+"name": &"cat_walking animation",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xiv5y"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1qne3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u3yxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wg7vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ubws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cj8ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_na7y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hgp0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_anvcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qot1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aciew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nxqlp")
+}],
+"loop": false,
+"name": &"fill",
+"speed": 12.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -26,26 +203,30 @@ position = Vector2(628, 339)
 scale = Vector2(0.250735, 0.250735)
 texture = ExtResource("3_tdowh")
 
-[node name="kioskfront" parent="." instance=ExtResource("2_c4i3q")]
-position = Vector2(334, 529)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(635, 300)
+scale = Vector2(0.417188, 0.471759)
+sprite_frames = SubResource("SpriteFrames_1qne3")
+animation = &"hanging_sign animation"
+autoplay = "hanging_sign animation"
+frame_progress = 0.722508
 
-[node name="Loading" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = -124.0
-offset_right = 93.0
-offset_bottom = -69.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedCat" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(622, 427)
+scale = Vector2(5, 4.6875)
+sprite_frames = SubResource("SpriteFrames_lplri")
+animation = &"cat_walking animation"
+autoplay = "cat_walking animation"
+frame_progress = 0.22933
+
+[node name="LoadingBarAnimated" type="AnimatedSprite2D" parent="."]
+position = Vector2(615, 529)
+scale = Vector2(9.27734, 6.94531)
+sprite_frames = SubResource("SpriteFrames_xiv5y")
+animation = &"fill"
+frame = 10
+frame_progress = 1.0
 
 [node name="Percentage" type="Label" parent="."]
 layout_mode = 1
@@ -54,18 +235,47 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = 52.0
-offset_right = 67.5
-offset_bottom = 94.0
+offset_left = -5.0
+offset_top = 237.0
+offset_right = 108.0
+offset_bottom = 301.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "50"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_0ngkg")
+theme_override_font_sizes/font_size = 41
+text = "0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="kioskfront" parent="." instance=ExtResource("2_c4i3q")]
+visible = false
+position = Vector2(419, 541)
+
+[node name="Loading" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = 233.0
+offset_right = 269.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_0ngkg")
+theme_override_font_sizes/font_size = 40
+text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+texture_filter = 1
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -73,16 +283,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -28.0
-offset_right = 300.0
-offset_bottom = 17.0
+offset_left = -247.0
+offset_top = -109.0
+offset_right = 376.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
-max_value = 1.0
 step = 0.0
+value = 10.0
 nine_patch_stretch = true
 stretch_margin_left = 12
 stretch_margin_right = 12
-texture_progress = ExtResource("6_32g36")
-texture_progress_offset = Vector2(0, 3.395)
+texture_under = ExtResource("5_tdowh")
