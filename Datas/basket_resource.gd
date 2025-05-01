@@ -39,6 +39,7 @@ func get_total_price() -> float:
 	for item in items.values():
 		total += item["price"] * item["quantity"]
 	return total
+	
 
 # Save the basket to a file (for persistence)
 func save_basket(file_path: String = "user://basket.tres"):

@@ -3,6 +3,8 @@ extends CharacterBody2D
 var player_data: PlayerData = PlayerData.load_data()
 
 @onready var start_conversation: NinePatchRect = $StartConversation
+@onready var thought_bubble_scene: Control = $ThoughtBubbleScene
+
 
 @onready var dialogue: Control = $Dialogue
 @export var customer: Customer
@@ -88,6 +90,8 @@ func _on_take_button_pressed():
 		take_button.visible = false
 		dialogue.visible = false
 		
+		show_order_bubbles(true)
+		
 	else:
 		print("NO order to take")
 
@@ -100,6 +104,14 @@ func hide_taken_button_if_order_taken():
 	else:
 		take_button.visible = true
 		serve_button.visible = false
+		
+func show_order_bubbles(served: bool):
+	# need to show the icon of the foods of the orders and how many of it like
+	# example: cheese(icon) 0/1
+	if served:
+		thought_bubble_scene.visible = false
+		
+	thought_bubble_scene.visible = true
 		
 		
 func reach_counter(path_follow_node: PathFollow2D):

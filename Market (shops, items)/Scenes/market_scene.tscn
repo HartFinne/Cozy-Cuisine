@@ -215,11 +215,10 @@ theme_override_styles/tab_selected = SubResource("StyleBoxFlat_r7y4f")
 theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_8nt3w")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_2y00d")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Available" type="TabBar" parent="Panel/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("2_pc21n")
 ingredient_scene = ExtResource("3_ov0xs")
@@ -251,6 +250,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Basket" type="TabBar" parent="Panel/TabContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 script = ExtResource("4_mojl1")
 basket_scene = ExtResource("5_mojl1")

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dca8dju3g02g8"
-path="res://.godot/imported/PressStart2P-Regular.ttf-c5d0233c844912e978cd218da72e782a.fontdata"
+uid="uid://3d05ixnahb7g"
+path="res://.godot/imported/Minecraftia-Regular.ttf-e1a3b8e1b2513e67b8a6906ca1a03c42.fontdata"
 
 [deps]
 
-source_file="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf"
-dest_files=["res://.godot/imported/PressStart2P-Regular.ttf-c5d0233c844912e978cd218da72e782a.fontdata"]
+source_file="res://Datas/Assets/Fonts/Minecraftia-Regular.ttf"
+dest_files=["res://.godot/imported/Minecraftia-Regular.ttf-e1a3b8e1b2513e67b8a6906ca1a03c42.fontdata"]
 
 [params]
 
@@ -33,8 +33,7 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-"size": Vector2i(16, 0),
-&"variation_embolden": 0.0
+&"size": Vector2i(4, 0)
 }]
 language_support={}
 script_support={}

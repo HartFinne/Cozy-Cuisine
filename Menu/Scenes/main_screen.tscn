@@ -3229,29 +3229,26 @@ scale = Vector2(1.735, 1.735)
 texture_normal = SubResource("AtlasTexture_v7wqy")
 texture_pressed = SubResource("AtlasTexture_e48ev")
 
-[node name="play" type="TextureButton" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = 4.0
-offset_right = 80.0
-offset_bottom = 76.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 309.0
+offset_right = 656.0
+offset_bottom = 492.0
+
+[node name="play" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
 texture_normal = ExtResource("8_sp1m5")
 texture_pressed = ExtResource("9_swnq6")
 texture_hover = ExtResource("10_n1qsx")
 
-[node name="quit" type="TextureButton" parent="Panel"]
-layout_mode = 0
-offset_left = 512.0
-offset_top = 392.0
-offset_right = 656.0
-offset_bottom = 464.0
+[node name="reset" type="Button" parent="Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Reset"
+
+[node name="quit" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
 texture_normal = ExtResource("14_heyad")
 texture_pressed = ExtResource("15_ownbj")
 texture_hover = ExtResource("16_v7wqy")
@@ -3291,6 +3288,10 @@ size_flags_vertical = 4
 theme_override_styles/hover = SubResource("StyleBoxTexture_f6jv6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_lcydj")
 
+[node name="resetconfirmdialog" type="ConfirmationDialog" parent="Panel"]
+unique_name_in_owner = true
+initial_position = 2
+
 [node name="Admob" type="Node" parent="."]
 script = ExtResource("22_e48ev")
 banner_position = 1
@@ -3305,7 +3306,9 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="Panel/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Panel/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/PopupPanel/VBoxContainer/BackButton" to="Panel/PopupPanel" method="_on_back_button_pressed"]
+[connection signal="confirmed" from="Panel/resetconfirmdialog" to="." method="_on_resetconfirmdialog_confirmed"]
 [connection signal="initialization_completed" from="Admob" to="." method="_on_admob_initialization_completed"]

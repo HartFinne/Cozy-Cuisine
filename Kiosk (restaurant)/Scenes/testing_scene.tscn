@@ -1107,7 +1107,7 @@ tile_set = ExtResource("5_066vs")
 shape = SubResource("SegmentShape2D_442mg")
 
 [node name="player_girl" parent="." groups=["player"] instance=ExtResource("4_dostw")]
-z_index = 1
+z_index = 2
 position = Vector2(545, 256)
 scale = Vector2(2, 2)
 move_speed = 150.0

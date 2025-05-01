@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Market" load_steps=10 format=3 uid="uid://bt8shkxnlp1b8"]
+[gd_resource type="Resource" script_class="Market" load_steps=11 format=3 uid="uid://bt8shkxnlp1b8"]
 
 [ext_resource type="Script" uid="uid://8ouvi3xs2uih" path="res://Datas/ingredients.gd" id="1_e2l72"]
 [ext_resource type="Script" uid="uid://e2lpmi2i670t" path="res://Datas/market.gd" id="2_huf27"]
@@ -9,10 +9,11 @@
 [ext_resource type="Resource" uid="uid://b0dgdmdsr8mbw" path="res://Datas/Resources/Ingredients/Milkshake/Milk.tres" id="6_07gxv"]
 [ext_resource type="PackedScene" uid="uid://cnq27xg3v6hs3" path="res://Datas/Assets/Shops/shop_animation_1.tscn" id="6_lrwvv"]
 [ext_resource type="Resource" uid="uid://clclb0xpk4vne" path="res://Datas/Resources/Ingredients/Pizza/Pepperoni.tres" id="7_tegb8"]
+[ext_resource type="Resource" uid="uid://5cdl48ndtxl1" path="res://Datas/Resources/Ingredients/Pizza/Cheese.tres" id="8_tegb8"]
 
 [resource]
 script = ExtResource("2_huf27")
 shop_name = "Shop 2"
 shop_image = ExtResource("6_lrwvv")
-ingredients = Array[ExtResource("1_e2l72")]([ExtResource("2_omv6o"), ExtResource("3_5s77b"), ExtResource("4_mog8a"), ExtResource("5_hb1xa"), ExtResource("6_07gxv"), ExtResource("7_tegb8")])
+ingredients = Array[ExtResource("1_e2l72")]([ExtResource("2_omv6o"), ExtResource("3_5s77b"), ExtResource("4_mog8a"), ExtResource("5_hb1xa"), ExtResource("6_07gxv"), ExtResource("7_tegb8"), ExtResource("8_tegb8")])
 metadata/_custom_type_script = "uid://e2lpmi2i670t"

@@ -8,6 +8,8 @@ const settings = preload("res://Menu/Scenes/settings.tscn")
 @onready var popup_panel: PopupPanel = $Panel/PopupPanel
 @onready var admob: Admob = $Admob
 var is_initialized: bool = false
+@onready var resetconfirmdialog: ConfirmationDialog = %resetconfirmdialog
+@onready var reset: Button = $Panel/VBoxContainer/reset
 
 func _on_play_pressed() -> void:
 	print("wiwer")
@@ -25,10 +27,44 @@ func _on_play_pressed() -> void:
 		print("Failed to load")
 	print("Start Button")
 	
+	reset.visible = false
+	
+	
+	
 func _on_tutorial_pressed() -> void:
 	print("Tutorialssss")
 	get_tree().paused = true
 	popup_panel.show()
+	
+
+func _on_reset_pressed() -> void:
+	resetconfirmdialog.popup_centered()
+	pass # Replace with function body.
+	
+
+func _on_resetconfirmdialog_confirmed() -> void:
+	player_data.budget = 1000.0
+	player_data.days = 1
+	player_data.is_intro_watched = false
+	player_data.is_tutorial_watched = false
+	player_data.expenses = 0.0
+	player_data.profit = 0.0
+	player_data.revenue = 0.0
+	player_data.total_profit = 0.0
+	player_data.inventory = {}
+	player_data.selected_ingredients = {}  # Store selected ingredients
+	player_data.dishes = {}
+	player_data.dish_order = []
+	player_data.order = {}
+	player_data.player_position = Vector2(136.0, 128.0)  # Example starting position
+
+	player_data.goal_profit_per_day = 100.0  # You can change the number as needed
+
+	player_data.music_volume = 1.0
+	player_data.sfx_volume = 1.0
+	
+	reset.visible = false  # ✅ Hide reset button again after resetting
+
 	
 	
 func _on_quit_pressed() -> void:
@@ -41,6 +77,12 @@ func _on_setting_button_pressed() -> void:
 	
 	
 func _ready() -> void:
+	if player_data.is_intro_watched:
+		reset.visible = true
+	else:
+		reset.visible = false
+	
+	
 	#When game starts, apply the saved volumes
 	var music_bus_index = AudioServer.get_bus_index("Music")
 	var sfx_bus_index = AudioServer.get_bus_index("SFX")
