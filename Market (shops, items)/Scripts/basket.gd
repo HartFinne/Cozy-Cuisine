@@ -17,7 +17,9 @@ func _ready() -> void:
 	update_basket_display()
 
 func update_basket_display():
+	update_tab_bar_name()
 	# Clear previous items in the UI
+	
 	for child in grid_container_2.get_children():
 		child.queue_free()
 
@@ -41,6 +43,18 @@ func update_basket_display():
 	total_price_label.text = str(total_price)
 		
 		
+# Update the TabBar name based on the number of items in the basket
+func update_tab_bar_name():
+	# Get the total number of items in the basket
+	var total_items = 0
+	for item in basket.items.values():
+		total_items += item["quantity"]
+	
+	# Update the TabBar name dynamically based on the total items
+	self.name = "Basket   " + str(total_items)
+	print("TabBar name updated to:", self.name)
+
+
 # Handle the buy button press
 signal purchase_completed(total_cost)
 @onready var error_popup: AcceptDialog = %ErrorPopup

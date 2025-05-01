@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_nvrqj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = -48.0
 offset_top = -72.0

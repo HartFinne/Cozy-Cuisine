@@ -30,6 +30,6 @@ scale = Vector2(0.7, 0.7)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_37a3h")
 theme_override_font_sizes/normal_font_size = 16
-text = "Press x to get order"
+text = "Press x"
 horizontal_alignment = 1
 vertical_alignment = 1

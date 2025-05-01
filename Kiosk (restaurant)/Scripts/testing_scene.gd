@@ -32,7 +32,7 @@ var expenses = 0
 	$Path2D2/PathFollow2D, 
 	$Path2D3/PathFollow2D, 
 	$Path2D4/PathFollow2D, 
-	$Path2D5/PathFollow2D
+	#$Path2D5/PathFollow2D
 ]  # ✅ Store all PathFollow2D nodes
 
 

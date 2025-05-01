@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=54 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dmbmdpxfkc5hx" path="res://Kiosk (restaurant)/Assets/START DAY/3.png" id="10_ragim"]
 [ext_resource type="PackedScene" uid="uid://sl0ilsl8ji6j" path="res://Kiosk (restaurant)/Scenes/Inventory/inventory.tscn" id="11_dostw"]
 [ext_resource type="Texture2D" uid="uid://cegp2wsdpjqdk" path="res://Kiosk (restaurant)/Assets/START DAY/1.png" id="11_fhl83"]
-[ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="12_fhl83"]
+[ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="13_kiwki"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="13_mj36q"]
 [ext_resource type="Texture2D" uid="uid://q8ta6q0o5ap6" path="res://Kiosk (restaurant)/Assets/global.png" id="16_fhl83"]
 [ext_resource type="Script" uid="uid://dt4jys3fl7s8g" path="res://Kiosk (restaurant)/Scripts/ui.gd" id="20_mj36q"]
@@ -964,7 +964,12 @@ texture = ExtResource("10_ragim")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vhscd"]
 texture = ExtResource("11_fhl83")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3whk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiwki"]
+atlas = ExtResource("13_kiwki")
+region = Rect2(418, 1055, 92, 33)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sac3f"]
+texture = SubResource("AtlasTexture_kiwki")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhl83"]
 content_margin_top = 5.0
@@ -1172,6 +1177,7 @@ progress = 527.22
 rotates = false
 
 [node name="UI" type="Control" parent="."]
+z_index = -1
 layout_mode = 3
 anchors_preset = 0
 grow_horizontal = 2
@@ -1182,6 +1188,7 @@ script = ExtResource("20_mj36q")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+layer = 0
 
 [node name="StartDayButton" type="Button" parent="UI/CanvasLayer"]
 unique_name_in_owner = true
@@ -1207,17 +1214,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_vhscd")
 metadata/_edit_use_anchors_ = true
 
 [node name="GoalContainer" type="PanelContainer" parent="UI/CanvasLayer"]
+custom_minimum_size = Vector2(300, 0)
 anchors_preset = -1
 anchor_left = 0.401042
 anchor_right = 0.609375
 anchor_bottom = 0.0864198
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_e3whk")
+theme_override_styles/panel = SubResource("StyleBoxTexture_sac3f")
 metadata/_edit_use_anchors_ = true
-
-[node name="TileMapLayer" type="TileMapLayer" parent="UI/CanvasLayer/GoalContainer"]
-tile_map_data = PackedByteArray("AAAAAAAAAAAfACgAAAABAAAAAAAfACgAAAACAAAAAAAfACgAAAADAAAAAAAfACgAAAAEAAAAAAAfACgAAAAAAAMAAAAeAC0AAAABAAMAAAAeAC0AAAACAAMAAAAeAC0AAAADAAMAAAAeAC0AAAAEAAMAAAAeAC0AAAD//wMAAAAeAC0AAAD//wEAAAAeACkAAAD//wIAAAAeACkAAAD//wAAAAAfACgAAAAFAAAAAAAeACgAAAAGAAAAAAAeACgAAAAHAAAAAAAeACgAAAAIAAAAAAAeACgAAAAJAAAAAAAeACgAAAAKAAAAAAAeACgAAAAKAAMAAAAeAC0AAAAFAAMAAAAeAC0AAAAGAAMAAAAeAC0AAAAHAAMAAAAeAC0AAAAIAAMAAAAeAC0AAAAJAAMAAAAeAC0AAAAAAAEAAAAeACkAAAABAAEAAAAeACoAAAACAAEAAAAeACoAAAADAAEAAAAeACoAAAAEAAEAAAAeACoAAAAFAAEAAAAeACoAAAAGAAEAAAAeACoAAAAHAAEAAAAeACoAAAAHAAIAAAAeACoAAAAIAAIAAAAeACoAAAAJAAIAAAAeACoAAAAJAAEAAAAeACoAAAAIAAEAAAAeACoAAAAGAAIAAAAeACoAAAAFAAIAAAAeACoAAAAEAAIAAAAeACoAAAADAAIAAAAeACoAAAACAAIAAAAeACoAAAABAAIAAAAeACoAAAAAAAIAAAAeACkAAAAPAAAAAAAfACgAAAAPAAMAAAAeAC0AAAALAAMAAAAeAC0AAAAMAAMAAAAeAC0AAAANAAMAAAAeAC0AAAAOAAMAAAAeAC0AAAAKAAEAAAAeACoAAAAKAAIAAAAeACoAAAALAAIAAAAeACoAAAAMAAIAAAAeACoAAAANAAIAAAAeACoAAAAOAAIAAAAeACoAAAAOAAEAAAAeACoAAAANAAEAAAAeACoAAAAMAAEAAAAeACoAAAALAAEAAAAeACoAAAALAAAAAAAeACgAAAAMAAAAAAAeACgAAAANAAAAAAAeACgAAAAOAAAAAAAeACgAAAD+/wAAAAAfACgAAAD9/wAAAAAcACgAAAARAAAAAAAhACgAAAARAAMAAAAhAC0AAAD9/wMAAAAcAC0AAAAQAAAAAAAfACgAAAAQAAMAAAAeAC0AAAD+/wMAAAAeAC0AAAARAAEAAAAhACoAAAARAAIAAAAhACoAAAD9/wEAAAAcACkAAAD9/wIAAAAcACoAAAD+/wEAAAAeACkAAAD+/wIAAAAeACkAAAAPAAEAAAAeACkAAAAQAAEAAAAeACkAAAAQAAIAAAAeACkAAAAPAAIAAAAeACkAAAA=")
-tile_set = ExtResource("12_fhl83")
 
 [node name="GoalLabel" type="Label" parent="UI/CanvasLayer/GoalContainer"]
 unique_name_in_owner = true

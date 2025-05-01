@@ -116,7 +116,7 @@ z_index = 1
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_208av")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "+1"
 horizontal_alignment = 2
 

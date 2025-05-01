@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://ctadedyc2fl8k" path="res://Market (shops, items)/Scenes/market.gdshader" id="2_ml07r"]
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="3_tdowh"]
 [ext_resource type="Texture2D" uid="uid://luqi36h73ybw" path="res://Menu/Assets/wood_slider_empty.png" id="5_0ngkg"]
-[ext_resource type="FontFile" uid="uid://c737wtn0srxp4" path="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf" id="5_32g36"]
+[ext_resource type="FontFile" uid="uid://dca8dju3g02g8" path="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf" id="5_32g36"]
 [ext_resource type="Texture2D" uid="uid://dtctjyisw703o" path="res://Menu/Assets/wood_slider_filled.png" id="5_xiv5y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdowh"]

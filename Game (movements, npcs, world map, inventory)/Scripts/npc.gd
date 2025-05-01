@@ -17,7 +17,7 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
-func _ready():
+func _ready() -> void:
 	# ✅ Ensure UI is fully loaded before accessing XButton
 	print(customer)
 	var ui = get_tree().get_root().find_child("UI", true, false)
@@ -25,6 +25,9 @@ func _ready():
 	x_button = ui.find_child("XButton", true, false)
 	take_button = ui.find_child("TakeButton", true, false)
 	serve_button = ui.find_child("ServeButton", true, false)
+	
+
+	
 
 
 func _process(delta: float) -> void:
@@ -34,11 +37,12 @@ func _process(delta: float) -> void:
 		x_button.visible = false
 		show_customer_order()
 		
-		if take_button:
+		if take_button and not take_button.is_connected("pressed", Callable(self, "_on_take_button_pressed")):
 			take_button.connect("pressed", Callable(self, "_on_take_button_pressed"))
-			
-		if serve_button:
+
+		if serve_button and not serve_button.is_connected("pressed", Callable(self, "serve_dish_to_customer")):
 			serve_button.connect("pressed", Callable(self, "serve_dish_to_customer"))
+		
 
 
 
@@ -72,28 +76,31 @@ func _on_take_button_pressed():
 	if customer and customer.order:
 		# Assuming customer.order is a dictionary like: {"PeperoniPizza": 2}
 		print("working", customer.order)
-		
+
+		# Duplicate the customer order to avoid shared reference issues
+		var customer_order_copy = customer.order.duplicate(true)  # This creates a unique copy of the order
+
 		# If the player already has an order for this customer, we don't overwrite it
 		if not player_data.order.has(customer.name):
 			# Create the order with customer.name as the key if it doesn't already exist
-			player_data.order[customer.name] = customer.order
+			player_data.order[customer.name] = customer_order_copy
 		else:
-			# Otherwise, you can modify the existing order (optional)
-			# For example, you can add more items to the order, etc.
-			player_data.order[customer.name] = customer.order
+			# You can add more logic here if you want to modify an existing order (optional)
+			player_data.order[customer.name] = customer_order_copy
 
 		print("Customer Name:", customer.name)
 		print("Player Order:", player_data.order)
-		
+
 		# Save the player data
 		player_data.save()
 		take_button.visible = false
 		dialogue.visible = false
-		
+
 		show_order_bubbles(true)
-		
+
 	else:
 		print("NO order to take")
+
 
 
 func hide_taken_button_if_order_taken():
