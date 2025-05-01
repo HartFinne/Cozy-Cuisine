@@ -82,6 +82,7 @@ func select_shop(index):
 	emit_signal("shop_selected", index)
 
 func _on_left_button_pressed() -> void:
+	ClickSound.play_click()
 	if current_index > 0:
 		current_index -= 1
 	else:
@@ -90,6 +91,7 @@ func _on_left_button_pressed() -> void:
 	update_shop_display()
 
 func _on_right_button_pressed() -> void:
+	ClickSound.play_click()
 	if current_index < shop_list.size() - 1:
 		current_index += 1
 	else:
@@ -101,4 +103,5 @@ func _on_setting_button_pressed() -> void:
 	print("Next Update: Setting Button")
 
 func _on_back_button_pressed() -> void:
+	ClickSound.play_click()
 	SceneManager.return_to_game()

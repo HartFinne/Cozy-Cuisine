@@ -11,6 +11,7 @@ func _on_visibility_changed():
 		get_tree().paused = false
 
 func _on_resume_button_pressed() -> void:
+	ClickSound.play_click()
 	%MenuPanel.hide()
 	get_tree().paused = false
 	pass # Replace with function body.
@@ -18,5 +19,6 @@ func _on_resume_button_pressed() -> void:
 
 
 func _on_quit_button_pressed() -> void:
+	ClickSound.play_click()
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(loading_scene)

@@ -55,4 +55,5 @@ func show_ingredient_details(ingredient):
 
 
 func _on_button_pressed() -> void:
+	ClickSound.play_click()
 	SceneManager.return_to_game()

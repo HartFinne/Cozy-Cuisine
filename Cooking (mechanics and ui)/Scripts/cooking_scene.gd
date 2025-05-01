@@ -30,6 +30,7 @@ func _ready() -> void:
 		
 
 func _on_back_button_pressed() -> void:
+	ClickSound.play_click()
 	SceneManager.return_to_game()
 
 
@@ -48,6 +49,7 @@ func select_ingredient(ingredient: Ingredient):
 		print("Added:", ingredient.name, "Total:", selected_ingredients[ingredient.name]["quantity"])
 
 func _on_cook_button_pressed() -> void:
+	ClickSound.play_click()
 	if selected_ingredients.is_empty():
 		_show_message("No ingredients selected!")
 		return
@@ -163,6 +165,7 @@ func _show_message(text: String) -> void:
 
 
 func _on_clear_button_pressed() -> void:
+	ClickSound.play_click()
 	player_data._return_selected_ingredients_to_inventory()
 	# Reset all ingredient slots in the UI
 	for slot in ingredients.get_children():

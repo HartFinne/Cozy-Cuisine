@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dlpdw8sjfo8i3" path="res://Datas/Assets/Dishes/pizza-Sheet.png" id="4_j8p71"]
 [ext_resource type="Script" uid="uid://dffnll0ydfwpi" path="res://Kiosk (restaurant)/Scripts/Inventory/bag_popup_panel.gd" id="5_2g18v"]
 [ext_resource type="Texture2D" uid="uid://5sqg4pf17a0r" path="res://Kiosk (restaurant)/Assets/ui_bg.png" id="6_j8p71"]
-[ext_resource type="FontFile" uid="uid://c737wtn0srxp4" path="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf" id="7_kdy3i"]
+[ext_resource type="FontFile" uid="uid://dca8dju3g02g8" path="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf" id="7_kdy3i"]
 [ext_resource type="Texture2D" uid="uid://bmpoyrwlnj27n" path="res://Kiosk (restaurant)/Assets/UI_x-button.png" id="7_wg8j1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdy3i"]

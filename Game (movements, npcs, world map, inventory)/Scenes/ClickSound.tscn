@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cih0o0fvkltrn"]
+
+[ext_resource type="Script" uid="uid://e21dogpy3uik" path="res://Game (movements, npcs, world map, inventory)/Scripts/ClickSound.gd" id="1_r2kyl"]
+[ext_resource type="PackedScene" uid="uid://bfjhgsir2n23s" path="res://Game (movements, npcs, world map, inventory)/Scenes/click_sfx.tscn" id="2_7aa2q"]
+
+[node name="ClickSound" type="Node2D"]
+script = ExtResource("1_r2kyl")
+
+[node name="ClickSFX" parent="." instance=ExtResource("2_7aa2q")]

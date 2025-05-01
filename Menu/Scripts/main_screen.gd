@@ -12,6 +12,7 @@ var is_initialized: bool = false
 @onready var reset: Button = $Panel/VBoxContainer/reset
 
 func _on_play_pressed() -> void:
+	ClickSound.play_click()
 	print("wiwer")
 	player_data.is_intro_watched
 	
@@ -68,10 +69,12 @@ func _on_resetconfirmdialog_confirmed() -> void:
 	
 	
 func _on_quit_pressed() -> void:
+	ClickSound.play_click()
 	get_tree().quit()
 
 
 func _on_setting_button_pressed() -> void:
+	ClickSound.play_click()
 	var settings_instance = settings.instantiate()
 	add_child(settings_instance)
 	
