@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="2_37a3h"]
 
 [node name="StartConversation" type="NinePatchRect"]
+z_index = 5
 anchors_preset = -1
 anchor_left = -0.0407986
 anchor_top = -0.037037

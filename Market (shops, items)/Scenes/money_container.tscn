@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://x0go4prl867m"]
+[gd_scene load_steps=14 format=4 uid="uid://x0go4prl867m"]
 
 [ext_resource type="Script" uid="uid://dh3hlyylw2dmn" path="res://Market (shops, items)/Scripts/money_cointainer.gd" id="1_kxisy"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="1_tmxi1"]
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="2_jc5go"]
 [ext_resource type="Texture2D" uid="uid://q8ta6q0o5ap6" path="res://Kiosk (restaurant)/Assets/global.png" id="4_mne10"]
+[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="4_rgaey"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mne10"]
 
@@ -75,6 +76,8 @@ stretch_mode = 3
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rgaey")
+theme_override_font_sizes/font_size = 32
 text = "100"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
@@ -91,6 +94,8 @@ stretch_mode = 3
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rgaey")
+theme_override_font_sizes/font_size = 32
 text = "100"
 
 [node name="MoreButton" type="Button" parent="MarginContainer/HBoxContainer"]
