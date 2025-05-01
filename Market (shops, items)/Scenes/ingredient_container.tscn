@@ -110,6 +110,16 @@ layout_mode = 2
 texture = ExtResource("1_sfash")
 stretch_mode = 5
 
+[node name="IndicatorLabel" type="Label" parent="VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_208av")
+theme_override_font_sizes/font_size = 16
+text = "+1"
+horizontal_alignment = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 7

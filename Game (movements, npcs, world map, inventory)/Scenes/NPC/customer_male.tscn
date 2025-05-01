@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c6ee5wledx871" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/Customer Male/idle_left_c3-Sheet.png" id="1_7t3d5"]
 [ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_cxb8g"]
 [ext_resource type="Resource" uid="uid://dn7rcr42bbmsd" path="res://Datas/Resources/Customer/male.tres" id="2_oq4kr"]
-[ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/dialogue.tscn" id="3_h6h62"]
-[ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/start_conversation.tscn" id="4_oq4kr"]
+[ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/Npc/dialogue.tscn" id="3_h6h62"]
+[ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/Npc/start_conversation.tscn" id="4_oq4kr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxb8g"]
 atlas = ExtResource("1_7t3d5")

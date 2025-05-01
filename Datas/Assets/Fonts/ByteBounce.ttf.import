@@ -2,19 +2,19 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dca8dju3g02g8"
-path="res://.godot/imported/PressStart2P-Regular.ttf-c5d0233c844912e978cd218da72e782a.fontdata"
+uid="uid://iyd8g3dach8t"
+path="res://.godot/imported/ByteBounce.ttf-69dafd7eb39cb5e0538d5632dfd46682.fontdata"
 
 [deps]
 
-source_file="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf"
-dest_files=["res://.godot/imported/PressStart2P-Regular.ttf-c5d0233c844912e978cd218da72e782a.fontdata"]
+source_file="res://Datas/Assets/Fonts/ByteBounce.ttf"
+dest_files=["res://.godot/imported/ByteBounce.ttf-69dafd7eb39cb5e0538d5632dfd46682.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
-generate_mipmaps=true
+generate_mipmaps=false
 disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
@@ -29,13 +29,7 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[{
-"chars": [],
-"glyphs": [],
-"name": "New Configuration",
-"size": Vector2i(16, 0),
-&"variation_embolden": 0.0
-}]
+preload=[]
 language_support={}
 script_support={}
 opentype_features={}

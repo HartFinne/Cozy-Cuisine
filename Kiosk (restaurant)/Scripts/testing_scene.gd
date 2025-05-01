@@ -38,11 +38,11 @@ var expenses = 0
 
 
 var customer_scene = [
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn"),
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_girl.tscn"),
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn"),
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_girl.tscn"),
 	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_young.tscn"),
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -66,6 +66,8 @@ func start_day():
 	player_data.revenue = 0
 	player_data.expenses = 0
 	player_data.profit = 0
+	
+	player_data.order = {}
 	
 	start_day_button.visible = false
 	goal_container.visible = true

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmr55ld6sev2w"]
+
+[ext_resource type="Texture2D" uid="uid://drsnxumar1fpb" path="res://Datas/Assets/Dishes/french_fried-Sheet.png" id="1_ic33e"]
+[ext_resource type="FontFile" uid="uid://3d05ixnahb7g" path="res://Datas/Assets/Fonts/Minecraftia-Regular.ttf" id="2_qw76r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yj1t0"]
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(12, 0)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yj1t0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_ic33e")
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_right = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qw76r")
+theme_override_font_sizes/font_size = 8
+text = "2"
+horizontal_alignment = 2

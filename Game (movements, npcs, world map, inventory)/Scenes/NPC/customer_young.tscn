@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bh0i340cg2mog"]
+[gd_scene load_steps=14 format=3 uid="uid://bh0i340cg2mog"]
 
 [ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_4jhon"]
 [ext_resource type="Texture2D" uid="uid://bekyc40ln1nd7" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/Customer Young/idle_left_c2-Sheet.png" id="1_jnx4l"]
 [ext_resource type="Resource" uid="uid://bqvb3bvkbdarj" path="res://Datas/Resources/Customer/young.tres" id="2_5h2sl"]
-[ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/dialogue.tscn" id="3_5h2sl"]
-[ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/start_conversation.tscn" id="4_xkjyl"]
+[ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/Npc/dialogue.tscn" id="3_5h2sl"]
+[ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/Npc/start_conversation.tscn" id="4_xkjyl"]
+[ext_resource type="PackedScene" uid="uid://drj4vdkghmx5k" path="res://Kiosk (restaurant)/Scenes/Npc/thought_bubble_scene.tscn" id="6_xkjyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u80u8"]
 atlas = ExtResource("1_jnx4l")
@@ -46,7 +47,7 @@ animations = [{
 size = Vector2(6, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scmok"]
-size = Vector2(66, 24)
+size = Vector2(66, 16)
 
 [node name="customer_young" type="CharacterBody2D"]
 script = ExtResource("1_4jhon")
@@ -64,7 +65,7 @@ shape = SubResource("RectangleShape2D_pfita")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-23, 4)
+position = Vector2(-23, 8)
 shape = SubResource("RectangleShape2D_scmok")
 
 [node name="Dialogue" parent="." instance=ExtResource("3_5h2sl")]
@@ -80,6 +81,13 @@ offset_left = -47.0
 offset_top = -24.0
 offset_right = 48.57
 offset_bottom = -4.99998
+
+[node name="ThoughtBubbleScene" parent="." instance=ExtResource("6_xkjyl")]
+visible = false
+offset_left = -35.0
+offset_top = -36.0
+offset_right = -35.0
+offset_bottom = -36.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
