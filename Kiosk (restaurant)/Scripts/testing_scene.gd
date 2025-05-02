@@ -10,7 +10,7 @@ var player_data: PlayerData = PlayerData.load_data()
 @onready var money_container: PanelContainer = $UI/CanvasLayer/MoneyContainer
 @onready var coin_sfx: AudioStreamPlayer2D = $CoinSFX
 
-
+@onready var tutorial_scene: Control = $UI/CanvasLayer/TutorialScene
 
 @onready var goal_label: Label = %GoalLabel
 @onready var goal_container: PanelContainer = $UI/CanvasLayer/GoalContainer
@@ -47,6 +47,16 @@ var customer_scene = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if player_data.is_tutorial_watched:
+		tutorial_scene.visible = false
+		player_data.is_tutorial_watched = true
+		player_data.save()
+	else:
+		tutorial_scene.visible = true
+		player_data.is_tutorial_watched = false
+		player_data.save()
+		
+	
 	h_box_container.mouse_filter = Control.MOUSE_FILTER_STOP  # ✅ Allow it to receive input
 
 	if player_data:  # ✅ Check if data is loaded
