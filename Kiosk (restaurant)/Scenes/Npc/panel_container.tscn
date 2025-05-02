@@ -1,30 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmr55ld6sev2w"]
+[gd_scene load_steps=5 format=3 uid="uid://cmr55ld6sev2w"]
 
-[ext_resource type="Texture2D" uid="uid://drsnxumar1fpb" path="res://Datas/Assets/Dishes/french_fried-Sheet.png" id="1_ic33e"]
-[ext_resource type="FontFile" uid="uid://3d05ixnahb7g" path="res://Datas/Assets/Fonts/Minecraftia-Regular.ttf" id="2_qw76r"]
+[ext_resource type="Script" uid="uid://d1k0crv32ccsx" path="res://Kiosk (restaurant)/Scripts/Npc/panel_container.gd" id="1_qw76r"]
+[ext_resource type="Texture2D" uid="uid://dlpdw8sjfo8i3" path="res://Datas/Assets/Dishes/pizza-Sheet.png" id="2_qw76r"]
+[ext_resource type="FontFile" uid="uid://dca8dju3g02g8" path="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf" id="3_03vjn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yj1t0"]
 
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(12, 0)
+scale = Vector2(1.0048, 1)
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yj1t0")
+script = ExtResource("1_qw76r")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("1_ic33e")
+texture = ExtResource("2_qw76r")
 stretch_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_right = 2
 
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_qw76r")
+theme_override_fonts/font = ExtResource("3_03vjn")
 theme_override_font_sizes/font_size = 8
 text = "2"
 horizontal_alignment = 2

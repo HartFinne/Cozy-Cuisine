@@ -28,7 +28,7 @@ var expenses = 0
 @onready var panel_label_2: Label = $UI/CanvasLayer/PanelContainer2/HBoxContainer/Label
 
 @onready var paths := [
-	$Path2D/PathFollow2D, 
+	#$Path2D/PathFollow2D, 
 	$Path2D2/PathFollow2D, 
 	$Path2D3/PathFollow2D, 
 	$Path2D4/PathFollow2D, 
@@ -38,11 +38,11 @@ var expenses = 0
 
 
 var customer_scene = [
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn"),
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_girl.tscn"),
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn"),
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_girl.tscn"),
 	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_young.tscn"),
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
-	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
+	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -196,21 +196,32 @@ func move_customer_along_path(path_follow: PathFollow2D, customer, path_index, s
 
 func resume_customer_movement(path_follow: PathFollow2D):
 	money_container.update_money_ui()
+
+	if path_follow.get_child_count() > 0:
+		var customer = path_follow.get_child(0)
+		
+		# Flip customer horizontally (face the exit)
+		customer.scale.x = -abs(customer.scale.x)
+
+		# Optionally flip rotation if needed (usually not necessary if scale handles it)
+		customer.rotation_degrees = 180  # Adjust as needed based on your setup
+
 	var tween = get_tree().create_tween()
 	tween.tween_property(path_follow, "progress", 1000, 3.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	
+
 	await tween.finished  # Wait for tween to complete
-	
+
 	# Remove customer from path after leaving
 	if path_follow.get_child_count() > 0:
 		var customer = path_follow.get_child(0)
 		customer.queue_free()             # Free instance to allow new one
 		await get_tree().process_frame
-		
+
 	# Allow new customers to spawn on this path
 	spawn_customer_on_random_path()
-	
+
 	print("Customer leaves after payment")
+
 
 
 func _on_h_box_container_gui_input(event: InputEvent) -> void:

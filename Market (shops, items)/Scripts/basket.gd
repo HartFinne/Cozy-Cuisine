@@ -3,6 +3,7 @@ extends TabBar
 @onready var grid_container_2: GridContainer = %GridContainer2
 @export var basket_scene: PackedScene
 @onready var total_price_label: Label = %TotalPriceLabel
+@onready var money_container: PanelContainer = $"../../MoneyContainer"
 
 const INVENTORY_PATH = "res://JSON (dictionaries, data)/player_data.json"
 var inventory_data: Dictionary = {}
@@ -78,6 +79,7 @@ func _on_buy_button_pressed() -> void:
 		error_popup.popup_centered()  # Show the pop-up in the center
 		return  # Stop the function if there's not enough budget
 
+	money_container._on_purchase_completed(total_cost)
 	merge_basket_into_inventory()
 
 # Merge basket_data into inventory_data

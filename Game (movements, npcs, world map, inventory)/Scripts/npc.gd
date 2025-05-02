@@ -4,9 +4,8 @@ var player_data: PlayerData = PlayerData.load_data()
 
 @onready var start_conversation: NinePatchRect = $StartConversation
 @onready var thought_bubble_scene: Control = $ThoughtBubbleScene
-
-
 @onready var dialogue: Control = $Dialogue
+
 @export var customer: Customer
 
 var player_in_area: bool = false
@@ -116,9 +115,36 @@ func show_order_bubbles(served: bool):
 	# need to show the icon of the foods of the orders and how many of it like
 	# example: cheese(icon) 0/1
 	if served:
+		# Show the bubble after the order was taken
+		thought_bubble_scene.visible = true
+	else:
+		# Optionally hide it if not taken yet or served already
 		thought_bubble_scene.visible = false
-		
-	thought_bubble_scene.visible = true
+
+	if customer and customer.order:
+		var dishes = player_data.dishes
+		var order_data = []
+
+		for item_name in customer.order.keys():
+			var found_recipe = null
+			for recipe in MenuManager.recipes:
+				if recipe.name == item_name:
+					found_recipe = recipe
+					break
+
+			if found_recipe:
+				var player_qty = int(dishes[item_name].get("quantity", 0)) if dishes.has(item_name) else 0
+				var needed_qty = customer.order[item_name]
+
+				order_data.append({
+					"label": found_recipe.label,
+					"image": found_recipe.image,
+					"have": player_qty,
+					"need": needed_qty
+				})
+
+		# Populate UI
+		thought_bubble_scene.populate_panel_container(order_data)
 		
 		
 func reach_counter(path_follow_node: PathFollow2D):
@@ -213,6 +239,9 @@ func serve_dish_to_customer():
 			
 		else:
 			print("Error: TestScene node not found or missing method!")
+			
+			
+	show_order_bubbles(false)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

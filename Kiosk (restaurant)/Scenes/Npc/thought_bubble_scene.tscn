@@ -28,6 +28,7 @@ offset_right = 84.5
 offset_bottom = 80.0
 theme_override_constants/h_separation = 1
 theme_override_constants/v_separation = 1
+columns = 2
 
 [node name="PanelContainer" parent="NinePatchRect/GridContainer" instance=ExtResource("3_78n3h")]
 layout_mode = 2

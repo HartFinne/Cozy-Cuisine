@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0alkyptlpybn"]
+[gd_scene load_steps=14 format=3 uid="uid://c0alkyptlpybn"]
 
 [ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_l545x"]
 [ext_resource type="Texture2D" uid="uid://5iffkvr4adi3" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/VIP BOY/idle_left_vip1-Sheet.png" id="1_mmhby"]
 [ext_resource type="Resource" uid="uid://6oimyi2pg2u6" path="res://Datas/Resources/Customer/rich_boy.tres" id="2_2sui8"]
 [ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/Npc/dialogue.tscn" id="3_yr3wf"]
 [ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/Npc/start_conversation.tscn" id="4_x5gsc"]
+[ext_resource type="PackedScene" uid="uid://drj4vdkghmx5k" path="res://Kiosk (restaurant)/Scenes/Npc/thought_bubble_scene.tscn" id="6_bx85m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l545x"]
 atlas = ExtResource("1_mmhby")
@@ -80,6 +81,13 @@ offset_left = -47.0
 offset_top = -24.0
 offset_right = 48.57
 offset_bottom = -5.0
+
+[node name="ThoughtBubbleScene" parent="." instance=ExtResource("6_bx85m")]
+visible = false
+offset_left = -35.0
+offset_top = -36.0
+offset_right = -35.0
+offset_bottom = -36.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

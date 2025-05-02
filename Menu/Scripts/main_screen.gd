@@ -20,10 +20,12 @@ func _on_play_pressed() -> void:
 		get_tree().change_scene_to_packed(world_scene)
 		player_data.save()
 		basket.save_basket()
+		player_data.order = {}
 	elif not player_data.is_intro_watched:
 		get_tree().change_scene_to_packed(intro_scene)
 		player_data.is_intro_watched = true
 		player_data.save()
+		player_data.order = {}
 	else:
 		print("Failed to load")
 	print("Start Button")

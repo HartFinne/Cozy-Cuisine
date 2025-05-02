@@ -51,6 +51,7 @@ size = Vector2(66, 16)
 
 [node name="customer_young" type="CharacterBody2D"]
 z_index = 1
+rotation = 6.28319
 script = ExtResource("1_4jhon")
 customer = ExtResource("2_5h2sl")
 

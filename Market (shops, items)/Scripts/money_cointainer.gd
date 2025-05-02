@@ -15,6 +15,7 @@ func _ready() -> void:
 func update_money_ui():
 	# Update UI labels if they display currency
 	coin_label.text = str(int(player_data.budget))
+	print(player_data.budget, " fslfkas;ksl;kf;alskf;l")
 	
 func _on_purchase_completed(total_cost: float) -> void:
 	# Deduct total cost from budget
