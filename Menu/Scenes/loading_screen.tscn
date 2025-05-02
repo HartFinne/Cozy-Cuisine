@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu7scive72cka"]
+[gd_scene load_steps=29 format=3 uid="uid://cu7scive72cka"]
 
 [ext_resource type="Script" uid="uid://dn8lt56u50v2w" path="res://Menu/Scripts/loading_screen.gd" id="1_mdvgv"]
 [ext_resource type="PackedScene" uid="uid://cnfvi6ryu2y40" path="res://Menu/Scenes/kioskbgg.tscn" id="2_c4i3q"]
@@ -7,9 +7,128 @@
 [ext_resource type="Texture2D" uid="uid://luqi36h73ybw" path="res://Menu/Assets/wood_slider_empty.png" id="5_0ngkg"]
 [ext_resource type="FontFile" uid="uid://dca8dju3g02g8" path="res://Datas/Assets/Fonts/PressStart2P-Regular.ttf" id="5_32g36"]
 [ext_resource type="Texture2D" uid="uid://dtctjyisw703o" path="res://Menu/Assets/wood_slider_filled.png" id="5_xiv5y"]
+[ext_resource type="Texture2D" uid="uid://bf1i81vn7mt4g" path="res://Menu/Assets/Logos/loading screen/cat-Sheet.png" id="5_yreom"]
+[ext_resource type="Texture2D" uid="uid://32oxh16rcu2f" path="res://Menu/Assets/Logos/loading screen/frame_0_delay-0.1s.png" id="9_b2q4v"]
+[ext_resource type="Texture2D" uid="uid://b0pkgu7xtows8" path="res://Menu/Assets/Logos/loading screen/frame_1_delay-0.1s.png" id="10_1qne3"]
+[ext_resource type="Texture2D" uid="uid://eaynefro0uwm" path="res://Menu/Assets/Logos/loading screen/frame_2_delay-0.1s.png" id="11_u3yxi"]
+[ext_resource type="Texture2D" uid="uid://cjohs7v6o1fog" path="res://Menu/Assets/Logos/loading screen/frame_3_delay-0.1s.png" id="12_wg7vx"]
+[ext_resource type="Texture2D" uid="uid://b6ebebm88qrqq" path="res://Menu/Assets/Logos/loading screen/frame_4_delay-0.1s.png" id="13_7ubws"]
+[ext_resource type="Texture2D" uid="uid://dp4t3ei7ffopv" path="res://Menu/Assets/Logos/loading screen/frame_5_delay-0.1s.png" id="14_cj8ms"]
+[ext_resource type="Texture2D" uid="uid://d2txabcc3inus" path="res://Menu/Assets/Logos/loading screen/frame_6_delay-0.1s.png" id="15_na7y6"]
+[ext_resource type="Texture2D" uid="uid://cx51vtjx3hcr3" path="res://Menu/Assets/Logos/loading screen/frame_7_delay-0.1s.png" id="16_hgp0g"]
+[ext_resource type="Texture2D" uid="uid://dbn06txr8cpvr" path="res://Menu/Assets/Logos/loading screen/frame_8_delay-0.1s.png" id="17_anvcq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdowh"]
 shader = ExtResource("2_ml07r")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1psoi"]
+atlas = ExtResource("5_yreom")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncqnt"]
+atlas = ExtResource("5_yreom")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tmjl"]
+atlas = ExtResource("5_yreom")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq4im"]
+atlas = ExtResource("5_yreom")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44rgj"]
+atlas = ExtResource("5_yreom")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjr0o"]
+atlas = ExtResource("5_yreom")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lplri"]
+atlas = ExtResource("5_yreom")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2q4v"]
+atlas = ExtResource("5_yreom")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qne3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1psoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncqnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tmjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq4im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44rgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjr0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lplri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2q4v")
+}],
+"loop": true,
+"name": &"Cat animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qot1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_b2q4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1qne3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u3yxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wg7vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7ubws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cj8ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_na7y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hgp0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_anvcq")
+}],
+"loop": true,
+"name": &"Hanging Sign",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,7 +148,16 @@ scale = Vector2(0.250735, 0.250735)
 texture = ExtResource("3_tdowh")
 
 [node name="kioskfront" parent="." instance=ExtResource("2_c4i3q")]
+visible = false
 position = Vector2(334, 529)
+
+[node name="Cat" type="AnimatedSprite2D" parent="."]
+position = Vector2(742, 529)
+scale = Vector2(4.15625, 4.0625)
+sprite_frames = SubResource("SpriteFrames_1qne3")
+animation = &"Cat animation"
+autoplay = "Cat animation"
+frame_progress = 0.0901432
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 custom_minimum_size = Vector2(600, 0)
@@ -58,16 +186,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -312.0
-offset_top = 236.0
-offset_right = 88.0
-offset_bottom = 268.0
+offset_left = -300.0
+offset_top = 203.0
+offset_right = 50.0
+offset_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("5_32g36")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 35
 text = "Loading..."
 vertical_alignment = 1
 
@@ -88,5 +216,13 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("5_32g36")
 theme_override_font_sizes/font_size = 24
-text = "50"
+text = "50%"
 vertical_alignment = 1
+
+[node name="HangingSign" type="AnimatedSprite2D" parent="."]
+position = Vector2(590, 329)
+scale = Vector2(0.469922, 0.500463)
+sprite_frames = SubResource("SpriteFrames_qot1o")
+animation = &"Hanging Sign"
+autoplay = "Hanging Sign"
+frame_progress = 0.391759
