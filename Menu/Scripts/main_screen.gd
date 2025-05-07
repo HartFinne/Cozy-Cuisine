@@ -9,7 +9,7 @@ const settings = preload("res://Menu/Scenes/settings.tscn")
 @onready var admob: Admob = $Admob
 var is_initialized: bool = false
 @onready var resetconfirmdialog: ConfirmationDialog = %resetconfirmdialog
-@onready var reset: Button = $Panel/VBoxContainer/reset
+@onready var reset: TextureButton = $Panel/VBoxContainer/reset
 
 func _on_play_pressed() -> void:
 	ClickSound.play_click()
