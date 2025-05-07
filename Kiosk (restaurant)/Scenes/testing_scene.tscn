@@ -973,7 +973,7 @@ region = Rect2(418, 1055, 92, 33)
 texture = SubResource("AtlasTexture_kiwki")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fhl83"]
-content_margin_top = 5.0
+content_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ev8p6"]
 
@@ -1199,9 +1199,9 @@ anchor_top = 0.0185185
 anchor_right = 0.557292
 anchor_bottom = 0.0972222
 offset_left = -24.0002
-offset_top = -15.0
-offset_right = -24.0004
-offset_bottom = -5.99999
+offset_top = -8.99999
+offset_right = -24.0005
+offset_bottom = 2.28882e-05
 grow_horizontal = 2
 scale = Vector2(1.2, 1.2)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
@@ -1220,6 +1220,10 @@ anchors_preset = -1
 anchor_left = 0.401042
 anchor_right = 0.609375
 anchor_bottom = 0.0864198
+offset_left = -30.0004
+offset_top = 8.0
+offset_right = 30.0
+offset_bottom = 8.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_sac3f")
 metadata/_edit_use_anchors_ = true
