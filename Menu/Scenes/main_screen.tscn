@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=48 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -19,8 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
 [ext_resource type="Texture2D" uid="uid://du0k2u7xdykiu" path="res://Menu/Assets/playbutton/play-hover_button-Sheet.png" id="18_f6jv6"]
 [ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Texture2D" uid="uid://5fua16ruwqr0" path="res://Menu/Assets/tutorialbutton/tutorial-base_button-Sheet.png" id="19_a8ydr"]
 [ext_resource type="Texture2D" uid="uid://00ufgdso17ap" path="res://Menu/Assets/reset/newgame_button.png" id="19_lcydj"]
+[ext_resource type="Texture2D" uid="uid://dbqlum4ohyia5" path="res://Menu/Assets/tutorialbutton/tutorial-pressed_button-Sheet.png" id="20_eva3w"]
 [ext_resource type="Texture2D" uid="uid://6dqyqrnpb60b" path="res://Menu/Assets/reset/pressed-newgame_button.png" id="20_ftosr"]
+[ext_resource type="Texture2D" uid="uid://ryn41l5sotk" path="res://Menu/Assets/tutorialbutton/tutorial-hover_button-Sheet.png" id="21_31tv4"]
 [ext_resource type="Texture2D" uid="uid://3c3n3e7v111q" path="res://Menu/Assets/reset/hover-newgame-button.png" id="21_kgx0q"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="AudioStream" uid="uid://2ixwsrjj4ir0" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/MainBGM.mp3" id="21_v7wqy"]
@@ -3255,8 +3258,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
 offset_top = -24.0
-offset_right = 125.0
-offset_bottom = 226.0
+offset_right = 135.0
+offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lcydj")
@@ -3268,10 +3271,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -23.0
-offset_right = 95.0
-offset_bottom = 216.0
+offset_left = -106.0
+offset_top = -64.0
+offset_right = 112.0
+offset_bottom = 337.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -3294,8 +3297,16 @@ texture_pressed = ExtResource("20_ftosr")
 texture_hover = ExtResource("21_kgx0q")
 stretch_mode = 0
 
+[node name="tutorial" type="TextureButton" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(169, 75)
+layout_mode = 2
+texture_normal = ExtResource("19_a8ydr")
+texture_pressed = ExtResource("20_eva3w")
+texture_hover = ExtResource("21_31tv4")
+stretch_mode = 0
+
 [node name="quit" type="TextureButton" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(135, 50)
+custom_minimum_size = Vector2(145, 50)
 layout_mode = 2
 texture_normal = ExtResource("22_lcydj")
 texture_pressed = ExtResource("23_ftosr")
