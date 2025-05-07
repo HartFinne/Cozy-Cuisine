@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8i4jm2lq5am"]
+[gd_scene load_steps=17 format=3 uid="uid://8i4jm2lq5am"]
 
 [ext_resource type="Script" uid="uid://bqjnh73w7kabw" path="res://Market (shops, items)/Scripts/ingredient_container.gd" id="1_aq5bi"]
 [ext_resource type="Texture2D" uid="uid://pnklqblnogb3" path="res://icon.svg" id="1_sfash"]
@@ -33,6 +33,22 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0ryu"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.501961, 0.239216, 0.231373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.552941, 0.286275, 0.227451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_208av"]
 content_margin_left = 5.0
@@ -114,9 +130,10 @@ stretch_mode = 5
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 2
-size_flags_vertical = 1
+size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_208av")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_j0ryu")
 text = "+1"
 horizontal_alignment = 2
 
@@ -144,6 +161,8 @@ stretch_mode = 4
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("2_208av")
+theme_override_font_sizes/font_size = 32
 text = "10"
 horizontal_alignment = 1
 
