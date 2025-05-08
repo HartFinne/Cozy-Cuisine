@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=48 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -8,28 +8,31 @@
 [ext_resource type="Texture2D" uid="uid://b60i00dh4chsa" path="res://Market (shops, items)/Assets/bgmarket.png" id="3_e48ev"]
 [ext_resource type="Shader" uid="uid://cbc0rbr0ptjmo" path="res://Menu/Scenes/scroll.gdshader" id="3_xbo66"]
 [ext_resource type="Texture2D" uid="uid://pbk6yy4up0ey" path="res://Menu/Assets/bg food.png" id="4_6663p"]
-[ext_resource type="Texture2D" uid="uid://dpkbem28xusa" path="res://Menu/Assets/playbutton/1.png" id="8_sp1m5"]
 [ext_resource type="Texture2D" uid="uid://dm8wwtdcmwlg4" path="res://Menu/Assets/Logos/logo_animation/frame_0_delay-0.1s.png" id="9_gwi2x"]
-[ext_resource type="Texture2D" uid="uid://btghb88f1yo7t" path="res://Menu/Assets/playbutton/3.png" id="9_swnq6"]
 [ext_resource type="Texture2D" uid="uid://cuci6pf1km711" path="res://Menu/Assets/Logos/logo_animation/frame_1_delay-0.1s.png" id="10_38atv"]
-[ext_resource type="Texture2D" uid="uid://cmjh0aurfq8t" path="res://Menu/Assets/playbutton/2.png" id="10_n1qsx"]
 [ext_resource type="Texture2D" uid="uid://dutrqal2pt285" path="res://Menu/Assets/Logos/logo_animation/frame_2_delay-0.1s.png" id="11_f6jv6"]
 [ext_resource type="Texture2D" uid="uid://wuirwpvvsuhp" path="res://Menu/Assets/Logos/logo_animation/frame_3_delay-0.1s.png" id="12_lcydj"]
 [ext_resource type="Texture2D" uid="uid://bkby80dnps6w4" path="res://Menu/Assets/Logos/logo_animation/frame_4_delay-0.1s.png" id="13_ftosr"]
-[ext_resource type="Texture2D" uid="uid://cpc0xa42gyfha" path="res://Menu/Assets/quitbutton/1.png" id="14_heyad"]
 [ext_resource type="Texture2D" uid="uid://34k760q7eo75" path="res://Menu/Assets/Logos/logo_animation/frame_5_delay-0.1s.png" id="14_kgx0q"]
-[ext_resource type="Texture2D" uid="uid://cjlomdj2qaoaq" path="res://Menu/Assets/quitbutton/3.png" id="15_ownbj"]
-[ext_resource type="Texture2D" uid="uid://xafp1b2txbh" path="res://Menu/Assets/quitbutton/2.png" id="16_v7wqy"]
+[ext_resource type="Texture2D" uid="uid://704l7j2wv58u" path="res://Menu/Assets/playbutton/play-base_button-Sheet.png" id="16_gwi2x"]
+[ext_resource type="Texture2D" uid="uid://dbnyl4ea6p63q" path="res://Menu/Assets/playbutton/play-pressed_button-Sheet.png" id="17_38atv"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
-[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
-[ext_resource type="Texture2D" uid="uid://co0e2fay2eugc" path="res://Menu/Assets/reset/2.png" id="19_lcydj"]
-[ext_resource type="Texture2D" uid="uid://bl4gg5poqjfq0" path="res://Menu/Assets/reset/3.png" id="20_ftosr"]
-[ext_resource type="Texture2D" uid="uid://e1ku4a36q0j4" path="res://Menu/Assets/reset/1.png" id="21_kgx0q"]
+[ext_resource type="Texture2D" uid="uid://du0k2u7xdykiu" path="res://Menu/Assets/playbutton/play-hover_button-Sheet.png" id="18_f6jv6"]
+[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Texture2D" uid="uid://5fua16ruwqr0" path="res://Menu/Assets/tutorialbutton/tutorial-base_button-Sheet.png" id="19_a8ydr"]
+[ext_resource type="Texture2D" uid="uid://00ufgdso17ap" path="res://Menu/Assets/reset/newgame_button.png" id="19_lcydj"]
+[ext_resource type="Texture2D" uid="uid://dbqlum4ohyia5" path="res://Menu/Assets/tutorialbutton/tutorial-pressed_button-Sheet.png" id="20_eva3w"]
+[ext_resource type="Texture2D" uid="uid://6dqyqrnpb60b" path="res://Menu/Assets/reset/pressed-newgame_button.png" id="20_ftosr"]
+[ext_resource type="Texture2D" uid="uid://ryn41l5sotk" path="res://Menu/Assets/tutorialbutton/tutorial-hover_button-Sheet.png" id="21_31tv4"]
+[ext_resource type="Texture2D" uid="uid://3c3n3e7v111q" path="res://Menu/Assets/reset/hover-newgame-button.png" id="21_kgx0q"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="AudioStream" uid="uid://2ixwsrjj4ir0" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/MainBGM.mp3" id="21_v7wqy"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
+[ext_resource type="Texture2D" uid="uid://7knvjx2e7qmm" path="res://Menu/Assets/quitbutton/quit-base_button-Sheet.png" id="22_lcydj"]
 [ext_resource type="Texture2D" uid="uid://bsu4na41r1e8p" path="res://Menu/Assets/OK/2.png" id="22_opkdy"]
+[ext_resource type="Texture2D" uid="uid://crilbab00v82x" path="res://Menu/Assets/quitbutton/quit-pressed_button-Sheet.png" id="23_ftosr"]
 [ext_resource type="Texture2D" uid="uid://cng4ywrj3ulkx" path="res://Menu/Assets/OK/1.png" id="23_uec84"]
+[ext_resource type="Texture2D" uid="uid://bgcwvgdt3s3li" path="res://Menu/Assets/quitbutton/quit-hover_button-Sheet.png" id="24_kgx0q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vjv"]
 bg_color = Color(1, 0.917647, 0.772549, 0)
@@ -3094,17 +3097,6 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8ydr"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eva3w"]
-texture = ExtResource("19_lcydj")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31tv4"]
-texture = ExtResource("20_ftosr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6trhn"]
-texture = ExtResource("21_kgx0q")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwi2x"]
 bg_color = Color(0.552941, 0.286275, 0.227451, 1)
 border_width_left = 8
@@ -3266,8 +3258,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
 offset_top = -24.0
-offset_right = 125.0
-offset_bottom = 226.0
+offset_right = 135.0
+offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lcydj")
@@ -3279,34 +3271,47 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -20.0
-offset_right = 74.0
-offset_bottom = 219.0
+offset_left = -106.0
+offset_top = -64.0
+offset_right = 112.0
+offset_bottom = 337.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="play" type="TextureButton" parent="Panel/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(186, 63)
 layout_mode = 2
-texture_normal = ExtResource("8_sp1m5")
-texture_pressed = ExtResource("9_swnq6")
-texture_hover = ExtResource("10_n1qsx")
+texture_normal = ExtResource("16_gwi2x")
+texture_pressed = ExtResource("17_38atv")
+texture_hover = ExtResource("18_f6jv6")
+stretch_mode = 0
 
-[node name="reset" type="Button" parent="Panel/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 72)
+[node name="reset" type="TextureButton" parent="Panel/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(187, 72)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_a8ydr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_eva3w")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_31tv4")
-theme_override_styles/normal = SubResource("StyleBoxTexture_6trhn")
+texture_normal = ExtResource("19_lcydj")
+texture_pressed = ExtResource("20_ftosr")
+texture_hover = ExtResource("21_kgx0q")
+stretch_mode = 0
+
+[node name="tutorial" type="TextureButton" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(169, 75)
+layout_mode = 2
+texture_normal = ExtResource("19_a8ydr")
+texture_pressed = ExtResource("20_eva3w")
+texture_hover = ExtResource("21_31tv4")
+stretch_mode = 0
 
 [node name="quit" type="TextureButton" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(145, 50)
 layout_mode = 2
-texture_normal = ExtResource("14_heyad")
-texture_pressed = ExtResource("15_ownbj")
-texture_hover = ExtResource("16_v7wqy")
+texture_normal = ExtResource("22_lcydj")
+texture_pressed = ExtResource("23_ftosr")
+texture_hover = ExtResource("24_kgx0q")
+stretch_mode = 0
 
 [node name="PopupPanel" type="PopupPanel" parent="Panel"]
 process_mode = 2
