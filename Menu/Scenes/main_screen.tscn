@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=49 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -21,7 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://cjlomdj2qaoaq" path="res://Menu/Assets/quitbutton/3.png" id="15_ownbj"]
 [ext_resource type="Texture2D" uid="uid://xafp1b2txbh" path="res://Menu/Assets/quitbutton/2.png" id="16_v7wqy"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
-[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Texture2D" uid="uid://co0e2fay2eugc" path="res://Menu/Assets/reset/2.png" id="19_lcydj"]
+[ext_resource type="Texture2D" uid="uid://bl4gg5poqjfq0" path="res://Menu/Assets/reset/3.png" id="20_ftosr"]
+[ext_resource type="Texture2D" uid="uid://e1ku4a36q0j4" path="res://Menu/Assets/reset/1.png" id="21_kgx0q"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="AudioStream" uid="uid://2ixwsrjj4ir0" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/MainBGM.mp3" id="21_v7wqy"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
@@ -3079,6 +3082,29 @@ region = Rect2(290, 577, 28, 31)
 atlas = ExtResource("17_k410j")
 region = Rect2(290, 610, 28, 30)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcydj"]
+bg_color = Color(1, 0.858824, 0.709804, 0.392157)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.423529, 0.305882, 0.192157, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8ydr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eva3w"]
+texture = ExtResource("19_lcydj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31tv4"]
+texture = ExtResource("20_ftosr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6trhn"]
+texture = ExtResource("21_kgx0q")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwi2x"]
 bg_color = Color(0.552941, 0.286275, 0.227451, 1)
 border_width_left = 8
@@ -3172,6 +3198,8 @@ texture = ExtResource("4_6663p")
 expand_mode = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Panel"]
+visible = false
+position = Vector2(0, 19)
 tile_map_data = PackedByteArray("AAAdABMAAAAcACkAAAAdABQAAAAcACoAAAAdABUAAAAcACsAAAAdABYAAAAcACkAAAAdABcAAAAcACoAAAAdABgAAAAcACsAAAAdABkAAAAcACwAAAAdABoAAAAcACkAAAAdABsAAAAcACoAAAAdABwAAAAcACsAAAAdAB0AAAAcACwAAAAdABIAAAAcACoAAAArABIAAAAhACkAAAArABMAAAAhACkAAAArABQAAAAhACkAAAArABUAAAAhACkAAAArABYAAAAhACkAAAArABcAAAAhACkAAAArABgAAAAhACkAAAArABkAAAAhACkAAAArABoAAAAhACkAAAArABsAAAAhACkAAAArABwAAAAhACkAAAArAB0AAAAhACkAAAArAB4AAAAhACkAAAArAB8AAAAhACkAAAAdACAAAAAcAC0AAAAeACAAAAAdAC0AAAAfACAAAAAeAC0AAAAgACAAAAAfAC0AAAAhACAAAAAgAC0AAAAdAB4AAAAcACoAAAAdAB8AAAAcACoAAAApACAAAAAfAC0AAAAqACAAAAAgAC0AAAArACAAAAAhAC0AAAAiACAAAAAeAC0AAAAjACAAAAAfAC0AAAAkACAAAAAeAC0AAAAmACAAAAAgAC0AAAAnACAAAAAfAC0AAAAoACAAAAAgAC0AAAAlACAAAAAfAC0AAAAeABIAAAAdACkAAAAeABMAAAAdACoAAAAeABQAAAAdACsAAAAeABUAAAAdACwAAAAfABIAAAAeACkAAAAfABMAAAAeACoAAAAfABQAAAAeACsAAAAfABUAAAAeACwAAAAgABIAAAAfACkAAAAgABMAAAAfACoAAAAgABQAAAAfACsAAAAgABUAAAAfACwAAAAhABIAAAAgACkAAAAhABMAAAAgACoAAAAhABQAAAAgACsAAAAhABUAAAAgACwAAAAeABYAAAAdACkAAAAeABcAAAAdACoAAAAeABgAAAAdACsAAAAeABkAAAAdACwAAAAfABYAAAAeACkAAAAfABcAAAAeACoAAAAfABgAAAAeACsAAAAfABkAAAAeACwAAAAgABYAAAAfACkAAAAgABcAAAAfACoAAAAgABgAAAAfACsAAAAgABkAAAAfACwAAAAhABYAAAAgACkAAAAhABcAAAAgACoAAAAhABgAAAAgACsAAAAhABkAAAAgACwAAAAeABoAAAAdACkAAAAeABsAAAAdACoAAAAeABwAAAAdACkAAAAeAB0AAAAdACoAAAAfABoAAAAeACkAAAAfABsAAAAeACoAAAAfABwAAAAeACkAAAAfAB0AAAAeACoAAAAgABoAAAAfACkAAAAgABsAAAAfACoAAAAgABwAAAAfACkAAAAgAB0AAAAfACoAAAAhABoAAAAgACkAAAAhABsAAAAgACoAAAAhABwAAAAgACkAAAAhAB0AAAAgACoAAAAeAB4AAAAdACsAAAAeAB8AAAAdACwAAAAfAB4AAAAeACsAAAAfAB8AAAAeACwAAAAgAB4AAAAfACsAAAAgAB8AAAAfACwAAAAhAB4AAAAgACsAAAAhAB8AAAAgACwAAAAiABIAAAAdACkAAAAiABMAAAAdACoAAAAiABQAAAAdACsAAAAiABUAAAAdACwAAAAjABIAAAAeACkAAAAjABMAAAAeACoAAAAjABQAAAAeACsAAAAjABUAAAAeACwAAAAkABIAAAAfACkAAAAkABMAAAAfACoAAAAkABQAAAAfACsAAAAkABUAAAAfACwAAAAlABIAAAAgACkAAAAlABMAAAAgACoAAAAlABQAAAAgACsAAAAlABUAAAAgACwAAAAmABIAAAAdACkAAAAmABMAAAAdACoAAAAmABQAAAAdACsAAAAmABUAAAAdACwAAAAnABIAAAAeACkAAAAnABMAAAAeACoAAAAnABQAAAAeACsAAAAnABUAAAAeACwAAAAoABIAAAAfACkAAAAoABMAAAAfACoAAAAoABQAAAAfACsAAAAoABUAAAAfACwAAAApABIAAAAgACkAAAApABMAAAAgACoAAAApABQAAAAgACsAAAApABUAAAAgACwAAAAiABYAAAAdACkAAAAiABcAAAAdACoAAAAiABgAAAAdACsAAAAiABkAAAAdACwAAAAjABYAAAAeACkAAAAjABcAAAAeACoAAAAjABgAAAAeACsAAAAjABkAAAAeACwAAAAkABYAAAAfACkAAAAkABcAAAAfACoAAAAkABgAAAAfACsAAAAkABkAAAAfACwAAAAlABYAAAAgACkAAAAlABcAAAAgACoAAAAlABgAAAAgACsAAAAlABkAAAAgACwAAAAmABYAAAAdACkAAAAmABcAAAAdACoAAAAmABgAAAAdACsAAAAmABkAAAAdACwAAAAnABYAAAAeACkAAAAnABcAAAAeACoAAAAnABgAAAAeACsAAAAnABkAAAAeACwAAAAoABYAAAAfACkAAAAoABcAAAAfACoAAAAoABgAAAAfACsAAAAoABkAAAAfACwAAAApABYAAAAgACkAAAApABcAAAAgACoAAAApABgAAAAgACsAAAApABkAAAAgACwAAAAiABoAAAAdACkAAAAiABsAAAAdACoAAAAiABwAAAAdACsAAAAiAB0AAAAdACwAAAAjABoAAAAeACkAAAAjABsAAAAeACoAAAAjABwAAAAeACsAAAAjAB0AAAAeACwAAAAkABoAAAAfACkAAAAkABsAAAAfACoAAAAkABwAAAAfACsAAAAkAB0AAAAfACwAAAAlABoAAAAgACkAAAAlABsAAAAgACoAAAAlABwAAAAgACsAAAAlAB0AAAAgACwAAAAmABoAAAAdACkAAAAmABsAAAAdACoAAAAmABwAAAAdACsAAAAmAB0AAAAdACwAAAAnABoAAAAeACkAAAAnABsAAAAeACoAAAAnABwAAAAeACsAAAAnAB0AAAAeACwAAAAoABoAAAAfACkAAAAoABsAAAAfACoAAAAoABwAAAAfACsAAAAoAB0AAAAfACwAAAApABoAAAAgACkAAAApABsAAAAgACoAAAApABwAAAAgACsAAAApAB0AAAAgACwAAAAqABIAAAAdACkAAAAqABMAAAAdACoAAAAqABQAAAAdACsAAAAqABUAAAAdACkAAAAqABYAAAAdACoAAAAqABcAAAAdACsAAAAqABgAAAAdACkAAAAqABkAAAAdACoAAAAqABoAAAAdACsAAAAqABsAAAAdACkAAAAqABwAAAAdACkAAAAqAB0AAAAdACoAAAAqAB4AAAAgACkAAAAqAB8AAAAgACoAAAApAB4AAAAgACkAAAApAB8AAAAgACoAAAAoAB4AAAAgACkAAAAoAB8AAAAgACoAAAAnAB4AAAAgACkAAAAnAB8AAAAgACoAAAAmAB4AAAAgACkAAAAmAB8AAAAgACoAAAAlAB4AAAAgACkAAAAlAB8AAAAgACoAAAAkAB4AAAAgACkAAAAkAB8AAAAgACoAAAAjAB4AAAAgACkAAAAjAB8AAAAgACoAAAAiAB4AAAAgACkAAAAiAB8AAAAgACoAAAArABEAAAAhACgAAAAqABEAAAAfACgAAAApABEAAAAeACgAAAAoABEAAAAfACgAAAAnABEAAAAeACgAAAAmABEAAAAfACgAAAAlABEAAAAeACgAAAAkABEAAAAfACgAAAAjABEAAAAeACgAAAAiABEAAAAgACgAAAAhABEAAAAfACgAAAAgABEAAAAeACgAAAAfABEAAAAdACgAAAAeABEAAAAeACgAAAAdABEAAAAcACgAAAA=")
 tile_set = SubResource("TileSet_heyad")
 
@@ -3229,12 +3257,35 @@ scale = Vector2(1.735, 1.735)
 texture_normal = SubResource("AtlasTexture_v7wqy")
 texture_pressed = SubResource("AtlasTexture_e48ev")
 
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -24.0
+offset_right = 125.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lcydj")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 0
-offset_left = 512.0
-offset_top = 309.0
-offset_right = 656.0
-offset_bottom = 492.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -20.0
+offset_right = 74.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="play" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -3244,8 +3295,12 @@ texture_hover = ExtResource("10_n1qsx")
 
 [node name="reset" type="Button" parent="Panel/VBoxContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
-text = "Reset"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a8ydr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eva3w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_31tv4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6trhn")
 
 [node name="quit" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
