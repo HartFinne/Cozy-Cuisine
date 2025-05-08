@@ -15,6 +15,8 @@ var tutorial_images = [
 
 var current_index = 0
 
+signal tutorial_finished
+
 @onready var texture_rect: TextureRect = $TextureRect
 
 # Called when the node enters the scene tree for the first time.
@@ -34,4 +36,5 @@ func show_next_image():
 	if current_index < tutorial_images.size():
 		show_tutorial_image()
 	else:
+		emit_signal("tutorial_finished")
 		hide()  # Or queue_free(), or signal tutorial end

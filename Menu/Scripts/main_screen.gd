@@ -67,7 +67,9 @@ func _on_resetconfirmdialog_confirmed() -> void:
 	player_data.sfx_volume = 1.0
 	
 	reset.visible = false  # ✅ Hide reset button again after resetting
-
+	
+	
+	_on_play_pressed()
 	
 	
 func _on_quit_pressed() -> void:
@@ -95,17 +97,4 @@ func _ready() -> void:
 	AudioServer.set_bus_volume_db(music_bus_index, linear_to_db(player_data.music_volume))
 	AudioServer.set_bus_volume_db(sfx_bus_index, linear_to_db(player_data.sfx_volume))
 
-	admob.initialize()
-	admob.initialization_completed.connect(_on_admob_initialization_completed)
-
-
-func _on_admob_initialization_completed(status_data: InitializationStatus) -> void:
-	is_initialized = true
-	load_and_show_banner()
-	pass # Replace with function body.
 	
-func load_and_show_banner():
-	if is_initialized:
-		admob.load_banner_ad()
-		await admob.banner_ad_loaded
-		admob.show_banner_ad()

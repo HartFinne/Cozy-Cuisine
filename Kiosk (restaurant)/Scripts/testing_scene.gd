@@ -47,14 +47,10 @@ var customer_scene = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if player_data.is_tutorial_watched:
-		tutorial_scene.visible = false
-		player_data.is_tutorial_watched = true
-		player_data.save()
-	else:
+	if !player_data.is_tutorial_watched:
+		touch_controls.visible = false
 		tutorial_scene.visible = true
-		player_data.is_tutorial_watched = false
-		player_data.save()
+		tutorial_scene.connect("tutorial_finished", Callable(self, "_on_tutorial_finished"))
 		
 	
 	h_box_container.mouse_filter = Control.MOUSE_FILTER_STOP  # ✅ Allow it to receive input
@@ -71,6 +67,12 @@ func _ready() -> void:
 	start_day_button.pressed.connect(start_day)
 
 	start_and_goal_update_ui()
+	
+func _on_tutorial_finished():
+	tutorial_scene.visible = false
+	touch_controls.visible = true
+	player_data.is_tutorial_watched = true
+	player_data.save()
 	
 func start_day():
 	player_data.revenue = 0
@@ -116,7 +118,7 @@ func end_day():
 	start_and_goal_update_ui()
 	is_day_ended = true
 	player_data.days += 1
-	player_data.goal_profit_per_day += 100
+	player_data.goal_profit_per_day += 50
 	player_data.save()
 	
 	get_tree().paused = true

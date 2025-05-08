@@ -1364,9 +1364,12 @@ visible = false
 
 [node name="Admob" type="Node" parent="UI"]
 script = ExtResource("22_yecm4")
+is_real = true
+child_directed = 1
+under_age_of_consent = 1
 banner_position = 1
-debug_application_id = "ca-app-pub-3940256099942544~3347511713"
-debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
+real_application_id = "ca-app-pub-1005053550504974~4004208045"
+real_banner_id = "ca-app-pub-1005053550504974/6539544497"
 metadata/_custom_type_script = "uid://cwhqet8b15kvi"
 
 [node name="CoinSFX" type="AudioStreamPlayer2D" parent="."]

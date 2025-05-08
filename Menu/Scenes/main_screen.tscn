@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=47 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://3c3n3e7v111q" path="res://Menu/Assets/reset/hover-newgame-button.png" id="21_kgx0q"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="AudioStream" uid="uid://2ixwsrjj4ir0" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/MainBGM.mp3" id="21_v7wqy"]
-[ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_e48ev"]
 [ext_resource type="Texture2D" uid="uid://7knvjx2e7qmm" path="res://Menu/Assets/quitbutton/quit-base_button-Sheet.png" id="22_lcydj"]
 [ext_resource type="Texture2D" uid="uid://bsu4na41r1e8p" path="res://Menu/Assets/OK/2.png" id="22_opkdy"]
 [ext_resource type="Texture2D" uid="uid://crilbab00v82x" path="res://Menu/Assets/quitbutton/quit-pressed_button-Sheet.png" id="23_ftosr"]
@@ -3352,13 +3351,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_lcydj")
 unique_name_in_owner = true
 initial_position = 2
 
-[node name="Admob" type="Node" parent="."]
-script = ExtResource("22_e48ev")
-banner_position = 1
-debug_application_id = "ca-app-pub-3940256099942544~3347511713"
-debug_banner_id = "ca-app-pub-3940256099942544/9214589741"
-metadata/_custom_type_script = "uid://cwhqet8b15kvi"
-
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_v7wqy")
 volume_db = -5.0
@@ -3371,4 +3363,3 @@ bus = &"Music"
 [connection signal="pressed" from="Panel/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/PopupPanel/VBoxContainer/BackButton" to="Panel/PopupPanel" method="_on_back_button_pressed"]
 [connection signal="confirmed" from="Panel/resetconfirmdialog" to="." method="_on_resetconfirmdialog_confirmed"]
-[connection signal="initialization_completed" from="Admob" to="." method="_on_admob_initialization_completed"]
