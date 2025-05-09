@@ -22,7 +22,7 @@ var revenue = 0
 var profit = 0
 var expenses = 0
 
-@onready var end_of_day: PopupPanel = $UI/CanvasLayer/EndOfDay
+@onready var end_of_day: PopupPanel = $UI/EndOfDay
 
 @onready var panel_label_1: Label = $UI/CanvasLayer/PanelContainer/Button/HBoxContainer/Label
 @onready var panel_label_2: Label = $UI/CanvasLayer/PanelContainer2/HBoxContainer/Label
@@ -125,12 +125,14 @@ func end_day():
 	player_data.save()
 	
 	get_tree().paused = true
-	end_of_day.show()
+	end_of_day.popup_centered()
 	end_of_day.set_testing_script(self)
 	end_of_day.end_day_update_ui()
 	
 	panel_label_1.visible = true
 	panel_label_2.visible = true
+	
+	player_data.budget += profit
 	
 	revenue = 0
 	profit = 0

@@ -37,6 +37,7 @@ texture = ExtResource("6_1lthg")
 
 [node name="EndOfDay" type="PopupPanel"]
 auto_translate_mode = 1
+position = Vector2i(295, 0)
 size = Vector2i(576, 352)
 visible = true
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xgdu4")

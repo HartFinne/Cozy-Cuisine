@@ -1188,6 +1188,11 @@ size_flags_vertical = 3
 script = ExtResource("20_mj36q")
 metadata/_edit_use_anchors_ = true
 
+[node name="EndOfDay" parent="UI" instance=ExtResource("10_ex6bc")]
+process_mode = 2
+mode = 1
+initial_position = 1
+
 [node name="CanvasLayer" type="CanvasLayer" parent="UI"]
 layer = 0
 
@@ -1347,12 +1352,6 @@ offset_bottom = -0.000427246
 
 [node name="MenuPanel" parent="UI/CanvasLayer" instance=ExtResource("9_btmqb")]
 unique_name_in_owner = true
-visible = false
-
-[node name="EndOfDay" parent="UI/CanvasLayer" instance=ExtResource("10_ex6bc")]
-process_mode = 2
-mode = 1
-initial_position = 1
 visible = false
 
 [node name="TutorialScene" parent="UI/CanvasLayer" instance=ExtResource("21_kiwki")]

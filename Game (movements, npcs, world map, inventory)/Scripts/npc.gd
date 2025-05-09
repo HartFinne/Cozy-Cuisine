@@ -241,6 +241,7 @@ func serve_dish_to_customer():
 
 	has_paid = true
 	follow_path(total_price)
+	show_order_bubbles(false)
 	
 func follow_path(total_price: float):
 	# Hide UI elements after payment
@@ -275,7 +276,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_in_area = true
 		print("Player entered NPC area")
 		start_conversation.visible = true
-		show_order_bubbles(false)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -286,4 +286,3 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		x_button.visible = true
 		take_button.visible = false
 		serve_button.visible = false
-		show_order_bubbles(true)
