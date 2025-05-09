@@ -5,6 +5,8 @@ var player_data: PlayerData = PlayerData.load_data()
 @onready var start_conversation: NinePatchRect = $StartConversation
 @onready var thought_bubble_scene: Control = $ThoughtBubbleScene
 @onready var dialogue: Control = $Dialogue
+@onready var patience_bar = $PatienceBar/TextureProgressBar
+
 
 @export var customer: Customer
 
@@ -16,7 +18,16 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
+var patience_duration := 50.0  # seconds until patience reaches 0
+var current_patience := 100.0
+var has_paid = false
+var total_price := 0.0
+
 func _ready() -> void:
+	current_patience = customer.patience_bar
+	patience_bar.max_value = customer.patience_bar
+	patience_bar.value = customer.patience_bar
+	
 	# ✅ Ensure UI is fully loaded before accessing XButton
 	print(customer)
 	var ui = get_tree().get_root().find_child("UI", true, false)
@@ -41,8 +52,19 @@ func _process(delta: float) -> void:
 
 		if serve_button and not serve_button.is_connected("pressed", Callable(self, "serve_dish_to_customer")):
 			serve_button.connect("pressed", Callable(self, "serve_dish_to_customer"))
-		
+			
+	
+	if current_patience > 0:
+		current_patience -= (customer.patience_bar / patience_duration) * delta
+		patience_bar.value = current_patience
 
+		if current_patience <= 0:
+			current_patience = 0
+			
+			if player_data.order.has(customer.name):
+				player_data.order.erase(customer.name)
+				player_data.save()
+			follow_path(0)
 
 
 func show_customer_order():
@@ -157,7 +179,6 @@ func serve_dish_to_customer():
 		print("Customer has no order to serve")
 		return  
 
-	var total_price = 0.0  # Initialize total price
 	var total_expense := 0.0
 
 	# Loop through the customer's order and check if player has enough of each dish
@@ -218,6 +239,10 @@ func serve_dish_to_customer():
 	print(customer.name, " paid ", total_price, " coins.")
 	dialogue.set_dialog_text(customer.name + "'s Payment", "Thank you! Here is " + str(total_price) + " coins.")
 
+	has_paid = true
+	follow_path(total_price)
+	
+func follow_path(total_price: float):
 	# Hide UI elements after payment
 	dialogue.visible = false
 	take_button.visible = false
@@ -234,14 +259,14 @@ func serve_dish_to_customer():
 		print(test_scene_node, "parent")
 		if test_scene_node and test_scene_node.has_method("resume_customer_movement"):
 			test_scene_node.resume_customer_movement(path_follow)
-			test_scene_node.customer_paid(total_price)
 			test_scene_node.get_node("UI/CanvasLayer/Inventory").populate_inventory_container()
-			
+			if has_paid:
+				test_scene_node.customer_paid(total_price)
+				has_paid = false
 		else:
 			print("Error: TestScene node not found or missing method!")
-			
-			
 	show_order_bubbles(false)
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
