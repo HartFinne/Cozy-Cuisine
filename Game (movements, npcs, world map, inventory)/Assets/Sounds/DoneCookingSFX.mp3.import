@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crxegxmomx4kh"
+path="res://.godot/imported/DoneCookingSFX.mp3-0b67de685c821a15494e36bf5e8dfe7d.mp3str"
+
+[deps]
+
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/DoneCookingSFX.mp3"
+dest_files=["res://.godot/imported/DoneCookingSFX.mp3-0b67de685c821a15494e36bf5e8dfe7d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

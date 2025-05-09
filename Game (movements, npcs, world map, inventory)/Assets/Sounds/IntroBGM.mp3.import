@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://deleclrlx3bln"
+path="res://.godot/imported/IntroBGM.mp3-ce18acc44cbf00d9c537e5e4f98178e6.mp3str"
+
+[deps]
+
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/IntroBGM.mp3"
+dest_files=["res://.godot/imported/IntroBGM.mp3-ce18acc44cbf00d9c537e5e4f98178e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

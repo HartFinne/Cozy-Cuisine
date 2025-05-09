@@ -36,6 +36,7 @@ func set_ingredient_display(ingredient: Ingredient):
 
 
 func _on_add_to_basket_button_pressed() -> void:
+	ClickSound.play_click()
 	print("Added to basket:", ingredient_resource.name)
 
 	# Add ingredient to basket resource

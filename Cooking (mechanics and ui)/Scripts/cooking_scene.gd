@@ -7,6 +7,7 @@ extends Control
 @onready var output_label: Label = %OutputLabel
 @onready var hidden_output_label: Label = %HiddenOutputLabel
 @onready var output_rect: TextureRect = %OutputRect
+@onready var done_cooking_sfx: AudioStreamPlayer2D = $DoneCookingSFX
 
 
 @onready var panel_container_3: PanelContainer = $PanelContainer3
@@ -146,6 +147,8 @@ func _finish_cooking() -> void:
 		current_recipe.is_cooking = false
 		current_recipe.cooking_time_left = 0
 		cook_timer.stop()  # Stop countdown timer
+		
+		done_cooking_sfx.play()
 
 		# Enable clicking to collect dish
 		output_rect.mouse_filter = Control.MOUSE_FILTER_STOP  

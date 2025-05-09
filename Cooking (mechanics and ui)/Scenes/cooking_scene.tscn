@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://66ftxmjmu23p"]
+[gd_scene load_steps=75 format=3 uid="uid://66ftxmjmu23p"]
 
 [ext_resource type="Script" uid="uid://bbsvy80e8b3df" path="res://Cooking (mechanics and ui)/Scripts/cooking_scene.gd" id="1_iv1l6"]
 [ext_resource type="Texture2D" uid="uid://1nhtcm7yjokm" path="res://Cooking (mechanics and ui)/Assets/Icons, UI, and window popup.png" id="2_5a071"]
@@ -9,12 +9,12 @@
 [ext_resource type="Script" uid="uid://oox1pt4tv8mf" path="res://Cooking (mechanics and ui)/Scripts/ingredient_popup.gd" id="4_oxed2"]
 [ext_resource type="PackedScene" uid="uid://dfq7velefot8o" path="res://Cooking (mechanics and ui)/Scenes/ingredient_container.tscn" id="5_fph4g"]
 [ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="5_hytrb"]
-[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
+[ext_resource type="Script" uid="uid://c58sj2tm5iwnd" path="res://Cooking (mechanics and ui)/Scripts/orders.gd" id="7_5d7ps"]
 [ext_resource type="Texture2D" uid="uid://c73n2p2syccx" path="res://Cooking (mechanics and ui)/Assets/COOK/2.png" id="7_t4kcf"]
 [ext_resource type="PackedScene" uid="uid://c87xmv0o4p1cn" path="res://Cooking (mechanics and ui)/Scenes/order_container.tscn" id="7_wobfx"]
 [ext_resource type="Texture2D" uid="uid://b0cxuassnsu75" path="res://Cooking (mechanics and ui)/Assets/COOK/3.png" id="8_c66or"]
 [ext_resource type="Texture2D" uid="uid://b7pxdp5aqmkga" path="res://Cooking (mechanics and ui)/Assets/COOK/1.png" id="9_s5ke1"]
-[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
+[ext_resource type="Script" uid="uid://cp743csr6i015" path="res://Cooking (mechanics and ui)/Scripts/dishes.gd" id="9_xmic6"]
 [ext_resource type="Texture2D" uid="uid://c2712n5jk0oy" path="res://Cooking (mechanics and ui)/Assets/CLEAR/3.png" id="10_4fvnn"]
 [ext_resource type="Texture2D" uid="uid://cl2qgahaw87a8" path="res://Cooking (mechanics and ui)/Assets/CLEAR/2.png" id="11_5ifc6"]
 [ext_resource type="Texture2D" uid="uid://bijjuwiasm1my" path="res://Cooking (mechanics and ui)/Assets/CLEAR/1.png" id="12_y42ar"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://dtqg3e75ckpf7" path="res://Cooking (mechanics and ui)/Assets/DISHES/2.png" id="19_j3u5v"]
 [ext_resource type="Texture2D" uid="uid://cg8wc7hgwannr" path="res://Cooking (mechanics and ui)/Assets/DISHES/3.png" id="20_bw05v"]
 [ext_resource type="Texture2D" uid="uid://er4ta2ol3f26" path="res://Cooking (mechanics and ui)/Assets/DISHES/1.png" id="21_ajps1"]
+[ext_resource type="AudioStream" uid="uid://crxegxmomx4kh" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/DoneCookingSFX.mp3" id="28_ajps1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5t4in"]
 shader = ExtResource("2_wk0hh")
@@ -686,6 +687,10 @@ text = "close"
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CookTimer" type="Timer" parent="."]
+
+[node name="DoneCookingSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("28_ajps1")
+bus = &"SFX"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CookButton" to="." method="_on_cook_button_pressed"]

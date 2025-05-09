@@ -46,6 +46,7 @@ func _on_reset_pressed() -> void:
 	
 
 func _on_resetconfirmdialog_confirmed() -> void:
+	ClickSound.play_click()
 	player_data.budget = 1000.0
 	player_data.days = 1
 	player_data.is_intro_watched = false
