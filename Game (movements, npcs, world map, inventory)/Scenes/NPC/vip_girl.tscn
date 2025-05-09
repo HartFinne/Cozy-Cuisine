@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhn70a2kptmwo"]
+[gd_scene load_steps=15 format=3 uid="uid://dhn70a2kptmwo"]
 
 [ext_resource type="Script" uid="uid://bqgdw38pitmik" path="res://Game (movements, npcs, world map, inventory)/Scripts/npc.gd" id="1_idonk"]
 [ext_resource type="Texture2D" uid="uid://cfoltpf380xp" path="res://Game (movements, npcs, world map, inventory)/Assets/NPCs/VIP GIRL/idle_left_vip2-Sheet.png" id="1_l77oo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxbmbqwvjgd0b" path="res://Kiosk (restaurant)/Scenes/Npc/dialogue.tscn" id="3_f5vsu"]
 [ext_resource type="PackedScene" uid="uid://mfisgq68y4y1" path="res://Kiosk (restaurant)/Scenes/Npc/start_conversation.tscn" id="4_3q2nk"]
 [ext_resource type="PackedScene" uid="uid://drj4vdkghmx5k" path="res://Kiosk (restaurant)/Scenes/Npc/thought_bubble_scene.tscn" id="6_3q2nk"]
+[ext_resource type="PackedScene" uid="uid://qerqgnoydayv" path="res://Kiosk (restaurant)/Scenes/Npc/patience_bar.tscn" id="7_bfxh1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edllg"]
 atlas = ExtResource("1_l77oo")
@@ -89,6 +90,13 @@ offset_left = -35.0
 offset_top = -36.0
 offset_right = -35.0
 offset_bottom = -36.0
+
+[node name="PatienceBar" parent="." instance=ExtResource("7_bfxh1")]
+offset_left = -14.0
+offset_top = -8.0
+offset_right = 82.0
+offset_bottom = 16.0
+scale = Vector2(0.3, 0.17)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

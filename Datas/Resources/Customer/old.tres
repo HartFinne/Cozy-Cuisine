@@ -8,4 +8,5 @@ name = "Jamal"
 order = {
 "PepperoniPizza": 1
 }
+patience_bar = 100.0
 metadata/_custom_type_script = "uid://c3j24prkhkpue"

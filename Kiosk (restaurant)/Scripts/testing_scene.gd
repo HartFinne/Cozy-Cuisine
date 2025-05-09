@@ -38,15 +38,16 @@ var expenses = 0
 
 
 var customer_scene = [
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn"),
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_boy.tscn"),
 	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/vip_girl.tscn"),
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_young.tscn"),
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
-	preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_young.tscn"),
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_old.tscn"),
+	#preload("res://Game (movements, npcs, world map, inventory)/Scenes/NPC/customer_male.tscn")
 ]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player_data.order = {}
 	if !player_data.is_tutorial_watched:
 		touch_controls.visible = false
 		tutorial_scene.visible = true
@@ -79,7 +80,7 @@ func start_day():
 	player_data.expenses = 0
 	player_data.profit = 0
 	
-	player_data.order = {}
+	
 	
 	start_day_button.visible = false
 	goal_container.visible = true
@@ -116,6 +117,7 @@ func check_if_day_should_end():
 		
 func end_day():
 	start_and_goal_update_ui()
+	player_data.order = {}
 	is_day_ended = true
 	player_data.days += 1
 	player_data.goal_profit_per_day += 50
