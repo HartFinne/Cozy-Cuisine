@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://sl0ilsl8ji6j"]
+[gd_scene load_steps=20 format=3 uid="uid://sl0ilsl8ji6j"]
 
 [ext_resource type="Script" uid="uid://dphaanv5s3uv2" path="res://Kiosk (restaurant)/Scripts/Inventory/inventory.gd" id="1_qka5t"]
 [ext_resource type="PackedScene" uid="uid://mjequ4v8il8q" path="res://Kiosk (restaurant)/Scenes/Inventory/inventory_container.tscn" id="2_2g18v"]
@@ -12,6 +12,66 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdy3i"]
 texture = ExtResource("6_j8p71")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ogr6h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdy3i"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 9.0
+bg_color = Color(0.399605, 0.196808, 0.152213, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8fes"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 9.0
+bg_color = Color(0.4, 0.196078, 0.152941, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3668s"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 9.0
+bg_color = Color(0.552941, 0.286275, 0.227451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.686275, 0.509804, 0.376471, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdy3i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8fes"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moq2i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3akxl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_er62j"]
 
 [node name="Inventory" type="HBoxContainer"]
 custom_minimum_size = Vector2(341, 71.001)
@@ -121,21 +181,24 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("7_kdy3i")
-text = "Bag"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ogr6h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kdy3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e8fes")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3668s")
+text = "BAG"
 
 [node name="BagPopupPanel" type="PopupPanel" parent="."]
 initial_position = 1
 size = Vector2i(685, 320)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kdy3i")
 script = ExtResource("5_2g18v")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BagPopupPanel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 681.0
-offset_bottom = 316.0
+offset_right = 685.0
+offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -170,6 +233,10 @@ text = "Meals"
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e8fes")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_moq2i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3akxl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_er62j")
 icon = ExtResource("7_wg8j1")
 
 [node name="InventoryGrid" type="GridContainer" parent="BagPopupPanel/ScrollContainer/Inventory UI/VBoxContainer"]
