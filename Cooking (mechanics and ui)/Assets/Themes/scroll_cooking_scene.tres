@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://llqk7nrl8vt1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sy65"]
+bg_color = Color(0.376471, 0.247059, 0.14902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_togb1"]
+bg_color = Color(0.376471, 0.247059, 0.14902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sydvr"]
+bg_color = Color(0.376471, 0.247059, 0.14902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlrc5"]
+content_margin_left = 10.0
+bg_color = Color(0.196078, 0.172549, 0.168627, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sydvr"]
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_7sy65")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_togb1")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_sydvr")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_vlrc5")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_sydvr")

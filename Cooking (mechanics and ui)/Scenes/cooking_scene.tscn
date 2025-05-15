@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cl2qgahaw87a8" path="res://Cooking (mechanics and ui)/Assets/CLEAR/2.png" id="11_5ifc6"]
 [ext_resource type="Texture2D" uid="uid://bijjuwiasm1my" path="res://Cooking (mechanics and ui)/Assets/CLEAR/1.png" id="12_y42ar"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="14_verp7"]
+[ext_resource type="Theme" uid="uid://llqk7nrl8vt1" path="res://Cooking (mechanics and ui)/Assets/Themes/scroll_cooking_scene.tres" id="16_ajps1"]
 [ext_resource type="Texture2D" uid="uid://bx6rokpeupc27" path="res://Cooking (mechanics and ui)/Assets/ORDERS/2.png" id="16_bbj53"]
-[ext_resource type="Theme" uid="uid://dooj82c87h1t" path="res://Cooking (mechanics and ui)/Assets/Themes/cook_book_scroll_theme.tres" id="16_j3u5v"]
 [ext_resource type="Texture2D" uid="uid://doxqhtbey1mp4" path="res://Cooking (mechanics and ui)/Assets/ORDERS/3.png" id="17_hytrb"]
 [ext_resource type="Texture2D" uid="uid://dp55aoiblghnq" path="res://Cooking (mechanics and ui)/Assets/ORDERS/1.png" id="18_verp7"]
 [ext_resource type="PackedScene" uid="uid://keqadk5s6vut" path="res://Cooking (mechanics and ui)/Scenes/dish_container.tscn" id="19_bw05v"]
@@ -556,7 +556,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Orders/PanelContainer"]
 layout_mode = 2
-theme = ExtResource("16_j3u5v")
+theme = ExtResource("16_ajps1")
 
 [node name="OrderVbox" type="VBoxContainer" parent="Orders/PanelContainer/ScrollContainer"]
 unique_name_in_owner = true
@@ -598,6 +598,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("16_ajps1")
 vertical_scroll_mode = 2
 
 [node name="DishVbox" type="VBoxContainer" parent="Dishes/PanelContainer/ScrollContainer"]
