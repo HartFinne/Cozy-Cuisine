@@ -18,7 +18,7 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
-var patience_duration := 50.0  # seconds until patience reaches 0
+var patience_duration := 75.0  # seconds until patience reaches 0
 var current_patience := 100.0
 var has_paid = false
 var total_price := 0.0
@@ -66,7 +66,6 @@ func _process(delta: float) -> void:
 				player_data.save()
 			follow_path(0)
 
-
 func show_customer_order():
 	# Hide the take button after taking the order
 	var dishes = player_data.dishes
@@ -95,6 +94,7 @@ func show_customer_order():
 
 func _on_take_button_pressed():
 	if customer and customer.order:
+		current_patience = customer.patience_bar
 		# Assuming customer.order is a dictionary like: {"PeperoniPizza": 2}
 		print("working", customer.order)
 
