@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://qerqgnoydayv"]
+[gd_scene load_steps=4 format=3 uid="uid://qerqgnoydayv"]
 
 [ext_resource type="Script" uid="uid://dtdsdymjhjygt" path="res://Kiosk (restaurant)/Scripts/Npc/patience_bar.gd" id="1_8yhtd"]
-[ext_resource type="Texture2D" uid="uid://ju1ullwiu3s4" path="res://Menu/Assets/bar_round_gloss_large.svg" id="1_mdkbu"]
+[ext_resource type="Texture2D" uid="uid://luqi36h73ybw" path="res://Menu/Assets/wood_slider_empty.png" id="2_0wm6r"]
+[ext_resource type="Texture2D" uid="uid://dtctjyisw703o" path="res://Menu/Assets/wood_slider_filled.png" id="3_s834o"]
 
 [node name="PatienceBar" type="Control"]
 layout_mode = 3
@@ -14,7 +15,9 @@ script = ExtResource("1_8yhtd")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 58.0
 offset_bottom = 40.0
+scale = Vector2(2, 2)
 value = 100.0
-texture_progress = ExtResource("1_mdkbu")
+texture_under = ExtResource("2_0wm6r")
+texture_progress = ExtResource("3_s834o")
