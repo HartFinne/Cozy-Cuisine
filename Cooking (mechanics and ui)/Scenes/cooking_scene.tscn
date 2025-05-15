@@ -124,7 +124,11 @@ region = Rect2(65, 97, 14, 14)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qccpg"]
 texture = SubResource("AtlasTexture_r4n4q")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hytrb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xmd4"]
+content_margin_left = 10.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.392157)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3u5v"]
 
@@ -149,9 +153,11 @@ region = Rect2(65, 97, 14, 14)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oysib"]
 texture = SubResource("AtlasTexture_qccpg")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bw05v"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajps1"]
+content_margin_left = 10.0
 content_margin_top = 20.0
 content_margin_bottom = 20.0
+bg_color = Color(0.686275, 0.509804, 0.376471, 0.392157)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajps1"]
 
@@ -545,7 +551,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_qccpg")
 [node name="PanelContainer" type="PanelContainer" parent="Orders"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_hytrb")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5xmd4")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Orders/PanelContainer"]
@@ -585,7 +591,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_oysib")
 [node name="PanelContainer" type="PanelContainer" parent="Dishes"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bw05v")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ajps1")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Dishes/PanelContainer"]
@@ -653,10 +659,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 540.0
-offset_bottom = 446.0
+offset_left = -267.5
+offset_top = -220.5
+offset_right = 267.5
+offset_bottom = 220.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_okkye")
