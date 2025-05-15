@@ -48,6 +48,13 @@ func select_ingredient(ingredient: Ingredient):
 				"quantity": 1  # ✅ Ensure correct structure
 			}
 		print("Added:", ingredient.name, "Total:", selected_ingredients[ingredient.name]["quantity"])
+		
+func remove_ingredient_by_name(name: String) -> void:
+	if name in selected_ingredients:
+		selected_ingredients[name]["quantity"] -= 1
+		if selected_ingredients[name]["quantity"] <= 0:
+			selected_ingredients.erase(name)
+		print("Removed one", name, "Remaining:", selected_ingredients.get(name, {}))
 
 func _on_cook_button_pressed() -> void:
 	ClickSound.play_click()

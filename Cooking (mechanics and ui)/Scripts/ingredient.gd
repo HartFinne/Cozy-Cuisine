@@ -31,6 +31,9 @@ func _on_ingredient_selected(new_ingredient_data: Dictionary):
 	# If there's a previously selected ingredient, add it back to inventory
 	print("working naman sana")
 	if ingredient_data and ingredient_data.has("name"):
+		# Remove the old one from cooking_scene
+		if cooking_script:
+			cooking_script.remove_ingredient_by_name(ingredient_data["name"])
 		_return_previous_ingredient_to_inventory()
 
 	# Update the button texture
