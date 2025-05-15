@@ -3360,6 +3360,7 @@ bus = &"Music"
 [connection signal="pressed" from="Panel/SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Panel/PopupPanel/VBoxContainer/BackButton" to="Panel/PopupPanel" method="_on_back_button_pressed"]
 [connection signal="confirmed" from="Panel/resetconfirmdialog" to="." method="_on_resetconfirmdialog_confirmed"]

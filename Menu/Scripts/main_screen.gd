@@ -1,11 +1,13 @@
 extends Control
 
+var tutorial_scene = preload("res://Tutorial/Scenes/tutorial_scene.tscn")
 var basket: Basket = Basket.load_basket()
 var player_data: PlayerData = PlayerData.load_data()
 var world_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
 var intro_scene = preload("res://intro/scenes/Main.tscn")
 const settings = preload("res://Menu/Scenes/settings.tscn")
 @onready var popup_panel: PopupPanel = $Panel/PopupPanel
+@onready var tutorial_popup: TextureButton = $Panel/VBoxContainer/tutorial
 @onready var admob: Admob = $Admob
 var is_initialized: bool = false
 @onready var resetconfirmdialog: ConfirmationDialog = %resetconfirmdialog
@@ -32,13 +34,18 @@ func _on_play_pressed() -> void:
 	
 	reset.visible = false
 	
-	
-	
-func _on_tutorial_pressed() -> void:
-	print("Tutorialssss")
-	get_tree().paused = true
-	popup_panel.show()
-	
+
+func _on_tutorial_pressed():
+	ClickSound.play_click()
+	var tutorial = preload("res://Tutorial/Scenes/tutorial_scene.tscn").instantiate()
+	tutorial.connect("tutorial_finished", Callable(self, "_on_tutorial_finished"))
+	add_child(tutorial)
+
+func _on_tutorial_finished():
+	# You can change this to start the game or just hide the tutorial
+	print("Tutorial finished!")
+	# Example: move to the game world
+	get_tree().change_scene_to_file("res://Menu/Scenes/main_screen.tscn")
 
 func _on_reset_pressed() -> void:
 	resetconfirmdialog.popup_centered()

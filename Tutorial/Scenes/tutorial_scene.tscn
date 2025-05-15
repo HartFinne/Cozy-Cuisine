@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://digierryohllx"]
 
 [ext_resource type="Script" uid="uid://bju0drnq3jyj4" path="res://Tutorial/Sripts/tutorial_scene.gd" id="1_25nka"]
-[ext_resource type="Texture2D" uid="uid://st5tmhf0tf6n" path="res://Tutorial/Assets/2.png" id="2_dxpx6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_25nka"]
+load_path = "res://.godot/imported/2.png-f5799b99078361020c588ef907814a84.ctex"
 
 [node name="TutorialScene" type="Control"]
 layout_mode = 3
@@ -19,5 +21,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_dxpx6")
+texture = SubResource("CompressedTexture2D_25nka")
 expand_mode = 1
