@@ -1358,6 +1358,13 @@ visible = false
 [node name="TutorialScene" parent="UI/CanvasLayer" instance=ExtResource("21_kiwki")]
 visible = false
 
+[node name="TutorialButton" type="Button" parent="UI/CanvasLayer"]
+offset_left = 23.0
+offset_top = 62.0
+offset_right = 65.0
+offset_bottom = 101.0
+text = "Tutorial"
+
 [node name="IntantiateScenes" type="CanvasLayer" parent="UI"]
 
 [node name="TouchControls" parent="UI" instance=ExtResource("5_wvgkv")]
@@ -1386,4 +1393,5 @@ bus = &"Music"
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer" to="." method="_on_h_box_container_gui_input"]
+[connection signal="pressed" from="UI/CanvasLayer/TutorialButton" to="UI/CanvasLayer/TutorialScene" method="_on_tutorial_button_pressed"]
 [connection signal="initialization_completed" from="UI/Admob" to="UI" method="_on_admob_initialization_completed"]
