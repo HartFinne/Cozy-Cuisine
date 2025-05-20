@@ -10,6 +10,7 @@ var intro_scenes = {
 }
 
 @onready var fade_layer: ColorRect = $FadeLayer
+@onready var intro_bgm: AudioStreamPlayer2D = $IntroBGM
 
 
 var game_scene = load("res://Kiosk (restaurant)/Scenes/testing_scene.tscn")
@@ -19,7 +20,7 @@ var textbox_scene = preload("res://intro/scenes/textbox.tscn")
 var textbox_instance = null
 
 func _ready():
-
+	intro_bgm.play()
 	change_scene("intro1")
 	
 	
@@ -47,6 +48,7 @@ func change_scene(scene_name):
 		if scene_name == "intro6":
 			await textbox_instance.finished_displaying
 			await get_tree().create_timer(2.0).timeout
+			await fade_out_bgm() 
 			await fade_out()
 			get_tree().change_scene_to_packed(game_scene)
 	else:
@@ -68,3 +70,9 @@ func fade_in(duration: float = 1.0):
 	var tween = create_tween()
 	tween.tween_property(fade_layer, "modulate:a", 0.0, duration)
 	await tween.finished
+	
+func fade_out_bgm(duration: float = 1.0):
+	var tween = create_tween()
+	tween.tween_property(intro_bgm, "volume_db", -80, duration)  # -80 dB = silent
+	await tween.finished
+	intro_bgm.stop()

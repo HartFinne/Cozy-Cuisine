@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://yhkvppvxkpkb"]
 
-[ext_resource type="Texture2D" uid="uid://dljykboltuy8i" path="res://assets/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-Cleaning-Products/Cabinet-Animation-with-Cleaning-Products-Sprite-Sheet.png" id="1_ym1ik"]
+[ext_resource type="Texture2D" uid="uid://dljykboltuy8i" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-Cleaning-Products/Cabinet-Animation-with-Cleaning-Products-Sprite-Sheet.png" id="1_ym1ik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syd62"]
 atlas = ExtResource("1_ym1ik")
