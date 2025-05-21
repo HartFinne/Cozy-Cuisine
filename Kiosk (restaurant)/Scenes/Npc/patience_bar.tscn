@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtdsdymjhjygt" path="res://Kiosk (restaurant)/Scripts/Npc/patience_bar.gd" id="1_8yhtd"]
 [ext_resource type="Texture2D" uid="uid://luqi36h73ybw" path="res://Menu/Assets/wood_slider_empty.png" id="2_0wm6r"]
-[ext_resource type="Texture2D" uid="uid://dtctjyisw703o" path="res://Menu/Assets/wood_slider_filled.png" id="3_s834o"]
+[ext_resource type="Texture2D" uid="uid://imvqwavdly0p" path="res://Menu/Assets/gold_slider_empty.png" id="3_0wm6r"]
 
 [node name="PatienceBar" type="Control"]
 layout_mode = 3
@@ -15,9 +15,11 @@ script = ExtResource("1_8yhtd")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_right = 58.0
-offset_bottom = 40.0
-scale = Vector2(2, 2)
+offset_left = 25.0
+offset_top = -15.0
+offset_right = 83.0
+offset_bottom = 25.0
+scale = Vector2(1, 3)
 value = 100.0
 texture_under = ExtResource("2_0wm6r")
-texture_progress = ExtResource("3_s834o")
+texture_progress = ExtResource("3_0wm6r")
