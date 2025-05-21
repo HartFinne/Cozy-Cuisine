@@ -241,7 +241,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_yvrcm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_yvrcm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_k3f1s")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jyvso")
-text = "x"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
