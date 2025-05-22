@@ -38,3 +38,7 @@ func show_next_image():
 	else:
 		emit_signal("tutorial_finished")
 		hide()  # Or queue_free(), or signal tutorial end
+
+
+func _on_tutorial_button_pressed() -> void:
+	pass # Replace with function body.
