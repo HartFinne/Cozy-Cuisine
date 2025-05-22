@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=96 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dwwxig42j7kqg" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Pickles-honey-and-knife.png" id="23_cwnbd"]
 [ext_resource type="AudioStream" uid="uid://gsrn08cb3faa" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/coin-clink.mp3" id="23_e3whk"]
 [ext_resource type="AudioStream" uid="uid://bweeog8icd6ot" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/GameBGM.mp3" id="24_vhscd"]
+[ext_resource type="Script" uid="uid://e6jxkheo75rv" path="res://Kiosk (restaurant)/Scenes/canvas_layer.gd" id="29_fq4ne"]
 [ext_resource type="Texture2D" uid="uid://bworukyr2pthv" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-normal.png" id="36_yg7rl"]
 [ext_resource type="Texture2D" uid="uid://caw7reeh766l" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-pressed.png" id="37_ccos6"]
 [ext_resource type="Texture2D" uid="uid://c55g2ktjrfgvq" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-hover.png" id="38_nemp8"]
@@ -1367,6 +1368,7 @@ visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI"]
 layer = 0
+script = ExtResource("29_fq4ne")
 
 [node name="StartDayButton" type="Button" parent="UI/CanvasLayer"]
 unique_name_in_owner = true
@@ -1566,5 +1568,7 @@ bus = &"Music"
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer" to="." method="_on_h_box_container_gui_input"]
+[connection signal="pressed" from="UI/CanvasLayer/TutorialButton" to="UI/CanvasLayer" method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/TutorialButton" to="UI/CanvasLayer/TutorialScene" method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/TutorialButton" to="UI/TouchControls" method="_on_tutorial_button_pressed"]
 [connection signal="initialization_completed" from="UI/Admob" to="UI" method="_on_admob_initialization_completed"]

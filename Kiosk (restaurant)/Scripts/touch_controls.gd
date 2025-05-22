@@ -26,3 +26,6 @@ func on_button_pressed(button: TouchScreenButton) -> void:
 # Function to return to normal when released
 func on_button_released(button: TouchScreenButton) -> void:
 	button.modulate = Color(1, 1, 1, 1)  # Reset to normal
+
+func _on_tutorial_button_pressed() -> void:
+	visible = false
