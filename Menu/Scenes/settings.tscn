@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://cuji2cqjx5m3y" path="res://Menu/Assets/Themes/settings.gdshader" id="1_ne7l5"]
 [ext_resource type="Script" uid="uid://c7gamm41g5btx" path="res://Menu/Scripts/settings.gd" id="1_nv1uq"]
 [ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="2_ghuux"]
-[ext_resource type="PackedScene" uid="uid://dwgijbku3oaun" path="res://Game (movements, npcs, world map, inventory)/Scenes/volume_slider.tscn" id="3_lpy8r"]
+[ext_resource type="PackedScene" uid="uid://dwgijbku3oaun" path="res://Game (movements, npcs, world map, inventory)/Scenes/SFX/volume_slider.tscn" id="3_lpy8r"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="4_0q1k6"]
 [ext_resource type="Script" uid="uid://dd4af488v37on" path="res://Menu/Scripts/music_button.gd" id="4_lpy8r"]
 [ext_resource type="Script" uid="uid://c62g37edyaqe3" path="res://Menu/Scripts/sfx_button.gd" id="5_ne7l5"]

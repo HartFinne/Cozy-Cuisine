@@ -32,6 +32,6 @@ func populate_inventory_container():
 		grid_container.add_child(inventory_instance)
 
 func _on_bag_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	bag_popup_panel.show()
 	print("working")

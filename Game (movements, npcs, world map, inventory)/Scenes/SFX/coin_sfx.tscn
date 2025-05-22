@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://4ippt6nns2gg"]
+
+[ext_resource type="AudioStream" uid="uid://gsrn08cb3faa" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/coin-clink.mp3" id="1_om264"]
+
+[node name="CoinSFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_om264")
+bus = &"SFX"
+playback_type = 1

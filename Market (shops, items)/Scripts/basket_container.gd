@@ -26,8 +26,8 @@ func set_item_data(ingredient: Dictionary):
 		ingredient_rect.texture = null  # Fallback in case of missing texture
 
 func _on_add_button_pressed() -> void:
-	ClickSound.play_click()
-	print(basket, "workiung")
+	SoundEffects.play_click()
+	print(basket, "working")
 	var ingredient_data = basket.items.get(ingredient_name)
 	print(ingredient_data, "working")
 	if ingredient_data:
@@ -42,14 +42,14 @@ func _on_add_button_pressed() -> void:
 
 # Subtract quantity, remove if zero
 func _on_minus_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	basket.subtract_item(ingredient_name, 1)
 	basket.save_basket()
 	update_display()
 
 # Remove from basket
 func _on_remove_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	basket.remove_item(ingredient_name)
 	basket.save_basket()
 	queue_free()  # Remove from UI

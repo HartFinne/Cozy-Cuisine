@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://brg7w5exoojcr"]
+
+[ext_resource type="Script" uid="uid://bhfhbg4bqjuk" path="res://Game (movements, npcs, world map, inventory)/Scripts/SoundEffects.gd" id="1_agve8"]
+[ext_resource type="PackedScene" uid="uid://bfjhgsir2n23s" path="res://Game (movements, npcs, world map, inventory)/Scenes/SFX/click_sfx.tscn" id="1_toh33"]
+[ext_resource type="PackedScene" uid="uid://4ippt6nns2gg" path="res://Game (movements, npcs, world map, inventory)/Scenes/SFX/coin_sfx.tscn" id="2_agve8"]
+[ext_resource type="PackedScene" uid="uid://dg1vkrpkbt0wf" path="res://Game (movements, npcs, world map, inventory)/Scenes/SFX/done_cooking_sfx.tscn" id="3_jhm4a"]
+
+[node name="SoundEffects" type="Node2D"]
+script = ExtResource("1_agve8")
+
+[node name="ClickSFX" parent="." instance=ExtResource("1_toh33")]
+
+[node name="CoinSFX" parent="." instance=ExtResource("2_agve8")]
+
+[node name="DoneCookingSFX" parent="." instance=ExtResource("3_jhm4a")]

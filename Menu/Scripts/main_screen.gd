@@ -14,7 +14,7 @@ var is_initialized: bool = false
 @onready var reset: TextureButton = $Panel/VBoxContainer/reset
 
 func _on_play_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	print("wiwer")
 	player_data.is_intro_watched
 	
@@ -36,7 +36,7 @@ func _on_play_pressed() -> void:
 	
 
 func _on_tutorial_pressed():
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	var tutorial = preload("res://Tutorial/Scenes/tutorial_scene.tscn").instantiate()
 	tutorial.connect("tutorial_finished", Callable(self, "_on_tutorial_finished"))
 	add_child(tutorial)
@@ -53,7 +53,7 @@ func _on_reset_pressed() -> void:
 	
 
 func _on_resetconfirmdialog_confirmed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	player_data.budget = 1000.0
 	player_data.days = 1
 	player_data.is_intro_watched = false
@@ -81,12 +81,12 @@ func _on_resetconfirmdialog_confirmed() -> void:
 	
 	
 func _on_quit_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	get_tree().quit()
 
 
 func _on_setting_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	var settings_instance = settings.instantiate()
 	add_child(settings_instance)
 	

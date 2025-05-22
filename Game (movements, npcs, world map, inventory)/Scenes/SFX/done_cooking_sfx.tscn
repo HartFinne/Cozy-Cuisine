@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg1vkrpkbt0wf"]
+
+[ext_resource type="AudioStream" uid="uid://crxegxmomx4kh" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/DoneCookingSFX.mp3" id="1_5obsj"]
+
+[node name="DoneCookingSFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_5obsj")
+bus = &"SFX"

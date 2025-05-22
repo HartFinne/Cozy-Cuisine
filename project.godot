@@ -23,7 +23,7 @@ config/icon="res://icon.svg"
 GameData="*res://Datas/Manager/game_data.gd"
 SceneManager="*res://Datas/Manager/SceneManager.gd"
 MenuManager="*res://Datas/Manager/menu_manager.gd"
-ClickSound="*res://Game (movements, npcs, world map, inventory)/Scenes/ClickSound.tscn"
+SoundEffects="*res://Game (movements, npcs, world map, inventory)/Scenes/SoundEffects.tscn"
 
 [display]
 

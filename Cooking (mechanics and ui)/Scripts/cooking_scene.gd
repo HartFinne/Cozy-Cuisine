@@ -7,7 +7,6 @@ extends Control
 @onready var output_label: Label = %OutputLabel
 @onready var hidden_output_label: Label = %HiddenOutputLabel
 @onready var output_rect: TextureRect = %OutputRect
-@onready var done_cooking_sfx: AudioStreamPlayer2D = $DoneCookingSFX
 
 
 @onready var panel_container_3: PanelContainer = $PanelContainer3
@@ -31,7 +30,7 @@ func _ready() -> void:
 		
 
 func _on_back_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	SceneManager.return_to_game()
 
 
@@ -57,7 +56,7 @@ func remove_ingredient_by_name(name: String) -> void:
 		print("Removed one", name, "Remaining:", selected_ingredients.get(name, {}))
 
 func _on_cook_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	if selected_ingredients.is_empty():
 		_show_message("No ingredients selected!")
 		return
@@ -155,7 +154,7 @@ func _finish_cooking() -> void:
 		current_recipe.cooking_time_left = 0
 		cook_timer.stop()  # Stop countdown timer
 		
-		done_cooking_sfx.play()
+		SoundEffects.play_doneCooking()
 
 		# Enable clicking to collect dish
 		output_rect.mouse_filter = Control.MOUSE_FILTER_STOP  
@@ -175,7 +174,7 @@ func _show_message(text: String) -> void:
 
 
 func _on_clear_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	player_data._return_selected_ingredients_to_inventory()
 	# Reset all ingredient slots in the UI
 	for slot in ingredients.get_children():

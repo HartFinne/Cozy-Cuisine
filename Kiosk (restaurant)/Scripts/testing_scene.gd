@@ -8,7 +8,6 @@ var player_data: PlayerData = PlayerData.load_data()
 @export var customers: Array = []
 @onready var touch_controls: CanvasLayer = $UI/TouchControls
 @onready var money_container: PanelContainer = $UI/CanvasLayer/MoneyContainer
-@onready var coin_sfx: AudioStreamPlayer2D = $CoinSFX
 
 @onready var tutorial_scene: Control = $UI/CanvasLayer/TutorialScene
 
@@ -76,7 +75,7 @@ func _on_tutorial_finished():
 	player_data.save()
 	
 func start_day():
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	player_data.revenue = 0
 	player_data.expenses = 0
 	player_data.profit = 0
@@ -107,7 +106,7 @@ func customer_paid(amount: int):
 	player_data.revenue = revenue
 	player_data.profit = profit
 	
-	coin_sfx.play()
+	SoundEffects.play_coin()
 	
 	start_and_goal_update_ui()
 	check_if_day_should_end()
@@ -244,7 +243,7 @@ func resume_customer_movement(path_follow: PathFollow2D):
 func _on_h_box_container_gui_input(event: InputEvent) -> void:
 	
 	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.pressed):
-		ClickSound.play_click()
+		SoundEffects.play_click()
 		SceneManager.touch_controls = get_node("UI/TouchControls")
 		SceneManager.canvas_layer = get_node("UI/CanvasLayer")
 		SceneManager.gameplay_scene = get_tree().current_scene
@@ -253,7 +252,7 @@ func _on_h_box_container_gui_input(event: InputEvent) -> void:
 			
 
 func _on_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	SceneManager.touch_controls = get_node("UI/TouchControls")
 	SceneManager.canvas_layer = get_node("UI/CanvasLayer")
 	SceneManager.gameplay_scene = get_tree().current_scene
@@ -262,7 +261,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_pause_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	get_tree().paused = true
 	%MenuPanel.show()
 	pass

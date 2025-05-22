@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=92 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -41,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://cg8kqofkty5q2" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Nonstick-skillet.png" id="22_7rlt2"]
 [ext_resource type="Script" uid="uid://cwhqet8b15kvi" path="res://addons/AdmobPlugin/Admob.gd" id="22_yecm4"]
 [ext_resource type="Texture2D" uid="uid://dwwxig42j7kqg" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Pickles-honey-and-knife.png" id="23_cwnbd"]
-[ext_resource type="AudioStream" uid="uid://gsrn08cb3faa" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/coin-clink.mp3" id="23_e3whk"]
 [ext_resource type="AudioStream" uid="uid://bweeog8icd6ot" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/GameBGM.mp3" id="24_vhscd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_066vs"]
@@ -1544,11 +1543,6 @@ banner_position = 1
 real_application_id = "ca-app-pub-1005053550504974~4004208045"
 real_banner_id = "ca-app-pub-1005053550504974/6539544497"
 metadata/_custom_type_script = "uid://cwhqet8b15kvi"
-
-[node name="CoinSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("23_e3whk")
-bus = &"SFX"
-playback_type = 1
 
 [node name="GameBGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_vhscd")

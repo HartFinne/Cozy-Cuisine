@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _on_mute_toggled() -> void:
 	
-	ClickSound.play_click()
+	SoundEffects.play_click()
 
 	if button_pressed:
 		previous_volume = sfx_slider.value

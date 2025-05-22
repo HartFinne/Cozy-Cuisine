@@ -62,7 +62,7 @@ signal purchase_completed(total_cost)
 var player_data: PlayerData = PlayerData.load_data()
 
 func _on_buy_button_pressed() -> void:
-	ClickSound.play_click()
+	SoundEffects.play_click()
 	print("Buy button Working")
 	
 	var total_cost = basket.get_total_price()
