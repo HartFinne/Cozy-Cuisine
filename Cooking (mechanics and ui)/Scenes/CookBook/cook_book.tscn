@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://u7h1rfmnxkre"]
+[gd_scene load_steps=42 format=4 uid="uid://u7h1rfmnxkre"]
 
 [ext_resource type="Script" uid="uid://bonrejv4k7kbv" path="res://Cooking (mechanics and ui)/Scripts/CookBook/cook_book.gd" id="1_ulscd"]
 [ext_resource type="Script" uid="uid://vrbrc881cfhh" path="res://Cooking (mechanics and ui)/Scripts/CookBook/food.gd" id="1_vokew"]
@@ -11,6 +11,9 @@
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="4_rrx8r"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="5_bo2hy"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="10_rcxoc"]
+[ext_resource type="Script" uid="uid://w04cu63wxhq4" path="res://Cooking (mechanics and ui)/Scripts/CookBook/equipment.gd" id="10_yvrcm"]
+[ext_resource type="Script" uid="uid://vnqgwbv6s25c" path="res://Cooking (mechanics and ui)/Scripts/CookBook/upgrades.gd" id="11_jyvso"]
+[ext_resource type="Script" uid="uid://deu8bo25x4vl2" path="res://Cooking (mechanics and ui)/Scripts/CookBook/titles.gd" id="12_k3f1s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dpysw"]
 shader = ExtResource("2_y5jva")
@@ -278,7 +281,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_86swa")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_y5jva")
 theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_rcxoc")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_l12xd")
-current_tab = 0
+current_tab = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
 position = Vector2(0, 31)
@@ -286,6 +289,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAcACgAAAABAAAAAAAeACgAAAACAAAAAAAfACg
 tile_set = ExtResource("4_rrx8r")
 
 [node name="Food" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -349,17 +353,91 @@ columns = 4
 [node name="Equipment" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
+script = ExtResource("10_yvrcm")
 metadata/_tab_index = 1
 
-[node name="Upgrades" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
-visible = false
+[node name="PopupPanel" type="PopupPanel" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment"]
+initial_position = 1
+size = Vector2i(114, 100)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment/PopupPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Next Updates"
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment/PopupPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Go Back"
+
+[node name="Upgrades" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
+layout_mode = 2
+script = ExtResource("11_jyvso")
 metadata/_tab_index = 2
+
+[node name="PopupPanel" type="PopupPanel" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(114, 100)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades/PopupPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Next Updates"
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades/PopupPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Go Back"
 
 [node name="Titles" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
+script = ExtResource("12_k3f1s")
 metadata/_tab_index = 3
+
+[node name="PopupPanel" type="PopupPanel" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles"]
+auto_translate_mode = 1
+initial_position = 1
+size = Vector2i(114, 100)
+visible = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles/PopupPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Next Updates"
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles/PopupPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Go Back"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -499,3 +577,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jnh3l")
 auto_height = true
 
 [connection signal="pressed" from="VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="tab_changed" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment" method="_on_tab_container_tab_changed"]
+[connection signal="tab_changed" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades" method="_on_tab_container_tab_changed"]
+[connection signal="tab_changed" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles" method="_on_tab_container_tab_changed"]
+[connection signal="popup_hide" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment/PopupPanel" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment" method="_on_popup_panel_popup_hide"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment/PopupPanel/VBoxContainer/Button" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment" method="_on_button_pressed"]
+[connection signal="popup_hide" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades/PopupPanel" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment" method="_on_popup_panel_popup_hide"]
+[connection signal="popup_hide" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades/PopupPanel" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades" method="_on_popup_panel_popup_hide"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades/PopupPanel/VBoxContainer/Button" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Equipment" method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades/PopupPanel/VBoxContainer/Button" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Upgrades" method="_on_button_pressed"]
+[connection signal="popup_hide" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles/PopupPanel" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles" method="_on_popup_panel_popup_hide"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles/PopupPanel/VBoxContainer/Button" to="VBoxContainer/MarginContainer/HBoxContainer/TabContainer/Titles" method="_on_button_pressed"]
