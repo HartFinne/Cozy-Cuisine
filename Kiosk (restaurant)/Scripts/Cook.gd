@@ -35,3 +35,4 @@ func _process(delta: float) -> void:
 		SceneManager.canvas_layer = get_parent().get_node("UI/CanvasLayer")
 		print(SceneManager.touch_controls)
 		SceneManager.go_to_cooking()
+		

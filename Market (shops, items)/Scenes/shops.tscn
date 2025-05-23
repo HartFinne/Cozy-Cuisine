@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bdhmvto5108fr"]
+[gd_scene load_steps=25 format=4 uid="uid://bdhmvto5108fr"]
 
 [ext_resource type="Texture2D" uid="uid://bbc0qogvitob4" path="res://Market (shops, items)/Assets/Logos/Icon-color.png" id="1_8ydwp"]
 [ext_resource type="Script" uid="uid://7vav0eoieviy" path="res://Market (shops, items)/Scripts/shops.gd" id="1_dli60"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="4_vc4qh"]
 [ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="5_f8skc"]
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="5_wvf3p"]
+[ext_resource type="Texture2D" uid="uid://dr3e8p67wwmin" path="res://Market (shops, items)/Assets/Shop.png" id="6_vc4qh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vc4qh"]
 
@@ -140,6 +141,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_f8skc")
 [node name="TileMapLayer" type="TileMapLayer" parent="VBoxContainer/HBoxContainer/VBoxContainer3/PanelContainer"]
 tile_map_data = PackedByteArray("AAAAAAAAAAAcACgAAAAAAAEAAAAcACkAAAAAAAIAAAAcACoAAAAAAAMAAAAcACsAAAABAAAAAAAdACgAAAABAAEAAAAdACkAAAABAAIAAAAdACoAAAABAAMAAAAdACkAAAACAAAAAAAeACgAAAACAAEAAAAeACkAAAACAAIAAAAeACoAAAACAAMAAAAeACkAAAAHAAAAAAAeACgAAAAHAAEAAAAeACkAAAAHAAIAAAAeACoAAAAHAAMAAAAeACsAAAAHAAQAAAAeACkAAAAIAAAAAAAfACgAAAAIAAEAAAAfACkAAAAIAAIAAAAfACoAAAAIAAMAAAAfACsAAAAIAAQAAAAfACkAAAAJAAAAAAAgACgAAAAJAAEAAAAgACkAAAAJAAIAAAAgACoAAAAJAAMAAAAgACsAAAAJAAQAAAAgACkAAAAKAAAAAAAhACgAAAAKAAEAAAAhACkAAAAKAAIAAAAhACoAAAAKAAMAAAAhACsAAAAKAAQAAAAhACwAAAAAAAYAAAAcACwAAAAAAAcAAAAcACwAAAAAAAgAAAAcAC0AAAABAAYAAAAdACwAAAABAAcAAAAdACwAAAABAAgAAAAdAC0AAAACAAYAAAAeACwAAAACAAcAAAAeACwAAAACAAgAAAAeAC0AAAAIAAYAAAAfACsAAAAIAAcAAAAfACwAAAAIAAgAAAAfAC0AAAAJAAYAAAAgACsAAAAJAAcAAAAgACwAAAAJAAgAAAAgAC0AAAAKAAYAAAAhACsAAAAKAAcAAAAhACwAAAAKAAgAAAAhAC0AAAADAAAAAAAdACgAAAADAAEAAAAdACkAAAADAAIAAAAdACoAAAADAAMAAAAfACkAAAADAAQAAAAdACkAAAAEAAAAAAAeACgAAAAEAAEAAAAeACkAAAAEAAIAAAAeACoAAAAEAAMAAAAgACkAAAAEAAQAAAAeACkAAAAFAAAAAAAfACgAAAAFAAEAAAAfACkAAAAFAAIAAAAfACoAAAAFAAMAAAAfACsAAAAFAAQAAAAfACkAAAAGAAAAAAAgACgAAAAGAAEAAAAgACkAAAAGAAIAAAAgACoAAAAGAAMAAAAgACsAAAAGAAQAAAAdACkAAAAAAAQAAAAcACoAAAAAAAUAAAAcACsAAAABAAQAAAAdACoAAAABAAUAAAAdACsAAAACAAQAAAAeACoAAAACAAUAAAAeACsAAAADAAUAAAAdACoAAAADAAYAAAAdACsAAAAEAAUAAAAeACoAAAAEAAYAAAAeACsAAAAEAAcAAAAeACwAAAAFAAUAAAAfACoAAAAFAAYAAAAfACsAAAAFAAcAAAAfACwAAAAGAAUAAAAdACoAAAAGAAYAAAAdACsAAAAGAAcAAAAdACwAAAAHAAUAAAAeACoAAAAHAAYAAAAeACsAAAAHAAcAAAAeACwAAAADAAcAAAAdACwAAAAIAAUAAAAfACoAAAAJAAUAAAAgACoAAAAKAAUAAAAhACoAAAADAAgAAAAdAC0AAAAEAAgAAAAdAC0AAAAFAAgAAAAeAC0AAAAGAAgAAAAfAC0AAAAHAAgAAAAgAC0AAAA=")
 tile_set = ExtResource("5_wvf3p")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer3/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer3/PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_vc4qh")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
