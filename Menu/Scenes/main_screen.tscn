@@ -20,11 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://du0k2u7xdykiu" path="res://Menu/Assets/playbutton/play-hover_button-Sheet.png" id="18_f6jv6"]
 [ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
 [ext_resource type="Texture2D" uid="uid://5fua16ruwqr0" path="res://Menu/Assets/tutorialbutton/tutorial-base_button-Sheet.png" id="19_a8ydr"]
-[ext_resource type="Texture2D" uid="uid://00ufgdso17ap" path="res://Menu/Assets/reset/newgame_button.png" id="19_lcydj"]
+[ext_resource type="Texture2D" uid="uid://dt7n8u6qobju7" path="res://Menu/Assets/reset/newgame button.png" id="19_kgx0q"]
 [ext_resource type="Texture2D" uid="uid://dbqlum4ohyia5" path="res://Menu/Assets/tutorialbutton/tutorial-pressed_button-Sheet.png" id="20_eva3w"]
-[ext_resource type="Texture2D" uid="uid://6dqyqrnpb60b" path="res://Menu/Assets/reset/pressed-newgame_button.png" id="20_ftosr"]
+[ext_resource type="Texture2D" uid="uid://cjuokxffxc1ue" path="res://Menu/Assets/reset/pressed-newgame_button.png" id="20_ftosr"]
 [ext_resource type="Texture2D" uid="uid://ryn41l5sotk" path="res://Menu/Assets/tutorialbutton/tutorial-hover_button-Sheet.png" id="21_31tv4"]
-[ext_resource type="Texture2D" uid="uid://3c3n3e7v111q" path="res://Menu/Assets/reset/hover-newgame-button.png" id="21_kgx0q"]
+[ext_resource type="Texture2D" uid="uid://rrllkco6hw44" path="res://Menu/Assets/reset/hover-newgame-button.png" id="21_kgx0q"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="21_phtfe"]
 [ext_resource type="AudioStream" uid="uid://2ixwsrjj4ir0" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/MainBGM.mp3" id="21_v7wqy"]
 [ext_resource type="Texture2D" uid="uid://7knvjx2e7qmm" path="res://Menu/Assets/quitbutton/quit-base_button-Sheet.png" id="22_lcydj"]
@@ -3256,7 +3256,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -125.0
-offset_top = -24.0
+offset_top = -30.0
 offset_right = 135.0
 offset_bottom = 299.0
 grow_horizontal = 2
@@ -3271,16 +3271,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -106.0
-offset_top = -64.0
+offset_top = -8.0
 offset_right = 112.0
-offset_bottom = 337.0
+offset_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="play" type="TextureButton" parent="Panel/VBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(186, 63)
+custom_minimum_size = Vector2(186, 67)
 layout_mode = 2
 texture_normal = ExtResource("16_gwi2x")
 texture_pressed = ExtResource("17_38atv")
@@ -3289,15 +3289,15 @@ stretch_mode = 0
 
 [node name="reset" type="TextureButton" parent="Panel/VBoxContainer"]
 texture_filter = 1
-custom_minimum_size = Vector2(187, 72)
+custom_minimum_size = Vector2(187, 60)
 layout_mode = 2
-texture_normal = ExtResource("19_lcydj")
+texture_normal = ExtResource("19_kgx0q")
 texture_pressed = ExtResource("20_ftosr")
 texture_hover = ExtResource("21_kgx0q")
 stretch_mode = 0
 
 [node name="tutorial" type="TextureButton" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(169, 75)
+custom_minimum_size = Vector2(169, 73)
 layout_mode = 2
 texture_normal = ExtResource("19_a8ydr")
 texture_pressed = ExtResource("20_eva3w")
@@ -3305,7 +3305,7 @@ texture_hover = ExtResource("21_31tv4")
 stretch_mode = 0
 
 [node name="quit" type="TextureButton" parent="Panel/VBoxContainer"]
-custom_minimum_size = Vector2(145, 50)
+custom_minimum_size = Vector2(145, 60)
 layout_mode = 2
 texture_normal = ExtResource("22_lcydj")
 texture_pressed = ExtResource("23_ftosr")

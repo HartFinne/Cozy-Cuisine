@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckuwdis0jkx61"
-path="res://.godot/imported/6.png-0852b7fb37a2fa2730631ec772a0fd36.ctex"
+uid="uid://c55g2ktjrfgvq"
+path="res://.godot/imported/cook-book-hover.png-54c2e9d41ccfd76ce815ae0823e06af8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tutorial/Assets/6.png"
-dest_files=["res://.godot/imported/6.png-0852b7fb37a2fa2730631ec772a0fd36.ctex"]
+source_file="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-hover.png"
+dest_files=["res://.godot/imported/cook-book-hover.png-54c2e9d41ccfd76ce815ae0823e06af8.ctex"]
 
 [params]
 

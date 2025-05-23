@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx6j31rokqfyq"
-path="res://.godot/imported/pressed-newgame_button.png-27ca12bda5183caa075cc91d2f83f2b9.ctex"
+uid="uid://caw7reeh766l"
+path="res://.godot/imported/cook-book-pressed.png-c31ca35deae1007a072f22a612bfeece.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu/Assets/newgamebutton/pressed-newgame_button.png"
-dest_files=["res://.godot/imported/pressed-newgame_button.png-27ca12bda5183caa075cc91d2f83f2b9.ctex"]
+source_file="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-pressed.png"
+dest_files=["res://.godot/imported/cook-book-pressed.png-c31ca35deae1007a072f22a612bfeece.ctex"]
 
 [params]
 
