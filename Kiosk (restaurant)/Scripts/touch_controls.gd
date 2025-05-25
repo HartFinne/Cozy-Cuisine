@@ -29,3 +29,6 @@ func on_button_released(button: TouchScreenButton) -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	visible = false
+
+func _on_tutorial_finished() -> void:
+	visible = true
