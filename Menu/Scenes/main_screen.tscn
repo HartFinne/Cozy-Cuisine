@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://cn7pxyittn3xa"]
+[gd_scene load_steps=48 format=4 uid="uid://cn7pxyittn3xa"]
 
 [ext_resource type="Script" uid="uid://u1hsxmpym5q1" path="res://Menu/Scripts/main_screen.gd" id="1_fv1yw"]
 [ext_resource type="Texture2D" uid="uid://bn4obqk4qxlp1" path="res://Menu/Assets/1.png" id="2_6663p"]
@@ -32,8 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://crilbab00v82x" path="res://Menu/Assets/quitbutton/quit-pressed_button-Sheet.png" id="23_ftosr"]
 [ext_resource type="Texture2D" uid="uid://cng4ywrj3ulkx" path="res://Menu/Assets/OK/1.png" id="23_uec84"]
 [ext_resource type="Texture2D" uid="uid://bgcwvgdt3s3li" path="res://Menu/Assets/quitbutton/quit-hover_button-Sheet.png" id="24_kgx0q"]
-[ext_resource type="FontFile" uid="uid://bq2bb101i2nj0" path="res://Market (shops, items)/Assets/ByteBounce.ttf" id="32_a8ydr"]
-[ext_resource type="Texture2D" uid="uid://cuv1s5lpuv4sx" path="res://Market (shops, items)/Assets/UiCozyFree.png" id="33_eva3w"]
+[ext_resource type="Theme" uid="uid://bq2snf4t8dkqj" path="res://Menu/Scenes/popuptheme.tres" id="32_a8ydr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8vjv"]
 bg_color = Color(1, 0.917647, 0.772549, 0)
@@ -3129,100 +3128,6 @@ texture = ExtResource("22_opkdy")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lcydj"]
 texture = ExtResource("23_uec84")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_31tv4"]
-atlas = ExtResource("33_eva3w")
-region = Rect2(65, 65, 14, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6trhn"]
-atlas = ExtResource("33_eva3w")
-region = Rect2(81, 65, 14, 14)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eva3w"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31tv4"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-content_margin_bottom = 20.0
-bg_color = Color(0.376471, 0.247059, 0.14902, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.917647, 0.772549, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6trhn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svf0u"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.894118, 0.772549, 0.619608, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.686275, 0.509804, 0.376471, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl0ig"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(1, 0.858824, 0.709804, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.686275, 0.509804, 0.376471, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf87d"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.894118, 0.772549, 0.619608, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.686275, 0.509804, 0.376471, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="Theme" id="Theme_puanu"]
-default_font = ExtResource("32_a8ydr")
-default_font_size = 32
-AcceptDialog/font_sizes/title_font_size = 32
-AcceptDialog/fonts/title_font = ExtResource("32_a8ydr")
-AcceptDialog/icons/close = SubResource("AtlasTexture_31tv4")
-AcceptDialog/icons/close_pressed = SubResource("AtlasTexture_6trhn")
-AcceptDialog/styles/embedded_border = SubResource("StyleBoxFlat_eva3w")
-AcceptDialog/styles/panel = SubResource("StyleBoxFlat_31tv4")
-Button/colors/font_color = Color(0.376471, 0.247059, 0.14902, 1)
-Button/colors/font_disabled_color = Color(0.376471, 0.247059, 0.14902, 1)
-Button/colors/font_focus_color = Color(0.376471, 0.247059, 0.14902, 1)
-Button/colors/font_hover_color = Color(0.376471, 0.247059, 0.14902, 1)
-Button/colors/font_hover_pressed_color = Color(0.376471, 0.247059, 0.14902, 1)
-Button/colors/font_outline_color = Color(0.376471, 0.247059, 0.14902, 1)
-Button/colors/font_pressed_color = Color(0.376471, 0.247059, 0.14902, 1)
-Button/fonts/font = ExtResource("32_a8ydr")
-Button/styles/focus = SubResource("StyleBoxEmpty_6trhn")
-Button/styles/hover = SubResource("StyleBoxFlat_svf0u")
-Button/styles/normal = SubResource("StyleBoxFlat_xl0ig")
-Button/styles/pressed = SubResource("StyleBoxFlat_xf87d")
-
 [node name="MainScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -3449,7 +3354,7 @@ title = ""
 initial_position = 2
 size = Vector2i(400, 150)
 borderless = true
-theme = SubResource("Theme_puanu")
+theme = ExtResource("32_a8ydr")
 dialog_text = "Are you sure you want to start a new game?"
 dialog_autowrap = true
 

@@ -120,7 +120,7 @@ content_margin_left = 20.0
 content_margin_top = 20.0
 content_margin_right = 20.0
 content_margin_bottom = 20.0
-bg_color = Color(0.686275, 0.509804, 0.376471, 1)
+bg_color = Color(0.376471, 0.247059, 0.14902, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -349,9 +349,9 @@ offset_right = 0.0
 unique_name_in_owner = true
 initial_position = 2
 size = Vector2i(470, 150)
+borderless = true
 theme = ExtResource("18_7mt4o")
 theme_override_styles/panel = SubResource("StyleBoxFlat_bligb")
-ok_button_text = ""
 dialog_text = "Error Messages"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
