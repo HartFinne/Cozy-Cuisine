@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dbnyl4ea6p63q" path="res://Menu/Assets/playbutton/play-pressed_button-Sheet.png" id="17_38atv"]
 [ext_resource type="Texture2D" uid="uid://kqfyf5ybngw8" path="res://Menu/Assets/Wooden Pixel Art GUI 32x32.png" id="17_k410j"]
 [ext_resource type="Texture2D" uid="uid://du0k2u7xdykiu" path="res://Menu/Assets/playbutton/play-hover_button-Sheet.png" id="18_f6jv6"]
-[ext_resource type="Script" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
+[ext_resource type="Script" uid="uid://wwo4xaieuqa3" path="res://Menu/Scripts/popup_panel.gd" id="18_tmrye"]
 [ext_resource type="Texture2D" uid="uid://5fua16ruwqr0" path="res://Menu/Assets/tutorialbutton/tutorial-base_button-Sheet.png" id="19_a8ydr"]
 [ext_resource type="Texture2D" uid="uid://dt7n8u6qobju7" path="res://Menu/Assets/reset/newgame button.png" id="19_kgx0q"]
 [ext_resource type="Texture2D" uid="uid://dbqlum4ohyia5" path="res://Menu/Assets/tutorialbutton/tutorial-pressed_button-Sheet.png" id="20_eva3w"]

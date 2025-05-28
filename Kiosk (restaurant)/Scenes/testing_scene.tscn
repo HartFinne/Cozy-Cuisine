@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://bkhbad2rxkcko" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Clay-pot-lid.png" id="14_b8f1s"]
 [ext_resource type="Texture2D" uid="uid://sd03a44np4iq" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Cleaning-productst.png" id="15_rbkai"]
 [ext_resource type="Texture2D" uid="uid://cda23b5g0nlvf" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Covered-Clay-pot-lid.png" id="16_8ws3c"]
-[ext_resource type="Texture2D" uid="uid://q8ta6q0o5ap6" path="res://Kiosk (restaurant)/Assets/global.png" id="16_fhl83"]
 [ext_resource type="Texture2D" uid="uid://dbfk0qv3ce478" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Covered-nonstick-pan.png" id="17_yg7rl"]
 [ext_resource type="Texture2D" uid="uid://jy0b2j75dg76" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Covered-nonstick-skillet.png" id="18_ccos6"]
 [ext_resource type="Texture2D" uid="uid://djhl7gc8281nf" path="res://intro/assets/kitchen assets/kitchen assets/Cabinet/Kitchen-utensils/Cutlery.png" id="19_nemp8"]
@@ -46,7 +45,10 @@
 [ext_resource type="Texture2D" uid="uid://bworukyr2pthv" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-normal.png" id="36_yg7rl"]
 [ext_resource type="Texture2D" uid="uid://caw7reeh766l" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-pressed.png" id="37_ccos6"]
 [ext_resource type="Texture2D" uid="uid://c55g2ktjrfgvq" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-hover.png" id="38_nemp8"]
+[ext_resource type="Texture2D" uid="uid://dgtb7010j0d35" path="res://Kiosk (restaurant)/Assets/shop button/normal.png" id="41_cwnbd"]
+[ext_resource type="Texture2D" uid="uid://03b46utaim22" path="res://Kiosk (restaurant)/Assets/shop button/pressed.png" id="42_iv008"]
 [ext_resource type="Texture2D" uid="uid://04ksn3vfifnf" path="res://Kiosk (restaurant)/Assets/tutorial button/tutorial-button-normal.png" id="43_5s3qi"]
+[ext_resource type="Texture2D" uid="uid://cr7x0e66n4nea" path="res://Kiosk (restaurant)/Assets/shop button/hover.png" id="43_y2aon"]
 [ext_resource type="Texture2D" uid="uid://cqjprokyjtvni" path="res://Kiosk (restaurant)/Assets/tutorial button/tutorial-button-pressed.png" id="44_fq4ne"]
 [ext_resource type="Texture2D" uid="uid://cboxi485yx8v0" path="res://Kiosk (restaurant)/Assets/tutorial button/tutorial-button-hover.png" id="45_7rlt2"]
 
@@ -1183,10 +1185,6 @@ shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
 shadow_size = 1
 shadow_offset = Vector2(0, 2.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a73q7"]
-atlas = ExtResource("16_fhl83")
-region = Rect2(83, 68, 16, 16)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a73q7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj36q"]
@@ -1207,10 +1205,6 @@ corner_radius_bottom_left = 5
 shadow_color = Color(0.423529, 0.305882, 0.192157, 1)
 shadow_size = 1
 shadow_offset = Vector2(0, 2.5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pqflv"]
-atlas = ExtResource("16_fhl83")
-region = Rect2(100, 68, 16, 16)
 
 [node name="TestingScene" type="Node2D"]
 script = ExtResource("1_5hxfs")
@@ -1482,11 +1476,14 @@ text = "COOK BOOK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/PanelContainer/Button/HBoxContainer"]
+[node name="TextureRect" type="TextureButton" parent="UI/CanvasLayer/PanelContainer/Button/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(44, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_a73q7")
-expand_mode = 3
+texture_normal = ExtResource("36_yg7rl")
+texture_pressed = ExtResource("37_ccos6")
+texture_hover = ExtResource("38_nemp8")
 stretch_mode = 5
 
 [node name="PanelContainer2" type="PanelContainer" parent="UI/CanvasLayer"]
@@ -1512,22 +1509,36 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_mj36q")
 text = "SHOP"
 
-[node name="TextureRect" type="TextureRect" parent="UI/CanvasLayer/PanelContainer2/HBoxContainer"]
+[node name="TextureRect" type="TextureButton" parent="UI/CanvasLayer/PanelContainer2/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(41, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_pqflv")
-expand_mode = 2
-stretch_mode = 4
+texture_normal = ExtResource("41_cwnbd")
+texture_pressed = ExtResource("42_iv008")
+texture_hover = ExtResource("43_y2aon")
+stretch_mode = 0
 
 [node name="TutorialButton" type="TextureButton" parent="UI/CanvasLayer"]
-offset_left = 1098.0
-offset_top = 181.0
-offset_right = 1138.0
-offset_bottom = 221.0
+offset_left = 1095.0
+offset_top = 180.0
+offset_right = 1135.0
+offset_bottom = 220.0
 texture_normal = ExtResource("43_5s3qi")
 texture_pressed = ExtResource("44_fq4ne")
 texture_hover = ExtResource("45_7rlt2")
 stretch_mode = 0
+
+[node name="Label2" type="Label" parent="UI/CanvasLayer/TutorialButton"]
+layout_mode = 2
+offset_left = -155.0
+offset_top = 2.0
+offset_right = -7.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("13_mj36q")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mj36q")
+text = "TUTORIAL"
 
 [node name="Inventory" parent="UI/CanvasLayer" instance=ExtResource("11_dostw")]
 offset_bottom = -0.000427246
