@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var tutorial_scene: Control = $TutorialScene
 @onready var tutorial_button: TextureButton = $TutorialButton
-@onready var touch_controls: CanvasLayer = $TouchControls
+@onready var touch_controls: CanvasLayer = $"../TouchControls"
 
 func _ready():
 	tutorial_scene.visible = false  # Start hidden
@@ -19,3 +19,4 @@ func _on_tutorial_button_pressed():
 
 func _on_tutorial_finished():
 	tutorial_button.disabled = false  # Re-enable after tutorial ends
+	touch_controls.visible = true
