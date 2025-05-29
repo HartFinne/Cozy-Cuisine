@@ -93,7 +93,16 @@ func show_customer_order():
 
 
 func _on_take_button_pressed():
+	if not player_in_area:
+		print("Player not in interaction area")
+		return
+		
 	if customer and customer.order:
+		# Check if this customer's order has already been taken
+		if player_data.order.has(customer.name):
+			print("Order already taken for customer: ", customer.name)
+			return
+			
 		current_patience = customer.patience_bar
 		# Assuming customer.order is a dictionary like: {"PeperoniPizza": 2}
 		print("working", customer.order)
@@ -101,13 +110,8 @@ func _on_take_button_pressed():
 		# Duplicate the customer order to avoid shared reference issues
 		var customer_order_copy = customer.order.duplicate(true)  # This creates a unique copy of the order
 
-		# If the player already has an order for this customer, we don't overwrite it
-		if not player_data.order.has(customer.name):
-			# Create the order with customer.name as the key if it doesn't already exist
-			player_data.order[customer.name] = customer_order_copy
-		else:
-			# You can add more logic here if you want to modify an existing order (optional)
-			player_data.order[customer.name] = customer_order_copy
+		# Create the order with customer.name as the key
+		player_data.order[customer.name] = customer_order_copy
 
 		print("Customer Name:", customer.name)
 		print("Player Order:", player_data.order)
