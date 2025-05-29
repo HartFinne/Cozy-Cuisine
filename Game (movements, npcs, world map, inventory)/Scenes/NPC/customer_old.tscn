@@ -91,6 +91,7 @@ offset_bottom = -5.0
 
 [node name="ThoughtBubbleScene" parent="." instance=ExtResource("6_m1n3a")]
 visible = false
+z_index = 0
 offset_left = -35.0
 offset_top = -36.0
 offset_right = -35.0

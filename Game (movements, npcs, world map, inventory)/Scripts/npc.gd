@@ -46,7 +46,6 @@ func _process(delta: float) -> void:
 		start_conversation.visible = false
 		x_button.visible = false
 		show_customer_order()
-		update_ui_state()
 		
 		if take_button and not take_button.is_connected("pressed", Callable(self, "_on_take_button_pressed")):
 			take_button.connect("pressed", Callable(self, "_on_take_button_pressed"))
@@ -246,8 +245,8 @@ func serve_dish_to_customer():
 
 	has_paid = true
 	follow_path(total_price)
-	thought_bubble_scene.visible = false
-
+	show_order_bubbles(false)
+	
 func follow_path(total_price: float):
 	# Hide UI elements after payment
 	dialogue.visible = false
@@ -274,17 +273,6 @@ func follow_path(total_price: float):
 	show_order_bubbles(false)
 	
 
-func update_ui_state():
-	if player_data.order.has(customer.name):
-		# If we have the order, show thought bubble when not in dialogue
-		thought_bubble_scene.visible = !dialogue.visible
-		take_button.visible = false
-		serve_button.visible = dialogue.visible
-	else:
-		# If we don't have the order yet
-		thought_bubble_scene.visible = false
-		take_button.visible = dialogue.visible
-		serve_button.visible = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Body entered:", body.name)  # Debugging: Print
@@ -300,4 +288,5 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		dialogue.visible = false
 		start_conversation.visible = false
 		x_button.visible = true
-		update_ui_state()
+		take_button.visible = false
+		serve_button.visible = false

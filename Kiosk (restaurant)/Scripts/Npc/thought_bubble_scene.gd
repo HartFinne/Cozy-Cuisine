@@ -18,9 +18,10 @@ func populate_panel_container(order_data: Array):
 	for item in order_data:
 		var container_instance = panel_container_scene.instantiate()
 
-		if container_instance.has_node("Label"):
-			var label = container_instance.get_node("Label")
-			label.text = "%d / %d x %s" % [item["have"], item["need"], item["label"]]
+		print(container_instance.has_node("Label"), "label")
+		if container_instance.has_node("MarginContainer/Label"):
+			var label = container_instance.get_node("MarginContainer/Label")
+			label.text = "%d" % [item["need"]]
 
 		if container_instance.has_node("TextureRect"):
 			var tex_rect = container_instance.get_node("TextureRect")
