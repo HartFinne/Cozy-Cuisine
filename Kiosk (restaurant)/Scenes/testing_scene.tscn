@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://buop56k2xua72"]
+[gd_scene load_steps=94 format=4 uid="uid://buop56k2xua72"]
 
 [ext_resource type="Script" uid="uid://dvagl716oqyxb" path="res://Kiosk (restaurant)/Scripts/testing_scene.gd" id="1_5hxfs"]
 [ext_resource type="PackedScene" uid="uid://x0go4prl867m" path="res://Market (shops, items)/Scenes/money_container.tscn" id="2_8xr7h"]
@@ -46,7 +46,6 @@
 [ext_resource type="Texture2D" uid="uid://caw7reeh766l" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-pressed.png" id="37_ccos6"]
 [ext_resource type="Texture2D" uid="uid://c55g2ktjrfgvq" path="res://Kiosk (restaurant)/Assets/cook book buttons/cook-book-hover.png" id="38_nemp8"]
 [ext_resource type="Texture2D" uid="uid://dgtb7010j0d35" path="res://Kiosk (restaurant)/Assets/shop button/normal.png" id="41_cwnbd"]
-[ext_resource type="Texture2D" uid="uid://03b46utaim22" path="res://Kiosk (restaurant)/Assets/shop button/pressed.png" id="42_iv008"]
 [ext_resource type="Texture2D" uid="uid://04ksn3vfifnf" path="res://Kiosk (restaurant)/Assets/tutorial button/tutorial-button-normal.png" id="43_5s3qi"]
 [ext_resource type="Texture2D" uid="uid://cr7x0e66n4nea" path="res://Kiosk (restaurant)/Assets/shop button/hover.png" id="43_y2aon"]
 [ext_resource type="Texture2D" uid="uid://cqjprokyjtvni" path="res://Kiosk (restaurant)/Assets/tutorial button/tutorial-button-pressed.png" id="44_fq4ne"]
@@ -1438,13 +1437,10 @@ offset_bottom = -31.0
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.777778
+anchor_left = 0.805556
 anchor_top = 0.12963
-anchor_right = 0.958333
+anchor_right = 0.986111
 anchor_bottom = 0.191358
-offset_left = 32.0
-offset_top = 1.52588e-05
-offset_right = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mj36q")
@@ -1512,8 +1508,8 @@ texture_filter = 1
 custom_minimum_size = Vector2(41, 0)
 layout_mode = 2
 size_flags_horizontal = 10
+action_mode = 0
 texture_normal = ExtResource("41_cwnbd")
-texture_pressed = ExtResource("42_iv008")
 texture_hover = ExtResource("43_y2aon")
 stretch_mode = 0
 
@@ -1570,7 +1566,9 @@ bus = &"Music"
 
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/TextureButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="UI/CanvasLayer/PanelContainer/TextureButton/HBoxContainer/TextureRect" to="." method="_on_texture_rect_pressed"]
 [connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer" to="." method="_on_h_box_container_gui_input"]
+[connection signal="gui_input" from="UI/CanvasLayer/PanelContainer2/HBoxContainer/TextureRect" to="." method="_on_texture_rect_gui_input"]
 [connection signal="pressed" from="UI/CanvasLayer/TutorialButton" to="UI/CanvasLayer" method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/TutorialButton" to="UI/CanvasLayer/TutorialScene" method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/TutorialButton" to="UI/TouchControls" method="_on_tutorial_button_pressed"]

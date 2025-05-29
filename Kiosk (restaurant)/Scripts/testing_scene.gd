@@ -240,18 +240,6 @@ func resume_customer_movement(path_follow: PathFollow2D):
 
 
 
-func _on_h_box_container_gui_input(event: InputEvent) -> void:
-	
-	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.pressed):
-		SoundEffects.play_click()
-		SceneManager.touch_controls = get_node("UI/TouchControls")
-		SceneManager.canvas_layer = get_node("UI/CanvasLayer")
-		SceneManager.gameplay_scene = get_tree().current_scene
-		SceneManager.go_to_market()
-			
-			
-
-
 func _on_pause_button_pressed() -> void:
 	SoundEffects.play_click()
 	get_tree().paused = true
@@ -267,3 +255,34 @@ func _on_button_pressed() -> void:
 	SceneManager.canvas_layer = get_node("UI/CanvasLayer")
 	SceneManager.gameplay_scene = get_tree().current_scene
 	SceneManager.go_to_cook_book()
+	
+
+func _on_texture_rect_pressed() -> void:
+	print("working")
+	SoundEffects.play_click()
+	SceneManager.touch_controls = get_node("UI/TouchControls")
+	SceneManager.canvas_layer = get_node("UI/CanvasLayer")
+	SceneManager.gameplay_scene = get_tree().current_scene
+	SceneManager.go_to_cook_book()
+	pass # Replace with function body.
+
+
+
+func _on_h_box_container_gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.pressed):
+		SoundEffects.play_click()
+		SceneManager.touch_controls = get_node("UI/TouchControls")
+		SceneManager.canvas_layer = get_node("UI/CanvasLayer")
+		SceneManager.gameplay_scene = get_tree().current_scene
+		SceneManager.go_to_market()
+	pass # Replace with function body.
+
+
+func _on_texture_rect_gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.pressed):
+		SoundEffects.play_click()
+		SceneManager.touch_controls = get_node("UI/TouchControls")
+		SceneManager.canvas_layer = get_node("UI/CanvasLayer")
+		SceneManager.gameplay_scene = get_tree().current_scene
+		SceneManager.go_to_market()
+	pass # Replace with function body.
