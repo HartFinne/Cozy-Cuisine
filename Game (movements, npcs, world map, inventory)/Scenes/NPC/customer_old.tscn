@@ -72,6 +72,7 @@ shape = SubResource("RectangleShape2D_n0r8f")
 [node name="Dialogue" parent="." instance=ExtResource("3_puhk6")]
 unique_name_in_owner = true
 visible = false
+z_index = 2
 offset_top = 11.0
 offset_bottom = 11.0
 

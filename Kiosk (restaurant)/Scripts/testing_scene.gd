@@ -85,8 +85,8 @@ func start_day():
 	start_day_button.visible = false
 	goal_container.visible = true
 	
-	panel_label_1.visible = false
-	panel_label_2.visible = false
+	#panel_label_1.visible = false
+	#panel_label_2.visible = false
 
 	spawn_customers_with_intervals()
 
@@ -251,14 +251,6 @@ func _on_h_box_container_gui_input(event: InputEvent) -> void:
 			
 			
 
-func _on_button_pressed() -> void:
-	SoundEffects.play_click()
-	SceneManager.touch_controls = get_node("UI/TouchControls")
-	SceneManager.canvas_layer = get_node("UI/CanvasLayer")
-	SceneManager.gameplay_scene = get_tree().current_scene
-	SceneManager.go_to_cook_book()
-
-
 
 func _on_pause_button_pressed() -> void:
 	SoundEffects.play_click()
@@ -266,3 +258,12 @@ func _on_pause_button_pressed() -> void:
 	%MenuPanel.show()
 	pass
 	
+
+
+func _on_button_pressed() -> void:
+	print("working")
+	SoundEffects.play_click()
+	SceneManager.touch_controls = get_node("UI/TouchControls")
+	SceneManager.canvas_layer = get_node("UI/CanvasLayer")
+	SceneManager.gameplay_scene = get_tree().current_scene
+	SceneManager.go_to_cook_book()
