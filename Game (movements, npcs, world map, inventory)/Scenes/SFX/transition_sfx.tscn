@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2h1smfg4ce7p"]
+
+[ext_resource type="AudioStream" uid="uid://bcocb43kuc8ls" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/transition_sfx.mp3" id="1_rs4s2"]
+
+[node name="TransitionSFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rs4s2")
+volume_db = -1.0
+bus = &"SFX"
+playback_type = 1

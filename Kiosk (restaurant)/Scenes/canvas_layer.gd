@@ -11,6 +11,7 @@ func _ready():
 
 func _on_tutorial_button_pressed():
 	print("✅ Tutorial button clicked")
+	SoundEffects.play_transition()
 	tutorial_scene.start_tutorial()
 	tutorial_scene.visible = true
 	tutorial_button.disabled = true

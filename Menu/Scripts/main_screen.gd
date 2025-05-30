@@ -48,6 +48,7 @@ func _on_tutorial_finished():
 	get_tree().change_scene_to_file("res://Menu/Scenes/main_screen.tscn")
 
 func _on_reset_pressed() -> void:
+	SoundEffects.play_click()
 	resetconfirmdialog.popup_centered()
 	pass # Replace with function body.
 	
@@ -86,7 +87,7 @@ func _on_quit_pressed() -> void:
 
 
 func _on_setting_button_pressed() -> void:
-	SoundEffects.play_click()
+	SoundEffects.play_transition()
 	var settings_instance = settings.instantiate()
 	add_child(settings_instance)
 	

@@ -250,7 +250,7 @@ func _on_pause_button_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	print("working")
-	SoundEffects.play_click()
+	SoundEffects.play_transition()
 	SceneManager.touch_controls = get_node("UI/TouchControls")
 	SceneManager.canvas_layer = get_node("UI/CanvasLayer")
 	SceneManager.gameplay_scene = get_tree().current_scene
@@ -259,7 +259,7 @@ func _on_button_pressed() -> void:
 
 func _on_texture_rect_pressed() -> void:
 	print("working")
-	SoundEffects.play_click()
+	SoundEffects.play_transition()
 	SceneManager.touch_controls = get_node("UI/TouchControls")
 	SceneManager.canvas_layer = get_node("UI/CanvasLayer")
 	SceneManager.gameplay_scene = get_tree().current_scene
@@ -270,7 +270,7 @@ func _on_texture_rect_pressed() -> void:
 
 func _on_h_box_container_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.pressed):
-		SoundEffects.play_click()
+		SoundEffects.play_transition()
 		SceneManager.touch_controls = get_node("UI/TouchControls")
 		SceneManager.canvas_layer = get_node("UI/CanvasLayer")
 		SceneManager.gameplay_scene = get_tree().current_scene
@@ -280,7 +280,7 @@ func _on_h_box_container_gui_input(event: InputEvent) -> void:
 
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton and event.is_pressed()) or (event is InputEventScreenTouch and event.pressed):
-		SoundEffects.play_click()
+		SoundEffects.play_transition()
 		SceneManager.touch_controls = get_node("UI/TouchControls")
 		SceneManager.canvas_layer = get_node("UI/CanvasLayer")
 		SceneManager.gameplay_scene = get_tree().current_scene

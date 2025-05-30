@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bcocb43kuc8ls"
+path="res://.godot/imported/transition_sfx.mp3-ed149dd0f9a5e7106f83f99646b4077b.mp3str"
+
+[deps]
+
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/transition_sfx.mp3"
+dest_files=["res://.godot/imported/transition_sfx.mp3-ed149dd0f9a5e7106f83f99646b4077b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

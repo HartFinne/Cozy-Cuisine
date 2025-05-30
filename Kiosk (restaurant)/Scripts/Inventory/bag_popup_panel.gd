@@ -77,5 +77,6 @@ func _on_inventory_clicked(container: PanelContainer) -> void:
 
 
 func _on_button_pressed() -> void:
+	SoundEffects.play_click()
 	bag_popup_panel.hide()
 	pass # Replace with function body.

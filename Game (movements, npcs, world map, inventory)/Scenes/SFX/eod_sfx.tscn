@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duvepv1sodj7x"]
+
+[ext_resource type="AudioStream" uid="uid://cukl7iv3o3ckl" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/eod_sfx.mp3" id="1_oi2ec"]
+
+[node name="EodSFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_oi2ec")
+bus = &"SFX"
+playback_type = 1
