@@ -128,8 +128,8 @@ func end_day():
 	end_of_day.set_testing_script(self)
 	end_of_day.end_day_update_ui()
 	
-	panel_label_1.visible = true
-	panel_label_2.visible = true
+	#panel_label_1.visible = true
+	#panel_label_2.visible = true
 	
 	player_data.budget += profit
 	
@@ -138,6 +138,11 @@ func end_day():
 	expenses = 0
 	
 	print("Day ended, is_day_ended = ", is_day_ended)  # Debugging line
+	
+
+func _on_end_of_day_popup_hide() -> void:
+	end_of_day._on_quit_pressed()
+	pass # Replace with function body.
 	
 	
 func spawn_customers_with_intervals():

@@ -1564,6 +1564,7 @@ volume_db = -5.0
 autoplay = true
 bus = &"Music"
 
+[connection signal="popup_hide" from="UI/EndOfDay" to="." method="_on_end_of_day_popup_hide"]
 [connection signal="pressed" from="UI/CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/TextureButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="UI/CanvasLayer/PanelContainer/TextureButton/HBoxContainer/TextureRect" to="." method="_on_texture_rect_pressed"]
