@@ -163,6 +163,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ao0as")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8ik8l")
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(120, 70)
 layout_mode = 2
 size_flags_vertical = 6
