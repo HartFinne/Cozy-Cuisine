@@ -1,6 +1,5 @@
 extends PopupPanel
 
-
 @onready var v_box_container: VBoxContainer = %VBoxContainer
 @export var ingredient_container: PackedScene
 
@@ -13,17 +12,25 @@ signal ingredient_selected(ingredient_data)  # Signal to send selected ingredien
 func _ready() -> void:
 	update_popup_ui()
 
-
 func show_popup(ingredient_slot):
 	print(ingredient_slot, "working112312213132")
 	selected_ingredient_slot = ingredient_slot  # Store the clicked slot
 	visible = true  # Show popup
 
-
 func update_popup_ui():
 	# Clear existing children before adding new ones
 	for child in v_box_container.get_children():
 		child.queue_free()
+		
+	# Add a simple Clear button at the top
+	var clear_button = Button.new()
+	clear_button.text = "Clear"
+	clear_button.pressed.connect(_on_clear_selected)
+	# Optional: Style the button
+	clear_button.custom_minimum_size.y = 40
+	clear_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	v_box_container.add_child(clear_button)
+		
 	# Add new ingredient names
 	if inventory_data.inventory.is_empty():
 		var empty_label = Label.new()
@@ -43,10 +50,15 @@ func update_popup_ui():
 			# Connect a click event to send selected ingredient back
 			ingredient_instance.connect("gui_input", Callable(self, "_on_ingredient_selected").bind(ingredient_data))
 			
-			
 			v_box_container.add_child(ingredient_instance)
 
 	print("Popup UI updated with", inventory_data.inventory.size(), "ingredients")
+
+func _on_clear_selected():
+	if selected_ingredient_slot:
+		selected_ingredient_slot.reset_ingredient()
+		update_popup_ui()
+	visible = false
 	
 func _on_ingredient_selected(event: InputEvent, ingredient_data: Dictionary):
 	if event is InputEventMouseButton and event.pressed:

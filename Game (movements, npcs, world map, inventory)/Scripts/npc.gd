@@ -248,10 +248,13 @@ func serve_dish_to_customer():
 	show_order_bubbles(false)
 	
 func follow_path(total_price: float):
-	# Hide UI elements after payment
-	dialogue.visible = false
-	take_button.visible = false
-	serve_button.visible = false
+	# Hide UI elements after payment - with null checks
+	if dialogue != null:
+		dialogue.visible = false
+	if take_button != null:
+		take_button.visible = false
+	if serve_button != null:
+		serve_button.visible = false
 	
 	if path_follow:
 		print("Path follow is valid!")
