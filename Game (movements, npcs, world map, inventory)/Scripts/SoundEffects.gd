@@ -34,6 +34,11 @@ func play_eod():
 		if eod_sfx.playing:
 			eod_sfx.stop()
 		eod_sfx.play()
+		
+func stop_eod():
+	print("Stopping EOD sound")
+	if eod_sfx and eod_sfx.playing:
+		eod_sfx.stop()
 	
 func play_transition():
 	print("Transition sound triggered")

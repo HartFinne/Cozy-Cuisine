@@ -124,9 +124,12 @@ func end_day():
 	player_data.save()
 	
 	get_tree().paused = true
+	SoundEffects.play_eod()
 	end_of_day.popup_centered()
 	end_of_day.set_testing_script(self)
 	end_of_day.end_day_update_ui()
+	
+	
 	
 	#panel_label_1.visible = true
 	#panel_label_2.visible = true
@@ -142,6 +145,7 @@ func end_day():
 
 func _on_end_of_day_popup_hide() -> void:
 	end_of_day._on_quit_pressed()
+	SoundEffects.stop_eod()
 	pass # Replace with function body.
 	
 	

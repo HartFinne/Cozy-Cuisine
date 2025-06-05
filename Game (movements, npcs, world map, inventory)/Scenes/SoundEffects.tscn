@@ -13,6 +13,7 @@ script = ExtResource("1_agve8")
 [node name="TransitionSFX" parent="." instance=ExtResource("2_b6cko")]
 
 [node name="EodSFX" parent="." instance=ExtResource("2_jhm4a")]
+process_mode = 3
 
 [node name="ClickSFX" parent="." instance=ExtResource("1_toh33")]
 
