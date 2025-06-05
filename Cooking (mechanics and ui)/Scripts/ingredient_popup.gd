@@ -24,6 +24,20 @@ func update_popup_ui():
 	# Clear existing children before adding new ones
 	for child in v_box_container.get_children():
 		child.queue_free()
+		
+	# Add the Clear option at the top
+	var clear_container = ingredient_container.instantiate()
+	if clear_container.has_method("set_ingredient_data"):
+		var clear_data = {
+			"name": "clear",
+			"label": "Clear",
+			"image": null,  # No image for clear option
+			"price": 0
+		}
+		clear_container.set_ingredient_data(clear_data)
+		clear_container.connect("gui_input", Callable(self, "_on_clear_selected"))
+	v_box_container.add_child(clear_container)
+		
 	# Add new ingredient names
 	if inventory_data.inventory.is_empty():
 		var empty_label = Label.new()
@@ -47,6 +61,13 @@ func update_popup_ui():
 			v_box_container.add_child(ingredient_instance)
 
 	print("Popup UI updated with", inventory_data.inventory.size(), "ingredients")
+	
+func _on_clear_selected(event: InputEvent):
+	if event is InputEventMouseButton and event.pressed:
+		if selected_ingredient_slot:
+			selected_ingredient_slot.reset_ingredient()
+			update_popup_ui()
+		visible = false
 	
 func _on_ingredient_selected(event: InputEvent, ingredient_data: Dictionary):
 	if event is InputEventMouseButton and event.pressed:

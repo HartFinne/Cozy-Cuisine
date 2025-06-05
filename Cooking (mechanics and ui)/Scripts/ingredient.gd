@@ -103,5 +103,17 @@ func _return_previous_ingredient_to_inventory():
 	
 	
 func reset_ingredient():
+	if ingredient_data and ingredient_data.has("name"):
+		# Remove from cooking scene
+		if cooking_script:
+			cooking_script.remove_ingredient_by_name(ingredient_data["name"])
+		
+		# Return ingredient to inventory
+		_return_previous_ingredient_to_inventory()
+	
+	# Clear the slot
 	ingredient_data = {}
 	texture_normal = null  # Reset button texture
+	
+	# Save changes
+	player_data.save()
