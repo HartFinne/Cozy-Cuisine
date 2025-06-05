@@ -18,7 +18,7 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
-var patience_duration := 75.0  # seconds until patience reaches 0
+var patience_duration := 75  # seconds until patience reaches 0
 var current_patience := 100.0
 var has_paid = false
 var total_price := 0.0
@@ -45,6 +45,8 @@ func _process(delta: float) -> void:
 		dialogue.visible = true
 		start_conversation.visible = false
 		x_button.visible = false
+		# Hide thought bubble when showing dialogue
+		thought_bubble_scene.visible = false
 		show_customer_order()
 		
 		if take_button and not take_button.is_connected("pressed", Callable(self, "_on_take_button_pressed")):
@@ -66,12 +68,21 @@ func _process(delta: float) -> void:
 				player_data.save()
 			follow_path(0)
 
+# Add helper function to get clean name
+func get_clean_customer_name() -> String:
+	if customer and customer.name:
+		# Remove the unique identifier after the underscore
+		var name_parts = customer.name.split("_")
+		return name_parts[0]  # Return just the base name
+	return "Customer"  # Fallback name
+
 func show_customer_order():
 	# Hide the take button after taking the order
 	var dishes = player_data.dishes
 	hide_taken_button_if_order_taken()
 	if customer and customer.order:
-		var name_text = customer.name + "'s Order:\n"
+		var clean_name = get_clean_customer_name()
+		var name_text = clean_name + "'s Order:\n"
 		var order_text: String
 
 		for item_name in customer.order.keys():
@@ -120,7 +131,7 @@ func _on_take_button_pressed():
 		player_data.save()
 		take_button.visible = false
 		dialogue.visible = false
-
+		# Show thought bubble after taking order
 		show_order_bubbles(true)
 
 	else:
@@ -192,7 +203,7 @@ func serve_dish_to_customer():
 		# Check if the dish exists in player_data.dishes
 		if not player_data.dishes.has(dish_name):
 			print("Dish not found:", dish_name)
-			dialogue.set_dialog_text(customer.name + "'s Order", "Sorry, we don't have that dish.")
+			dialogue.set_dialog_text(get_clean_customer_name() + "'s Order", "Sorry, we don't have that dish.")
 			return  
 
 		var dish = player_data.dishes[dish_name]
@@ -214,8 +225,8 @@ func serve_dish_to_customer():
 					print("⚠️ Could not load ingredient: ", ingredient_name)
 			
 		if player_quantity < required_quantity:
-			dialogue.set_dialog_text(customer.name + "'s Order", "Sorry, I don't have enough " + dish_name)
-			print("Not enough ", dish_name, " to serve ", customer.name)
+			dialogue.set_dialog_text(get_clean_customer_name() + "'s Order", "Sorry, I don't have enough " + dish_name)
+			print("Not enough ", dish_name, " to serve ", get_clean_customer_name())
 			return  
 
 		# Calculate total price
@@ -229,7 +240,7 @@ func serve_dish_to_customer():
 			player_data.dishes.erase(dish_name)  
 
 		# Notify the player
-		print("Serving ", required_quantity, " of ", dish_name, " to ", customer.name)
+		print("Serving ", required_quantity, " of ", dish_name, " to ", get_clean_customer_name())
 
 	# Remove the order after serving all dishes
 	player_data.expenses += total_expense
@@ -240,8 +251,8 @@ func serve_dish_to_customer():
 		print("No payment needed. Customer has no order.")
 		return  
 
-	print(customer.name, " paid ", total_price, " coins.")
-	dialogue.set_dialog_text(customer.name + "'s Payment", "Thank you! Here is " + str(total_price) + " coins.")
+	print(get_clean_customer_name(), " paid ", total_price, " coins.")
+	dialogue.set_dialog_text(get_clean_customer_name() + "'s Payment", "Thank you! Here is " + str(total_price) + " coins.")
 
 	has_paid = true
 	follow_path(total_price)
@@ -283,6 +294,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_in_area = true
 		print("Player entered NPC area")
 		start_conversation.visible = true
+		# Hide thought bubble when player is in area (if order exists)
+		if player_data.order.has(customer.name):
+			thought_bubble_scene.visible = false
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -293,3 +307,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		x_button.visible = true
 		take_button.visible = false
 		serve_button.visible = false
+		# Show thought bubble when player exits (if order exists)
+		if player_data.order.has(customer.name):
+			thought_bubble_scene.visible = true
