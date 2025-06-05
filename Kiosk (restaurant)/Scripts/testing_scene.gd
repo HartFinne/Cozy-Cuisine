@@ -75,7 +75,7 @@ func _on_tutorial_finished():
 	player_data.save()
 	
 func start_day():
-	SoundEffects.play_click()
+	SoundEffects.play_startDay()
 	player_data.revenue = 0
 	player_data.expenses = 0
 	player_data.profit = 0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://3pd2c5mxerji"]
+
+[ext_resource type="AudioStream" uid="uid://c8eub3djrhr1b" path="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/start day sfx.mp3" id="1_a3ily"]
+
+[node name="StartDaySFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_a3ily")
+volume_db = -2.0
+bus = &"SFX"
+playback_type = 1

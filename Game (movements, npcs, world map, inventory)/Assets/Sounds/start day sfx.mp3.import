@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8eub3djrhr1b"
+path="res://.godot/imported/start day sfx.mp3-c705707cdcf9d2f5173ab9b88719d047.mp3str"
+
+[deps]
+
+source_file="res://Game (movements, npcs, world map, inventory)/Assets/Sounds/start day sfx.mp3"
+dest_files=["res://.godot/imported/start day sfx.mp3-c705707cdcf9d2f5173ab9b88719d047.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

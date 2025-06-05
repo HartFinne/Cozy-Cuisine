@@ -5,6 +5,7 @@ extends Node2D
 @onready var done_cooking_sfx: AudioStreamPlayer2D = $DoneCookingSFX
 @onready var eod_sfx: AudioStreamPlayer2D = $EodSFX
 @onready var transition_sfx: AudioStreamPlayer2D = $TransitionSFX
+@onready var start_day_sfx: AudioStreamPlayer2D = $StartDaySFX
 
 
 func play_click():
@@ -27,6 +28,13 @@ func play_doneCooking():
 		if done_cooking_sfx.playing:
 			done_cooking_sfx.stop()
 		done_cooking_sfx.play()
+	
+func play_startDay():
+	print("Start day sound triggered")
+	if start_day_sfx:
+		if start_day_sfx.playing:
+			start_day_sfx.stop()
+		start_day_sfx.play()
 	
 func play_eod():
 	print("EOD sound triggered")
