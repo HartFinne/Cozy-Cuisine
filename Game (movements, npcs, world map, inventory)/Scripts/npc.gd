@@ -18,7 +18,7 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
-var patience_duration := 100  # seconds until patience reaches 0
+var patience_duration := 5  # seconds until patience reaches 0
 var current_patience := 100.0
 var has_paid = false
 var total_price := 0.0
