@@ -11,10 +11,10 @@
 [ext_resource type="TileSet" uid="uid://dyfo4odvea4rs" path="res://Market (shops, items)/Assets/wood.tres" id="4_rrx8r"]
 [ext_resource type="FontFile" uid="uid://dcyhga4jkbicf" path="res://intro/assets/market/Press_Start_2P/PressStart2P-Regular.ttf" id="5_bo2hy"]
 [ext_resource type="Texture2D" uid="uid://cblq4kjmp4x83" path="res://Market (shops, items)/Assets/Logos/icons8-coin-25.png" id="10_rcxoc"]
-[ext_resource type="Script" uid="uid://w04cu63wxhq4" path="res://Cooking (mechanics and ui)/Scripts/CookBook/equipment.gd" id="10_yvrcm"]
-[ext_resource type="Script" uid="uid://vnqgwbv6s25c" path="res://Cooking (mechanics and ui)/Scripts/CookBook/upgrades.gd" id="11_jyvso"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/CookBook/equipment.gd" id="10_yvrcm"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/CookBook/upgrades.gd" id="11_jyvso"]
 [ext_resource type="Theme" uid="uid://bq2snf4t8dkqj" path="res://Menu/Scenes/popuptheme.tres" id="11_k3f1s"]
-[ext_resource type="Script" uid="uid://deu8bo25x4vl2" path="res://Cooking (mechanics and ui)/Scripts/CookBook/titles.gd" id="12_k3f1s"]
+[ext_resource type="Script" path="res://Cooking (mechanics and ui)/Scripts/CookBook/titles.gd" id="12_k3f1s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dpysw"]
 shader = ExtResource("2_y5jva")
