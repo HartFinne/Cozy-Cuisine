@@ -18,7 +18,7 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
-var patience_duration := 75  # seconds until patience reaches 0
+var patience_duration := 10  # seconds until patience reaches 0
 var current_patience := 100.0
 var has_paid = false
 var total_price := 0.0
@@ -44,7 +44,8 @@ func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("accept"):
 		dialogue.visible = true
 		start_conversation.visible = false
-		x_button.visible = false
+		if x_button != null:
+			x_button.visible = false
 		# Hide thought bubble when showing dialogue
 		thought_bubble_scene.visible = false
 		show_customer_order()
@@ -142,11 +143,15 @@ func _on_take_button_pressed():
 func hide_taken_button_if_order_taken():
 	if player_data.order.has(customer.name):
 		print("hide button")
-		take_button.visible = false
-		serve_button.visible = true
+		if take_button != null:
+			take_button.visible = false
+		if serve_button != null:
+			serve_button.visible = true
 	else:
-		take_button.visible = true
-		serve_button.visible = false
+		if take_button != null:
+			take_button.visible = true
+		if serve_button != null:
+			serve_button.visible = false
 		
 func show_order_bubbles(served: bool):
 	# need to show the icon of the foods of the orders and how many of it like
@@ -302,11 +307,17 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_area = false
 		print("Player left NPC area")
-		dialogue.visible = false
-		start_conversation.visible = false
-		x_button.visible = true
-		take_button.visible = false
-		serve_button.visible = false
+		if dialogue != null:
+			dialogue.visible = false
+		if start_conversation != null:
+			start_conversation.visible = false
+		if x_button != null:
+			x_button.visible = true
+		if take_button != null:
+			take_button.visible = false
+		if serve_button != null:
+			serve_button.visible = false
 		# Show thought bubble when player exits (if order exists)
 		if player_data.order.has(customer.name):
-			thought_bubble_scene.visible = true
+			if thought_bubble_scene != null:
+				thought_bubble_scene.visible = true

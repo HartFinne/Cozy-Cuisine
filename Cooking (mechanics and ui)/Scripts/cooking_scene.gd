@@ -7,6 +7,7 @@ extends Control
 @onready var output_label: Label = %OutputLabel
 @onready var hidden_output_label: Label = %HiddenOutputLabel
 @onready var output_rect: TextureRect = %OutputRect
+@onready var notification_label: Label = $Notification
 
 
 @onready var panel_container_3: PanelContainer = $PanelContainer3
@@ -27,6 +28,11 @@ func _ready() -> void:
 	MenuManager.load_recipes()
 	if not output_rect.gui_input.is_connected(_on_output_rect_clicked):
 		output_rect.gui_input.connect(_on_output_rect_clicked)
+	
+	# Connect to the customer_left signal from Orders node
+	var orders_node = $Orders
+	if orders_node:
+		orders_node.customer_left.connect(_on_customer_left)
 		
 
 func _on_back_button_pressed() -> void:
@@ -253,4 +259,22 @@ func show_panel_for_seconds(seconds: float):
 func _on_timer_timeout():
 	panel_container_3.visible = false  # Hide the panel when timer runs out
 	timer.timeout.disconnect(_on_timer_timeout)  # Disconnect to prevent multiple connections
+	
+
+func _on_customer_left(customer_name: String) -> void:
+	# Show notification when a customer leaves
+	notification_label.text = customer_name + " has left due to waiting too long!"
+	notification_label.visible = true
+	
+	# Create a timer to hide the notification after 3 seconds
+	var notification_timer = Timer.new()
+	add_child(notification_timer)
+	notification_timer.wait_time = 3.0
+	notification_timer.one_shot = true
+	notification_timer.timeout.connect(func(): 
+		notification_label.visible = false
+		notification_timer.queue_free()
+	)
+	notification_timer.start()
+
 	
