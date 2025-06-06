@@ -118,6 +118,7 @@ theme_override_font_sizes/font_size = 32
 text = "100"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 
