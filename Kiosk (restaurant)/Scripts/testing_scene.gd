@@ -80,7 +80,8 @@ func start_day():
 	player_data.expenses = 0
 	player_data.profit = 0
 	
-	
+	# Reset day state
+	is_day_ended = false
 	
 	start_day_button.visible = false
 	goal_container.visible = true

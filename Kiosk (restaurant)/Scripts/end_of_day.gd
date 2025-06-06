@@ -26,9 +26,11 @@ func end_day_update_ui():
 func _on_continue_pressed() -> void:
 	get_tree().paused = false
 	if testing_scene:
-		testing_scene.is_day_ended = false
-		testing_scene.start_day_button.visible = false
-		testing_scene.goal_container.visible = true
+		testing_scene.is_day_ended = true
+		testing_scene.start_day_button.visible = true
+		testing_scene.goal_container.visible = false
+		testing_scene.revenue = 0
+		testing_scene.profit = 0
 		# 🧼 Force all remaining customers to leave
 		for path in testing_scene.paths:
 			if path.get_child_count() > 0:
