@@ -97,27 +97,43 @@ func _on_cook_button_pressed() -> void:
 
 func _deduct_ingredients(required_ingredients: Dictionary) -> bool:
 	print("Before Deduction, Selected Ingredients:", selected_ingredients)
+	print("Before Deduction, Player Inventory:", player_data.inventory)
 
-	# ✅ Check and deduct required ingredients
+	# First check if we have enough ingredients in both selected and inventory
 	for ingredient_name in required_ingredients.keys():
 		if ingredient_name not in selected_ingredients or selected_ingredients[ingredient_name].get("quantity", 0) < required_ingredients[ingredient_name]:
 			print("Missing or insufficient:", ingredient_name)
-			return false  
-
-		# Subtract only required quantity
-		selected_ingredients[ingredient_name]["quantity"] -= required_ingredients[ingredient_name]
+			return false
 		
-		# Remove ingredient if quantity reaches 0
+		# Also check player's inventory
+		if ingredient_name not in player_data.inventory or player_data.inventory[ingredient_name].get("quantity", 0) < required_ingredients[ingredient_name]:
+			print("Missing or insufficient in inventory:", ingredient_name)
+			return false
+
+	# If we have enough, deduct from both selected_ingredients and player's inventory
+	for ingredient_name in required_ingredients.keys():
+		# Deduct from selected_ingredients
+		selected_ingredients[ingredient_name]["quantity"] -= required_ingredients[ingredient_name]
 		if selected_ingredients[ingredient_name]["quantity"] <= 0:
 			selected_ingredients.erase(ingredient_name)
+			
+		# Deduct from player's inventory
+		player_data.inventory[ingredient_name]["quantity"] -= required_ingredients[ingredient_name]
+		if player_data.inventory[ingredient_name]["quantity"] <= 0:
+			player_data.inventory.erase(ingredient_name)
 
+	# Save changes to player data
 	if selected_ingredients != player_data.selected_ingredients:
 		player_data.selected_ingredients = selected_ingredients
 		player_data.save()
 
 	print("After Deduction, Selected Ingredients:", selected_ingredients)
 	print("After Deduction, Player Inventory:", player_data.inventory)
-	return true 
+	
+	# Update the ingredient popup UI
+	ingredient_popup.update_popup_ui()
+	
+	return true
 	
 
 func _start_cooking(recipe: MenuItem) -> void:

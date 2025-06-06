@@ -18,7 +18,7 @@ var path_follow: PathFollow2D
 
 var customer_data = GameData.load_customers()
 
-var patience_duration := 10  # seconds until patience reaches 0
+var patience_duration := 100  # seconds until patience reaches 0
 var current_patience := 100.0
 var has_paid = false
 var total_price := 0.0
@@ -200,6 +200,7 @@ func serve_dish_to_customer():
 		return  
 
 	var total_expense := 0.0
+	var total_price := 0.0
 
 	# Loop through the customer's order and check if player has enough of each dish
 	for dish_name in customer.order.keys():
@@ -214,13 +215,15 @@ func serve_dish_to_customer():
 		var dish = player_data.dishes[dish_name]
 		var player_quantity = dish.get("quantity", 0)
 
-		print(player_quantity, "workins")  # Debugging print
-		print(required_quantity, "kimh")  # Debugging print
-		print(dish, "asdkjfhasdjksafhsakljfdhfjfhalkjfdhfsljkahfljsahfdafsakjfh")
-		
+		if player_quantity < required_quantity:
+			dialogue.set_dialog_text(get_clean_customer_name() + "'s Order", "Sorry, I don't have enough " + dish_name)
+			print("Not enough ", dish_name, " to serve ", get_clean_customer_name())
+			return  
+
+		# Calculate ingredient costs
 		if dish.has("ingredients"):
 			for ingredient_name in dish["ingredients"].keys():
-				var quantity = dish["ingredients"][ingredient_name] * required_quantity  # <-- Multiply by quantity ordered
+				var quantity = dish["ingredients"][ingredient_name] * required_quantity
 				var ingredient_path = "res://Datas/Resources/Ingredients/" + ingredient_name + ".tres"
 				var ingredient_res = load(ingredient_path)
 				if ingredient_res and ingredient_res is Ingredient:
@@ -228,36 +231,31 @@ func serve_dish_to_customer():
 					print("Used ", quantity, "x ", ingredient_name, " (", ingredient_res.price, " each)")
 				else:
 					print("⚠️ Could not load ingredient: ", ingredient_name)
-			
-		if player_quantity < required_quantity:
-			dialogue.set_dialog_text(get_clean_customer_name() + "'s Order", "Sorry, I don't have enough " + dish_name)
-			print("Not enough ", dish_name, " to serve ", get_clean_customer_name())
-			return  
 
-		# Calculate total price
-		total_price += dish.get("price", 0.0) * required_quantity  
+		# Calculate selling price
+		total_price += dish.get("price", 0.0) * required_quantity
 
-		# Player has enough of the dish, serve it
-		dish["quantity"] -= required_quantity  
+		# Update dish quantity
+		dish["quantity"] -= required_quantity
 
-		# Remove the dish from player_data.dishes if quantity is 0
+		# Remove the dish if quantity is 0
 		if dish["quantity"] <= 0:
-			player_data.dishes.erase(dish_name)  
+			player_data.dishes.erase(dish_name)
 
-		# Notify the player
 		print("Serving ", required_quantity, " of ", dish_name, " to ", get_clean_customer_name())
 
-	# Remove the order after serving all dishes
+	# Update player data with expenses
 	player_data.expenses += total_expense
 	player_data.order.erase(customer.name)
 	player_data.save()
 
 	if total_price <= 0:
 		print("No payment needed. Customer has no order.")
-		return  
+		return
 
-	print(get_clean_customer_name(), " paid ", total_price, " coins.")
-	dialogue.set_dialog_text(get_clean_customer_name() + "'s Payment", "Thank you! Here is " + str(total_price) + " coins.")
+	print(get_clean_customer_name(), " paid ", total_price, " coins (Cost: ", total_expense, ")")
+	dialogue.set_dialog_text(get_clean_customer_name() + "'s Payment", 
+		"Thank you! Here is " + str(total_price) + " coins.\nProfit: " + str(total_price - total_expense))
 
 	has_paid = true
 	follow_path(total_price)

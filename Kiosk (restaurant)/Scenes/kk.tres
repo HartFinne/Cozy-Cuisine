@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bnhix200axflb" path="res://intro/assets/Interiors_free_32x32.png" id="1_n6mc1"]
 [ext_resource type="Texture2D" uid="uid://c12nb5arq0ior" path="res://Kiosk (restaurant)/Assets/kitchen_v1.png" id="2_m2bgp"]
-[ext_resource type="Texture2D" uid="uid://kck7q33o33aj" path="res://intro/assets/free-office-pixel-art/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-Cleaning-Products/Cabinet-Animation-with-Cleaning-Products-png (3).png" id="3_svm5w"]
+[ext_resource type="Texture2D" uid="uid://nqaair4vot0o" path="res://intro/assets/free-office-pixel-art/kitchen assets/kitchen assets/Cabinet/Cabinet-with-doors/Cabinet-with-Cleaning-Products/Cabinet-Animation-with-Cleaning-Products-png (3).png" id="3_svm5w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ev8p6"]
 texture = ExtResource("1_n6mc1")

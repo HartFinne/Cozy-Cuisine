@@ -94,19 +94,23 @@ func start_day():
 func start_and_goal_update_ui():
 	start_day_button.text = "Start Day " + str(int(player_data.days))
 	
-	goal_label.text = "Profit Goal: " + str(int(profit)) + " / " + str(int(player_data.goal_profit_per_day))
-	
+	# Calculate actual profit (revenue - expenses)
+	var actual_profit = profit
+	goal_label.text = "Profit Goal: " + str(int(actual_profit)) + " / " + str(int(player_data.goal_profit_per_day))
 	
 func customer_paid(amount: int):
 	expenses = player_data.expenses
 	
 	revenue += amount
+	# Calculate actual profit by subtracting expenses
 	profit = revenue - expenses
 	
 	player_data.revenue = revenue
 	player_data.profit = profit
 	
 	SoundEffects.play_coin()
+	
+	print("Revenue: ", revenue, " Expenses: ", expenses, " Profit: ", profit)  # Debug print
 	
 	start_and_goal_update_ui()
 	check_if_day_should_end()
